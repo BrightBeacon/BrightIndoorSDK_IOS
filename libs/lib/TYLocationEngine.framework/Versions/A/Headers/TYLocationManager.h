@@ -1,0 +1,129 @@
+//
+//  TYLocationManager.h
+//  BLEProject
+//
+//  Created by innerpeacer on 15/2/11.
+//  Copyright (c) 2015年 innerpeacer. All rights reserved.
+//
+
+#import <CoreLocation/CoreLocation.h>
+#import <CoreMotion/CoreMotion.h>
+#import <TYMapData/TYMapData.h>
+#import <TYMapSDK/TYMapSDK.h>
+
+@class TYLocationManager;
+
+/**
+ *  定位引擎代理协议
+ */
+@protocol TYLocationManagerDelegate <NSObject>
+
+/**
+ *  位置更新事件回调，位置更新并返回新的位置结果
+ *
+ *  @param manager     定位引擎实例
+ *  @param newLocation 新的位置结果
+ */
+- (void)TYLocationManager:(TYLocationManager *)manager didUpdateLocation:(TYLocalPoint *)newLocation;
+
+/**
+ *  位置更新失败事件回调
+ *
+ *  @param manager 定位引擎实例
+ */
+- (void)TYLocationManagerdidFailUpdateLocation:(TYLocationManager *)manager;
+
+@optional
+/**
+ *  Beacon扫描结果事件回调，返回符合扫描参数的所有Beacon
+ *
+ *  @param manager 定位引擎实例
+ *  @param beacons Beacon数组，[TYBeacon]
+ */
+- (void)TYLocationManager:(TYLocationManager *)manager didRangedBeacons:(NSArray *)beacons;
+
+/**
+ *  定位Beacon扫描结果事件回调，返回符合扫描参数的定位Beacon，定位Beacon包含坐标信息。
+ *
+ *  @param manager 定位引擎实例
+ *  @param beacons 定位Beacon数组，[TYPublicBeacon]
+ */
+- (void)TYLocationManager:(TYLocationManager *)manager didRangedLocationBeacons:(NSArray *)beacons;
+
+/**
+ *  设备方向改变事件回调
+ *
+ *  @param manager    定位引擎实例
+ *  @param newHeading 新的设备方向结果
+ */
+- (void)TYLocationManager:(TYLocationManager *)manager didUpdateDeviceHeading:(double)newHeading;
+
+@end
+
+@interface TYLocationManager : NSObject
+
+/**
+ *  初始化定位引擎
+ *
+ *  @param building 目标建筑信息
+ *
+ *  @return 定位引擎实例
+ */
+- (id)initWithBuilding:(TYBuilding *)building;
+
+/**
+ *  开启定位引擎
+ */
+- (void)startUpdateLocation;
+
+/**
+ *  停止定位引擎
+ */
+- (void)stopUpdateLocation;
+
+/**
+ *  获取最近一次的位置信息
+ *
+ *  @return 位置信息
+ */
+- (TYLocalPoint *)getLastLocation;
+
+/**
+ *  设置用于定位的Beacon参数
+ *
+ *  @param region Beacon Region参数
+ */
+- (void)setBeaconRegion:(CLBeaconRegion *)region;
+
+/**
+ *  设置是否限制定位使用的beacon个数
+ *
+ *  @param lbn 是否限制
+ */
+- (void)setLimitBeaconNumber:(BOOL)lbn;
+
+/**
+ *  设置用于定位的beacon最大个数
+ *
+ *  @param mbn 用于定位的beacon最大个数，即选取不多于mbn个beacon进行定位
+ */
+- (void)setMaxBeaconNumberForProcessing:(int)mbn;
+
+/**
+ *  设置beacon信号阈值
+ *
+ *  @param threshold 低于此信号阈值将忽略beacon信号
+ */
+- (void)setRssiThreshold:(int)threshold;
+
+/**
+ *  请求超时时间，即超过此时间没有结果返回认为定位失败
+ */
+@property (nonatomic, assign) float requestTimeOut;
+
+/**
+ *  定位引擎协议代理
+ */
+@property (nonatomic, assign) id<TYLocationManagerDelegate> delegate;
+
+@end
