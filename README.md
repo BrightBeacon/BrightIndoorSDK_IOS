@@ -1,4 +1,5 @@
 ##室内定位开发包-[智石科技](http://www.brtbeacon.com)
+v1.0.0
 ###一、简介
 室内定位开发包是基于ArcGIS框架和GEOS几何计算开源库，为开发者提供了的室内地图显示、路径规划、室内定位等相关GIS功能。
 
@@ -175,5 +176,3 @@ AGSGraphics（空间要素）必须要有几何形状（AGSGeometry），表现�
 ##四、相关资源
 * [开发者社区](http://bbs.brtbeacon.com)
 * [智石官网](http://www.brtbeacon.com)
-
-
