@@ -1,0 +1,180 @@
+{
+    "RenderingScheme": {
+        "DefaultSymbol": {
+            "DefaultFillSymbol": {
+                "colorID": 9999,
+                "fillColor": "#FFB2B2B2",
+                "outlineColor": "#FFC38D73",
+                "lineWidth": 1
+            },
+            "DefaultHighlightFillSymbol": {
+                "colorID": 9998,
+                "fillColor": "#FF00FFFF",
+                "outlineColor": "#FF00FFFF",
+                "lineWidth": 1
+            },
+            "DefaultLineSymbol": {
+                "colorID": 9997,
+                "fillColor": "",
+                "outlineColor": "",
+                "lineWidth": 1
+            },
+            "DefaultHighlightLineSymbol": {
+                "colorID": 9996,
+                "fillColor": "",
+                "outlineColor": "",
+                "lineWidth": 1
+            }
+        },
+        "FillSymbol": [
+                       {
+                       "colorID": 1,
+                       "fillColor": "#FFEFC0EE",
+                       "outlineColor": "#FFEFC0EE",
+                       "lineWidth": 1
+                       },
+                       {
+                       "colorID": 2,
+                       "fillColor": "#FFADE8E2",
+                       "outlineColor": "#FFCCCCCC",
+                       "lineWidth": 1
+                       },
+                       {
+                       "colorID": 3,
+                       "fillColor": "#FFFFCF91",
+                       "outlineColor": "#FFCCCCCC",
+                       "lineWidth": 1
+                       }
+                       ,
+                       {
+                       "colorID": 4,
+                       "fillColor": "#FFFFE6AD",
+                       "outlineColor": "#FFCCCCCC",
+                       "lineWidth": 1
+                       }
+                       ,
+                       {
+                       "colorID": 5,
+                       "fillColor": "#FFB1D1FF",
+                       "outlineColor": "#FFCCCCCC",
+                       "lineWidth": 1
+                       }
+                       ,
+                       {
+                       "colorID": 6,
+                       "fillColor": "#FFFFE3C6",
+                       "outlineColor": "#FFCCCCCC",
+                       "lineWidth": 1
+                       }
+                       ,
+                       {
+                       "colorID": 7,
+                       "fillColor": "#FFFFFFEF",
+                       "outlineColor": "#FFCCCCCC",
+                       "lineWidth": 1
+                       }
+                       ,
+                       {
+                       "colorID": 8,
+                       "fillColor": "#FF7CA3DF",
+                       "outlineColor": "#FFCCCCCC",
+                       "lineWidth": 1
+                       }
+                       ,
+                       {
+                       "colorID": 9,
+                       "fillColor": "#FFFAFCFC",
+                       "outlineColor": "#FFFAFCFC",
+                       "lineWidth": 1
+                       }
+                       ,
+                       {
+                       "colorID": 10,
+                       "fillColor": "#FFFFEA86",
+                       "outlineColor": "#FFD5BF58",
+                       "lineWidth": 1
+                       }
+                       ,
+                       {
+                       "colorID": 11,
+                       "fillColor": "#FFABBEEA",
+                       "outlineColor": "#FF9EAAD7",
+                       "lineWidth": 1
+                       }
+                       ,
+                       {
+                       "colorID": 12,
+                       "fillColor": "#FFD4E0F2",
+                       "outlineColor": "#FF9EBBD7",
+                       "lineWidth": 1
+                       }
+                       ,
+                       {
+                       "colorID": 13,
+                       "fillColor": "#FFEFF2D4",
+                       "outlineColor": "#FFD7D79E",
+                       "lineWidth": 1
+                       },
+                       {
+                       "colorID": 14,
+                       "fillColor": "#FFE6E6E6",
+                       "outlineColor": "#FFCCCCCC",
+                       "lineWidth": 1
+                       },
+                       {
+                       "colorID": 15,
+                       "fillColor": "#FFE0E6D9",
+                       "outlineColor": "#FFCCCCCC",
+                       "lineWidth": 1
+                       },
+                       {
+                       "colorID": 16,
+                       "fillColor": "#FFFFCDB5",
+                       "outlineColor": "#FFCCCCCC",
+                       "lineWidth": 1
+                       },
+                       {
+                       "colorID": 17,
+                       "fillColor": "#FFCCCCCC",
+                       "outlineColor": "#FFE1E1E1",
+                       "lineWidth": 0.4
+                       }
+
+
+                       ],
+        "IconSymbol": [
+                       {
+                       "colorID": 25134,
+                       "icon": "icon_stair"
+                       },
+                       {
+                       "colorID": 25136,
+                       "icon": "icon_lift"
+                       },
+                       {
+                       "colorID": 25075,
+                       "icon": "icon_mens_room"
+                       },
+                       {
+                       "colorID": 25133,
+                       "icon": "icon_womens_room"
+                       },
+                       {
+                       "colorID": 25000,
+                       "icon": "icon_exit"
+                       },
+                       {
+                       "colorID": 25140,
+                       "icon": "icon_exit"
+                       },
+                       {
+                       "colorID": 1,
+                       "icon": "icon_exit"
+                       },
+                       {
+                       "colorID": 2,
+                       "icon": "icon_exit"
+                       }
+                       ]
+    }
+}

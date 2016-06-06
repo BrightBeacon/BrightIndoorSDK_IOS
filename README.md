@@ -1,31 +1,48 @@
 ##室内定位开发包-[智石科技](http://www.brtbeacon.com)
 v1.0.0
 ###一、简介
+***
 室内定位开发包是基于ArcGIS框架和GEOS几何计算开源库，为开发者提供了的室内地图显示、路径规划、室内定位等相关GIS功能。
 
 开发包最低兼容IOS7及其以上系统。
 ###二、集成开发包
+***
+由于github上限100M限制，或CocoaPods集成缓慢，请手动下载[安装ArcGIS.framework开发包](https://developers.arcgis.com/ios/)和[编译libgeos.a库](https://github.com/libgeos/libgeos)，附编译脚本[geos.sh](https://github.com/BrightBeacon/BrightIndoorSDK_IOS.git)
 ####1、使用CocoaPods集成
 如果你已经使用了 [Cocoapods](https://cocoapods.org)，集成方法非常简单：
 
-* 添加 pod 'BrightIndoorSDK' 到Podfile
-* 在终端运行  pod install
+* 添加依赖到Podfile
+
+```
+pod 'BrightIndoorSDK'
+#以下库文件较大，如无法使用pod集成。请手动下载
+#pod 'ArcGIS-Runtime-SDK-iOS'
+#pod 'geos'
+```
+* 在Profile文件夹，终端运行  
+
+```
+pod install
+```
 * 打开项目工程集（*.xcworkspace file），根据需求添加#import <TYMapSDK/TYMapSDK.h>和#import <TYLocationEngine/TYLocationEngine.h>到对应的类文件中。
 
-注：依赖的ArcGIS和geos库文件较大，有可能导致下载缓慢或失败，可以选择手动集成。
+PS:若是手动下载，请设置Target->Building Setting->Framework Search Paths: 
+$HOME/Library/SDKs/ArcGIS/iOS
+
 
 
 ###2、手动集成
 * 参见[下载开发示例工程](https://github.com/BrightBeacon/BrightIndoorSDK_IOS.git)
-* 将libs文件夹添加到您的项目中，并设置好Frameworks Search Paths
+* 将libs文件夹添加到您的项目中，并设置好Frameworks Search Paths，并加入ArcGIS依赖：$HOME/Library/SDKs/ArcGIS/iOS
 * 添加Building Setting的Other Linker Flags：-ObjC -framework ArcGIS -l c++
 * 添加相关图标文件，到你的工程imageSets
 * 最后根据需求添加#import <TYMapSDK/TYMapSDK.h>和#import <TYLocationEngine/TYLocationEngine.h>到对应的类文件中。
 
 ###三、常用功能API介绍
+***
 ###1、添加地图
-请添加你的地图资源文件到工程中,或使用[示例工程资源](https://github.com/BrightBeacon/BrightIndoorSDK_IOS.git)。
-需要绘制地图可以联系客服电话：400-023-3883
+请添加你的地图资源文件到工程中，或使用[示例工程资源](https://github.com/BrightBeacon/BrightIndoorSDK_IOS.git)。
+目前绘制自定义地图需要联系客服洽谈，电话：[400-023-3883](tel:4000233883)
 ***
 ####设置地图资源路径
 使用地图前，请先初始化地图资源路径，可以直接放到AppDelegate启动时直接初始化。
@@ -174,5 +191,6 @@ AGSGraphics（空间要素）必须要有几何形状（AGSGeometry），表现�
 }
 ```
 ##四、相关资源
+***
 * [开发者社区](http://bbs.brtbeacon.com)
 * [智石官网](http://www.brtbeacon.com)
