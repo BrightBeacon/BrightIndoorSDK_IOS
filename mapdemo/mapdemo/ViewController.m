@@ -9,9 +9,8 @@
 #import "ViewController.h"
 #import <TYMapSDK/TYMapSDK.h>
 #import <TYLocationEngine/TYLocationEngine.h>
-#import "FMDatabase.h"
 
-@interface ViewController ()<TYMapViewDelegate,TYOfflineRouteManagerDelegate>{
+@interface ViewController ()<TYMapViewDelegate,TYOfflineRouteManagerDelegate,AGSCalloutDelegate,TYLocationManagerDelegate>{
     // 路径管理器
     TYOfflineRouteManager *cppOfflineRouteManager;
     
@@ -26,9 +25,9 @@
     AGSGraphicsLayer *hintLayer;
     
     // 起点、终点、切换点标识符号
-    AGSSimpleMarkerSymbol *startSymbol;
-    AGSSimpleMarkerSymbol *endSymbol;
-    AGSSimpleMarkerSymbol *switchSymbol;
+    TYPictureMarkerSymbol *startSymbol;
+    TYPictureMarkerSymbol *endSymbol;
+    TYPictureMarkerSymbol *switchSymbol;
     AGSSimpleMarkerSymbol *markerSymbol;
     AGSPictureMarkerSymbol *locationSymbol;
 }
@@ -46,16 +45,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
-    /*AGSTiledMapServiceLayer*tiledLayer=[AGSTiledMapServiceLayer tiledMapServiceLayerWithURL:[NSURL URLWithString:@"http://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer"]];
-    [self.mapView addMapLayer:tiledLayer];
-    self.mapView.allowRotationByPinching = YES;
-    [self.mapView enableWrapAround];
-    [self.mapView.locationDisplay startDataSource];
-    //显示中国经纬度范围
-    AGSEnvelope *envelope = [AGSEnvelope envelopeWithXmin:73 ymin:3 xmax:135 ymax:53 spatialReference:self.mapView.spatialReference];
-    [self.mapView zoomToEnvelope:envelope animated:YES];*/
     
+    //初始化地图数据
     self.currentCity = [TYCityManager parseCity:@"0021"];
     self.currentBuilding = [TYBuildingManager parseBuilding:@"00210018" InCity:self.currentCity];
     self.allMapInfos = [TYMapInfo parseAllMapInfo:self.currentBuilding];
@@ -64,29 +55,30 @@
     self.mapView.mapDelegate = self;
     [self.mapView setFloorWithInfo:mapInfo];
     
+    //初始化地图标识
     [self initSymbols];
     
-    //点击出现小圆点图层
+    //点击地图出现小圆点图层
     hintLayer = [AGSGraphicsLayer graphicsLayer];
     [self.mapView addMapLayer:hintLayer];
     
-    //路径规划
+    //路径规划初始化
     cppOfflineRouteManager = [TYOfflineRouteManager routeManagerWithBuilding:self.currentBuilding MapInfos:self.allMapInfos];
     cppOfflineRouteManager.delegate = self;
-    //    [self test];
     
-    //定位
+    //定位初始化
     TYLocationManager *loc = [[TYLocationManager alloc] initWithBuilding:self.currentBuilding];
     [loc setBeaconRegion:[[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"FDA50693-A4E2-4FB1-AFCF-C6EB07647825"] identifier:@"testforloc"]];
     [loc startUpdateLocation];
     loc.delegate = self;
     
+    //设置地图导航旋转模式
     [self.mapView setMapMode:TYMapViewModeDefault];
 }
-#pragma mark - **************** locationManager
+#pragma mark - **************** 定位回调
 - (void)TYLocationManager:(TYLocationManager *)manager didUpdateLocation:(TYLocalPoint *)newLocation{
     [self.mapView showLocation:newLocation];
-    self.startLocalPoint = newLocation;
+    self.endLocalPoint = newLocation;
     
 }
 - (void)TYLocationManagerdidFailUpdateLocation:(TYLocationManager *)manager{
@@ -101,27 +93,10 @@
     NSLog(@"%f_%d_%d",heading,angle,mode);
 }
 - (void)TYLocationManager:(TYLocationManager *)manager didUpdateDeviceHeading:(double)newHeading {
+    //处理地图旋转，依据设置的旋转模式
     [self.mapView processDeviceRotation:newHeading];
-    // 将设备的方向角度换算成弧度
-    /*CGFloat headings = -1.0f * M_PI * newHeading / 180.0f;
-     // 创建不断改变CALayer的transform属性的属性动画
-     CABasicAnimation* anim = [CABasicAnimation
-     animationWithKeyPath:@"transform"];
-     CATransform3D fromValue = self.mapView.layer.transform;
-     // 设置动画开始的属性值
-     anim.fromValue = [NSValue valueWithCATransform3D: fromValue];
-     // 绕Z轴旋转heading弧度的变换矩阵
-     CATransform3D toValue = CATransform3DMakeRotation(headings , 0 , 0 , 1);
-     // 设置动画结束的属性
-     anim.toValue = [NSValue valueWithCATransform3D: toValue];
-     anim.duration = 0.5;
-     anim.removedOnCompletion = YES;
-     // 设置动画结束后znzLayer的变换矩阵
-     self.mapView.layer.transform = toValue;
-     // 为znzLayer添加动画
-     [self.mapView.layer addAnimation:anim forKey:nil];*/
 }
-#pragma mark - **************** offlineRoute
+#pragma mark - **************** 路径规划
 - (void)offlineRouteManager:(TYOfflineRouteManager *)routeManager didFailSolveRouteWithError:(NSError *)error
 {
     NSLog(@"%@", NSStringFromSelector(_cmd));
@@ -129,8 +104,7 @@
 
 - (void)offlineRouteManager:(TYOfflineRouteManager *)routeManager didSolveRouteWithResult:(TYRouteResult *)rs
 {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
-    
+    //移除其他图层显示
     [hintLayer removeAllGraphics];
     
     routeResult = rs;
@@ -151,20 +125,7 @@
     //    [self.mapView setMapMode:TYMapViewModeFollowing];
 }
 
-#pragma mark - **************** mapViewDelegate
-
-- (void)TYMapViewDidLoad:(TYMapView *)mapView {
-    //测试初始化，起点。
-    AGSPoint *point = self.mapView.visibleAreaEnvelope.center;
-    self.startLocalPoint = [TYLocalPoint pointWithX:point.x Y:point.y Floor:self.mapView.currentMapInfo.floorNumber];
-    //测试放置自定义图片
-    AGSGraphicsLayer *poiLayer = [AGSGraphicsLayer graphicsLayer];
-    [self.mapView addMapLayer:poiLayer];
-    AGSPictureMarkerSymbol *poiSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"GreenPushpin"];
-    AGSPoint *poiCoord = [AGSPoint pointWithX:self.mapView.visibleAreaEnvelope.center.x y:self.mapView.visibleAreaEnvelope.center.y spatialReference:self.mapView.spatialReference];
-    [poiLayer addGraphic:[AGSGraphic graphicWithGeometry:poiCoord symbol:poiSymbol attributes:nil]];
-    [poiLayer refresh];
-}
+#pragma mark - **************** 地图回调
 
 - (void)TYMapView:(TYMapView *)mapView didFinishLoadingFloor:(TYMapInfo *)mapInfo
 {
@@ -189,22 +150,26 @@
     [hintLayer removeAllGraphics];
     [hintLayer addGraphic:[AGSGraphic graphicWithGeometry:mappoint symbol:markerSymbol attributes:nil]];
     
-    //弹窗callout
+    self.mapView.callout.delegate = self;
+    //弹窗提示
     [self.mapView.callout showCalloutAt:mappoint screenOffset:CGPointMake(0, 0) animated:YES];
 }
 
-#pragma mark - **************** callout
+#pragma mark - **************** 配置默认弹出样式（可以自定义customView）
+- (BOOL)TYMapView:(TYMapView *)mapView willShowForGraphic:(TYGraphic *)graphic layer:(TYGraphicsLayer *)layer mapPoint:(TYPoint *)mappoint{
+    return [self callout:mapView.callout willShowForFeature:nil layer:layer mapPoint:mappoint];
+}
 
-- (BOOL)TYMapView:(TYMapView *)mapView willShowForGraphic:(TYGraphic *)graphic layer:(TYGraphicsLayer *)layer mapPoint:(TYPoint *)mappoint {
-    mapView.callout.image = [UIImage imageNamed:@"start"];
-    mapView.callout.title = @"导航";
-    mapView.callout.detail = @"testForDetail";
-    mapView.callout.titleColor = [UIColor blackColor];
-    mapView.callout.detailColor = [UIColor blackColor];
-    mapView.callout.delegate = self;
-    return NO;
+- (BOOL)callout:(AGSCallout *)callout willShowForFeature:(id<AGSFeature>)feature layer:(AGSLayer<AGSHitTestable> *)layer mapPoint:(AGSPoint *)mapPoint{
+    callout.image = [UIImage imageNamed:@"GreenPushpin"];
+    callout.title = _endLocalPoint?@"终点":@"设置起点";
+    callout.detail = _endLocalPoint?@"点击开始导航":@"点击设置起点";
+    callout.titleColor = [UIColor blackColor];
+    callout.detailColor = [UIColor blackColor];
+    return YES;
 }
 - (void)didClickAccessoryButtonForCallout:(AGSCallout *)callout {
+    self.startLocalPoint = _endLocalPoint;
     self.endLocalPoint = [TYLocalPoint pointWithX:callout.mapLocation.x Y:callout.mapLocation.y Floor:self.mapView.currentMapInfo.floorNumber];
     [callout dismiss];
     [self requestRoute];
@@ -212,33 +177,34 @@
 
 #pragma mark - **************** methods
 
-- (void)test
-{
-    NSString *poiDBPath = [[TYMapEnvironment getBuildingDirectory:self.currentBuilding] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@_POI.db", self.currentBuilding.buildingID]];
-    FMDatabase *db = [FMDatabase databaseWithPath:poiDBPath];
-    [db open];
-    
-    NSString *sql = @"select * from poi";
-    FMResultSet *rs = [db executeQuery:sql];
-    while ([rs next]) {
-        NSString *poiID = [rs stringForColumn:@"POI_ID"];
-        if ([poiID isEqualToString:@"00210018F0110001"]) {
-            double x = [rs doubleForColumn:@"LABEL_X"];
-            double y = [rs doubleForColumn:@"LABEL_Y"];
-            int floor = [rs intForColumn:@"FLOOR_INDEX"];
-            self.startLocalPoint = [TYLocalPoint pointWithX:x Y:y Floor:floor];
-        }
-        
-        if ([poiID isEqualToString:@"00210018F0110005"]) {
-            double x = [rs doubleForColumn:@"LABEL_X"];
-            double y = [rs doubleForColumn:@"LABEL_Y"];
-            int floor = [rs intForColumn:@"FLOOR_INDEX"];
-            self.endLocalPoint = [TYLocalPoint pointWithX:x Y:y Floor:floor];
-        }
-    }
-    [db close];
-    [self requestRoute];
-}
+/*路径规划测试。请自行引入数据库工具读取POD.db数据库，下面使用了FMDatabase库
+ - (void)test
+ {
+ NSString *poiDBPath = [[TYMapEnvironment getBuildingDirectory:self.currentBuilding] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@_POI.db", self.currentBuilding.buildingID]];
+ FMDatabase *db = [FMDatabase databaseWithPath:poiDBPath];
+ [db open];
+ 
+ NSString *sql = @"select * from poi";
+ FMResultSet *rs = [db executeQuery:sql];
+ while ([rs next]) {
+ NSString *poiID = [rs stringForColumn:@"POI_ID"];
+ if ([poiID isEqualToString:@"00210018F0110001"]) {
+ double x = [rs doubleForColumn:@"LABEL_X"];
+ double y = [rs doubleForColumn:@"LABEL_Y"];
+ int floor = [rs intForColumn:@"FLOOR_INDEX"];
+ self.startLocalPoint = [TYLocalPoint pointWithX:x Y:y Floor:floor];
+ }
+ 
+ if ([poiID isEqualToString:@"00210018F0110005"]) {
+ double x = [rs doubleForColumn:@"LABEL_X"];
+ double y = [rs doubleForColumn:@"LABEL_Y"];
+ int floor = [rs intForColumn:@"FLOOR_INDEX"];
+ self.endLocalPoint = [TYLocalPoint pointWithX:x Y:y Floor:floor];
+ }
+ }
+ [db close];
+ [self requestRoute];
+ }*/
 
 - (void)requestRoute
 {
@@ -253,13 +219,13 @@
 
 - (void)initSymbols
 {
-    startSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"start"];
+    startSymbol = [TYPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"start"];
     startSymbol.offset = CGPointMake(0, 22);
     
-    endSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"end"];
+    endSymbol = [TYPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"end"];
     endSymbol.offset = CGPointMake(0, 22);
     
-    switchSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"nav_exit"];
+    switchSymbol = [TYPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"nav_exit"];
     
     markerSymbol = [AGSSimpleMarkerSymbol simpleMarkerSymbolWithColor:[UIColor greenColor]];
     markerSymbol.size = CGSizeMake(5, 5);

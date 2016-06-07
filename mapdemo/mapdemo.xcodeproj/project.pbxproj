@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5817719C1D06695F00B1203C /* libgeos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5817719B1D06695F00B1203C /* libgeos.a */; };
 		581A7B6A1CEEA206008F791C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 581A7B691CEEA206008F791C /* main.m */; };
 		581A7B6D1CEEA206008F791C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 581A7B6C1CEEA206008F791C /* AppDelegate.m */; };
 		581A7B701CEEA206008F791C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 581A7B6F1CEEA206008F791C /* ViewController.m */; };
@@ -14,19 +15,11 @@
 		581A7B751CEEA206008F791C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 581A7B741CEEA206008F791C /* Assets.xcassets */; };
 		581A7B781CEEA206008F791C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 581A7B761CEEA206008F791C /* LaunchScreen.storyboard */; };
 		581A7BBC1CEEAC61008F791C /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 581A7BBB1CEEAC61008F791C /* libsqlite3.0.tbd */; };
-		58851D811CFE96E800404110 /* TYLocationEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58851D741CFE96E800404110 /* TYLocationEngine.framework */; };
-		58851D821CFE96E800404110 /* TYMapData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58851D751CFE96E800404110 /* TYMapData.framework */; };
-		58851D831CFE96E800404110 /* TYMapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58851D761CFE96E800404110 /* TYMapSDK.framework */; };
-		58851D841CFE96E800404110 /* Licenses.json in Resources */ = {isa = PBXBuildFile; fileRef = 58851D771CFE96E800404110 /* Licenses.json */; };
-		58851D851CFE96E800404110 /* 00210018.tymap in Resources */ = {isa = PBXBuildFile; fileRef = 58851D7B1CFE96E800404110 /* 00210018.tymap */; };
-		58851D861CFE96E800404110 /* 00210018_Beacon.db in Resources */ = {isa = PBXBuildFile; fileRef = 58851D7C1CFE96E800404110 /* 00210018_Beacon.db */; };
-		58851D871CFE96E800404110 /* 00210018_POI.db in Resources */ = {isa = PBXBuildFile; fileRef = 58851D7D1CFE96E800404110 /* 00210018_POI.db */; };
-		58851D881CFE96E800404110 /* 00210018_RenderingScheme.json in Resources */ = {isa = PBXBuildFile; fileRef = 58851D7E1CFE96E800404110 /* 00210018_RenderingScheme.json */; };
-		58851D891CFE96E800404110 /* 00210018_Route.db in Resources */ = {isa = PBXBuildFile; fileRef = 58851D7F1CFE96E800404110 /* 00210018_Route.db */; };
-		58851D8A1CFE96E800404110 /* TYMap.db in Resources */ = {isa = PBXBuildFile; fileRef = 58851D801CFE96E800404110 /* TYMap.db */; };
+		77CB8C37CF53B51D0B6D2775 /* libPods-mapdemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF4B29727FE8F101A729644 /* libPods-mapdemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5817719B1D06695F00B1203C /* libgeos.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgeos.a; path = "../../../../../Downloads/geos-3.5.0/geos/platform/libgeos.a"; sourceTree = "<group>"; };
 		581A7B651CEEA206008F791C /* mapdemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mapdemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		581A7B691CEEA206008F791C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		581A7B6B1CEEA206008F791C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -38,16 +31,9 @@
 		581A7B771CEEA206008F791C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		581A7B791CEEA206008F791C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		581A7BBB1CEEAC61008F791C /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
-		58851D741CFE96E800404110 /* TYLocationEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TYLocationEngine.framework; sourceTree = "<group>"; };
-		58851D751CFE96E800404110 /* TYMapData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TYMapData.framework; sourceTree = "<group>"; };
-		58851D761CFE96E800404110 /* TYMapSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TYMapSDK.framework; sourceTree = "<group>"; };
-		58851D771CFE96E800404110 /* Licenses.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Licenses.json; sourceTree = "<group>"; };
-		58851D7B1CFE96E800404110 /* 00210018.tymap */ = {isa = PBXFileReference; lastKnownFileType = file; path = 00210018.tymap; sourceTree = "<group>"; };
-		58851D7C1CFE96E800404110 /* 00210018_Beacon.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = 00210018_Beacon.db; sourceTree = "<group>"; };
-		58851D7D1CFE96E800404110 /* 00210018_POI.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = 00210018_POI.db; sourceTree = "<group>"; };
-		58851D7E1CFE96E800404110 /* 00210018_RenderingScheme.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 00210018_RenderingScheme.json; sourceTree = "<group>"; };
-		58851D7F1CFE96E800404110 /* 00210018_Route.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = 00210018_Route.db; sourceTree = "<group>"; };
-		58851D801CFE96E800404110 /* TYMap.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = TYMap.db; sourceTree = "<group>"; };
+		7FF4B29727FE8F101A729644 /* libPods-mapdemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mapdemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84050A76411FD418143DCEE4 /* Pods-mapdemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mapdemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mapdemo/Pods-mapdemo.debug.xcconfig"; sourceTree = "<group>"; };
+		C432E5052E51400333442AE8 /* Pods-mapdemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mapdemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-mapdemo/Pods-mapdemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,10 +41,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58851D811CFE96E800404110 /* TYLocationEngine.framework in Frameworks */,
 				581A7BBC1CEEAC61008F791C /* libsqlite3.0.tbd in Frameworks */,
-				58851D821CFE96E800404110 /* TYMapData.framework in Frameworks */,
-				58851D831CFE96E800404110 /* TYMapSDK.framework in Frameworks */,
+				77CB8C37CF53B51D0B6D2775 /* libPods-mapdemo.a in Frameworks */,
+				5817719C1D06695F00B1203C /* libgeos.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +55,8 @@
 			children = (
 				581A7B671CEEA206008F791C /* mapdemo */,
 				581A7B661CEEA206008F791C /* Products */,
+				6B241AC2BC04C0C3F5230A3C /* Pods */,
+				775DCDEA34FF5F233A7D4C84 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,60 +87,28 @@
 		581A7B681CEEA206008F791C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				58851D721CFE96E800404110 /* libs */,
 				581A7BBB1CEEAC61008F791C /* libsqlite3.0.tbd */,
 				581A7B691CEEA206008F791C /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		58851D721CFE96E800404110 /* libs */ = {
+		6B241AC2BC04C0C3F5230A3C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				58851D731CFE96E800404110 /* lib */,
-				58851D771CFE96E800404110 /* Licenses.json */,
-				58851D781CFE96E800404110 /* MapResource */,
+				84050A76411FD418143DCEE4 /* Pods-mapdemo.debug.xcconfig */,
+				C432E5052E51400333442AE8 /* Pods-mapdemo.release.xcconfig */,
 			);
-			path = libs;
-			sourceTree = SOURCE_ROOT;
-		};
-		58851D731CFE96E800404110 /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				58851D741CFE96E800404110 /* TYLocationEngine.framework */,
-				58851D751CFE96E800404110 /* TYMapData.framework */,
-				58851D761CFE96E800404110 /* TYMapSDK.framework */,
-			);
-			path = lib;
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		58851D781CFE96E800404110 /* MapResource */ = {
+		775DCDEA34FF5F233A7D4C84 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				58851D791CFE96E800404110 /* 0021 */,
-				58851D801CFE96E800404110 /* TYMap.db */,
+				5817719B1D06695F00B1203C /* libgeos.a */,
+				7FF4B29727FE8F101A729644 /* libPods-mapdemo.a */,
 			);
-			path = MapResource;
-			sourceTree = "<group>";
-		};
-		58851D791CFE96E800404110 /* 0021 */ = {
-			isa = PBXGroup;
-			children = (
-				58851D7A1CFE96E800404110 /* 00210018 */,
-			);
-			path = 0021;
-			sourceTree = "<group>";
-		};
-		58851D7A1CFE96E800404110 /* 00210018 */ = {
-			isa = PBXGroup;
-			children = (
-				58851D7B1CFE96E800404110 /* 00210018.tymap */,
-				58851D7C1CFE96E800404110 /* 00210018_Beacon.db */,
-				58851D7D1CFE96E800404110 /* 00210018_POI.db */,
-				58851D7E1CFE96E800404110 /* 00210018_RenderingScheme.json */,
-				58851D7F1CFE96E800404110 /* 00210018_Route.db */,
-			);
-			path = 00210018;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,9 +118,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 581A7B7C1CEEA206008F791C /* Build configuration list for PBXNativeTarget "mapdemo" */;
 			buildPhases = (
+				2BCB056B66C9782C98CE943C /* 📦 Check Pods Manifest.lock */,
 				581A7B611CEEA206008F791C /* Sources */,
 				581A7B621CEEA206008F791C /* Frameworks */,
 				581A7B631CEEA206008F791C /* Resources */,
+				D30AA5209B6A26CCA7F6C863 /* 📦 Embed Pods Frameworks */,
+				9764112214A5671D81563514 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -213,20 +171,61 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58851D871CFE96E800404110 /* 00210018_POI.db in Resources */,
 				581A7B781CEEA206008F791C /* LaunchScreen.storyboard in Resources */,
-				58851D891CFE96E800404110 /* 00210018_Route.db in Resources */,
 				581A7B751CEEA206008F791C /* Assets.xcassets in Resources */,
-				58851D881CFE96E800404110 /* 00210018_RenderingScheme.json in Resources */,
-				58851D8A1CFE96E800404110 /* TYMap.db in Resources */,
 				581A7B731CEEA206008F791C /* Main.storyboard in Resources */,
-				58851D851CFE96E800404110 /* 00210018.tymap in Resources */,
-				58851D841CFE96E800404110 /* Licenses.json in Resources */,
-				58851D861CFE96E800404110 /* 00210018_Beacon.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2BCB056B66C9782C98CE943C /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9764112214A5671D81563514 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mapdemo/Pods-mapdemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D30AA5209B6A26CCA7F6C863 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mapdemo/Pods-mapdemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		581A7B611CEEA206008F791C /* Sources */ = {
@@ -347,32 +346,33 @@
 		};
 		581A7B7D1CEEA206008F791C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84050A76411FD418143DCEE4 /* Pods-mapdemo.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
+					$HOME/Library/SDKs/ArcGIS/iOS,
 					"$(inherited)",
-					"$(PROJECT_DIR)/.../.../libs/lib",
-					"$(PROJECT_DIR)/libs/lib",
 				);
-				HEADER_SEARCH_PATHS = (
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/.../.../libs/lib/**",
-				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = mapdemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/.../.../libs/lib",
-				);
+				LIBRARY_SEARCH_PATHS = "/Users/thomasho/Downloads/geos-3.5.0/geos/platform";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-framework",
 					ArcGIS,
-					"-l",
-					"c++",
+					"-lc++",
+					"-l\"geos\"",
+					"-l\"sqlite3\"",
+					"-framework",
+					"\"TYLocationEngine\"",
+					"-framework",
+					"\"TYMapData\"",
+					"-framework",
+					"\"TYMapSDK\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.o2o.mapdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -381,32 +381,33 @@
 		};
 		581A7B7E1CEEA206008F791C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C432E5052E51400333442AE8 /* Pods-mapdemo.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
+					$HOME/Library/SDKs/ArcGIS/iOS,
 					"$(inherited)",
-					"$(PROJECT_DIR)/.../.../libs/lib",
-					"$(PROJECT_DIR)/libs/lib",
 				);
-				HEADER_SEARCH_PATHS = (
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/.../.../libs/lib/**",
-				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = mapdemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/.../.../libs/lib",
-				);
+				LIBRARY_SEARCH_PATHS = "/Users/thomasho/Downloads/geos-3.5.0/geos/platform";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-framework",
 					ArcGIS,
-					"-l",
-					"c++",
+					"-lc++",
+					"-l\"geos\"",
+					"-l\"sqlite3\"",
+					"-framework",
+					"\"TYLocationEngine\"",
+					"-framework",
+					"\"TYMapData\"",
+					"-framework",
+					"\"TYMapSDK\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.o2o.mapdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -7,7 +7,32 @@ v1.0.0
 开发包最低兼容IOS7及其以上系统。
 ###二、集成开发包
 ***
-由于github上限100M限制，或CocoaPods集成缓慢，请手动下载[安装ArcGIS.framework开发包](https://developers.arcgis.com/ios/)和[编译libgeos.a库](https://github.com/libgeos/libgeos)，附编译脚本[geos.sh](https://github.com/BrightBeacon/BrightIndoorSDK_IOS.git)
+示例工程由于github上限100M限制，或使用CocoaPods集成缓慢，请手动下载[①安装ArcGIS.framework开发包](https://developers.arcgis.com/ios/)和[②编译libgeos.a库](https://github.com/libgeos/libgeos)
+<br/>
+
+####集成前准备:
+如果CocoaPods能直接集成可以跳过①和②。
+#####手动下载库文件①：
+
+* 安装AGSRuntimeSDKiOSv10.2.5.pkg文件
+* 请将ArcGIS.framework引入项目；或设置引用路径Target->Building Setting->Framework Search Paths: 
+<code>$HOME/Library/SDKs/ArcGIS/iOS</code>
+
+#####手动编译库文件②：
+
+* 打开终端，前往下载的geos-3.5.0目录下，执行<code>. geos.sh</code>，请[下载geos.sh文件](https://github.com/BrightBeacon/BrightIndoorSDK_IOS.git)
+* 请先使用<code>lipo -info libgeos.a</code>确认是否包含项目运行所需的构架(ios真机:armv7 armv7s arm64;模拟器:i386 x86_64)；
+* 将libgeos.a拷贝并引入项目(如未选择Copy拷贝库文件到项目路径，需设置Library Search Paths指向该库目录)
+
+#####引入资源文件③(可选)
+
+* 添加resource相关图标文件，到你的工程imageSets
+
+
+#####直接参考[下载开发示例工程](https://github.com/BrightBeacon/BrightIndoorSDK_IOS.git)
+
+注：工程未包含①和②文件，请按要求引入文件。
+
 ####1、使用CocoaPods集成
 如果你已经使用了 [Cocoapods](https://cocoapods.org)，集成方法非常简单：
 
@@ -15,7 +40,7 @@ v1.0.0
 
 ```
 pod 'BrightIndoorSDK'
-#以下库文件较大，如无法使用pod集成。请手动下载
+#以下库文件较大，如无法使用pod集成。请手动下载引入①和②文件。
 #pod 'ArcGIS-Runtime-SDK-iOS'
 #pod 'geos'
 ```
@@ -24,18 +49,12 @@ pod 'BrightIndoorSDK'
 ```
 pod install
 ```
+* 请检查Building Setting的Other Linker Flags、Framework Search Paths、Header Search Paths是否包含：<code>$(inherited)</code>
 * 打开项目工程集（*.xcworkspace file），根据需求添加#import <TYMapSDK/TYMapSDK.h>和#import <TYLocationEngine/TYLocationEngine.h>到对应的类文件中。
 
-PS:若是手动下载，请设置Target->Building Setting->Framework Search Paths: 
-$HOME/Library/SDKs/ArcGIS/iOS
-
-
-
 ###2、手动集成
-* 参见[下载开发示例工程](https://github.com/BrightBeacon/BrightIndoorSDK_IOS.git)
-* 将libs文件夹添加到您的项目中，并设置好Frameworks Search Paths，并加入ArcGIS依赖：$HOME/Library/SDKs/ArcGIS/iOS
-* 添加Building Setting的Other Linker Flags：-ObjC -framework ArcGIS -l c++
-* 添加相关图标文件，到你的工程imageSets
+* 将整个libs文件夹引入并选择拷贝到项目目录。
+* 添加Building Setting的Other Linker Flags：<code>-ObjC -framework ArcGIS -lc++ -l"geos" -l"sqlite3" -framework "TYLocationEngine" -framework "TYMapData" -framework "TYMapSDK"</code>
 * 最后根据需求添加#import <TYMapSDK/TYMapSDK.h>和#import <TYLocationEngine/TYLocationEngine.h>到对应的类文件中。
 
 ###三、常用功能API介绍
@@ -48,6 +67,7 @@ $HOME/Library/SDKs/ArcGIS/iOS
 使用地图前，请先初始化地图资源路径，可以直接放到AppDelegate启动时直接初始化。
 
 ```
+	#import <TYMapSDK/TYMapSDK.h>
     NSString *rootDir = [[NSBundle mainBundle] pathForResource:@"MapResource" ofType:nil];
     [TYMapEnvironment setRootDirectoryForMapFiles:rootDir];
     [TYMapEnvironment initMapEnvironment];
