@@ -186,13 +186,48 @@ AGSGraphics（空间要素）必须要有几何形状（AGSGeometry），表现�
 ###4、iBeacon室内定位
 使用与地图数据配套的iBeacon设备部署方案，可以使用TYLocationEngine实现室内地图定位。示例地图资源，需要准备5个iBeacon设备；配置参数列表如下：
 
-No.|UUID | Major | Minor
------------- | ------------- | ------------
-区域1| FDA50693-A4E2-4FB1-AFCF-C6EB07647825 | 10046  | 11048
-区域2| FDA50693-A4E2-4FB1-AFCF-C6EB07647825 | 10046  | 11049
-区域3| FDA50693-A4E2-4FB1-AFCF-C6EB07647825 | 10046  | 11050
-区域4| FDA50693-A4E2-4FB1-AFCF-C6EB07647825 | 10046  | 11053
-区域5| FDA50693-A4E2-4FB1-AFCF-C6EB07647825 | 10046  | 11055
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>UUID </th>
+<th> Major </th>
+<th> Minor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>区域1</td>
+<td> FDA50693-A4E2-4FB1-AFCF-C6EB07647825 </td>
+<td> 10046  </td>
+<td> 11048</td>
+</tr>
+<tr>
+<td>区域2</td>
+<td> FDA50693-A4E2-4FB1-AFCF-C6EB07647825 </td>
+<td> 10046  </td>
+<td> 11049</td>
+</tr>
+<tr>
+<td>区域3</td>
+<td> FDA50693-A4E2-4FB1-AFCF-C6EB07647825 </td>
+<td> 10046  </td>
+<td> 11050</td>
+</tr>
+<tr>
+<td>区域4</td>
+<td> FDA50693-A4E2-4FB1-AFCF-C6EB07647825 </td>
+<td> 10046  </td>
+<td> 11053</td>
+</tr>
+<tr>
+<td>区域5</td>
+<td> FDA50693-A4E2-4FB1-AFCF-C6EB07647825 </td>
+<td> 10046  </td>
+<td> 11055</td>
+</tr>
+</tbody>
+</table>
 
 
 ```
