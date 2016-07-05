@@ -1,5 +1,6 @@
 ##室内定位开发包-[智石科技](http://www.brtbeacon.com)
 v1.0.7 优化地图数据结构
+<br/>
 v1.0.0 智石科技定位SDK
 ###一、简介
 ***
@@ -8,7 +9,7 @@ v1.0.0 智石科技定位SDK
 开发包最低兼容IOS7及其以上系统。
 ###二、集成开发包
 ***
-示例工程由于github上限100M限制，或使用CocoaPods集成缓慢，请手动下载[①安装ArcGIS.framework开发包](https://developers.arcgis.com/ios/)和[②下载编译libgeos.a库](https://github.com/libgeos/libgeos)
+请手动下载[①安装ArcGIS.framework开发包](https://developers.arcgis.com/ios/)和[②编译libgeos.a库](http://download.osgeo.org/geos)(本项目含有geos-3.5.0版本)
 <br/>
 
 ####集成前准备:
@@ -21,9 +22,10 @@ v1.0.0 智石科技定位SDK
 
 #####手动编译库文件②：
 
-* 打开终端，前往下载的geos-3.5.0目录下，执行<code>. geos.sh</code>，请[下载geos.sh文件](https://github.com/BrightBeacon/BrightIndoorSDK_IOS.git)
+* 打开终端，前往内置的geos-3.5.0目录下，执行<code>. geos.sh</code>，(可以按需要配置支持的架构，默认支持目前所有架构，编译大约耗时3～5分钟；若手动下载了geos源码，请拷贝内置geos.sh文件)
+* 编译完成后，最终合成的libgeos.a文件在目录<code>/geos-3.5.0/geos/platform/mixd</code>
 * 请先使用<code>lipo -info libgeos.a</code>确认是否包含项目运行所需的构架(ios真机:armv7 armv7s arm64;模拟器:i386 x86_64)；
-* 将libgeos.a拷贝并引入项目(如未选择Copy拷贝库文件到项目路径，需设置Library Search Paths指向该库目录)
+* 将libgeos.a拷贝并引入项目(如未勾选Copy库文件到项目路径，需设置Library Search Paths指向该库目录)
 
 #####引入资源文件③(可选)
 
@@ -198,7 +200,7 @@ AGSGraphics（空间要素）必须要有几何形状（AGSGeometry），表现�
 <tbody>
 <tr>
 <td>区域1</td>
-<td> FDA50693-A4E2-4FB1-AFCF-C6EB07647825 </td>
+<td rowspan＝'2'> FDA50693-A4E2-4FB1-AFCF-C6EB07647825 </td>
 <td> 10046  </td>
 <td> 11048</td>
 </tr>
