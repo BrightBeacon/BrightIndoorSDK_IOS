@@ -7,8 +7,6 @@
 //
 
 #import <ArcGIS/ArcGIS.h>
-#import "TYCredential.h"
-#import "TYSpatialReference.h"
 #import <TYMapData/TYMapData.h>
 
 /**
@@ -29,7 +27,7 @@ typedef enum {
  *
  *  @return WKID:3395
  */
-+ (TYSpatialReference *)defaultSpatialReference;
++ (AGSSpatialReference *)defaultSpatialReference;
 
 
 /**
@@ -37,7 +35,7 @@ typedef enum {
  *
  *  @return [user:password]
  */
-+ (TYCredential *)defaultCredential;
++ (AGSCredential *)defaultCredential;
 
 
 /**
@@ -82,9 +80,18 @@ typedef enum {
  */
 + (TYMapLanguage)getMapLanguage;
 
+/**
+ *  设置地图服务网络接口主机名
+ *
+ *  @param hostName 主机名
+ */
++ (void)setHostName:(NSString *)hostName;
 
-+ (void)setEncryptionEnabled:(BOOL)enabled;
-
-+ (BOOL)useEncryption;
+/**
+ *  获取地图服务网络接口主机名
+ *
+ *  @return 主机名
+ */
++ (NSString *)getHostName;
 
 @end

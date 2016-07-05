@@ -12,7 +12,6 @@
 #import "TYRouteResult.h"
 
 #import <TYMapData/TYMapData.h>
-#import "TYPoint.h"
 
 @class TYRouteManager;
 
@@ -63,12 +62,12 @@
 /**
  *  路径规划起点
  */
-@property (nonatomic, strong, readonly) TYPoint *startPoint;
+@property (nonatomic, strong, readonly) AGSPoint *startPoint;
 
 /**
  *  路径规划终点
  */
-@property (nonatomic, strong, readonly) TYPoint *endPoint;
+@property (nonatomic, strong, readonly) AGSPoint *endPoint;
 
 /**
  *  路径管理代理
@@ -84,7 +83,7 @@
  *
  *  @return 路径管理类实例
  */
-+ (TYRouteManager *)routeManagerWithBuilding:(TYBuilding *)building credential:(TYCredential *)credential MapInfos:(NSArray *)mapInfoArray;
++ (TYRouteManager *)routeManagerWithBuilding:(TYBuilding *)building credential:(AGSCredential *)credential MapInfos:(NSArray *)mapInfoArray;
 
 /**
  *  请求路径规划，在代理方法获取规划结果

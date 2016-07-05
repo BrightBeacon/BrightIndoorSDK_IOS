@@ -134,5 +134,22 @@ MapSize TYMapSizeMake(double x, double y);
  */
 + (NSArray *)parseAllMapInfoFromFile:(NSString *)path;
 
+/**
+ *  从Json数据中解析MapInfo信息
+ *
+ *  @param mapInfoObject 地图信息的JSON表示
+ *
+ *  @return 地图信息实例
+ */
++ (TYMapInfo *)parseMapInfoObject:(NSDictionary *)mapInfoObject;
+
+/**
+ *  构建地图信息的JSON表示
+ *
+ *  @param mapInfo 地图信息实例
+ *
+ *  @return 地图信息的JSON表示
+ */
++ (NSDictionary *)buildingMapInfoObject:(TYMapInfo *)mapInfo;
 
 @end

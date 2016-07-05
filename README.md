@@ -1,5 +1,6 @@
 ##室内定位开发包-[智石科技](http://www.brtbeacon.com)
-v1.0.0
+v1.0.7 优化地图数据结构
+v1.0.0 智石科技定位SDK
 ###一、简介
 ***
 室内定位开发包是基于ArcGIS框架和GEOS几何计算开源库，为开发者提供了的室内地图显示、路径规划、室内定位等相关GIS功能。
@@ -7,7 +8,7 @@ v1.0.0
 开发包最低兼容IOS7及其以上系统。
 ###二、集成开发包
 ***
-示例工程由于github上限100M限制，或使用CocoaPods集成缓慢，请手动下载[①安装ArcGIS.framework开发包](https://developers.arcgis.com/ios/)和[②编译libgeos.a库](https://github.com/libgeos/libgeos)
+示例工程由于github上限100M限制，或使用CocoaPods集成缓慢，请手动下载[①安装ArcGIS.framework开发包](https://developers.arcgis.com/ios/)和[②下载编译libgeos.a库](https://github.com/libgeos/libgeos)
 <br/>
 
 ####集成前准备:
@@ -183,7 +184,16 @@ AGSGraphics（空间要素）必须要有几何形状（AGSGeometry），表现�
 }
 ```
 ###4、iBeacon室内定位
-使用与地图数据配套的iBeacon设备部署方案，可以使用TYLocationEngine实现室内地图定位。
+使用与地图数据配套的iBeacon设备部署方案，可以使用TYLocationEngine实现室内地图定位。示例地图资源，需要准备5个iBeacon设备；配置参数列表如下：
+
+No.|UUID | Major | Minor
+------------ | ------------- | ------------
+区域1| FDA50693-A4E2-4FB1-AFCF-C6EB07647825 | 10046  | 11048
+区域2| FDA50693-A4E2-4FB1-AFCF-C6EB07647825 | 10046  | 11049
+区域3| FDA50693-A4E2-4FB1-AFCF-C6EB07647825 | 10046  | 11050
+区域4| FDA50693-A4E2-4FB1-AFCF-C6EB07647825 | 10046  | 11053
+区域5| FDA50693-A4E2-4FB1-AFCF-C6EB07647825 | 10046  | 11055
+
 
 ```
 	//设置定位符号

@@ -10,7 +10,6 @@
 
 #import "TYRouteResult.h"
 #import <TYMapData/TYMapData.h>
-#import "TYPoint.h"
 #import <ArcGIS/ArcGIS.h>
 
 @class TYOfflineRouteManager;
@@ -47,12 +46,12 @@
 /**
  *  路径规划起点
  */
-@property (nonatomic, strong, readonly) TYPoint *startPoint;
+@property (nonatomic, strong, readonly) AGSPoint *startPoint;
 
 /**
  *  路径规划终点
  */
-@property (nonatomic, strong, readonly) TYPoint *endPoint;
+@property (nonatomic, strong, readonly) AGSPoint *endPoint;
 
 
 /**

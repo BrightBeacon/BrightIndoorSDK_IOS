@@ -25,9 +25,9 @@
     AGSGraphicsLayer *hintLayer;
     
     // 起点、终点、切换点标识符号
-    TYPictureMarkerSymbol *startSymbol;
-    TYPictureMarkerSymbol *endSymbol;
-    TYPictureMarkerSymbol *switchSymbol;
+    AGSPictureMarkerSymbol *startSymbol;
+    AGSPictureMarkerSymbol *endSymbol;
+    AGSPictureMarkerSymbol *switchSymbol;
     AGSSimpleMarkerSymbol *markerSymbol;
     AGSPictureMarkerSymbol *locationSymbol;
 }
@@ -45,13 +45,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     //初始化地图数据
     self.currentCity = [TYCityManager parseCity:@"0021"];
     self.currentBuilding = [TYBuildingManager parseBuilding:@"00210018" InCity:self.currentCity];
     self.allMapInfos = [TYMapInfo parseAllMapInfo:self.currentBuilding];
     TYMapInfo *mapInfo = self.allMapInfos.firstObject;
-    [self.mapView initMapViewWithBuilding:self.currentBuilding UserID:@"ty4e13f85911a44a75" License:@"26db2af1g0772n53`dd9`666101ec55a"];
+    [self.mapView initMapViewWithBuilding:self.currentBuilding UserID:@"ty4e13f85911a44a75" License:@"038cd1d0ZzA3NzJuNTM#YGRkNmAxNTc#5fd4f83c"];
     self.mapView.mapDelegate = self;
     [self.mapView setFloorWithInfo:mapInfo];
     
@@ -150,14 +149,14 @@
     [hintLayer removeAllGraphics];
     [hintLayer addGraphic:[AGSGraphic graphicWithGeometry:mappoint symbol:markerSymbol attributes:nil]];
     
-    self.mapView.callout.delegate = self;
     //弹窗提示
     [self.mapView.callout showCalloutAt:mappoint screenOffset:CGPointMake(0, 0) animated:YES];
 }
 
-#pragma mark - **************** 配置默认弹出样式（可以自定义customView）
-- (BOOL)TYMapView:(TYMapView *)mapView willShowForGraphic:(TYGraphic *)graphic layer:(TYGraphicsLayer *)layer mapPoint:(TYPoint *)mappoint{
-    return [self callout:mapView.callout willShowForFeature:nil layer:layer mapPoint:mappoint];
+#pragma mark - **************** 配置默认弹出样式（建议自定义customView）
+- (BOOL)TYMapView:(TYMapView *)mapView willShowForGraphic:(AGSGraphic *)graphic layer:(AGSGraphicsLayer *)layer mapPoint:(AGSPoint *)mappoint{
+    self.mapView.callout.delegate = self;
+    return [self callout:mapView.callout willShowForFeature:graphic layer:layer mapPoint:mappoint];
 }
 
 - (BOOL)callout:(AGSCallout *)callout willShowForFeature:(id<AGSFeature>)feature layer:(AGSLayer<AGSHitTestable> *)layer mapPoint:(AGSPoint *)mapPoint{
@@ -219,13 +218,13 @@
 
 - (void)initSymbols
 {
-    startSymbol = [TYPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"start"];
+    startSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"start"];
     startSymbol.offset = CGPointMake(0, 22);
     
-    endSymbol = [TYPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"end"];
+    endSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"end"];
     endSymbol.offset = CGPointMake(0, 22);
     
-    switchSymbol = [TYPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"nav_exit"];
+    switchSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"nav_exit"];
     
     markerSymbol = [AGSSimpleMarkerSymbol simpleMarkerSymbolWithColor:[UIColor greenColor]];
     markerSymbol.size = CGSizeMake(5, 5);
@@ -235,7 +234,7 @@
     [self.mapView setRouteSwitchSymbol:switchSymbol];
     
     
-    TYMarkerSymbol *locSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImage:[UIImage imageNamed:@"locationArrow"]];
+    AGSPictureMarkerSymbol *locSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImage:[UIImage imageNamed:@"locationArrow"]];
     [self.mapView setLocationSymbol:locSymbol];
 }
 @end

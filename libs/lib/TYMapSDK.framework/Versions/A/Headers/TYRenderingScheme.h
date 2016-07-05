@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TYSimpleFillSymbol.h"
-#import "TYSimpleLineSymbol.h"
+#import <ArcGIS/ArcGIS.h>
 
 /**
  *  渲染方案类：用于表示地图的渲染规则
@@ -27,22 +26,22 @@
 /**
  *  默认填充符号
  */
-@property (nonatomic, strong) TYSimpleFillSymbol *defaultFillSymbol;
+@property (nonatomic, strong) AGSSimpleFillSymbol *defaultFillSymbol;
 
 /**
  *  默认高亮填充符号
  */
-@property (nonatomic, strong) TYSimpleFillSymbol *defaultHighlightFillSymbol;
+@property (nonatomic, strong) AGSSimpleFillSymbol *defaultHighlightFillSymbol;
 
 /**
  *  默认线型符号
  */
-@property (nonatomic, strong) TYSimpleLineSymbol *defaultLineSymbol;
+@property (nonatomic, strong) AGSSimpleLineSymbol *defaultLineSymbol;
 
 /**
  *  默认高亮线型符号
  */
-@property (nonatomic, strong) TYSimpleLineSymbol *defaultHighlightLineSymbol;
+@property (nonatomic, strong) AGSSimpleLineSymbol *defaultHighlightLineSymbol;
 
 /**
  *  填充符号字典，{NSNumber: FillSymbol} -> {类型: 填充符号}

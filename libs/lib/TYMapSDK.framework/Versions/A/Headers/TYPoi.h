@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TYGeometry.h"
+#import <ArcGIS/ArcGIS.h>
+
 /**
  *  POI所在层，当前按层来分类：房间层（ROOM）、资产层（ASSET）、公共设施层（FACILITY）
  */
@@ -51,7 +52,7 @@ typedef enum
 /**
  *  POI几何数据
  */
-@property (nonatomic, strong) TYGeometry *geometry;
+@property (nonatomic, strong) AGSGeometry *geometry;
 
 /**
  *  POI分类类型ID
@@ -77,6 +78,6 @@ typedef enum
  *
  *  @return POI实例
  */
-+ (TYPoi *)poiWithGeoID:(NSString *)gid PoiID:(NSString *)pid FloorID:(NSString *)fid  BuildingID:(NSString *)bid Name:(NSString *)pname Geometry:(TYGeometry *)geometry CategoryID:(int)cid Layer:(POI_LAYER)pLayer;
++ (TYPoi *)poiWithGeoID:(NSString *)gid PoiID:(NSString *)pid FloorID:(NSString *)fid  BuildingID:(NSString *)bid Name:(NSString *)pname Geometry:(AGSGeometry *)geometry CategoryID:(int)cid Layer:(POI_LAYER)pLayer;
 
 @end
