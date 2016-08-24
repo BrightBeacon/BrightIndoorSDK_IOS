@@ -17,11 +17,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-   
-    NSString *rootDir = [[NSBundle mainBundle] pathForResource:@"MapResource" ofType:nil];
-    [TYMapEnvironment setRootDirectoryForMapFiles:rootDir];
-    [TYMapEnvironment initMapEnvironment];
-    
     return YES;
 }
 

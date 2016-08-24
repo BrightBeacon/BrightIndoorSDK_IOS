@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -17,20 +17,97 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qqh-ed-Upk" customClass="TYMapView">
-                                <rect key="frame" x="-3" y="-124" width="600" height="600"/>
+                            <searchBar contentMode="redraw" placeholder="搜索POIID（例：00210018F0110001）" translatesAutoresizingMaskIntoConstraints="NO" id="4rm-NT-Fmn">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="eeC-jk-HEp"/>
+                                </connections>
+                            </searchBar>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bqu-7i-itD">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="示例地图" id="8j0-IU-Kma">
+                                        <barButtonItem key="leftBarButtonItem" title="取消" id="DbN-j0-osF">
+                                            <connections>
+                                                <action selector="cancelButtonClicked:" destination="BYZ-38-t0r" id="1Lo-tZ-oKx"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qqh-ed-Upk" customClass="TYMapView">
+                                <rect key="frame" x="0.0" y="108" width="600" height="492"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wd-Zs-ZrA">
+                                        <rect key="frame" x="535" y="364" width="40" height="44"/>
+                                        <state key="normal" backgroundImage="zoominbutton"/>
+                                        <connections>
+                                            <action selector="zoomOutButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kWk-Ii-Ft6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E7R-ym-rxw">
+                                        <rect key="frame" x="536" y="430" width="38" height="38"/>
+                                        <state key="normal" backgroundImage="locbutton"/>
+                                        <connections>
+                                            <action selector="locButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hx0-xq-OsP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R08-La-7xO">
+                                        <rect key="frame" x="229" y="434" width="142" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="142" id="PPZ-Az-RTl"/>
+                                            <constraint firstAttribute="height" constant="30" id="hqv-tN-mFl"/>
+                                        </constraints>
+                                        <state key="normal" title="楼层" backgroundImage="floorbutton"/>
+                                        <connections>
+                                            <action selector="floorButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zmW-g4-rBO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QX0-Ak-OBz">
+                                        <rect key="frame" x="535" y="325" width="40" height="40"/>
+                                        <state key="normal" backgroundImage="zoomoutbutton"/>
+                                        <connections>
+                                            <action selector="zoomInClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="41N-Dt-YAd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="E7R-ym-rxw" secondAttribute="trailing" constant="26" id="3KV-uz-jTH"/>
+                                    <constraint firstAttribute="bottom" secondItem="R08-La-7xO" secondAttribute="bottom" constant="28" id="Cg9-CT-evC"/>
+                                    <constraint firstAttribute="trailing" secondItem="QX0-Ak-OBz" secondAttribute="trailing" constant="25" id="ENg-BC-1v6"/>
+                                    <constraint firstAttribute="bottom" secondItem="E7R-ym-rxw" secondAttribute="bottom" constant="24" id="Kwm-sA-E3f"/>
+                                    <constraint firstItem="E7R-ym-rxw" firstAttribute="top" secondItem="QX0-Ak-OBz" secondAttribute="bottom" constant="65" id="Zlk-0d-arS"/>
+                                    <constraint firstItem="E7R-ym-rxw" firstAttribute="top" secondItem="8wd-Zs-ZrA" secondAttribute="bottom" constant="22" id="aBJ-pS-RUT"/>
+                                    <constraint firstItem="R08-La-7xO" firstAttribute="centerX" secondItem="qqh-ed-Upk" secondAttribute="centerX" id="dNL-nt-Su4"/>
+                                    <constraint firstAttribute="trailing" secondItem="8wd-Zs-ZrA" secondAttribute="trailing" constant="25" id="f4S-nO-WXN"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="bqu-7i-itD" secondAttribute="trailing" id="1iF-E6-rrj"/>
+                            <constraint firstItem="4rm-NT-Fmn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2Mj-D2-lcx"/>
+                            <constraint firstItem="4rm-NT-Fmn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="64" id="6tC-GR-mgd"/>
+                            <constraint firstAttribute="trailing" secondItem="4rm-NT-Fmn" secondAttribute="trailing" id="G0e-gs-E9q"/>
                             <constraint firstItem="qqh-ed-Upk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="HVM-sg-m2r"/>
-                            <constraint firstItem="qqh-ed-Upk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ffS-4Z-QCU"/>
+                            <constraint firstItem="bqu-7i-itD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ZIa-bV-91z"/>
+                            <constraint firstItem="bqu-7i-itD" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="b4a-Pb-aZU"/>
+                            <constraint firstItem="qqh-ed-Upk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="44" id="ffS-4Z-QCU"/>
+                            <constraint firstItem="qqh-ed-Upk" firstAttribute="top" secondItem="4rm-NT-Fmn" secondAttribute="top" constant="44" id="gCQ-Bm-SbW"/>
                             <constraint firstAttribute="trailing" secondItem="qqh-ed-Upk" secondAttribute="trailing" id="lTr-gO-HdT"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qqh-ed-Upk" secondAttribute="bottom" id="vkT-mL-fwD"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ffS-4Z-QCU"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="floorButton" destination="R08-La-7xO" id="vBv-UY-Ufm"/>
                         <outlet property="mapView" destination="qqh-ed-Upk" id="J1b-zf-Us9"/>
                     </connections>
                 </viewController>
@@ -39,4 +116,10 @@
             <point key="canvasLocation" x="387" y="388"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="floorbutton" width="142" height="30"/>
+        <image name="locbutton" width="38" height="38"/>
+        <image name="zoominbutton" width="40" height="44"/>
+        <image name="zoomoutbutton" width="40" height="40"/>
+    </resources>
 </document>

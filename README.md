@@ -1,15 +1,17 @@
 ##室内定位开发包-[智石科技](http://www.brtbeacon.com)
+v1.0.8 增加示例方法
+<br/>
 v1.0.7 优化地图数据结构
 <br/>
 v1.0.0 智石科技定位SDK
 ###一、简介
 ***
-室内定位开发包是基于ArcGIS框架和GEOS几何计算开源库，为开发者提供了的室内地图显示、路径规划、室内定位等相关GIS功能。
+室内定位开发包是基于ArcGIS框架（[关于ArcGIS](https://developers.arcgis.com/ios/)）和GEOS几何计算开源库，为开发者提供了的室内地图显示、路径规划、室内定位等相关GIS功能。
 
 开发包最低兼容IOS7及其以上系统。
 ###二、集成开发包
 ***
-请手动下载[①安装ArcGIS.framework开发包](https://developers.arcgis.com/ios/)和[②编译libgeos.a库](http://download.osgeo.org/geos)(本项目含有geos-3.5.0版本)
+请①安装[AGSRuntimeSDKiOSv10.2.5.pkg](https://pan.baidu.com/s/1b56UIE)开发包和②编译libgeos.a库。
 <br/>
 
 ####集成前准备:
@@ -17,33 +19,56 @@ v1.0.0 智石科技定位SDK
 #####手动下载库文件①：
 
 * 安装AGSRuntimeSDKiOSv10.2.5.pkg文件
-* 请将ArcGIS.framework引入项目；或设置引用路径Target->Building Setting->Framework Search Paths: 
+* 设置引用路径Target->Building Setting->Framework Search Paths: 
 <code>$HOME/Library/SDKs/ArcGIS/iOS</code>
+或
+前往~/Library/SDKs/ArcGIS/iOS拖入ArcGIS.framework到项目。
 
 #####手动编译库文件②：
 
-* 打开终端，前往内置的geos-3.5.0目录下，执行<code>. geos.sh</code>，(可以按需要配置支持的架构，默认支持目前所有架构，编译大约耗时3～5分钟；若手动下载了geos源码，请拷贝内置geos.sh文件)
+* 打开终端，
+
+```
+cd 本项目文件夹/geos-3.5.0
+```
+前往下载的geos-3.5.0目录下，执行
+
+```
+. geos.sh
+```
+(可以按需要配置支持的架构，默认支持目前所有架构，编译大约耗时3～5分钟；若手动下载了[geos源码]((http://download.osgeo.org/geos)，请拷贝内置geos.sh文件或自写的编译脚本)
+
 * 编译完成后，最终合成的libgeos.a文件在目录<code>/geos-3.5.0/geos/platform/mixd</code>
 * 请先使用<code>lipo -info libgeos.a</code>确认是否包含项目运行所需的构架(ios真机:armv7 armv7s arm64;模拟器:i386 x86_64)；
-* 将libgeos.a拷贝并引入项目(如未勾选Copy库文件到项目路径，需设置Library Search Paths指向该库目录)
 
-#####引入资源文件③(可选)
+
+#####引入资源文件③(可自定义图标)
 
 * 添加resource相关图标文件，到你的工程imageSets
 
 
 #####直接参考[下载开发示例工程](https://github.com/BrightBeacon/BrightIndoorSDK_IOS.git)
 
-注：工程未包含①和②文件，请按要求引入文件。
+注：工程使用了CocoaPods集成，但未包含①和②文件，请按以上要求引入文件。
 
 ####1、使用CocoaPods集成
 如果你已经使用了 [Cocoapods](https://cocoapods.org)，集成方法非常简单：
+<br/>注：导入C库需要编译，因此需要安装GNU编译环境。[GNU资料](https://en.wikipedia.org/wiki/GNU_build_system):
+<br/>注：请先确认已安装brew，需要获取管理员权限
+
+```
+sudo chown $(whoami):admin /usr/local && sudo chown -R $(whoami):admin /usr/local
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)")
+```
+```
+brew install automake autoconf libtool
+```
 
 * 添加依赖到Podfile
 
 ```
 pod 'BrightIndoorSDK'
-#以下库文件较大，如无法使用pod集成。请手动下载引入①和②文件。
+#以下库文件较大并需要编译，如无法使用pod集成。请手动引入①和②文件。
 #pod 'ArcGIS-Runtime-SDK-iOS'
 #pod 'geos'
 ```
@@ -53,12 +78,12 @@ pod 'BrightIndoorSDK'
 pod install
 ```
 * 请检查Building Setting的Other Linker Flags、Framework Search Paths、Header Search Paths是否包含：<code>$(inherited)</code>
-* 打开项目工程集（*.xcworkspace file），根据需求添加#import <TYMapSDK/TYMapSDK.h>和#import <TYLocationEngine/TYLocationEngine.h>到对应的类文件中。
+* 打开项目工程集（*.xcworkspace file），根据需求添加地图框架TYMapSDK/TYMapSDK.h和定位引擎TYLocationEngine/TYLocationEngine.h到对应的类文件中。
 
 ###2、手动集成
-* 将整个libs文件夹引入并选择拷贝到项目目录。
-* 添加Building Setting的Other Linker Flags：<code>-ObjC -framework ArcGIS -lc++ -l"geos" -l"sqlite3" -framework "TYLocationEngine" -framework "TYMapData" -framework "TYMapSDK"</code>
-* 最后根据需求添加#import <TYMapSDK/TYMapSDK.h>和#import <TYLocationEngine/TYLocationEngine.h>到对应的类文件中。
+* 将整个libs文件夹引入并选择拷贝到项目目录。请单独将libs/MapResource引入并选择Create folder references
+* *添加Building Setting的Other Linker Flags：<code>-ObjC -framework ArcGIS -lc++ -l"geos" -l"sqlite3" -framework "TYLocationEngine" -framework "TYMapData" -framework "TYMapSDK"</code>
+* 最后根据需求添加TYMapSDK/TYMapSDK.h和TYLocationEngine/TYLocationEngine.h到对应的类文件中。
 
 ###三、常用功能API介绍
 ***
@@ -67,10 +92,10 @@ pod install
 目前绘制自定义地图需要联系客服洽谈，电话：[400-023-3883](tel:4000233883)
 ***
 ####设置地图资源路径
-使用地图前，请先初始化地图资源路径，可以直接放到AppDelegate启动时直接初始化。
+使用地图前，请先初始化地图资源路径。请确保rootDir能获得路径。（也可以将地图数据文件夹放置到自定义的目录，请保持MapResource内文件结构即可，如0010/00100018/*.db，默认路径为MapResource）
 
 ```
-	#import <TYMapSDK/TYMapSDK.h>
+	#import <TYMapSDK/TYMapSDK.h>	
     NSString *rootDir = [[NSBundle mainBundle] pathForResource:@"MapResource" ofType:nil];
     [TYMapEnvironment setRootDirectoryForMapFiles:rootDir];
     [TYMapEnvironment initMapEnvironment];

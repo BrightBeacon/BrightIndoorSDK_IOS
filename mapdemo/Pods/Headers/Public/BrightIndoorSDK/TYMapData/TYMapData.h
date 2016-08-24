@@ -1,1 +1,0 @@
-../../../../../../libs/lib/TYMapData.framework/Versions/A/Headers/TYMapData.h

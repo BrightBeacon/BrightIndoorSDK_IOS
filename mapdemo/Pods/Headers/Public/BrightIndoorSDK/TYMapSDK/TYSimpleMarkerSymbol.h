@@ -1,1 +1,0 @@
-../../../../../../libs/lib/TYMapSDK.framework/Versions/A/Headers/TYSimpleMarkerSymbol.h

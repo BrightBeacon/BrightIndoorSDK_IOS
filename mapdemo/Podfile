@@ -1,8 +1,8 @@
 platform :ios,"7.0"
 
 target "mapdemo" do
-pod "BrightIndoorSDK"
-#以下库文件较大，如无法使用pod集成。请手动下载引入①和②文件。
-#pod 'ArcGIS-Runtime-SDK-iOS'
-#pod 'geos'
+    pod "BrightIndoorSDK"
+    #以下库文件，如无法使用pod集成。请手动引入
+    #pod 'ArcGIS-Runtime-SDK-iOS'
+    #pod 'geos'
 end

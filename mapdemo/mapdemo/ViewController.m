@@ -9,13 +9,18 @@
 #import "ViewController.h"
 #import <TYMapSDK/TYMapSDK.h>
 #import <TYLocationEngine/TYLocationEngine.h>
+//类别高亮
+#import "QuadCurveMenu.h"
 
-@interface ViewController ()<TYMapViewDelegate,TYOfflineRouteManagerDelegate,AGSCalloutDelegate,TYLocationManagerDelegate>{
-    // 路径管理器
-    TYOfflineRouteManager *cppOfflineRouteManager;
-    
-    
+#define userID @"ty4e13f85911a44a75"
+#define buildingID @"00210018"
+#define license @"038cd1d0ZzA3NzJuNTM#YGRkNmAxNTc#5fd4f83c"
+#define regionUUID @"FDA50693-A4E2-4FB1-AFCF-C6EB07647825"
+#define rootDir [[NSBundle mainBundle] pathForResource:@"MapResource" ofType:nil]//[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]
+
+@interface ViewController ()<TYMapViewDelegate,TYOfflineRouteManagerDelegate,AGSCalloutDelegate,TYLocationManagerDelegate,UISearchBarDelegate,QuadCurveMenuDelegate,QuadCurveMenuItemDelegate,UIActionSheetDelegate>{
     BOOL isRouting;
+    BOOL isFirstlocation;
     
     // 路径规划结果
     TYRouteResult *routeResult;
@@ -39,21 +44,68 @@
 
 @property(nonatomic,strong) TYLocalPoint *startLocalPoint;
 @property(nonatomic,strong) TYLocalPoint *endLocalPoint;
+@property(nonatomic,strong) TYLocalPoint *currentLocalPoint;
+
+@property (nonatomic,strong) QuadCurveMenu *QCMenu;
+@property (nonatomic,strong) IBOutlet UIButton *floorButton;
+
+// 路径管理器
+@property (nonatomic,strong) TYOfflineRouteManager *cppOfflineRouteManager;
+//定位管理器
+@property (nonatomic,strong) TYLocationManager *loc;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    isFirstlocation = YES;
+    [self loadMapView];
+    [self QCMenu];
+}
+#pragma mark - QuadCurveMenu
+
+- (QuadCurveMenu*)QCMenu {
+    if (!_QCMenu) {
+        NSMutableArray *menus = [NSMutableArray array];
+        for (NSString *type in @[@"icon_atm_normal",@"icon_womens_room_normal",@"icon_mens_room_normal",@"icon_childroom_normal",@"icon_staircase_normal",@"icon_stair_normal",@"icon_lift_normal",@"icon_exit_normal"]) {
+            QuadCurveMenuItem *menuItem = [[QuadCurveMenuItem alloc] initWithImage:[UIImage imageNamed:type]
+                                                                  highlightedImage:[UIImage imageNamed:type]
+                                                                      ContentImage:nil
+                                                           highlightedContentImage:nil];
+            [menus addObject:menuItem];
+        }
+        _QCMenu = [[QuadCurveMenu alloc] initWithFrame:self.view.bounds menus:menus];
+        _QCMenu.delegate = self;
+        [self.view addSubview:_QCMenu];
+    }
+    return _QCMenu;
+}
+
+- (void)quadCurveMenu:(QuadCurveMenu *)menu didSelectIndex:(NSInteger)idx
+{
+    NSArray *cids = @[@"25020",@"160013",@"160012",@"25025",@"150014",@"150012",@"150013",@"150001"];
+    [self.mapView showFacilityOnCurrentWithCategory:[[cids objectAtIndex:idx] intValue]];
+}
+
+#pragma mark - loadMapView
+
+- (void)loadMapView {
+    //拷贝内置地图数据
+    if (![[NSFileManager defaultManager] fileExistsAtPath:[rootDir stringByAppendingPathComponent:[buildingID substringToIndex:4]]]) {
+        return;
+    }
+    //设置地图路径
+    [TYMapEnvironment setRootDirectoryForMapFiles:rootDir];
+    [TYMapEnvironment initMapEnvironment];
     //初始化地图数据
-    self.currentCity = [TYCityManager parseCity:@"0021"];
-    self.currentBuilding = [TYBuildingManager parseBuilding:@"00210018" InCity:self.currentCity];
+    self.currentCity = [TYCityManager parseCity:[buildingID substringToIndex:4]];
+    self.currentBuilding = [TYBuildingManager parseBuilding:buildingID InCity:self.currentCity];
     self.allMapInfos = [TYMapInfo parseAllMapInfo:self.currentBuilding];
-    TYMapInfo *mapInfo = self.allMapInfos.firstObject;
-    [self.mapView initMapViewWithBuilding:self.currentBuilding UserID:@"ty4e13f85911a44a75" License:@"038cd1d0ZzA3NzJuNTM#YGRkNmAxNTc#5fd4f83c"];
+    self.currentMapInfo = self.allMapInfos.firstObject;
+    [self.mapView initMapViewWithBuilding:self.currentBuilding UserID:userID License:license];
     self.mapView.mapDelegate = self;
-    [self.mapView setFloorWithInfo:mapInfo];
-    
+    [self.mapView setFloorWithInfo:_currentMapInfo];
     //初始化地图标识
     [self initSymbols];
     
@@ -61,32 +113,71 @@
     hintLayer = [AGSGraphicsLayer graphicsLayer];
     [self.mapView addMapLayer:hintLayer];
     
-    //路径规划初始化
-    cppOfflineRouteManager = [TYOfflineRouteManager routeManagerWithBuilding:self.currentBuilding MapInfos:self.allMapInfos];
-    cppOfflineRouteManager.delegate = self;
-    
-    //定位初始化
-    TYLocationManager *loc = [[TYLocationManager alloc] initWithBuilding:self.currentBuilding];
-    [loc setBeaconRegion:[[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"FDA50693-A4E2-4FB1-AFCF-C6EB07647825"] identifier:@"testforloc"]];
-    [loc startUpdateLocation];
-    loc.delegate = self;
     
     //设置地图导航旋转模式
     [self.mapView setMapMode:TYMapViewModeDefault];
+    //设置地图选中高亮（本例已在TYMapView:PoiSelected回调中高亮Poi）
+    //    [self.mapView setHighlightPOIOnSelection:YES];
+    //设置地图弹窗
+    self.mapView.callout.delegate = self;
+}
+
+- (void)TYMapViewDidLoad:(TYMapView *)mapView {
+    //路径规划初始化
+    _cppOfflineRouteManager = [TYOfflineRouteManager routeManagerWithBuilding:self.currentBuilding MapInfos:self.allMapInfos];
+    _cppOfflineRouteManager.delegate = self;
+    
+    //定位初始化
+    _loc = [[TYLocationManager alloc] initWithBuilding:self.currentBuilding];
+    [_loc setRssiThreshold:-100];
+    [_loc setBeaconRegion:[[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:regionUUID] identifier:@"identifier"]];
+    [_loc startUpdateLocation];
+    _loc.delegate = self;
 }
 #pragma mark - **************** 定位回调
 - (void)TYLocationManager:(TYLocationManager *)manager didUpdateLocation:(TYLocalPoint *)newLocation{
     [self.mapView showLocation:newLocation];
-    self.endLocalPoint = newLocation;
+    if (isFirstlocation) {
+        isFirstlocation = NO;
+        AGSPoint *pt = [AGSPoint pointWithX:newLocation.x y:newLocation.y spatialReference:self.mapView.spatialReference];
+        [self.mapView centerAtPoint:pt animated:YES];
+        [self.mapView zoomToResolution:0.1 withCenterPoint:pt animated:YES];
+    }
+    self.startLocalPoint = newLocation;
+    self.currentLocalPoint = newLocation;
     
+    
+    // 判断地图当前显示楼层是否与定位结果一致，若不一致则切换到定位结果所在楼层（楼层自动切换）
+    if (self.mapView.currentMapInfo.floorNumber!=newLocation.floor) {
+        TYMapInfo *targetMapInfo = nil;
+        for (targetMapInfo in self.allMapInfos) {
+            if (targetMapInfo.floorNumber == newLocation.floor) {
+                [self.mapView setFloorWithInfo:targetMapInfo];
+                break;
+            }
+        }
+    }
+    if (isRouting) {
+        // 在地图显示当前楼层导航
+        [self.mapView showPassedAndRemainingRouteResultOnCurrentFloor:newLocation];
+        BOOL isDeciatig = [routeResult isDeviatingFromRoute:newLocation WithThrehold:5.0];
+        if (isDeciatig) {
+            //重置导航层，移除显示的结果，并将导航结果清空
+            [self.mapView resetRouteLayer];
+            [self requestRoute];
+        }
+    }
 }
 - (void)TYLocationManagerdidFailUpdateLocation:(TYLocationManager *)manager{
     
 }
 - (void)TYLocationManager:(TYLocationManager *)manager didRangedBeacons:(NSArray *)beacons{
+    
 }
 - (void)TYLocationManager:(TYLocationManager *)manager didRangedLocationBeacons:(NSArray *)beacons{
-    
+    for (TYBeacon *b in beacons) {
+        NSLog(@"%@_%d",b.minor,b.rssi);
+    }
 }
 - (void)updateDeviceHeading:(double)heading initAngle:(int)angle mapViewMode:(int)mode {
     NSLog(@"%f_%d_%d",heading,angle,mode);
@@ -120,6 +211,7 @@
     
     if (currentRoutePart) {
         routeGuides = [routeResult getRouteDirectionalHint:currentRoutePart];
+        [self.mapView zoomToGeometry:currentRoutePart.route.envelope withPadding:20 animated:YES];
     }
     //    [self.mapView setMapMode:TYMapViewModeFollowing];
 }
@@ -139,71 +231,86 @@
         [self.mapView showRouteResultOnCurrentFloor];
     }
 }
-
-
+- (void)TYMapView:(TYMapView *)mapView PoiSelected:(NSArray *)array {
+    TYPoi *poi = array.firstObject;
+    if (poi) {
+        [mapView highlightPoi:poi];
+        //        AGSPoint *location = nil;
+        //        if ([poi.geometry isKindOfClass:[AGSPolygon class]]) {
+        //            location = [[AGSGeometryEngine defaultGeometryEngine] labelPointForPolygon:(AGSPolygon *)poi.geometry];
+        //        }else{
+        //            location = (AGSPoint *)poi.geometry;
+        //        }
+        //        mapView.callout.delegate = self;
+        //        mapView.callout.title = poi.name;
+        //        mapView.callout.detail = poi.poiID;
+        //        [mapView.callout showCalloutAt:location screenOffset:CGPointZero animated:YES];
+    }
+}
 - (void)TYMapView:(TYMapView *)mapView didClickAtPoint:(CGPoint)screen mapPoint:(AGSPoint *)mappoint
 {
-    NSLog(@"(%f, %f) in floor %d", mappoint.x, mappoint.y, self.currentMapInfo.floorNumber);
+    [self.view endEditing:YES];
+    //显示当前点击位置(AGSGraphicsLayer *)mapView.baseLayer
+    if ([mapView.baseLayer.fullEnvelope containsPoint:mappoint]) {
+        [hintLayer removeAllGraphics];
+        [hintLayer addGraphic:[AGSGraphic graphicWithGeometry:mappoint symbol:markerSymbol attributes:nil]];
+    }
     
-    //显示当前点击位置
-    [hintLayer removeAllGraphics];
-    [hintLayer addGraphic:[AGSGraphic graphicWithGeometry:mappoint symbol:markerSymbol attributes:nil]];
-    
-    //弹窗提示
-    [self.mapView.callout showCalloutAt:mappoint screenOffset:CGPointMake(0, 0) animated:YES];
+    //弹窗提示（配置了delegate会自动弹窗）
+    //[self.mapView.callout showCalloutAt:mappoint screenOffset:CGPointMake(0, 0) animated:YES];
 }
 
-#pragma mark - **************** 配置默认弹出样式（建议自定义customView）
-- (BOOL)TYMapView:(TYMapView *)mapView willShowForGraphic:(AGSGraphic *)graphic layer:(AGSGraphicsLayer *)layer mapPoint:(AGSPoint *)mappoint{
-    self.mapView.callout.delegate = self;
-    return [self callout:mapView.callout willShowForFeature:graphic layer:layer mapPoint:mappoint];
-}
+#pragma mark - **************** 配置默认弹出样式（可以自定义customView）
 
 - (BOOL)callout:(AGSCallout *)callout willShowForFeature:(id<AGSFeature>)feature layer:(AGSLayer<AGSHitTestable> *)layer mapPoint:(AGSPoint *)mapPoint{
     callout.image = [UIImage imageNamed:@"GreenPushpin"];
-    callout.title = _endLocalPoint?@"终点":@"设置起点";
-    callout.detail = _endLocalPoint?@"点击开始导航":@"点击设置起点";
+    callout.detail = self.startLocalPoint?@"终点":@"起点";
+    id title = [feature attributeForKey:@"NAME"];
+    callout.title = [title isEqual:[NSNull null]]?@"未命名":title;
     callout.titleColor = [UIColor blackColor];
     callout.detailColor = [UIColor blackColor];
     return YES;
 }
 - (void)didClickAccessoryButtonForCallout:(AGSCallout *)callout {
-    self.startLocalPoint = _endLocalPoint;
-    self.endLocalPoint = [TYLocalPoint pointWithX:callout.mapLocation.x Y:callout.mapLocation.y Floor:self.mapView.currentMapInfo.floorNumber];
+    if (self.startLocalPoint) {
+        self.endLocalPoint = [TYLocalPoint pointWithX:callout.mapLocation.x Y:callout.mapLocation.y Floor:self.mapView.currentMapInfo.floorNumber];
+    }else{
+        self.startLocalPoint = [TYLocalPoint pointWithX:callout.mapLocation.x Y:callout.mapLocation.y Floor:self.mapView.currentMapInfo.floorNumber];;
+    }
     [callout dismiss];
     [self requestRoute];
 }
 
 #pragma mark - **************** methods
 
-/*路径规划测试。请自行引入数据库工具读取POD.db数据库，下面使用了FMDatabase库
- - (void)test
- {
- NSString *poiDBPath = [[TYMapEnvironment getBuildingDirectory:self.currentBuilding] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@_POI.db", self.currentBuilding.buildingID]];
- FMDatabase *db = [FMDatabase databaseWithPath:poiDBPath];
- [db open];
- 
- NSString *sql = @"select * from poi";
- FMResultSet *rs = [db executeQuery:sql];
- while ([rs next]) {
- NSString *poiID = [rs stringForColumn:@"POI_ID"];
- if ([poiID isEqualToString:@"00210018F0110001"]) {
- double x = [rs doubleForColumn:@"LABEL_X"];
- double y = [rs doubleForColumn:@"LABEL_Y"];
- int floor = [rs intForColumn:@"FLOOR_INDEX"];
- self.startLocalPoint = [TYLocalPoint pointWithX:x Y:y Floor:floor];
- }
- 
- if ([poiID isEqualToString:@"00210018F0110005"]) {
- double x = [rs doubleForColumn:@"LABEL_X"];
- double y = [rs doubleForColumn:@"LABEL_Y"];
- int floor = [rs intForColumn:@"FLOOR_INDEX"];
- self.endLocalPoint = [TYLocalPoint pointWithX:x Y:y Floor:floor];
- }
- }
- [db close];
- [self requestRoute];
- }*/
+//路径规划测试。请自行引入数据库工具读取POD.db数据库，下面使用了FMDatabase库
+//- (void)test
+//{
+//    NSString *poiDBPath = [[TYMapEnvironment getBuildingDirectory:self.currentBuilding] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@_POI.db", self.currentBuilding.buildingID]];
+//    FMDatabase *db = [FMDatabase databaseWithPath:poiDBPath];
+//    [db open];
+//    
+//    NSString *sql = @"select * from poi";
+//    FMResultSet *rs = [db executeQuery:sql];
+//    while ([rs next]) {
+//        NSString *poiID = [rs stringForColumn:@"POI_ID"];
+//        if ([poiID isEqualToString:@"00210018F0110001"]) {
+//            double x = [rs doubleForColumn:@"LABEL_X"];
+//            double y = [rs doubleForColumn:@"LABEL_Y"];
+//            int floor = [rs intForColumn:@"FLOOR_INDEX"];
+//            self.startLocalPoint = [TYLocalPoint pointWithX:x Y:y Floor:floor];
+//        }
+//        
+//        if ([poiID isEqualToString:@"00210018F0110005"]) {
+//            double x = [rs doubleForColumn:@"LABEL_X"];
+//            double y = [rs doubleForColumn:@"LABEL_Y"];
+//            int floor = [rs intForColumn:@"FLOOR_INDEX"];
+//            self.endLocalPoint = [TYLocalPoint pointWithX:x Y:y Floor:floor];
+//        }
+//    }
+//    [db close];
+//    [self requestRoute];
+//}
 
 - (void)requestRoute
 {
@@ -213,7 +320,7 @@
     routeResult = nil;
     isRouting = YES;
     
-    [cppOfflineRouteManager requestRouteWithStart:self.startLocalPoint End:self.endLocalPoint];
+    [_cppOfflineRouteManager requestRouteWithStart:self.startLocalPoint End:self.endLocalPoint];
 }
 
 - (void)initSymbols
@@ -236,5 +343,56 @@
     
     AGSPictureMarkerSymbol *locSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImage:[UIImage imageNamed:@"locationArrow"]];
     [self.mapView setLocationSymbol:locSymbol];
+}
+#pragma mark - Actions
+
+- (IBAction)floorButtonClicked:(id)sender {
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"选择楼层" delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
+    for (TYMapInfo *mapInfo in self.allMapInfos) {
+        [sheet addButtonWithTitle:mapInfo.floorName];
+    }
+    [sheet showInView:self.view];
+}
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if (buttonIndex<self.allMapInfos.count) {
+        self.currentMapInfo = [self.allMapInfos objectAtIndex:buttonIndex];
+        [self.mapView setFloorWithInfo:self.currentMapInfo];
+    }
+}
+- (IBAction)zoomOutButtonClicked:(id)sender {
+    [self.mapView zoomOut:YES];
+    NSLog(@"%f",
+          [self.mapView mapScale]);
+}
+- (IBAction)zoomInClicked:(id)sender {
+    [self.mapView zoomIn:YES];
+    NSLog(@"%f",
+          [self.mapView mapScale]);
+}
+- (IBAction)locButtonClicked:(id)sender {
+    [_loc startUpdateLocation];
+    if(self.currentLocalPoint)[self.mapView zoomToResolution:0.1 withCenterPoint:[AGSPoint pointWithX:self.currentLocalPoint.x y:self.currentLocalPoint.y spatialReference:self.mapView.spatialReference] animated:YES];
+}
+- (IBAction)cancelButtonClicked:(id)sender {
+    [_loc stopUpdateLocation];
+    self.currentLocalPoint = nil;
+    [self.mapView removeLocation];
+    
+    [self.mapView resetRouteLayer];
+    self.startLocalPoint = nil;
+    self.endLocalPoint = nil;
+    [self.view endEditing:YES];
+}
+
+#pragma mark - SearchDelgate
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    if (searchBar.text.length) {
+        //to do
+        
+        TYPoi *poi = [self.mapView getPoiOnCurrentFloorWithPoiID:searchBar.text layer:POI_ROOM];
+        if (poi&&poi.categoryID!=800&&poi.categoryID!=300) {
+            [self.mapView highlightPoi:poi];
+        }
+    }
 }
 @end

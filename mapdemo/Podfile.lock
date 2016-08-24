@@ -1,16 +1,12 @@
 PODS:
-  - BrightIndoorSDK (1.0.0)
+  - BrightIndoorSDK (1.0.7)
 
 DEPENDENCIES:
-  - BrightIndoorSDK (from `~/Documents/works/github/BrightIndoorSDK_IOS/BrightIndoorSDK_IOS`)
-
-EXTERNAL SOURCES:
-  BrightIndoorSDK:
-    :path: ~/Documents/works/github/BrightIndoorSDK_IOS/BrightIndoorSDK_IOS
+  - BrightIndoorSDK
 
 SPEC CHECKSUMS:
-  BrightIndoorSDK: d2adffc1c49ff1e005004e2fc32089a588852841
+  BrightIndoorSDK: e24d73ff4d75c70aa854d890eba3facc77a0a057
 
-PODFILE CHECKSUM: c971bb5addd200ede3fea69932edd730895956c3
+PODFILE CHECKSUM: c722adf29abaac14100d400570a6c86bbb1c882e
 
 COCOAPODS: 1.0.0

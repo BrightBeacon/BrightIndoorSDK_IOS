@@ -15,6 +15,9 @@
 		581A7B751CEEA206008F791C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 581A7B741CEEA206008F791C /* Assets.xcassets */; };
 		581A7B781CEEA206008F791C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 581A7B761CEEA206008F791C /* LaunchScreen.storyboard */; };
 		581A7BBC1CEEAC61008F791C /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 581A7BBB1CEEAC61008F791C /* libsqlite3.0.tbd */; };
+		58E066181D5B138500622C3D /* QuadCurveMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E066151D5B138500622C3D /* QuadCurveMenu.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		58E066191D5B138500622C3D /* QuadCurveMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E066171D5B138500622C3D /* QuadCurveMenuItem.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		58FF19E11D59D9C10060EF7B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 58E56A391D4A1B8D00823924 /* libz.tbd */; };
 		77CB8C37CF53B51D0B6D2775 /* libPods-mapdemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF4B29727FE8F101A729644 /* libPods-mapdemo.a */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +34,13 @@
 		581A7B771CEEA206008F791C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		581A7B791CEEA206008F791C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		581A7BBB1CEEAC61008F791C /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		58E0660F1D5AD91900622C3D /* libZipArchive.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libZipArchive.a; path = "../../../../../../Library/Developer/Xcode/DerivedData/mapdemo-byjecokepbrequadodockuivfxgb/Build/Products/Debug-iphonesimulator/ZipArchive/libZipArchive.a"; sourceTree = "<group>"; };
+		58E066141D5B138500622C3D /* QuadCurveMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadCurveMenu.h; sourceTree = "<group>"; };
+		58E066151D5B138500622C3D /* QuadCurveMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuadCurveMenu.m; sourceTree = "<group>"; };
+		58E066161D5B138500622C3D /* QuadCurveMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadCurveMenuItem.h; sourceTree = "<group>"; };
+		58E066171D5B138500622C3D /* QuadCurveMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuadCurveMenuItem.m; sourceTree = "<group>"; };
+		58E56A371D4A1B7B00823924 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
+		58E56A391D4A1B8D00823924 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		7FF4B29727FE8F101A729644 /* libPods-mapdemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mapdemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84050A76411FD418143DCEE4 /* Pods-mapdemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mapdemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mapdemo/Pods-mapdemo.debug.xcconfig"; sourceTree = "<group>"; };
 		C432E5052E51400333442AE8 /* Pods-mapdemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mapdemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-mapdemo/Pods-mapdemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -41,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58FF19E11D59D9C10060EF7B /* libz.tbd in Frameworks */,
 				581A7BBC1CEEAC61008F791C /* libsqlite3.0.tbd in Frameworks */,
 				77CB8C37CF53B51D0B6D2775 /* libPods-mapdemo.a in Frameworks */,
 				5817719C1D06695F00B1203C /* libgeos.a in Frameworks */,
@@ -78,7 +89,7 @@
 				581A7B711CEEA206008F791C /* Main.storyboard */,
 				581A7B741CEEA206008F791C /* Assets.xcassets */,
 				581A7B761CEEA206008F791C /* LaunchScreen.storyboard */,
-				581A7B791CEEA206008F791C /* Info.plist */,
+				58E066131D5B138500622C3D /* AwesomeMenu */,
 				581A7B681CEEA206008F791C /* Supporting Files */,
 			);
 			path = mapdemo;
@@ -88,9 +99,21 @@
 			isa = PBXGroup;
 			children = (
 				581A7BBB1CEEAC61008F791C /* libsqlite3.0.tbd */,
+				581A7B791CEEA206008F791C /* Info.plist */,
 				581A7B691CEEA206008F791C /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		58E066131D5B138500622C3D /* AwesomeMenu */ = {
+			isa = PBXGroup;
+			children = (
+				58E066141D5B138500622C3D /* QuadCurveMenu.h */,
+				58E066151D5B138500622C3D /* QuadCurveMenu.m */,
+				58E066161D5B138500622C3D /* QuadCurveMenuItem.h */,
+				58E066171D5B138500622C3D /* QuadCurveMenuItem.m */,
+			);
+			path = AwesomeMenu;
 			sourceTree = "<group>";
 		};
 		6B241AC2BC04C0C3F5230A3C /* Pods */ = {
@@ -105,6 +128,9 @@
 		775DCDEA34FF5F233A7D4C84 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				58E0660F1D5AD91900622C3D /* libZipArchive.a */,
+				58E56A391D4A1B8D00823924 /* libz.tbd */,
+				58E56A371D4A1B7B00823924 /* libbz2.tbd */,
 				5817719B1D06695F00B1203C /* libgeos.a */,
 				7FF4B29727FE8F101A729644 /* libPods-mapdemo.a */,
 			);
@@ -145,6 +171,7 @@
 				TargetAttributes = {
 					581A7B641CEEA206008F791C = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = L2S5E9QH3S;
 					};
 				};
 			};
@@ -233,8 +260,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				581A7B701CEEA206008F791C /* ViewController.m in Sources */,
+				58E066191D5B138500622C3D /* QuadCurveMenuItem.m in Sources */,
 				581A7B6D1CEEA206008F791C /* AppDelegate.m in Sources */,
 				581A7B6A1CEEA206008F791C /* main.m in Sources */,
+				58E066181D5B138500622C3D /* QuadCurveMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,7 +328,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -350,6 +379,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					$HOME/Library/SDKs/ArcGIS/iOS,
@@ -359,8 +390,13 @@
 				INFOPLIST_FILE = mapdemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "/Users/thomasho/Downloads/geos-3.5.0/geos/platform";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"~/Downloads/geos-3.5.0/geos/platform/mixd",
+				);
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
+					"$(inherited)",
 					"-ObjC",
 					"-framework",
 					ArcGIS,
@@ -376,6 +412,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.o2o.mapdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -385,6 +422,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					$HOME/Library/SDKs/ArcGIS/iOS,
@@ -394,8 +433,13 @@
 				INFOPLIST_FILE = mapdemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "/Users/thomasho/Downloads/geos-3.5.0/geos/platform";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"~/Downloads/geos-3.5.0/geos/platform/mixd",
+				);
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
+					"$(inherited)",
 					"-ObjC",
 					"-framework",
 					ArcGIS,
@@ -411,6 +455,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.o2o.mapdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
