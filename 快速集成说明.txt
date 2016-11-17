@@ -1,21 +1,20 @@
-geos库编译说明
-1、geos-3.5.0编译集成方法
-项目运行必须库文件源码，需要编译，步骤：
-第一步：前往目录
+快速搭建运行环境：
+1、geos-3.5.0集成方法
+方法一、直接下载编译好的libgeos.a：
+第一步：下载https://pan.baidu.com/s/1qYU0ztM
+第二步：在target的buiding setting配置库路径：Library Search Paths：库所在的文件夹/
+
+方法二、手动编译内置geos库源码，集成步骤：
+第一步：前往geos-3.5.0目录
 cd geos-3.5.0
-第二步：编译文件
+第二步：执行编译文件（终端会一直执行，约耗时2分钟）
 . geos.sh
-第三步：在target的buiding setting配置libgeos.a库文件目录 或 拖入生成的a文件到项目(自动生成路径) 二选一
-配置路径：Library Search Paths->你的目录/geos-3.5.0/geos/platform/mixd/libgeos.a
-或
-前往 /geos-3.5.0/geos/platform/mixd/ 拖入libgeos.a到项目
+第三步：查看文件是否存在：(geos-3.5.0/geos/platform/mixd/libgeos.a)
+第四步：在target的buiding setting配置库路径：Library Search Paths：你的目录前缀/geos-3.5.0/geos/platform/mixd/
 
 
 2、arcGIS安装集成方法
 第一步：下载https://pan.baidu.com/s/1b56UIE,运行AGSRuntimeSDKiOSv10.2.5.pkg直到安装完成
-第二步：在target的buiding setting配置ArcGIS.framework路径 或 拖入ArcGIS.framework 二选一
-配置路径：Framework Search Paths->$HOME/Library/SDKs/ArcGIS/iOS
-或
-前往~/Library/SDKs/ArcGIS/iOS拖入ArcGIS.framework到项目。
+第二步：在target的buiding setting配置Framework路径：Framework Search Paths路径：$HOME/Library/SDKs/ArcGIS/iOS
 
-3、运行示例项目，请先 pod update一下。
+3、运行示例项目，有问题发截图到:developer@brtbeacon.com

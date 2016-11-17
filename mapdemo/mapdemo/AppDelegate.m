@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import <TYMapSDK/TYMapSDK.h>
 
 @interface AppDelegate ()
 

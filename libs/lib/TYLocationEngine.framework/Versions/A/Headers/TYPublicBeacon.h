@@ -16,6 +16,11 @@
  */
 @property (nonatomic, strong) NSString *shopGid;
 
+
+@property (nonatomic, strong) NSString *mapID;
+@property (nonatomic, strong) NSString *buildingID;
+@property (nonatomic, strong) NSString *cityID;
+
 /**
  *  初始化定位Beacon的类方法
  *
@@ -42,4 +47,8 @@
  *  @return 定位Beacon实例
  */
 + (TYPublicBeacon *)beaconWithUUID:(NSString *)uuid Major:(NSNumber *)major Minor:(NSNumber *)minor Tag:(NSString *)tag Location:(TYLocalPoint *)location ShopGid:(NSString *)shopID;
+
++ (NSDictionary *)buildBeaconObject:(TYPublicBeacon *)pb;
++ (TYPublicBeacon *)parseBeaconObject:(NSDictionary *)beaconObject;
+
 @end

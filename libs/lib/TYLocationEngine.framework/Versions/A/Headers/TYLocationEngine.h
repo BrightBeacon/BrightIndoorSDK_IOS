@@ -9,11 +9,12 @@
 #ifndef TYLocationEngine_TYLocationEngine_h
 #define TYLocationEngine_TYLocationEngine_h
 
+#import <CoreLocation/CoreLocation.h>
 #import <TYLocationEngine/TYLocationManager.h>
 #import <TYLocationEngine/TYPublicBeacon.h>
 #import <TYLocationEngine/TYBeacon.h>
-//#import <TYLocationEngine/TYBeaconKey.h>
-//#import <TYLocationEngine/TYStepEvent.h>
+#import <TYLocationEngine/TYBeaconRegion.h>
+#import <TYLocationEngine/TYBLEEnvironment.h>
 #import <TYLocationEngine/BLELocationEngineConstants.h>
 
 #endif

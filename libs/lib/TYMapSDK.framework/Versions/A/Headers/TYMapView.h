@@ -430,6 +430,8 @@ typedef enum {
  */
 - (void)setLabelOverlapDetectingEnabled:(BOOL)enabled;
 
+- (void)setLabelColor:(UIColor *)color;
+
 /**
  *  当前是否启用标识重叠检测
  *

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5817719C1D06695F00B1203C /* libgeos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5817719B1D06695F00B1203C /* libgeos.a */; };
 		581A7B6A1CEEA206008F791C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 581A7B691CEEA206008F791C /* main.m */; };
 		581A7B6D1CEEA206008F791C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 581A7B6C1CEEA206008F791C /* AppDelegate.m */; };
 		581A7B701CEEA206008F791C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 581A7B6F1CEEA206008F791C /* ViewController.m */; };
@@ -15,14 +14,17 @@
 		581A7B751CEEA206008F791C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 581A7B741CEEA206008F791C /* Assets.xcassets */; };
 		581A7B781CEEA206008F791C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 581A7B761CEEA206008F791C /* LaunchScreen.storyboard */; };
 		581A7BBC1CEEAC61008F791C /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 581A7BBB1CEEAC61008F791C /* libsqlite3.0.tbd */; };
+		586C22441DDD857100C31931 /* MapResource in Resources */ = {isa = PBXBuildFile; fileRef = 586C22431DDD857100C31931 /* MapResource */; };
+		586C224B1DDD86DB00C31931 /* TYMapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586C224A1DDD86DB00C31931 /* TYMapSDK.framework */; };
+		586C224E1DDD86E300C31931 /* TYLocationEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586C224C1DDD86E300C31931 /* TYLocationEngine.framework */; };
+		586C224F1DDD86E300C31931 /* TYMapData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586C224D1DDD86E300C31931 /* TYMapData.framework */; };
+		586C22521DDD8CDC00C31931 /* MKNetworkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586C22511DDD8CDC00C31931 /* MKNetworkKit.framework */; };
 		58E066181D5B138500622C3D /* QuadCurveMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E066151D5B138500622C3D /* QuadCurveMenu.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		58E066191D5B138500622C3D /* QuadCurveMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E066171D5B138500622C3D /* QuadCurveMenuItem.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		58FF19E11D59D9C10060EF7B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 58E56A391D4A1B8D00823924 /* libz.tbd */; };
-		77CB8C37CF53B51D0B6D2775 /* libPods-mapdemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF4B29727FE8F101A729644 /* libPods-mapdemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5817719B1D06695F00B1203C /* libgeos.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgeos.a; path = "../../../../../Downloads/geos-3.5.0/geos/platform/libgeos.a"; sourceTree = "<group>"; };
 		581A7B651CEEA206008F791C /* mapdemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mapdemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		581A7B691CEEA206008F791C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		581A7B6B1CEEA206008F791C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -34,16 +36,17 @@
 		581A7B771CEEA206008F791C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		581A7B791CEEA206008F791C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		581A7BBB1CEEAC61008F791C /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
-		58E0660F1D5AD91900622C3D /* libZipArchive.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libZipArchive.a; path = "../../../../../../Library/Developer/Xcode/DerivedData/mapdemo-byjecokepbrequadodockuivfxgb/Build/Products/Debug-iphonesimulator/ZipArchive/libZipArchive.a"; sourceTree = "<group>"; };
+		586C22431DDD857100C31931 /* MapResource */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MapResource; sourceTree = "<group>"; };
+		586C224A1DDD86DB00C31931 /* TYMapSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TYMapSDK.framework; sourceTree = "<group>"; };
+		586C224C1DDD86E300C31931 /* TYLocationEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TYLocationEngine.framework; sourceTree = "<group>"; };
+		586C224D1DDD86E300C31931 /* TYMapData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TYMapData.framework; sourceTree = "<group>"; };
+		586C22511DDD8CDC00C31931 /* MKNetworkKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MKNetworkKit.framework; sourceTree = "<group>"; };
 		58E066141D5B138500622C3D /* QuadCurveMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadCurveMenu.h; sourceTree = "<group>"; };
 		58E066151D5B138500622C3D /* QuadCurveMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuadCurveMenu.m; sourceTree = "<group>"; };
 		58E066161D5B138500622C3D /* QuadCurveMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuadCurveMenuItem.h; sourceTree = "<group>"; };
 		58E066171D5B138500622C3D /* QuadCurveMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuadCurveMenuItem.m; sourceTree = "<group>"; };
 		58E56A371D4A1B7B00823924 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
 		58E56A391D4A1B8D00823924 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		7FF4B29727FE8F101A729644 /* libPods-mapdemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mapdemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		84050A76411FD418143DCEE4 /* Pods-mapdemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mapdemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mapdemo/Pods-mapdemo.debug.xcconfig"; sourceTree = "<group>"; };
-		C432E5052E51400333442AE8 /* Pods-mapdemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mapdemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-mapdemo/Pods-mapdemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +54,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				586C224F1DDD86E300C31931 /* TYMapData.framework in Frameworks */,
 				58FF19E11D59D9C10060EF7B /* libz.tbd in Frameworks */,
+				586C22521DDD8CDC00C31931 /* MKNetworkKit.framework in Frameworks */,
+				586C224B1DDD86DB00C31931 /* TYMapSDK.framework in Frameworks */,
+				586C224E1DDD86E300C31931 /* TYLocationEngine.framework in Frameworks */,
 				581A7BBC1CEEAC61008F791C /* libsqlite3.0.tbd in Frameworks */,
-				77CB8C37CF53B51D0B6D2775 /* libPods-mapdemo.a in Frameworks */,
-				5817719C1D06695F00B1203C /* libgeos.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,7 +71,6 @@
 			children = (
 				581A7B671CEEA206008F791C /* mapdemo */,
 				581A7B661CEEA206008F791C /* Products */,
-				6B241AC2BC04C0C3F5230A3C /* Pods */,
 				775DCDEA34FF5F233A7D4C84 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -98,11 +102,33 @@
 		581A7B681CEEA206008F791C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				586C22301DDD856900C31931 /* libs */,
 				581A7BBB1CEEAC61008F791C /* libsqlite3.0.tbd */,
 				581A7B791CEEA206008F791C /* Info.plist */,
 				581A7B691CEEA206008F791C /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		586C22301DDD856900C31931 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				586C22431DDD857100C31931 /* MapResource */,
+				586C22311DDD856900C31931 /* lib */,
+			);
+			name = libs;
+			path = ../../libs;
+			sourceTree = "<group>";
+		};
+		586C22311DDD856900C31931 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				586C22511DDD8CDC00C31931 /* MKNetworkKit.framework */,
+				586C224C1DDD86E300C31931 /* TYLocationEngine.framework */,
+				586C224D1DDD86E300C31931 /* TYMapData.framework */,
+				586C224A1DDD86DB00C31931 /* TYMapSDK.framework */,
+			);
+			path = lib;
 			sourceTree = "<group>";
 		};
 		58E066131D5B138500622C3D /* AwesomeMenu */ = {
@@ -116,23 +142,11 @@
 			path = AwesomeMenu;
 			sourceTree = "<group>";
 		};
-		6B241AC2BC04C0C3F5230A3C /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				84050A76411FD418143DCEE4 /* Pods-mapdemo.debug.xcconfig */,
-				C432E5052E51400333442AE8 /* Pods-mapdemo.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		775DCDEA34FF5F233A7D4C84 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				58E0660F1D5AD91900622C3D /* libZipArchive.a */,
 				58E56A391D4A1B8D00823924 /* libz.tbd */,
 				58E56A371D4A1B7B00823924 /* libbz2.tbd */,
-				5817719B1D06695F00B1203C /* libgeos.a */,
-				7FF4B29727FE8F101A729644 /* libPods-mapdemo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -144,12 +158,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 581A7B7C1CEEA206008F791C /* Build configuration list for PBXNativeTarget "mapdemo" */;
 			buildPhases = (
-				2BCB056B66C9782C98CE943C /* 📦 Check Pods Manifest.lock */,
 				581A7B611CEEA206008F791C /* Sources */,
 				581A7B621CEEA206008F791C /* Frameworks */,
 				581A7B631CEEA206008F791C /* Resources */,
-				D30AA5209B6A26CCA7F6C863 /* 📦 Embed Pods Frameworks */,
-				9764112214A5671D81563514 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -199,60 +210,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				581A7B781CEEA206008F791C /* LaunchScreen.storyboard in Resources */,
+				586C22441DDD857100C31931 /* MapResource in Resources */,
 				581A7B751CEEA206008F791C /* Assets.xcassets in Resources */,
 				581A7B731CEEA206008F791C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		2BCB056B66C9782C98CE943C /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		9764112214A5671D81563514 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mapdemo/Pods-mapdemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D30AA5209B6A26CCA7F6C863 /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mapdemo/Pods-mapdemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		581A7B611CEEA206008F791C /* Sources */ = {
@@ -375,7 +339,6 @@
 		};
 		581A7B7D1CEEA206008F791C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 84050A76411FD418143DCEE4 /* Pods-mapdemo.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -385,8 +348,9 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					$HOME/Library/SDKs/ArcGIS/iOS,
 					"$(inherited)",
+					"$(SRCROOT)/../libs/lib/",
 				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../libs/lib/";
 				INFOPLIST_FILE = mapdemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -418,7 +382,6 @@
 		};
 		581A7B7E1CEEA206008F791C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C432E5052E51400333442AE8 /* Pods-mapdemo.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -428,8 +391,9 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					$HOME/Library/SDKs/ArcGIS/iOS,
 					"$(inherited)",
+					"$(SRCROOT)/../libs/lib/",
 				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../libs/lib/";
 				INFOPLIST_FILE = mapdemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

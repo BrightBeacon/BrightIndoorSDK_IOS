@@ -128,6 +128,7 @@
     _cppOfflineRouteManager.delegate = self;
     
     //定位初始化
+    [TYBLEEnvironment setRootDirectoryForFiles:rootDir];
     _loc = [[TYLocationManager alloc] initWithBuilding:self.currentBuilding];
     [_loc setRssiThreshold:-100];
     [_loc setBeaconRegion:[[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:regionUUID] identifier:@"identifier"]];
@@ -141,7 +142,6 @@
         isFirstlocation = NO;
         AGSPoint *pt = [AGSPoint pointWithX:newLocation.x y:newLocation.y spatialReference:self.mapView.spatialReference];
         [self.mapView centerAtPoint:pt animated:YES];
-        [self.mapView zoomToResolution:0.1 withCenterPoint:pt animated:YES];
     }
     self.startLocalPoint = newLocation;
     self.currentLocalPoint = newLocation;
@@ -211,7 +211,7 @@
     
     if (currentRoutePart) {
         routeGuides = [routeResult getRouteDirectionalHint:currentRoutePart];
-        [self.mapView zoomToGeometry:currentRoutePart.route.envelope withPadding:20 animated:YES];
+        [self.mapView zoomToGeometry:currentRoutePart.route.envelope withPadding:80 animated:YES];
     }
     //    [self.mapView setMapMode:TYMapViewModeFollowing];
 }
