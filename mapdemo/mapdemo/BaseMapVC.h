@@ -16,6 +16,10 @@
 #define kBuildingId @"ZS020006"
 #define kAppKey @"efef3dbde9dd416bb24b213ed546584f"
 #define kLicense @"608d7b30DwYwMDM2MT8brtd_ZmY2YWYyNjQbrtd_c1de8012"
+//
+//#define kBuildingId @"00270001"
+//#define kAppKey @"4899847d06be4c1cbd7ef05afc8a7d48"
+//#define kLicense @"5c60c3dfOW9rZmI2ZDUbrtd_YDNnNmUzNWcbrtd_c27a8608"
 //**********************************以上必须修改***********************************
 
 @interface BaseMapVC : UIViewController<TYMapViewDelegate,TYOfflineRouteManagerDelegate>

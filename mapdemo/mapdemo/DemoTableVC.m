@@ -25,7 +25,8 @@
 					 @{@"使用弹窗":@"CalloutVC"},
 					 @{@"使用图层":@"LayerVC"},
 					 @{@"显示POI":@"POIVC"},
-					 @{@"路径规划":@"RouteVC"}
+					 @{@"路径规划":@"RouteVC"},
+					 @{@"瓦片地图":@"TileVC"}
 					 ];
 	self.locDemoArr = @[
 					 @{@"显示定位":@"LocationVC"},

@@ -99,6 +99,20 @@
 #pragma mark - **************** 地图回调
 
 - (void)TYMapView:(TYMapView *)mapView didClickAtPoint:(CGPoint)screen mapPoint:(AGSPoint *)mappoint {
+
+	if (isRouting) {
+		TYLocalPoint *localPoint = [TYLocalPoint pointWithX:mappoint.x Y:mappoint.y Floor:mapView.currentMapInfo.floorNumber];
+		if ([routeResult isDeviatingFromRoute:localPoint WithThrehold:2]) {
+			//模拟偏航2米，重新规划路径
+			self.currentLocalPoint = localPoint;
+			[self startButtonClicked:nil];
+		}
+		//模拟定位点，显示导航路径
+		[mapView showLocation:localPoint];
+		[mapView showPassedAndRemainingRouteResultOnCurrentFloor:localPoint];
+		return;
+	}
+
 	mapView.callout.customView = [self customView:mappoint];
 	[mapView.callout showCalloutAt:mappoint screenOffset:CGPointZero animated:YES];
 }
@@ -119,6 +133,7 @@
 - (void)offlineRouteManager:(TYOfflineRouteManager *)routeManager didSolveRouteWithResult:(TYRouteResult *)rs
 {
 	routeResult = rs;
+	isRouting = YES;
 
 	[self.mapView setRouteResult:rs];
 	[self.mapView setRouteStart:self.startLocalPoint];

@@ -19,6 +19,7 @@
 		5836E49B1E07D6B8008F5BB0 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5836E4961E07D6B8008F5BB0 /* FMResultSet.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5836E49C1E07D6B8008F5BB0 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 5836E4981E07D6B8008F5BB0 /* NSData+Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5836E49F1E07D737008F5BB0 /* POIVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5836E49E1E07D737008F5BB0 /* POIVC.m */; };
+		5847A33D1E164B0E00B5EEC2 /* MKNetworkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5847A33C1E164B0E00B5EEC2 /* MKNetworkKit.framework */; };
 		584CD63E1E03DA2500EC1757 /* LayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 584CD63D1E03DA2500EC1757 /* LayerVC.m */; };
 		584CD6441E03E0B100EC1757 /* RouteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 584CD6431E03E0B100EC1757 /* RouteVC.m */; };
 		584CD6471E03E0BC00EC1757 /* LocationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 584CD6461E03E0BC00EC1757 /* LocationVC.m */; };
@@ -26,9 +27,10 @@
 		586C224B1DDD86DB00C31931 /* TYMapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586C224A1DDD86DB00C31931 /* TYMapSDK.framework */; };
 		586C224E1DDD86E300C31931 /* TYLocationEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586C224C1DDD86E300C31931 /* TYLocationEngine.framework */; };
 		586C224F1DDD86E300C31931 /* TYMapData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586C224D1DDD86E300C31931 /* TYMapData.framework */; };
-		586C22521DDD8CDC00C31931 /* MKNetworkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586C22511DDD8CDC00C31931 /* MKNetworkKit.framework */; };
 		5875716B1E079F8600E96CA4 /* UIImageView+AGSNorthArrow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5875716A1E079F8600E96CA4 /* UIImageView+AGSNorthArrow.m */; };
 		588B378D1E0BE82100BE56D7 /* ZS020006 in Resources */ = {isa = PBXBuildFile; fileRef = 588B378C1E0BE82100BE56D7 /* ZS020006 */; };
+		58D877B41E261163000F31DD /* TileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D877B31E261163000F31DD /* TileVC.m */; };
+		58D877B81E271421000F31DD /* TYTileMapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D877B71E271421000F31DD /* TYTileMapSDK.framework */; };
 		58F449921DFF97380025B433 /* MapDataSync.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F449911DFF97380025B433 /* MapDataSync.m */; };
 		58F449A31DFF9CBA0025B433 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 58F449941DFF9CBA0025B433 /* LICENSE */; };
 		58F449A41DFF9CBA0025B433 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 58F449971DFF9CBA0025B433 /* ioapi.c */; };
@@ -67,6 +69,7 @@
 		5836E4981E07D6B8008F5BB0 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		5836E49D1E07D737008F5BB0 /* POIVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POIVC.h; sourceTree = "<group>"; };
 		5836E49E1E07D737008F5BB0 /* POIVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POIVC.m; sourceTree = "<group>"; };
+		5847A33C1E164B0E00B5EEC2 /* MKNetworkKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MKNetworkKit.framework; sourceTree = "<group>"; };
 		584CD63C1E03DA2500EC1757 /* LayerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerVC.h; sourceTree = "<group>"; };
 		584CD63D1E03DA2500EC1757 /* LayerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayerVC.m; sourceTree = "<group>"; };
 		584CD6421E03E0B100EC1757 /* RouteVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteVC.h; sourceTree = "<group>"; };
@@ -78,10 +81,12 @@
 		586C224A1DDD86DB00C31931 /* TYMapSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TYMapSDK.framework; sourceTree = "<group>"; };
 		586C224C1DDD86E300C31931 /* TYLocationEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TYLocationEngine.framework; sourceTree = "<group>"; };
 		586C224D1DDD86E300C31931 /* TYMapData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TYMapData.framework; sourceTree = "<group>"; };
-		586C22511DDD8CDC00C31931 /* MKNetworkKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MKNetworkKit.framework; sourceTree = "<group>"; };
 		587571691E079F8600E96CA4 /* UIImageView+AGSNorthArrow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AGSNorthArrow.h"; sourceTree = "<group>"; };
 		5875716A1E079F8600E96CA4 /* UIImageView+AGSNorthArrow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AGSNorthArrow.m"; sourceTree = "<group>"; };
 		588B378C1E0BE82100BE56D7 /* ZS020006 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ZS020006; path = ../../libs/ZS020006; sourceTree = "<group>"; };
+		58D877B21E261163000F31DD /* TileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileVC.h; sourceTree = "<group>"; };
+		58D877B31E261163000F31DD /* TileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileVC.m; sourceTree = "<group>"; };
+		58D877B71E271421000F31DD /* TYTileMapSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TYTileMapSDK.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/TYTileMapSDK-dsetegsbfzbyuqdlhtqntntpbasp/Build/Products/Debug-iphoneos/TYTileMapSDK.framework"; sourceTree = "<group>"; };
 		58E56A371D4A1B7B00823924 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
 		58E56A391D4A1B8D00823924 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		58F449901DFF97380025B433 /* MapDataSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapDataSync.h; sourceTree = "<group>"; };
@@ -118,7 +123,8 @@
 			files = (
 				586C224F1DDD86E300C31931 /* TYMapData.framework in Frameworks */,
 				58FF19E11D59D9C10060EF7B /* libz.tbd in Frameworks */,
-				586C22521DDD8CDC00C31931 /* MKNetworkKit.framework in Frameworks */,
+				58D877B81E271421000F31DD /* TYTileMapSDK.framework in Frameworks */,
+				5847A33D1E164B0E00B5EEC2 /* MKNetworkKit.framework in Frameworks */,
 				586C224B1DDD86DB00C31931 /* TYMapSDK.framework in Frameworks */,
 				586C224E1DDD86E300C31931 /* TYLocationEngine.framework in Frameworks */,
 				581A7BBC1CEEAC61008F791C /* libsqlite3.0.tbd in Frameworks */,
@@ -161,6 +167,7 @@
 				584CD6311E02727C00EC1757 /* 使用图层 */,
 				5836E48F1E07D664008F5BB0 /* 显示POI */,
 				584CD63F1E03DDFE00EC1757 /* 路径规划 */,
+				58D877B11E2610CF000F31DD /* 瓦片地图 */,
 				584CD6401E03E07D00EC1757 /* 显示定位 */,
 				581A7B6E1CEEA206008F791C /* ViewController.h */,
 				581A7B6F1CEEA206008F791C /* ViewController.m */,
@@ -249,7 +256,7 @@
 		586C22311DDD856900C31931 /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				586C22511DDD8CDC00C31931 /* MKNetworkKit.framework */,
+				5847A33C1E164B0E00B5EEC2 /* MKNetworkKit.framework */,
 				586C224C1DDD86E300C31931 /* TYLocationEngine.framework */,
 				586C224D1DDD86E300C31931 /* TYMapData.framework */,
 				586C224A1DDD86DB00C31931 /* TYMapSDK.framework */,
@@ -264,6 +271,16 @@
 				5875716A1E079F8600E96CA4 /* UIImageView+AGSNorthArrow.m */,
 			);
 			name = "指北针";
+			sourceTree = "<group>";
+		};
+		58D877B11E2610CF000F31DD /* 瓦片地图 */ = {
+			isa = PBXGroup;
+			children = (
+				58D877B21E261163000F31DD /* TileVC.h */,
+				58D877B31E261163000F31DD /* TileVC.m */,
+				58D877B71E271421000F31DD /* TYTileMapSDK.framework */,
+			);
+			name = "瓦片地图";
 			sourceTree = "<group>";
 		};
 		58F449931DFF9CBA0025B433 /* ZipArchive */ = {
@@ -437,6 +454,7 @@
 				584CD64D1E05584F00EC1757 /* LocDataSync.m in Sources */,
 				581A7B6A1CEEA206008F791C /* main.m in Sources */,
 				5875716B1E079F8600E96CA4 /* UIImageView+AGSNorthArrow.m in Sources */,
+				58D877B41E261163000F31DD /* TileVC.m in Sources */,
 				58F449B21DFFF2470025B433 /* BaseMapVC.m in Sources */,
 				58F449B51E0000CC0025B433 /* MapVC.m in Sources */,
 				584CD6471E03E0BC00EC1757 /* LocationVC.m in Sources */,
@@ -569,6 +587,7 @@
 					$HOME/Library/SDKs/ArcGIS/iOS,
 					"$(inherited)",
 					"$(SRCROOT)/../libs/lib/",
+					"/Users/thomasho/Library/Developer/Xcode/DerivedData/TYTileMapSDK-dsetegsbfzbyuqdlhtqntntpbasp/Build/Products/Debug-iphoneos",
 				);
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../libs/lib/";
 				INFOPLIST_FILE = mapdemo/Info.plist;
@@ -576,7 +595,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"~/Downloads/geos-3.5.0/geos/platform/mixd",
+					"~/Desktop/geos-3.5.0/geos/platform/mixd",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
@@ -612,6 +631,7 @@
 					$HOME/Library/SDKs/ArcGIS/iOS,
 					"$(inherited)",
 					"$(SRCROOT)/../libs/lib/",
+					"/Users/thomasho/Library/Developer/Xcode/DerivedData/TYTileMapSDK-dsetegsbfzbyuqdlhtqntntpbasp/Build/Products/Debug-iphoneos",
 				);
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../libs/lib/";
 				INFOPLIST_FILE = mapdemo/Info.plist;
@@ -619,7 +639,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"~/Downloads/geos-3.5.0/geos/platform/mixd",
+					"~/Desktop/geos-3.5.0/geos/platform/mixd",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (

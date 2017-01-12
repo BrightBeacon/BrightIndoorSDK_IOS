@@ -18,6 +18,7 @@
     TYRouteResult *routeResult;
     TYRoutePart *currentRoutePart;
     NSArray *routeGuides;
+	IBOutlet UILabel *hintLabel;
     
     AGSGraphicsLayer *hintLayer;
     
@@ -103,14 +104,19 @@
         }
     }
     if (isRouting) {
-        // 在地图显示当前楼层导航
+        // 在地图显示当前楼层导航；检测偏航重新规划路径
         [self.mapView showPassedAndRemainingRouteResultOnCurrentFloor:newLocation];
         BOOL isDeciatig = [routeResult isDeviatingFromRoute:newLocation WithThrehold:5.0];
         if (isDeciatig) {
             //重置导航层，移除显示的结果，并将导航结果清空
             [self.mapView resetRouteLayer];
             [self requestRoute];
-        }
+			hintLabel.text = @"";
+		}else{
+//			TYDirectionalHint *hint = [routeResult getDirectionHintForLocation:newLocation FromHints:routeGuides];
+//			hintLabel.text = hint.getLandMarkString;
+//			NSLog(@"%@_%@",hint.getDirectionString,hint.getLandMarkString);
+		}
     }
 }
 - (void)TYLocationManagerdidFailUpdateLocation:(TYLocationManager *)manager{

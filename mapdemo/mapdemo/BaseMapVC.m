@@ -38,6 +38,7 @@
 	NSString *dir = [NSHomeDirectory() stringByAppendingFormat:@"/Documents/%@",buidingId];
 	[TYMapEnvironment initMapEnvironment];
 	[TYMapEnvironment setRootDirectoryForMapFiles:dir];
+	NSLog(@"%@",dir);
 	if (![[NSFileManager defaultManager] fileExistsAtPath:dir]) {
 		//withIntermediateDirectories 是否覆盖
 		[[NSFileManager defaultManager] createDirectoryAtPath:dir withIntermediateDirectories:YES attributes:nil error:nil];
