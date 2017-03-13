@@ -14,7 +14,9 @@
 //登录http://developer.brtbeacon.com，查看主动定位，点位管理，获取当前建筑UUID
 #define kUUID @"FDA50693-A4E2-4FB1-AFCF-C6EB07647825"
 
-@interface LocationVC ()<TYLocationManagerDelegate>
+@interface LocationVC ()<TYLocationManagerDelegate>{
+    TYLocalPoint *lastLocation,*currentLocation;
+}
 
 @property (nonatomic ,strong) TYLocationManager *locationManager;
 
@@ -61,7 +63,7 @@
 	//检查定位数据更新
 	[LocDataSync updateLocData:[NSString stringWithFormat:url_beaconnew,kBuildingId,kAppKey,kLicense] onCompletion:^(NSError *err) {
 		if (err) NSLog(@"无更新定位数据%@",err);
-		else [self startLocation];
+		[self startLocation];
 	}];
 
 }
@@ -96,7 +98,28 @@
  */
 - (void)TYLocationManager:(TYLocationManager *)manager didUpdateLocation:(TYLocalPoint *)newLocation {
 	NSLog(@"您的位置：%@",newLocation);
-	[self.mapView showLocation:newLocation];
+
+    //平滑显示定位点
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    if(currentLocation)lastLocation = currentLocation;
+    [self showSmoothLocation:newLocation];
+}
+
+- (void)showSmoothLocation:(TYLocalPoint *)newLocation{
+    static int idx = 0;
+    if (lastLocation.floor == newLocation.floor&&idx<=6) {
+        idx++;
+        double scale = idx/6.0;
+        double x = (1-scale)*lastLocation.x + scale*newLocation.x;
+        double y = (1-scale)*lastLocation.y + scale*newLocation.y;
+        currentLocation = [TYLocalPoint pointWithX:x Y:y Floor:newLocation.floor];
+        [self.mapView showLocation:currentLocation];
+        [self performSelector:@selector(showSmoothLocation:) withObject:newLocation afterDelay:1.0/6];
+    }else{
+        idx = 0;
+        [self.mapView showLocation:newLocation];
+        lastLocation = newLocation;
+    }
 }
 
 

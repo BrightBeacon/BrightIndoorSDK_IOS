@@ -27,7 +27,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
-
+//初始化路径图标
 - (void)initSymbols
 {
 	AGSPictureMarkerSymbol *startSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"start"];
@@ -45,8 +45,14 @@
 	[self.mapView setRouteEndSymbol:endSymbol];
 	[self.mapView setRouteSwitchSymbol:switchSymbol];
 }
+- (void)initLocationSymbol {
+    //设置地图显示定位图标
+    AGSPictureMarkerSymbol *locSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImage:[UIImage imageNamed:@"locationArrow"]];
+    [self.mapView setLocationSymbol:locSymbol];
+}
 - (void)TYMapViewDidLoad:(TYMapView *)mapView {
 	[self initSymbols];
+    [self initLocationSymbol];
 }
 
 //自定义View
@@ -106,10 +112,18 @@
 			//模拟偏航2米，重新规划路径
 			self.currentLocalPoint = localPoint;
 			[self startButtonClicked:nil];
-		}
+        }
+        [mapView showPassedAndRemainingRouteResultOnCurrentFloor:localPoint];
+
+        //导航时候，未偏航，可以直接吸附到导航路径上面
+        if(currentRoutePart){
+            AGSGeometryEngine *engine = [AGSGeometryEngine defaultGeometryEngine];
+            AGSProximityResult *result = [engine nearestCoordinateInGeometry:currentRoutePart.route toPoint:mappoint];
+            mappoint = result.point;
+            localPoint = [TYLocalPoint pointWithX:mappoint.x Y:mappoint.y Floor:mapView.currentMapInfo.floorNumber];
+        }
 		//模拟定位点，显示导航路径
 		[mapView showLocation:localPoint];
-		[mapView showPassedAndRemainingRouteResultOnCurrentFloor:localPoint];
 		return;
 	}
 
@@ -144,7 +158,9 @@
 	NSArray *routePartArray = [routeResult getRoutePartsOnFloor:self.mapView.currentMapInfo.floorNumber];
 	if (routePartArray.count > 0) {
 		currentRoutePart = [routePartArray objectAtIndex:0];
-	}
+    }else{
+        currentRoutePart = nil;
+    }
 
 	//缩放到路段
 	if (currentRoutePart) {

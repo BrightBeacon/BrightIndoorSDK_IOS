@@ -28,16 +28,14 @@
 		586C224E1DDD86E300C31931 /* TYLocationEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586C224C1DDD86E300C31931 /* TYLocationEngine.framework */; };
 		586C224F1DDD86E300C31931 /* TYMapData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586C224D1DDD86E300C31931 /* TYMapData.framework */; };
 		5875716B1E079F8600E96CA4 /* UIImageView+AGSNorthArrow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5875716A1E079F8600E96CA4 /* UIImageView+AGSNorthArrow.m */; };
+		587B644A1E7013980043663D /* TYTileMapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587B64491E7013980043663D /* TYTileMapSDK.framework */; };
 		588B378D1E0BE82100BE56D7 /* ZS020006 in Resources */ = {isa = PBXBuildFile; fileRef = 588B378C1E0BE82100BE56D7 /* ZS020006 */; };
 		58D877B41E261163000F31DD /* TileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D877B31E261163000F31DD /* TileVC.m */; };
-		58D877B81E271421000F31DD /* TYTileMapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D877B71E271421000F31DD /* TYTileMapSDK.framework */; };
 		58F449921DFF97380025B433 /* MapDataSync.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F449911DFF97380025B433 /* MapDataSync.m */; };
-		58F449A31DFF9CBA0025B433 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 58F449941DFF9CBA0025B433 /* LICENSE */; };
 		58F449A41DFF9CBA0025B433 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 58F449971DFF9CBA0025B433 /* ioapi.c */; };
 		58F449A51DFF9CBA0025B433 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 58F449991DFF9CBA0025B433 /* mztools.c */; };
 		58F449A61DFF9CBA0025B433 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 58F4499B1DFF9CBA0025B433 /* unzip.c */; };
 		58F449A71DFF9CBA0025B433 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 58F4499D1DFF9CBA0025B433 /* zip.c */; };
-		58F449A81DFF9CBA0025B433 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 58F4499F1DFF9CBA0025B433 /* README.md */; };
 		58F449A91DFF9CBA0025B433 /* ZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F449A21DFF9CBA0025B433 /* ZipArchive.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		58F449AF1DFFE9830025B433 /* DemoTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F449AE1DFFE9830025B433 /* DemoTableVC.m */; };
 		58F449B21DFFF2470025B433 /* BaseMapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F449B11DFFF2470025B433 /* BaseMapVC.m */; };
@@ -83,15 +81,14 @@
 		586C224D1DDD86E300C31931 /* TYMapData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TYMapData.framework; sourceTree = "<group>"; };
 		587571691E079F8600E96CA4 /* UIImageView+AGSNorthArrow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AGSNorthArrow.h"; sourceTree = "<group>"; };
 		5875716A1E079F8600E96CA4 /* UIImageView+AGSNorthArrow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AGSNorthArrow.m"; sourceTree = "<group>"; };
+		587B64491E7013980043663D /* TYTileMapSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TYTileMapSDK.framework; sourceTree = "<group>"; };
 		588B378C1E0BE82100BE56D7 /* ZS020006 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ZS020006; path = ../../libs/ZS020006; sourceTree = "<group>"; };
 		58D877B21E261163000F31DD /* TileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileVC.h; sourceTree = "<group>"; };
 		58D877B31E261163000F31DD /* TileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileVC.m; sourceTree = "<group>"; };
-		58D877B71E271421000F31DD /* TYTileMapSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TYTileMapSDK.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/TYTileMapSDK-dsetegsbfzbyuqdlhtqntntpbasp/Build/Products/Debug-iphoneos/TYTileMapSDK.framework"; sourceTree = "<group>"; };
 		58E56A371D4A1B7B00823924 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
 		58E56A391D4A1B8D00823924 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		58F449901DFF97380025B433 /* MapDataSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapDataSync.h; sourceTree = "<group>"; };
 		58F449911DFF97380025B433 /* MapDataSync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapDataSync.m; sourceTree = "<group>"; };
-		58F449941DFF9CBA0025B433 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		58F449961DFF9CBA0025B433 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
 		58F449971DFF9CBA0025B433 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
 		58F449981DFF9CBA0025B433 /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
@@ -101,7 +98,6 @@
 		58F4499C1DFF9CBA0025B433 /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
 		58F4499D1DFF9CBA0025B433 /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
 		58F4499E1DFF9CBA0025B433 /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
-		58F4499F1DFF9CBA0025B433 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		58F449A11DFF9CBA0025B433 /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZipArchive.h; path = mapdemo/ZipArchive/ZipArchive.h; sourceTree = SOURCE_ROOT; };
 		58F449A21DFF9CBA0025B433 /* ZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZipArchive.m; path = mapdemo/ZipArchive/ZipArchive.m; sourceTree = SOURCE_ROOT; };
 		58F449AD1DFFE9830025B433 /* DemoTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoTableVC.h; sourceTree = "<group>"; };
@@ -123,7 +119,7 @@
 			files = (
 				586C224F1DDD86E300C31931 /* TYMapData.framework in Frameworks */,
 				58FF19E11D59D9C10060EF7B /* libz.tbd in Frameworks */,
-				58D877B81E271421000F31DD /* TYTileMapSDK.framework in Frameworks */,
+				587B644A1E7013980043663D /* TYTileMapSDK.framework in Frameworks */,
 				5847A33D1E164B0E00B5EEC2 /* MKNetworkKit.framework in Frameworks */,
 				586C224B1DDD86DB00C31931 /* TYMapSDK.framework in Frameworks */,
 				586C224E1DDD86E300C31931 /* TYLocationEngine.framework in Frameworks */,
@@ -278,7 +274,7 @@
 			children = (
 				58D877B21E261163000F31DD /* TileVC.h */,
 				58D877B31E261163000F31DD /* TileVC.m */,
-				58D877B71E271421000F31DD /* TYTileMapSDK.framework */,
+				587B64491E7013980043663D /* TYTileMapSDK.framework */,
 			);
 			name = "瓦片地图";
 			sourceTree = "<group>";
@@ -286,9 +282,7 @@
 		58F449931DFF9CBA0025B433 /* ZipArchive */ = {
 			isa = PBXGroup;
 			children = (
-				58F449941DFF9CBA0025B433 /* LICENSE */,
 				58F449951DFF9CBA0025B433 /* minizip */,
-				58F4499F1DFF9CBA0025B433 /* README.md */,
 				58F449A01DFF9CBA0025B433 /* ZipArchive */,
 			);
 			path = ZipArchive;
@@ -393,7 +387,7 @@
 		581A7B5D1CEEA206008F791C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = thomasho;
 				TargetAttributes = {
 					581A7B641CEEA206008F791C = {
@@ -429,7 +423,6 @@
 				588B378D1E0BE82100BE56D7 /* ZS020006 in Resources */,
 				581A7B751CEEA206008F791C /* Assets.xcassets in Resources */,
 				581A7B731CEEA206008F791C /* Main.storyboard in Resources */,
-				58F449A31DFF9CBA0025B433 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,7 +438,6 @@
 				58F449A61DFF9CBA0025B433 /* unzip.c in Sources */,
 				581A7B701CEEA206008F791C /* ViewController.m in Sources */,
 				58F449B91E012DBD0025B433 /* CalloutVC.m in Sources */,
-				58F449A81DFF9CBA0025B433 /* README.md in Sources */,
 				58F449A51DFF9CBA0025B433 /* mztools.c in Sources */,
 				5836E4991E07D6B8008F5BB0 /* FMDatabase.m in Sources */,
 				581A7B6D1CEEA206008F791C /* AppDelegate.m in Sources */,
@@ -505,8 +497,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -528,9 +522,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -550,8 +544,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -567,7 +563,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -587,11 +583,11 @@
 					$HOME/Library/SDKs/ArcGIS/iOS,
 					"$(inherited)",
 					"$(SRCROOT)/../libs/lib/",
-					"/Users/thomasho/Library/Developer/Xcode/DerivedData/TYTileMapSDK-dsetegsbfzbyuqdlhtqntntpbasp/Build/Products/Debug-iphoneos",
+					"$(PROJECT_DIR)/mapdemo",
 				);
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../libs/lib/";
 				INFOPLIST_FILE = mapdemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -631,11 +627,11 @@
 					$HOME/Library/SDKs/ArcGIS/iOS,
 					"$(inherited)",
 					"$(SRCROOT)/../libs/lib/",
-					"/Users/thomasho/Library/Developer/Xcode/DerivedData/TYTileMapSDK-dsetegsbfzbyuqdlhtqntntpbasp/Build/Products/Debug-iphoneos",
+					"$(PROJECT_DIR)/mapdemo",
 				);
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../libs/lib/";
 				INFOPLIST_FILE = mapdemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

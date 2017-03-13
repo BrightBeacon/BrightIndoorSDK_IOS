@@ -119,6 +119,9 @@
 		}
     }
 }
+- (void)TYLocationManager:(TYLocationManager *)manager didUpdateImmediateLocation:(TYLocalPoint *)newImmediateLocation{
+    
+}
 - (void)TYLocationManagerdidFailUpdateLocation:(TYLocationManager *)manager{
     
 }

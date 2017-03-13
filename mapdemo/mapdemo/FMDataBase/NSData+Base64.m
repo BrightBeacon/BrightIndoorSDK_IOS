@@ -19,10 +19,6 @@ static char encodingTable[64] = {
 */
 @implementation NSData (Base64)
 
-
-
-
-
  - (id) initWithBase64EncodedString:(NSString *) string {
 	NSMutableData *mutableData = nil;
 	

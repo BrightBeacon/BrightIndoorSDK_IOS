@@ -24,14 +24,18 @@
 - (void)TYMapView:(TYMapView *)mapView didFinishLoadingFloor:(TYMapInfo *)mapInfo {
 	[mapView removeMapLayer:_tileLayer];
 	NSString *dir = [TYMapEnvironment getRootDirectoryForMapFiles];
-	NSArray *tileInfos = [TYTiledManager tileInfoByServer:@"http://files.brtbeacon.com" buildingId:@"00210018" toPath:nil];
-	if (tileInfos.count) {
-		_tileLayer = [[TYTiledLayer alloc] initWithTileRoot:dir withTileInfo:[TYTiledManager findTileInfo:tileInfos byMapID:@"00210018F01"]];
-		if(_tileLayer&&!_tileLayer.error)
-			[mapView insertMapLayer:_tileLayer atIndex:0];
-		else
-			NSLog(@"瓦片加载失败：%@",_tileLayer.error);
-	}
+    TYTiledLayer *tileLayer = (TYTiledLayer *)[self.mapView mapLayerForName:mapInfo.buildingID];
+    [self.mapView removeMapLayer:tileLayer];
+
+    NSString *tileInfoPath = [dir stringByAppendingPathComponent:@"tileInfo.json"];
+    NSArray *tileInfos = [TYTiledManager tileInfoByServer:@"http:/files.brtbeacon.com" buildingId:mapInfo.buildingID toPath:tileInfoPath];
+    tileLayer = [[TYTiledLayer alloc] initWithTileRoot:dir withTileInfo:[TYTiledManager findTileInfo:tileInfos byMapID:mapInfo.mapID]];
+    if(tileLayer&&!tileLayer.error){
+        [self.mapView insertMapLayer:tileLayer withName:mapInfo.buildingID atIndex:0];
+        [self.mapView setFloorWithInfo:mapInfo];
+    }else{
+        [[[UIAlertView alloc]initWithTitle:@"无法加载图层数据" message:[tileLayer.error localizedDescription] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
