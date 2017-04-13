@@ -21,9 +21,11 @@
 
 #pragma mark - **************** 地图回调
 
-- (void)TYMapViewDidLoad:(TYMapView *)mapView {
-	[self showFloorControl];
-	[self showZoomControl];
+- (void)TYMapViewDidLoad:(TYMapView *)mapView withError:(NSError *)error{
+    if (error) {
+        NSLog(@"%@",error);
+        return;
+    }
 	//限制屏幕宽显示范围5米-100米
 	[self setMinMaxResolution:5 :100];
 }
@@ -37,6 +39,13 @@
 	if (poi) {
 		[mapView highlightPoi:poi];
 	}
+    if ([mapView.building.buildingID isEqualToString:kBuildingId]) {
+        [mapView switchBuilding:@"ZS010005" AppKey:kAppKey];
+        [mapView setFloor:1];
+    }else{
+        [mapView switchBuilding:kBuildingId AppKey:kAppKey];
+        [mapView setFloor:1];
+    }
 }
 
 - (void)TYMapViewDidZoomed:(TYMapView *)mapView {
@@ -54,7 +63,7 @@
 
 - (IBAction)resolutionButtonClicked:(UISlider *)sender {
 	//缩放分辨率：?米/宽度
-	double width = [UIScreen mainScreen].bounds.size.width;
+	double width = self.mapView.frame.size.width;
 	double distance = (self.mapView.maxResolution*width)*sender.value;
 	[self.mapView zoomToResolution:distance/width animated:NO];
 }

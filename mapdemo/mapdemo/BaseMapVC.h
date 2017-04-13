@@ -12,17 +12,15 @@
 #import "NSNull+OVNatural.h"
 
 //**********************************以下必须修改***********************************
-//以下地图初始化、检查更新参数参看：http://developer.brtbeacon.com/map/myMapList
+//以下地图初始化参数参看：http://open.brtbeacon.com
 #define kBuildingId @"ZS020006"
 #define kAppKey @"efef3dbde9dd416bb24b213ed546584f"
-#define kLicense @"608d7b30DwYwMDM2MT8brtd_ZmY2YWYyNjQbrtd_c1de8012"
 //**********************************以上必须修改***********************************
 
 @interface BaseMapVC : UIViewController<TYMapViewDelegate,TYOfflineRouteManagerDelegate>
 
 @property (nonatomic,strong) IBOutlet TYMapView *mapView;
-@property (nonatomic,readonly) NSArray *allMapInfo;
-@property (nonatomic,strong) TYOfflineRouteManager *routeManager;
+
 
 - (void)showFloorControl;
 - (void)showZoomControl;

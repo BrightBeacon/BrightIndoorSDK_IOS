@@ -8,16 +8,15 @@
 
 #import "ViewController.h"
 #import <TYLocationEngine/TYLocationEngine.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface ViewController ()<TYMapViewDelegate,TYOfflineRouteManagerDelegate,AGSCalloutDelegate,TYLocationManagerDelegate,UISearchBarDelegate>{
     BOOL isRouting;
     BOOL isFirstlocation;
     
     // 路径规划结果
-	TYOfflineRouteManager *routeManager;
     TYRouteResult *routeResult;
     TYRoutePart *currentRoutePart;
-    NSArray *routeGuides;
 	IBOutlet UILabel *hintLabel;
     
     AGSGraphicsLayer *hintLayer;
@@ -33,7 +32,10 @@
 @property(nonatomic,strong) TYLocalPoint *startLocalPoint;
 @property(nonatomic,strong) TYLocalPoint *endLocalPoint;
 @property(nonatomic,strong) TYLocalPoint *currentLocalPoint;
+@property(nonatomic,strong) TYLocalPoint *lastLocalPoint;
 
+
+@property (nonatomic,strong) AVSpeechSynthesizer *speech;
 //定位管理器
 @property (nonatomic,strong) TYLocationManager *loc;
 @end
@@ -43,8 +45,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     isFirstlocation = YES;
-	[self showZoomControl];
-	[self showFloorControl];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -53,9 +53,18 @@
 	self.loc = nil;
 }
 
+- (void)showLocationControl {
+    CGRect frame = CGRectMake(20, self.view.bounds.size.height - 120, 40, 40);
+    UIButton *locbtn = [[UIButton alloc] initWithFrame:frame];
+    [locbtn setImage:[UIImage imageNamed:@"locbutton"] forState:UIControlStateNormal];
+    [locbtn addTarget:self action:@selector(locButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:locbtn];
+}
+
 #pragma mark - loadMapView
 
 - (void)loadMapView {
+    [self showLocationControl];
     //初始化地图标识
     [self initSymbols];
     
@@ -64,26 +73,51 @@
     [self.mapView addMapLayer:hintLayer];
     
     //设置地图导航旋转模式
-    [self.mapView setMapMode:TYMapViewModeDefault];
+    [self.mapView setMapMode:TYMapViewModeFollowing];
     //设置地图选中高亮（本例已在TYMapView:PoiSelected回调中高亮Poi）
     //    [self.mapView setHighlightPOIOnSelection:YES];
     //设置地图弹窗
     self.mapView.callout.delegate = self;
 }
 
-- (void)TYMapViewDidLoad:(TYMapView *)mapView {
+- (void)TYMapViewDidLoad:(TYMapView *)mapView withError:(NSError *)error{
+    if (error) {
+        NSLog(@"%@",error);
+        return;
+    }
     [self loadMapView];
-    //定位初始化
-    [TYBLEEnvironment setRootDirectoryForFiles:[TYMapEnvironment getRootDirectoryForMapFiles]];
-    _loc = [[TYLocationManager alloc] initWithBuilding:self.mapView.building];
-    [_loc setRssiThreshold:-100];
-    [_loc setBeaconRegion:[[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"FDA50693-A4E2-4FB1-AFCF-C6EB07647825"] identifier:@"identifier"]];
-    [_loc startUpdateLocation];
-    _loc.delegate = self;
 }
+
+- (AVSpeechSynthesizer *)speech {
+    if (!_speech) {
+        _speech = [[AVSpeechSynthesizer alloc] init];
+    }
+    return _speech;
+}
+- (IBAction)textToSpeech:(NSString *)text
+{
+    [self.speech stopSpeakingAtBoundary:AVSpeechBoundaryImmediate];
+    AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc]initWithString:text];  //需要转换的文本
+    utterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"zh-CN"];
+    float sysVer = [UIDevice currentDevice].systemVersion.floatValue;
+    if (sysVer < 9) {
+        utterance.rate = 0.15;
+    }else if(sysVer == 9){
+        utterance.rate = 0.53;
+    }else{
+        utterance.rate = 0.5;
+    }
+//    utterance.pitchMultiplier = 2;
+    [self.speech speakUtterance:utterance];
+}
+
 #pragma mark - **************** 定位回调
+
+- (void)TYLocationManager:(TYLocationManager *)manager didFailUpdateLocation:(NSError *)error {
+
+}
+
 - (void)TYLocationManager:(TYLocationManager *)manager didUpdateLocation:(TYLocalPoint *)newLocation{
-    [self.mapView showLocation:newLocation];
     if (isFirstlocation) {
         isFirstlocation = NO;
         AGSPoint *pt = [AGSPoint pointWithX:newLocation.x y:newLocation.y spatialReference:self.mapView.spatialReference];
@@ -91,38 +125,75 @@
     }
     self.startLocalPoint = newLocation;
     self.currentLocalPoint = newLocation;
-    
-    
+
     // 判断地图当前显示楼层是否与定位结果一致，若不一致则切换到定位结果所在楼层（楼层自动切换）
     if (self.mapView.currentMapInfo.floorNumber!=newLocation.floor) {
-        TYMapInfo *targetMapInfo = nil;
-        for (targetMapInfo in self.allMapInfo) {
-            if (targetMapInfo.floorNumber == newLocation.floor) {
-                [self.mapView setFloorWithInfo:targetMapInfo];
-                break;
+        [self.mapView setFloor:newLocation.floor];
+        return;
+    }
+    TYLocalPoint *localPoint = newLocation;
+    if (isRouting) {
+        double distance2end = [self.endLocalPoint distanceWith:localPoint];
+        if (distance2end<2) {
+            [self.mapView resetRouteLayer];
+            isRouting = NO;
+            [self.mapView showLocation:localPoint];
+            self.startLocalPoint = nil;
+            self.endLocalPoint = nil;
+            self.currentLocalPoint = nil;
+            [self textToSpeech:@"已到达终点附近。"];
+            NSLog(@"已到达终点附近。");
+            return;
+        }
+        if ([routeResult isDeviatingFromRoute:localPoint WithThrehold:2]) {
+            //偏航2米，重新规划路径
+            self.startLocalPoint = localPoint;
+            [self requestRoute];
+            [self textToSpeech:@"你已偏航，重新规划路线。"];
+            [self.mapView showLocation:localPoint];
+            return;
+        }
+        //显示路过和余下线段
+        [self.mapView showPassedAndRemainingRouteResultOnCurrentFloor:localPoint];
+
+        //导航中，未偏航，可以直接吸附到最近的路径上。注意：同层如有隔断，会出现多路径线段TYRoutePart
+        AGSGeometryEngine *engine = [AGSGeometryEngine defaultGeometryEngine];
+        TYRoutePart *part = [routeResult getNearestRoutePart:localPoint];
+        if (part) {
+            AGSProximityResult *result = [engine nearestCoordinateInGeometry:part.route toPoint:[AGSPoint pointWithX:newLocation.x y:newLocation.y spatialReference:self.mapView.spatialReference]];
+
+            localPoint = [TYLocalPoint pointWithX:result.point.x Y:result.point.y Floor:self.mapView.currentMapInfo.floorNumber];
+        //移动位置超过2米，进行导航提示
+        NSArray *routeGuides = [routeResult getRouteDirectionalHint:part];
+        if (routeGuides.count&&[localPoint distanceWith:self.lastLocalPoint]>2) {
+            self.lastLocalPoint = localPoint;
+            //地图显示本线段
+            TYDirectionalHint *hint = [routeResult getDirectionHintForLocation:localPoint FromHints:routeGuides];
+            if (![hint.routePart.route.envelope containsPoint:result.point]) {
+                //点不在线段上
+                return;
+            }
+            [self.mapView showRouteHintForDirectionHint:hint Centered:NO];
+            //计算当前位置点，距离本路段起点、终点距离
+            float len2Start = [localPoint distanceWith:(TYLocalPoint*)hint.startPoint];
+            float len2End = [localPoint distanceWith:(TYLocalPoint*)hint.endPoint];
+            //当前路段开始2米、或1/5以内提示本段方向
+            if (len2Start<MIN(hint.length/5.0, 2)) {
+                [self textToSpeech:[hint getDirectionString]];
+            }else if(len2End<MIN(hint.length/3.0, 10)){
+                //当前路段末尾10米、或最后1/3以内提示下一段方向（有可能无提示）
+                if(hint.nextHint)[self textToSpeech:[NSString stringWithFormat:@"前方%.0f米%@",len2End,[hint.nextHint getDirectionString]]];
+                else [self textToSpeech:@"请保持直行"];
+            }else{
+                //中间路段，含微小弯道或直行部分
+                [self textToSpeech:[NSString stringWithFormat:@"继续沿路前行%.0f米",len2End]];
             }
         }
+        }
     }
-    if (isRouting) {
-        // 在地图显示当前楼层导航；检测偏航重新规划路径
-        [self.mapView showPassedAndRemainingRouteResultOnCurrentFloor:newLocation];
-        BOOL isDeciatig = [routeResult isDeviatingFromRoute:newLocation WithThrehold:5.0];
-        if (isDeciatig) {
-            //重置导航层，移除显示的结果，并将导航结果清空
-            [self.mapView resetRouteLayer];
-            [self requestRoute];
-			hintLabel.text = @"";
-		}else{
-//			TYDirectionalHint *hint = [routeResult getDirectionHintForLocation:newLocation FromHints:routeGuides];
-//			hintLabel.text = hint.getLandMarkString;
-//			NSLog(@"%@_%@",hint.getDirectionString,hint.getLandMarkString);
-		}
-    }
+    [self.mapView showLocation:localPoint];
 }
 - (void)TYLocationManager:(TYLocationManager *)manager didUpdateImmediateLocation:(TYLocalPoint *)newImmediateLocation{
-    
-}
-- (void)TYLocationManagerdidFailUpdateLocation:(TYLocationManager *)manager{
     
 }
 - (void)TYLocationManager:(TYLocationManager *)manager didRangedBeacons:(NSArray *)beacons{
@@ -164,7 +235,6 @@
     }
     
     if (currentRoutePart) {
-        routeGuides = [routeResult getRouteDirectionalHint:currentRoutePart];
         [self.mapView zoomToGeometry:currentRoutePart.route.envelope withPadding:80 animated:YES];
     }
     //    [self.mapView setMapMode:TYMapViewModeFollowing];
@@ -244,11 +314,7 @@
     }
     routeResult = nil;
     isRouting = YES;
-	if (!routeManager) {
-		routeManager = [TYOfflineRouteManager routeManagerWithBuilding:self.mapView.building MapInfos:self.allMapInfo];
-		routeManager.delegate = self;
-	}
-    [routeManager requestRouteWithStart:self.startLocalPoint End:self.endLocalPoint];
+    [self.mapView.routeManager requestRouteWithStart:self.startLocalPoint End:self.endLocalPoint];
 }
 
 - (void)initSymbols
@@ -275,8 +341,26 @@
 #pragma mark - Actions
 
 - (IBAction)locButtonClicked:(id)sender {
+    if (_loc == nil) {
+        //定位初始化
+        NSString *path = [TYMapEnvironment getRootDirectoryForMapFiles];
+        [TYBLEEnvironment setRootDirectoryForFiles:path];
+        self.loc = [[TYLocationManager alloc] initWithBuilding:kBuildingId appKey:kAppKey];
+        [_loc setRssiThreshold:-100];
+        [_loc setBeaconRegion:[[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"FDA50693-A4E2-4FB1-AFCF-C6EB07647825"] identifier:@"identifier1"]];
+        [_loc setBeaconRegion:[[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"E2C56DB5-DFFB-48D2-B060-D0F5A71096E0"] identifier:@"identifier2"]];
+        _loc.delegate = self;
+    }
     [_loc startUpdateLocation];
 	if(self.currentLocalPoint)[self.mapView zoomToResolution:30/[UIScreen mainScreen].bounds.size.width withCenterPoint:[AGSPoint pointWithX:self.currentLocalPoint.x y:self.currentLocalPoint.y spatialReference:self.mapView.spatialReference] animated:YES];
+    if (isRouting) {
+        double len = 0;
+        for (TYRoutePart *rp in routeResult.allRoutePartArray) {
+            len += [[AGSGeometryEngine defaultGeometryEngine] distanceFromGeometry:rp.getFirstPoint toGeometry:rp.getLastPoint];
+        }
+        int min = ceil(len/80);
+        [self textToSpeech:[NSString stringWithFormat:@"开始导航，全程%.0f米，大约需要%d分钟",len,min]];
+    }
 }
 - (IBAction)cancelButtonClicked:(id)sender {
     [_loc stopUpdateLocation];

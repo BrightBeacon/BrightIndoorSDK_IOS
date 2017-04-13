@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "BrightIndoorSDK"
   s.version      = "1.0.8"
-  s.summary      = "Indoor location library for BrightBeacon devices"
+  s.summary      = "Indoor location library for iBeacon devices"
   s.homepage     = "http://www.brtbeacon.com"
   s.author       = { "BrightBeacon" => "o2owlkj@163.com" }
   s.platform     = :ios,'7.0'
@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   s.license      = {
     :type => 'Copyright',
     :text => <<-LICENSE
-      Copyright 2016 BrightBeacon All rights reserved.
+      Copyright 2017 BrightBeacon All rights reserved.
       LICENSE
   }
 end

@@ -13,6 +13,10 @@
 #import "TYRouteResult.h"
 #import "TYDirectionalHint.h"
 #import <TYMapData/TYMapData.h>
+#import "TYMapError.h"
+#import "TYOfflineRouteManager.h"
+
+typedef void(^OnMapDataCompletion)(NSString *version, NSError* error);
 
 /**
     地图模式类型：默认模式和跟随模式
@@ -68,7 +72,9 @@ typedef enum {
  *
  *  @param mapView 地图视图
  */
-- (void)TYMapViewDidLoad:(TYMapView *)mapView;
+//- (void)TYMapViewDidLoad:(TYMapView *)mapView;
+
+- (void)TYMapViewDidLoad:(TYMapView *)mapView withError:(NSError *)error;
 
 /**
  *  地图弹出框解除完成事件回调
@@ -106,22 +112,29 @@ typedef enum {
 @interface TYMapView : AGSMapView
 
 /**
- *  地图代理，用于处理地图点击、Poi点选事件、弹出框等
+ *  地图代理，用于处理地图点击、Poi点选事件、弹出框、路径规划等
  */
-@property (nonatomic, weak) id<TYMapViewDelegate> mapDelegate;
+@property (nonatomic, weak) id<TYMapViewDelegate,TYOfflineRouteManagerDelegate> mapDelegate;
 
 /**
  *  当前显示的建筑ID
  */
-@property (nonatomic, strong) TYBuilding *building;
+@property (nonatomic, readonly) TYBuilding *building;
 
 /**
  *  当前建筑的当前楼层信息
  */
 @property (nonatomic, readonly) TYMapInfo *currentMapInfo;
 
-//@property (nonatomic, readonly) TYParkingLayer *parkingLayer;
-//- (NSArray *)getParkingSpacesOnCurrentFloor;
+/**
+ *  当前建筑的所有楼层信息
+ */
+@property (nonatomic, readonly) NSArray *allMapInfo;
+
+/**
+ *  路径规划管理器
+ */
+@property (nonatomic, readonly) TYOfflineRouteManager *routeManager;
 
 /**
  *  在POI被点选时是否高亮显示，默认为NO
@@ -133,7 +146,6 @@ typedef enum {
  */
 - (void)reloadMapView;
 
-
 /**
  *  切换楼层方法
  *
@@ -141,6 +153,13 @@ typedef enum {
  */
 - (void)setFloorWithInfo:(TYMapInfo *)info;
 
+
+/**
+ 设置目标楼层
+
+ @param floor 楼层 -1 0 1
+ */
+- (void)setFloor:(int)floor;
 /**
  *  设置定位点符号，用于标识定位结果
  *
@@ -276,26 +295,22 @@ typedef enum {
  */
 - (void)showRouteHintForDirectionHint:(TYDirectionalHint *)ds Centered:(BOOL)isCentered;
 
-- (void)initMapView;
-- (void)loadBuilding:(TYBuilding *)b UserID:(NSString *)uID License:(NSString *)license;
-
 /**
  *  地图初始化方法
  *
- *  @param b       地图显示的目标建筑
- *  @param uID     SDK的用户ID
- *  @param license 目标建筑的License
+ *  @param buildingID       地图显示的目标建筑
+ *  @param aKey     SDK的用户appKey
  */
-- (void)initMapViewWithBuilding:(TYBuilding *)b UserID:(NSString *)uID License:(NSString *)license;
+
+- (void)initMapViewWithBuilding:(NSString *)buildingID AppKey:(NSString *)aKey;
 
 /**
  *  切换建筑方法，将地图切换到目标建筑
  *
- *  @param b       切换的目标建筑
- *  @param uID     SDK的用户ID
- *  @param license 目标建筑的License
+ *  @param buildingID       切换的目标建筑
+ *  @param aKey     SDK的用户appKey
  */
-- (void)switchBuilding:(TYBuilding *)b UserID:(NSString *)uID License:(NSString *)license;
+- (void)switchBuilding:(NSString *)buildingID AppKey:(NSString *)aKey;
 
 /**
  *  移动地图将特定坐标限定在特定屏幕范围内

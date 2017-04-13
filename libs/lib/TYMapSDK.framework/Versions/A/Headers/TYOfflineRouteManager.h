@@ -19,6 +19,7 @@
  */
 @protocol TYOfflineRouteManagerDelegate <NSObject>
 
+@optional
 /**
  *  解决路径规划返回方法
  *

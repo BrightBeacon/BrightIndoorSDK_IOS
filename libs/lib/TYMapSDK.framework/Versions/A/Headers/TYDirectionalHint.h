@@ -104,4 +104,12 @@ typedef enum {
  */
 - (BOOL)hasLandMark;
 
+
+/**
+ 下一段提示
+
+ @return 下一段提示
+ */
+@property (nonatomic,strong) TYDirectionalHint *nextHint;
+
 @end

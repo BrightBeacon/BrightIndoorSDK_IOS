@@ -22,6 +22,7 @@ typedef enum {
  */
 @interface TYMapEnvironment : NSObject
 
++ (NSString *)getSDKVersion;
 /**
  *  默认坐标系空间参考
  *
@@ -93,5 +94,15 @@ typedef enum {
  *  @return 主机名
  */
 + (NSString *)getHostName;
+
+/**
+ *  设置离线License
+ *
+ *  license 离线验证
+ *  buildingId 建筑Id
+ *  appkey 用户appkey
+ *  @return 主机名
+ */
++ (void)setLicense:(NSString *)license forBuildingId:(NSString *)buildingId appKey:(NSString *)appkey;
 
 @end

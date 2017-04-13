@@ -17,7 +17,7 @@
 
 @implementation POIVC
 
-- (void)TYMapViewDidLoad:(TYMapView *)mapView {
+- (void)TYMapViewDidLoad:(TYMapView *)mapView withError:(NSError *)error{
 	[self readPoi];
 	[self showPoi];
 }

@@ -27,10 +27,10 @@
  *  解析目标城市特定ID的建筑信息
  *
  *  @param buildingID 目标建筑ID
- *  @param city       目标城市
+ *  @param city       目标城市ID,传nil自动拾取buildingID前4位
  *
  *  @return 目标建筑信息
  */
-+ (TYBuilding *)parseBuilding:(NSString *)buildingID InCity:(TYCity *)city;
++ (TYBuilding *)parseBuilding:(NSString *)buildingID InCity:(NSString *)cityID;
 
 @end

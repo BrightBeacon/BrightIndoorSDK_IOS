@@ -32,7 +32,7 @@
     tileLayer = [[TYTiledLayer alloc] initWithTileRoot:dir withTileInfo:[TYTiledManager findTileInfo:tileInfos byMapID:mapInfo.mapID]];
     if(tileLayer&&!tileLayer.error){
         [self.mapView insertMapLayer:tileLayer withName:mapInfo.buildingID atIndex:0];
-        [self.mapView setFloorWithInfo:mapInfo];
+//        [self.mapView setFloorWithInfo:mapInfo];
     }else{
         [[[UIAlertView alloc]initWithTitle:@"无法加载图层数据" message:[tileLayer.error localizedDescription] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
     }

@@ -21,14 +21,12 @@
 /**
  *  初始化定位引擎
  *
- *  @param building 目标建筑信息
+ *  @param buildingID 目标建筑ID
+ *  @param aKey 用户appkey
  *
  *  @return 定位引擎实例
  */
-- (id)initWithBuilding:(TYBuilding *)building;
-
-
-- (id)initWithBuilding:(NSString *)buildingID cityID:(NSString *)cityID;
+- (id)initWithBuilding:(NSString *)buildingID appKey:(NSString *)aKey;
 
 /**
  *  开启定位引擎
@@ -80,6 +78,12 @@
  */
 @property (nonatomic, assign) float requestTimeOut;
 
+
+/**
+ *  当前building
+ */
+@property (nonatomic, strong) NSString *buildingID;
+
 /**
  *  定位引擎协议代理
  */
@@ -101,24 +105,33 @@
  */
 - (void)TYLocationManager:(TYLocationManager *)manager didUpdateLocation:(TYLocalPoint *)newLocation;
 
-
-/**
- *  位置更新事件回调，位置更新并返回新的位置结果。
-    与[TYLocationManager:didUpdateLocatin:]方法相近，此方法回调结果未融合计步器信息，灵敏度较高，适合用于行车场景下
- *
- *  @param manager     定位引擎实例
- *  @param newLocation 新的位置结果
- */
-- (void)TYLocationManager:(TYLocationManager *)manager didUpdateImmediateLocation:(TYLocalPoint *)newImmediateLocation;
-
 /**
  *  位置更新失败事件回调
  *
  *  @param manager 定位引擎实例
+ *  @param error 定位错误
  */
-- (void)TYLocationManagerdidFailUpdateLocation:(TYLocationManager *)manager;
+- (void)TYLocationManager:(TYLocationManager *)manager didFailUpdateLocation:(NSError *)error;
 
 @optional
+
+/**
+ *  数据更新事件回调
+ *
+ *  @param manager     定位引擎实例
+ *  @param error 加载定位数据错误
+ */
+- (void)TYLocationManager:(TYLocationManager *)manager didLoadWithError:(NSError *)error;
+
+/**
+ *  位置更新事件回调，位置更新并返回新的位置结果。
+ 与[TYLocationManager:didUpdateLocatin:]方法相近，此方法回调结果未融合计步器信息，灵敏度较高，适合用于行车场景下
+ *
+ *  @param manager     定位引擎实例
+ *  @param newImmediateLocation 新的位置结果
+ */
+- (void)TYLocationManager:(TYLocationManager *)manager didUpdateImmediateLocation:(TYLocalPoint *)newImmediateLocation;
+
 /**
  *  Beacon扫描结果事件回调，返回符合扫描参数的所有Beacon
  *

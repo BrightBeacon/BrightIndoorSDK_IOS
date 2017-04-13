@@ -1,0 +1,1246 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>TYMapInfo Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">TYMapDoc </a></h1>
+				<a id="developerHome" href="../index.html">智石科技</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">TYMapInfo Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/buildingID">&nbsp;&nbsp;&nbsp;&nbsp;buildingID</option>
+	
+	<option value="//api/name/cityID">&nbsp;&nbsp;&nbsp;&nbsp;cityID</option>
+	
+	<option value="//api/name/floorName">&nbsp;&nbsp;&nbsp;&nbsp;floorName</option>
+	
+	<option value="//api/name/floorNumber">&nbsp;&nbsp;&nbsp;&nbsp;floorNumber</option>
+	
+	<option value="//api/name/mapExtent">&nbsp;&nbsp;&nbsp;&nbsp;mapExtent</option>
+	
+	<option value="//api/name/mapID">&nbsp;&nbsp;&nbsp;&nbsp;mapID</option>
+	
+	<option value="//api/name/mapSize">&nbsp;&nbsp;&nbsp;&nbsp;mapSize</option>
+	
+	<option value="//api/name/scalex">&nbsp;&nbsp;&nbsp;&nbsp;scalex</option>
+	
+	<option value="//api/name/scaley">&nbsp;&nbsp;&nbsp;&nbsp;scaley</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/buildingMapInfoObject:">&nbsp;&nbsp;&nbsp;&nbsp;+ buildingMapInfoObject:</option>
+	
+	<option value="//api/name/parseAllMapInfo:">&nbsp;&nbsp;&nbsp;&nbsp;+ parseAllMapInfo:</option>
+	
+	<option value="//api/name/parseAllMapInfoFromFile:">&nbsp;&nbsp;&nbsp;&nbsp;+ parseAllMapInfoFromFile:</option>
+	
+	<option value="//api/name/parseMapInfo:ForBuilding:">&nbsp;&nbsp;&nbsp;&nbsp;+ parseMapInfo:ForBuilding:</option>
+	
+	<option value="//api/name/parseMapInfoObject:">&nbsp;&nbsp;&nbsp;&nbsp;+ parseMapInfoObject:</option>
+	
+	<option value="//api/name/searchMapInfoFromArray:Floor:">&nbsp;&nbsp;&nbsp;&nbsp;+ searchMapInfoFromArray:Floor:</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/initWithCityID:BuildingID:MapID:Extent:Size:Floor:FloorNumber:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithCityID:BuildingID:MapID:Extent:Size:Floor:FloorNumber:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/buildingID">buildingID</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cityID">cityID</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/floorName">floorName</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/floorNumber">floorNumber</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapExtent">mapExtent</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapID">mapID</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapSize">mapSize</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/scalex">scalex</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/scaley">scaley</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/buildingMapInfoObject:">buildingMapInfoObject:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/parseAllMapInfo:">parseAllMapInfo:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/parseAllMapInfoFromFile:">parseAllMapInfoFromFile:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/parseMapInfo:ForBuilding:">parseMapInfo:ForBuilding:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/parseMapInfoObject:">parseMapInfoObject:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/searchMapInfoFromArray:Floor:">searchMapInfoFromArray:Floor:</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithCityID:BuildingID:MapID:Extent:Size:Floor:FloorNumber:">initWithCityID:BuildingID:MapID:Extent:Size:Floor:FloorNumber:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="TYMapInfo Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">TYMapInfo Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">TYMapInfo.h<br />TYMapInfo.m</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>地图信息类：用于表示某一层地图的配置信息，包含地图ID、地图尺寸、地图范围、地图偏转角等</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cityID">&nbsp;&nbsp;cityID</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/buildingID">&nbsp;&nbsp;buildingID</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mapID">&nbsp;&nbsp;mapID</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mapSize">&nbsp;&nbsp;mapSize</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mapExtent">&nbsp;&nbsp;mapExtent</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/floorName">&nbsp;&nbsp;floorName</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/floorNumber">&nbsp;&nbsp;floorNumber</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/scalex">&nbsp;&nbsp;scalex</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/scaley">&nbsp;&nbsp;scaley</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithCityID:BuildingID:MapID:Extent:Size:Floor:FloorNumber:">&ndash;&nbsp;initWithCityID:BuildingID:MapID:Extent:Size:Floor:FloorNumber:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/parseMapInfo:ForBuilding:">+&nbsp;parseMapInfo:ForBuilding:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/parseAllMapInfo:">+&nbsp;parseAllMapInfo:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/searchMapInfoFromArray:Floor:">+&nbsp;searchMapInfoFromArray:Floor:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/parseAllMapInfoFromFile:">+&nbsp;parseAllMapInfoFromFile:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/parseMapInfoObject:">+&nbsp;parseMapInfoObject:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/buildingMapInfoObject:">+&nbsp;buildingMapInfoObject:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/buildingID" title="buildingID"></a>
+	<h3 class="subsubtitle method-title">buildingID</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>所在建筑的ID</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *buildingID</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>所在建筑的ID</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TYMapInfo.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/cityID" title="cityID"></a>
+	<h3 class="subsubtitle method-title">cityID</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>所在城市的ID</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *cityID</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>所在城市的ID</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TYMapInfo.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/floorName" title="floorName"></a>
+	<h3 class="subsubtitle method-title">floorName</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>当前楼层名称，如F1、B1</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) NSString *floorName</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>当前楼层名称，如F1、B1</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TYMapInfo.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/floorNumber" title="floorNumber"></a>
+	<h3 class="subsubtitle method-title">floorNumber</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>当前楼层序号,如-1、1</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readonly) int floorNumber</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>当前楼层序号,如-1、1</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TYMapInfo.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/mapExtent" title="mapExtent"></a>
+	<h3 class="subsubtitle method-title">mapExtent</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>地图范围</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readonly) MapExtent mapExtent</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>地图范围</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TYMapInfo.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/mapID" title="mapID"></a>
+	<h3 class="subsubtitle method-title">mapID</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>当前地图的唯一ID，当前与楼层的FloorID一致</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *mapID</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>当前地图的唯一ID，当前与楼层的FloorID一致</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TYMapInfo.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/mapSize" title="mapSize"></a>
+	<h3 class="subsubtitle method-title">mapSize</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>地图尺寸</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readonly) MapSize mapSize</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>地图尺寸</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TYMapInfo.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/scalex" title="scalex"></a>
+	<h3 class="subsubtitle method-title">scalex</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>地图X方向放缩比例，当前比例为1</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readonly) double scalex</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>地图X方向放缩比例，当前比例为1</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TYMapInfo.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/scaley" title="scaley"></a>
+	<h3 class="subsubtitle method-title">scaley</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>地图Y方向放缩比例，当前比例为1</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readonly) double scaley</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>地图Y方向放缩比例，当前比例为1</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TYMapInfo.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/buildingMapInfoObject:" title="buildingMapInfoObject:"></a>
+	<h3 class="subsubtitle method-title">buildingMapInfoObject:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>构建地图信息的JSON表示</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSDictionary *)buildingMapInfoObject:(TYMapInfo *)<em>mapInfo</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>mapInfo</em></dt>
+			<dd><p>地图信息实例</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>地图信息的JSON表示</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>构建地图信息的JSON表示</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TYMapInfo.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/parseAllMapInfo:" title="parseAllMapInfo:"></a>
+	<h3 class="subsubtitle method-title">parseAllMapInfo:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>解析目标建筑的所有楼层地图信息</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)parseAllMapInfo:(TYBuilding *)<em>building</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>building</em></dt>
+			<dd><p>目标建筑</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>目标楼层所有地图信息</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>解析目标建筑的所有楼层地图信息</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TYMapInfo.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/parseAllMapInfoFromFile:" title="parseAllMapInfoFromFile:"></a>
+	<h3 class="subsubtitle method-title">parseAllMapInfoFromFile:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>从目标路径的地图信息文件中解析所有地图信息</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)parseAllMapInfoFromFile:(NSString *)<em>path</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>path</em></dt>
+			<dd><p>目标地图信息文件</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>所有地图信息</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>从目标路径的地图信息文件中解析所有地图信息</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TYMapInfo.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/parseMapInfo:ForBuilding:" title="parseMapInfo:ForBuilding:"></a>
+	<h3 class="subsubtitle method-title">parseMapInfo:ForBuilding:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>解析目标建筑的特定名称的地图信息</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (TYMapInfo *)parseMapInfo:(NSString *)<em>floor</em> ForBuilding:(TYBuilding *)<em>building</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>floor</em></dt>
+			<dd><p>目标楼层名称</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>building</em></dt>
+			<dd><p>目标建筑信息</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>目标楼层地图信息</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>解析目标建筑的特定名称的地图信息</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TYMapInfo.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/parseMapInfoObject:" title="parseMapInfoObject:"></a>
+	<h3 class="subsubtitle method-title">parseMapInfoObject:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>从Json数据中解析MapInfo信息</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (TYMapInfo *)parseMapInfoObject:(NSDictionary *)<em>mapInfoObject</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>mapInfoObject</em></dt>
+			<dd><p>地图信息的JSON表示</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>地图信息实例</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>从Json数据中解析MapInfo信息</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TYMapInfo.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/searchMapInfoFromArray:Floor:" title="searchMapInfoFromArray:Floor:"></a>
+	<h3 class="subsubtitle method-title">searchMapInfoFromArray:Floor:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>从一组地图信息中搜索特定楼层的地图信息</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (TYMapInfo *)searchMapInfoFromArray:(NSArray *)<em>array</em> Floor:(int)<em>floor</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>array</em></dt>
+			<dd><p>目标地图信息数组</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>floor</em></dt>
+			<dd><p>目标楼层</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>目标楼层信息</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>从一组地图信息中搜索特定楼层的地图信息</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TYMapInfo.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithCityID:BuildingID:MapID:Extent:Size:Floor:FloorNumber:" title="initWithCityID:BuildingID:MapID:Extent:Size:Floor:FloorNumber:"></a>
+	<h3 class="subsubtitle method-title">initWithCityID:BuildingID:MapID:Extent:Size:Floor:FloorNumber:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>地图信息的实例化方法</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithCityID:(NSString *)<em>cityID</em> BuildingID:(NSString *)<em>buidlingID</em> MapID:(NSString *)<em>mapID</em> Extent:(MapExtent)<em>e</em> Size:(MapSize)<em>s</em> Floor:(NSString *)<em>fs</em> FloorNumber:(int)<em>fi</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>cityID</em></dt>
+			<dd><p>城市ID</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>buidlingID</em></dt>
+			<dd><p>建筑ID</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>mapID</em></dt>
+			<dd><p>地图ID，与楼层ID相同</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>e</em></dt>
+			<dd><p>地图范围</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>s</em></dt>
+			<dd><p>地图尺寸</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fs</em></dt>
+			<dd><p>楼层名称</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fi</em></dt>
+			<dd><p>楼层序号</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>地图信息实例</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>地图信息的实例化方法</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TYMapInfo.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2017 智石科技. All rights reserved. (Last updated: 2017-04-13)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

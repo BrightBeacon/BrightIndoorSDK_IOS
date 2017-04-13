@@ -1,6 +1,0 @@
-framework module TYTileMapSDK {
-  umbrella header "TYTileMapSDK.h"
-
-  export *
-  module * { export * }
-}

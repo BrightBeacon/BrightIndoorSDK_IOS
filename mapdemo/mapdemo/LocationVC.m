@@ -7,7 +7,6 @@
 //
 
 #import "LocationVC.h"
-#import "LocDataSync.h"
 #import <TYLocationEngine/TYLocationEngine.h>
 #import "UIImageView+AGSNorthArrow.h"
 
@@ -28,9 +27,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-	[self showZoomControl];
-	[self showFloorControl];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -45,8 +41,10 @@
 	}
 }
 
-- (void)TYMapViewDidLoad:(TYMapView *)mapView {
-
+- (void)TYMapViewDidLoad:(TYMapView *)mapView withError:(NSError *)error{
+    if (error) {
+        return;
+    }
 	//设置地图显示定位图标
 	AGSPictureMarkerSymbol *locSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImage:[UIImage imageNamed:@"locationArrow"]];
 	[self.mapView setLocationSymbol:locSymbol];
@@ -57,48 +55,25 @@
 	//设置指北针
 	self.northImageView.mapViewForNorthArrow  = self.mapView;
 
-	//设置定位数据路径
-	[self setBLEEnvironment:kBuildingId];
-
-	//检查定位数据更新
-	[LocDataSync updateLocData:[NSString stringWithFormat:url_beaconnew,kBuildingId,kAppKey,kLicense] onCompletion:^(NSError *err) {
-		if (err) NSLog(@"无更新定位数据%@",err);
-		[self startLocation];
-	}];
+	//定位
+	[self startLocation];
 
 }
 
-//设置下载定位文件目录
-- (void)setBLEEnvironment:(NSString *)buidingId{
-	NSString *mapFilePath = [TYMapEnvironment getRootDirectoryForMapFiles];
-	//设置定位数据路径，这里直接使用了map的路径
-	[TYBLEEnvironment setRootDirectoryForFiles:mapFilePath];
-}
-
-
-
+//以下
 - (void)startLocation {
-	//初始化定位
-	if (!self.locationManager) {
-		self.locationManager = [[TYLocationManager alloc] initWithBuilding:self.mapView.building];
-		[_locationManager setRssiThreshold:-90];
-		[_locationManager setBeaconRegion:[[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:kUUID] identifier:@"regionIdentifier"]];
-		_locationManager.delegate = self;
+    if (!self.locationManager) {
+		self.locationManager = [[TYLocationManager alloc] initWithBuilding:kBuildingId appKey:kAppKey];
+        NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:kUUID];
+        CLBeaconRegion *region = [[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:@"id"];
+		[self.locationManager setBeaconRegion:region];
+		self.locationManager.delegate = self;
 	}
-	[_locationManager startUpdateLocation];
+	[self.locationManager startUpdateLocation];
 }
 
-#pragma mark - **************** 定位回调
-/**
- *  位置更新事件回调，位置更新并返回新的位置结果。
- *  与[TYLocationManager:didUpdateImmediationLocation:]方法相近，此方法回调结果融合计步器信息，稳定性较好，适合用于步行场景下。
- *
- *  @param manager     定位引擎实例
- *  @param newLocation 新的位置结果
- */
 - (void)TYLocationManager:(TYLocationManager *)manager didUpdateLocation:(TYLocalPoint *)newLocation {
-	NSLog(@"您的位置：%@",newLocation);
-
+    NSLog(@"您的位置：%@",newLocation);
     //平滑显示定位点
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
     if(currentLocation)lastLocation = currentLocation;
@@ -140,7 +115,7 @@
  *
  *  @param manager 定位引擎实例
  */
-- (void)TYLocationManagerdidFailUpdateLocation:(TYLocationManager *)manager {
+- (void)TYLocationManager:(TYLocationManager *)manager didFailUpdateLocation:(NSError *)error {
 	NSLog(@"定位失败");
 }
 

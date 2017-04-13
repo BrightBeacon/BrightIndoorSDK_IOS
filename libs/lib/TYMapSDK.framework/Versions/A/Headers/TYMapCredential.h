@@ -8,13 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+#define kDefaultLicense @"00000000000000000000000000000000"
+
 @interface TYMapCredential : NSObject
 
-@property (nonatomic, strong, readonly) NSString *userID;
+@property (nonatomic, strong, readonly) NSString *appKey;
 @property (nonatomic, strong, readonly) NSString *buildingID;
 @property (nonatomic, strong, readonly) NSString *license;
 
-+ (TYMapCredential *)credentialWithUserID:(NSString *)uid BuildingID:(NSString *)bid License:(NSString *)l;
++ (TYMapCredential *)credentialWithAppKey:(NSString *)aKey BuildingID:(NSString *)bid License:(NSString *)license;
 - (NSDictionary *)buildDictionary;
-
+- (void)resetLicense;
+      
 @end
