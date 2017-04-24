@@ -1,5 +1,5 @@
 {
-  "name": "geos-libc++",
+  "name": "geos",
   "version": "3.5.0",
   "summary": "GEOS (Geometry Engine - Open Source) is a C++ port of the Java Topology Suite (JTS).",
   "homepage": "http://trac.osgeo.org/geos/",

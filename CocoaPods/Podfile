@@ -1,0 +1,21 @@
+platform :ios, '7.0'
+
+target '工程target' do
+
+pod 'BrightIndoorSDK', '1.1.0'
+pod 'geos', :podspec => 'geos.podspec.json'
+
+end
+
+#如不使用指定geos.podspec.json，请添加pod 'geos', "3.5.0"，并打开以下注释
+#post_install do |installer|
+#    installer.pods_project.targets.each do |target|
+#        puts "JUST PRINT:#{target.name}"
+#        target.build_configurations.each do |config|
+#            if target.name == "geos"
+#                config.build_settings['CLANG_CXX_LIBRARY'] = 'libc++'
+#                config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '7.0'
+#            end
+#        end
+#    end
+#end
