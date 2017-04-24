@@ -157,9 +157,9 @@ typedef enum {
 /**
  设置目标楼层
 
- @param floor 楼层 -1 0 1
+ @param floorName 楼层 -1,1或B1,F1
  */
-- (void)setFloor:(int)floor;
+- (void)setFloor:(NSString *)floorName;
 /**
  *  设置定位点符号，用于标识定位结果
  *

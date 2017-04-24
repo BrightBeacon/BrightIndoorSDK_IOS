@@ -1,0 +1,1798 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		58E19AFE1EA6FB4100AE8A10 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58E19AFD1EA6FB4100AE8A10 /* Foundation.framework */; };
+		58E1A8971EA7004400AE8A10 /* geos_svn_revision.h in Headers */ = {isa = PBXBuildFile; fileRef = 58E1A7461EA7004300AE8A10 /* geos_svn_revision.h */; };
+		58E1A8981EA7004400AE8A10 /* Angle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7491EA7004300AE8A10 /* Angle.cpp */; };
+		58E1A8991EA7004400AE8A10 /* BoundaryNodeRule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A74A1EA7004300AE8A10 /* BoundaryNodeRule.cpp */; };
+		58E1A89A1EA7004400AE8A10 /* Centroid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A74B1EA7004300AE8A10 /* Centroid.cpp */; };
+		58E1A89B1EA7004400AE8A10 /* CentroidArea.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A74C1EA7004300AE8A10 /* CentroidArea.cpp */; };
+		58E1A89C1EA7004400AE8A10 /* CentroidLine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A74D1EA7004300AE8A10 /* CentroidLine.cpp */; };
+		58E1A89D1EA7004400AE8A10 /* CentroidPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A74E1EA7004300AE8A10 /* CentroidPoint.cpp */; };
+		58E1A89E1EA7004400AE8A10 /* CGAlgorithms.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A74F1EA7004300AE8A10 /* CGAlgorithms.cpp */; };
+		58E1A89F1EA7004400AE8A10 /* ConvexHull.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7501EA7004300AE8A10 /* ConvexHull.cpp */; };
+		58E1A8A01EA7004400AE8A10 /* DiscreteHausdorffDistance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7521EA7004300AE8A10 /* DiscreteHausdorffDistance.cpp */; };
+		58E1A8A11EA7004400AE8A10 /* DistanceToPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7531EA7004300AE8A10 /* DistanceToPoint.cpp */; };
+		58E1A8A21EA7004400AE8A10 /* HCoordinate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7541EA7004300AE8A10 /* HCoordinate.cpp */; };
+		58E1A8A31EA7004400AE8A10 /* InteriorPointArea.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7551EA7004300AE8A10 /* InteriorPointArea.cpp */; };
+		58E1A8A41EA7004400AE8A10 /* InteriorPointLine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7561EA7004300AE8A10 /* InteriorPointLine.cpp */; };
+		58E1A8A51EA7004400AE8A10 /* InteriorPointPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7571EA7004300AE8A10 /* InteriorPointPoint.cpp */; };
+		58E1A8A61EA7004400AE8A10 /* LineIntersector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7581EA7004300AE8A10 /* LineIntersector.cpp */; };
+		58E1A8A71EA7004400AE8A10 /* IndexedPointInAreaLocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A75A1EA7004300AE8A10 /* IndexedPointInAreaLocator.cpp */; };
+		58E1A8A81EA7004400AE8A10 /* PointOnGeometryLocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A75B1EA7004300AE8A10 /* PointOnGeometryLocator.cpp */; };
+		58E1A8A91EA7004400AE8A10 /* SimplePointInAreaLocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A75C1EA7004300AE8A10 /* SimplePointInAreaLocator.cpp */; };
+		58E1A8AA1EA7004400AE8A10 /* MCPointInRing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A75D1EA7004300AE8A10 /* MCPointInRing.cpp */; };
+		58E1A8AB1EA7004400AE8A10 /* MinimumDiameter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A75E1EA7004300AE8A10 /* MinimumDiameter.cpp */; };
+		58E1A8AC1EA7004400AE8A10 /* NotRepresentableException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A75F1EA7004300AE8A10 /* NotRepresentableException.cpp */; };
+		58E1A8AD1EA7004400AE8A10 /* PointLocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7601EA7004300AE8A10 /* PointLocator.cpp */; };
+		58E1A8AE1EA7004400AE8A10 /* RayCrossingCounter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7611EA7004300AE8A10 /* RayCrossingCounter.cpp */; };
+		58E1A8AF1EA7004400AE8A10 /* RobustDeterminant.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7621EA7004300AE8A10 /* RobustDeterminant.cpp */; };
+		58E1A8B01EA7004400AE8A10 /* SimplePointInRing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7631EA7004300AE8A10 /* SimplePointInRing.cpp */; };
+		58E1A8B11EA7004400AE8A10 /* SIRtreePointInRing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7641EA7004300AE8A10 /* SIRtreePointInRing.cpp */; };
+		58E1A8B21EA7004400AE8A10 /* Coordinate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7661EA7004300AE8A10 /* Coordinate.cpp */; };
+		58E1A8B31EA7004400AE8A10 /* CoordinateArraySequence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7671EA7004300AE8A10 /* CoordinateArraySequence.cpp */; };
+		58E1A8B41EA7004400AE8A10 /* CoordinateArraySequenceFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7681EA7004300AE8A10 /* CoordinateArraySequenceFactory.cpp */; };
+		58E1A8B51EA7004400AE8A10 /* CoordinateSequence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7691EA7004300AE8A10 /* CoordinateSequence.cpp */; };
+		58E1A8B61EA7004400AE8A10 /* CoordinateSequenceFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A76A1EA7004300AE8A10 /* CoordinateSequenceFactory.cpp */; };
+		58E1A8B71EA7004400AE8A10 /* Dimension.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A76B1EA7004300AE8A10 /* Dimension.cpp */; };
+		58E1A8B81EA7004400AE8A10 /* Envelope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A76C1EA7004300AE8A10 /* Envelope.cpp */; };
+		58E1A8B91EA7004400AE8A10 /* Geometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A76D1EA7004300AE8A10 /* Geometry.cpp */; };
+		58E1A8BA1EA7004400AE8A10 /* GeometryCollection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A76E1EA7004300AE8A10 /* GeometryCollection.cpp */; };
+		58E1A8BB1EA7004400AE8A10 /* GeometryComponentFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A76F1EA7004300AE8A10 /* GeometryComponentFilter.cpp */; };
+		58E1A8BC1EA7004400AE8A10 /* GeometryFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7701EA7004300AE8A10 /* GeometryFactory.cpp */; };
+		58E1A8BD1EA7004400AE8A10 /* GeometryList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7711EA7004300AE8A10 /* GeometryList.cpp */; };
+		58E1A8BE1EA7004400AE8A10 /* IntersectionMatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7721EA7004300AE8A10 /* IntersectionMatrix.cpp */; };
+		58E1A8BF1EA7004400AE8A10 /* LinearRing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7731EA7004300AE8A10 /* LinearRing.cpp */; };
+		58E1A8C01EA7004400AE8A10 /* LineSegment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7741EA7004300AE8A10 /* LineSegment.cpp */; };
+		58E1A8C11EA7004400AE8A10 /* LineString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7751EA7004300AE8A10 /* LineString.cpp */; };
+		58E1A8C21EA7004400AE8A10 /* Location.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7761EA7004300AE8A10 /* Location.cpp */; };
+		58E1A8C31EA7004400AE8A10 /* MultiLineString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7771EA7004300AE8A10 /* MultiLineString.cpp */; };
+		58E1A8C41EA7004400AE8A10 /* MultiPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7781EA7004300AE8A10 /* MultiPoint.cpp */; };
+		58E1A8C51EA7004400AE8A10 /* MultiPolygon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7791EA7004300AE8A10 /* MultiPolygon.cpp */; };
+		58E1A8C61EA7004400AE8A10 /* Point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A77A1EA7004300AE8A10 /* Point.cpp */; };
+		58E1A8C71EA7004400AE8A10 /* Polygon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A77B1EA7004300AE8A10 /* Polygon.cpp */; };
+		58E1A8C81EA7004400AE8A10 /* PrecisionModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A77C1EA7004300AE8A10 /* PrecisionModel.cpp */; };
+		58E1A8C91EA7004400AE8A10 /* AbstractPreparedPolygonContains.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A77E1EA7004300AE8A10 /* AbstractPreparedPolygonContains.cpp */; };
+		58E1A8CA1EA7004400AE8A10 /* BasicPreparedGeometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A77F1EA7004300AE8A10 /* BasicPreparedGeometry.cpp */; };
+		58E1A8CB1EA7004400AE8A10 /* PreparedGeometry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7801EA7004300AE8A10 /* PreparedGeometry.cpp */; };
+		58E1A8CC1EA7004400AE8A10 /* PreparedGeometryFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7811EA7004300AE8A10 /* PreparedGeometryFactory.cpp */; };
+		58E1A8CD1EA7004400AE8A10 /* PreparedLineString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7821EA7004300AE8A10 /* PreparedLineString.cpp */; };
+		58E1A8CE1EA7004400AE8A10 /* PreparedLineStringIntersects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7831EA7004300AE8A10 /* PreparedLineStringIntersects.cpp */; };
+		58E1A8CF1EA7004400AE8A10 /* PreparedPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7841EA7004300AE8A10 /* PreparedPoint.cpp */; };
+		58E1A8D01EA7004400AE8A10 /* PreparedPolygon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7851EA7004300AE8A10 /* PreparedPolygon.cpp */; };
+		58E1A8D11EA7004400AE8A10 /* PreparedPolygonContains.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7861EA7004300AE8A10 /* PreparedPolygonContains.cpp */; };
+		58E1A8D21EA7004400AE8A10 /* PreparedPolygonContainsProperly.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7871EA7004300AE8A10 /* PreparedPolygonContainsProperly.cpp */; };
+		58E1A8D31EA7004400AE8A10 /* PreparedPolygonCovers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7881EA7004300AE8A10 /* PreparedPolygonCovers.cpp */; };
+		58E1A8D41EA7004400AE8A10 /* PreparedPolygonIntersects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7891EA7004300AE8A10 /* PreparedPolygonIntersects.cpp */; };
+		58E1A8D51EA7004400AE8A10 /* PreparedPolygonPredicate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A78A1EA7004300AE8A10 /* PreparedPolygonPredicate.cpp */; };
+		58E1A8D61EA7004400AE8A10 /* Triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A78B1EA7004300AE8A10 /* Triangle.cpp */; };
+		58E1A8D71EA7004400AE8A10 /* ComponentCoordinateExtracter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A78D1EA7004300AE8A10 /* ComponentCoordinateExtracter.cpp */; };
+		58E1A8D81EA7004400AE8A10 /* CoordinateOperation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A78E1EA7004300AE8A10 /* CoordinateOperation.cpp */; };
+		58E1A8D91EA7004400AE8A10 /* GeometryCombiner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A78F1EA7004300AE8A10 /* GeometryCombiner.cpp */; };
+		58E1A8DA1EA7004400AE8A10 /* GeometryEditor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7901EA7004300AE8A10 /* GeometryEditor.cpp */; };
+		58E1A8DB1EA7004400AE8A10 /* GeometryTransformer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7911EA7004300AE8A10 /* GeometryTransformer.cpp */; };
+		58E1A8DC1EA7004400AE8A10 /* LinearComponentExtracter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7921EA7004300AE8A10 /* LinearComponentExtracter.cpp */; };
+		58E1A8DD1EA7004400AE8A10 /* PointExtracter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7931EA7004300AE8A10 /* PointExtracter.cpp */; };
+		58E1A8DE1EA7004400AE8A10 /* PolygonExtracter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7941EA7004300AE8A10 /* PolygonExtracter.cpp */; };
+		58E1A8DF1EA7004400AE8A10 /* ShortCircuitedGeometryVisitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7951EA7004300AE8A10 /* ShortCircuitedGeometryVisitor.cpp */; };
+		58E1A8E01EA7004400AE8A10 /* SineStarFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7961EA7004300AE8A10 /* SineStarFactory.cpp */; };
+		58E1A8E11EA7004400AE8A10 /* Depth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7981EA7004300AE8A10 /* Depth.cpp */; };
+		58E1A8E21EA7004400AE8A10 /* DirectedEdge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7991EA7004300AE8A10 /* DirectedEdge.cpp */; };
+		58E1A8E31EA7004400AE8A10 /* DirectedEdgeStar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A79A1EA7004300AE8A10 /* DirectedEdgeStar.cpp */; };
+		58E1A8E41EA7004400AE8A10 /* Edge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A79B1EA7004300AE8A10 /* Edge.cpp */; };
+		58E1A8E51EA7004400AE8A10 /* EdgeEnd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A79C1EA7004300AE8A10 /* EdgeEnd.cpp */; };
+		58E1A8E61EA7004400AE8A10 /* EdgeEndStar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A79D1EA7004300AE8A10 /* EdgeEndStar.cpp */; };
+		58E1A8E71EA7004400AE8A10 /* EdgeIntersectionList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A79E1EA7004300AE8A10 /* EdgeIntersectionList.cpp */; };
+		58E1A8E81EA7004400AE8A10 /* EdgeList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A79F1EA7004300AE8A10 /* EdgeList.cpp */; };
+		58E1A8E91EA7004400AE8A10 /* EdgeNodingValidator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7A01EA7004300AE8A10 /* EdgeNodingValidator.cpp */; };
+		58E1A8EA1EA7004400AE8A10 /* EdgeRing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7A11EA7004300AE8A10 /* EdgeRing.cpp */; };
+		58E1A8EB1EA7004400AE8A10 /* GeometryGraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7A21EA7004300AE8A10 /* GeometryGraph.cpp */; };
+		58E1A8EC1EA7004400AE8A10 /* GraphComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7A31EA7004300AE8A10 /* GraphComponent.cpp */; };
+		58E1A8ED1EA7004400AE8A10 /* MonotoneChainEdge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7A51EA7004300AE8A10 /* MonotoneChainEdge.cpp */; };
+		58E1A8EE1EA7004400AE8A10 /* MonotoneChainIndexer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7A61EA7004300AE8A10 /* MonotoneChainIndexer.cpp */; };
+		58E1A8EF1EA7004400AE8A10 /* SegmentIntersector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7A71EA7004300AE8A10 /* SegmentIntersector.cpp */; };
+		58E1A8F01EA7004400AE8A10 /* SimpleEdgeSetIntersector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7A81EA7004300AE8A10 /* SimpleEdgeSetIntersector.cpp */; };
+		58E1A8F11EA7004400AE8A10 /* SimpleMCSweepLineIntersector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7A91EA7004300AE8A10 /* SimpleMCSweepLineIntersector.cpp */; };
+		58E1A8F21EA7004400AE8A10 /* SimpleSweepLineIntersector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7AA1EA7004300AE8A10 /* SimpleSweepLineIntersector.cpp */; };
+		58E1A8F31EA7004400AE8A10 /* SweepLineEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7AB1EA7004300AE8A10 /* SweepLineEvent.cpp */; };
+		58E1A8F41EA7004400AE8A10 /* SweepLineSegment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7AC1EA7004300AE8A10 /* SweepLineSegment.cpp */; };
+		58E1A8F51EA7004400AE8A10 /* Label.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7AD1EA7004300AE8A10 /* Label.cpp */; };
+		58E1A8F61EA7004400AE8A10 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7AE1EA7004300AE8A10 /* Node.cpp */; };
+		58E1A8F71EA7004400AE8A10 /* NodeFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7AF1EA7004300AE8A10 /* NodeFactory.cpp */; };
+		58E1A8F81EA7004400AE8A10 /* NodeMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7B01EA7004300AE8A10 /* NodeMap.cpp */; };
+		58E1A8F91EA7004400AE8A10 /* PlanarGraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7B11EA7004300AE8A10 /* PlanarGraph.cpp */; };
+		58E1A8FA1EA7004400AE8A10 /* Position.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7B21EA7004300AE8A10 /* Position.cpp */; };
+		58E1A8FB1EA7004400AE8A10 /* Quadrant.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7B31EA7004300AE8A10 /* Quadrant.cpp */; };
+		58E1A8FC1EA7004400AE8A10 /* TopologyLocation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7B41EA7004300AE8A10 /* TopologyLocation.cpp */; };
+		58E1A8FD1EA7004400AE8A10 /* Bintree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7B71EA7004300AE8A10 /* Bintree.cpp */; };
+		58E1A8FE1EA7004400AE8A10 /* Interval.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7B81EA7004300AE8A10 /* Interval.cpp */; };
+		58E1A8FF1EA7004400AE8A10 /* Key.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7B91EA7004300AE8A10 /* Key.cpp */; };
+		58E1A9001EA7004400AE8A10 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7BA1EA7004300AE8A10 /* Node.cpp */; };
+		58E1A9011EA7004400AE8A10 /* NodeBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7BB1EA7004300AE8A10 /* NodeBase.cpp */; };
+		58E1A9021EA7004400AE8A10 /* Root.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7BC1EA7004300AE8A10 /* Root.cpp */; };
+		58E1A9031EA7004400AE8A10 /* MonotoneChain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7BE1EA7004300AE8A10 /* MonotoneChain.cpp */; };
+		58E1A9041EA7004400AE8A10 /* MonotoneChainBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7BF1EA7004300AE8A10 /* MonotoneChainBuilder.cpp */; };
+		58E1A9051EA7004400AE8A10 /* MonotoneChainOverlapAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7C01EA7004300AE8A10 /* MonotoneChainOverlapAction.cpp */; };
+		58E1A9061EA7004400AE8A10 /* MonotoneChainSelectAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7C11EA7004300AE8A10 /* MonotoneChainSelectAction.cpp */; };
+		58E1A9071EA7004400AE8A10 /* IntervalRTreeBranchNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7C31EA7004300AE8A10 /* IntervalRTreeBranchNode.cpp */; };
+		58E1A9081EA7004400AE8A10 /* IntervalRTreeLeafNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7C41EA7004300AE8A10 /* IntervalRTreeLeafNode.cpp */; };
+		58E1A9091EA7004400AE8A10 /* IntervalRTreeNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7C51EA7004300AE8A10 /* IntervalRTreeNode.cpp */; };
+		58E1A90A1EA7004400AE8A10 /* SortedPackedIntervalRTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7C61EA7004300AE8A10 /* SortedPackedIntervalRTree.cpp */; };
+		58E1A90B1EA7004400AE8A10 /* DoubleBits.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7C81EA7004300AE8A10 /* DoubleBits.cpp */; };
+		58E1A90C1EA7004400AE8A10 /* IntervalSize.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7C91EA7004300AE8A10 /* IntervalSize.cpp */; };
+		58E1A90D1EA7004400AE8A10 /* Key.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7CA1EA7004300AE8A10 /* Key.cpp */; };
+		58E1A90E1EA7004400AE8A10 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7CB1EA7004300AE8A10 /* Node.cpp */; };
+		58E1A90F1EA7004400AE8A10 /* NodeBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7CC1EA7004300AE8A10 /* NodeBase.cpp */; };
+		58E1A9101EA7004400AE8A10 /* Quadtree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7CD1EA7004300AE8A10 /* Quadtree.cpp */; };
+		58E1A9111EA7004400AE8A10 /* Root.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7CE1EA7004300AE8A10 /* Root.cpp */; };
+		58E1A9121EA7004400AE8A10 /* AbstractNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7D01EA7004300AE8A10 /* AbstractNode.cpp */; };
+		58E1A9131EA7004400AE8A10 /* AbstractSTRtree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7D11EA7004300AE8A10 /* AbstractSTRtree.cpp */; };
+		58E1A9141EA7004400AE8A10 /* Interval.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7D21EA7004300AE8A10 /* Interval.cpp */; };
+		58E1A9151EA7004400AE8A10 /* ItemBoundable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7D31EA7004300AE8A10 /* ItemBoundable.cpp */; };
+		58E1A9161EA7004400AE8A10 /* SIRtree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7D41EA7004300AE8A10 /* SIRtree.cpp */; };
+		58E1A9171EA7004400AE8A10 /* STRtree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7D51EA7004300AE8A10 /* STRtree.cpp */; };
+		58E1A9181EA7004400AE8A10 /* SweepLineEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7D71EA7004300AE8A10 /* SweepLineEvent.cpp */; };
+		58E1A9191EA7004400AE8A10 /* SweepLineIndex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7D81EA7004300AE8A10 /* SweepLineIndex.cpp */; };
+		58E1A91A1EA7004400AE8A10 /* SweepLineInterval.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7D91EA7004300AE8A10 /* SweepLineInterval.cpp */; };
+		58E1A91B1EA7004400AE8A10 /* inlines.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7DA1EA7004300AE8A10 /* inlines.cpp */; };
+		58E1A91C1EA7004400AE8A10 /* ByteOrderDataInStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7DC1EA7004300AE8A10 /* ByteOrderDataInStream.cpp */; };
+		58E1A91D1EA7004400AE8A10 /* ByteOrderValues.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7DD1EA7004300AE8A10 /* ByteOrderValues.cpp */; };
+		58E1A91E1EA7004400AE8A10 /* CLocalizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7DE1EA7004300AE8A10 /* CLocalizer.cpp */; };
+		58E1A91F1EA7004400AE8A10 /* ParseException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7DF1EA7004300AE8A10 /* ParseException.cpp */; };
+		58E1A9201EA7004400AE8A10 /* StringTokenizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7E01EA7004300AE8A10 /* StringTokenizer.cpp */; };
+		58E1A9211EA7004400AE8A10 /* Unload.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7E11EA7004300AE8A10 /* Unload.cpp */; };
+		58E1A9221EA7004400AE8A10 /* WKBReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7E21EA7004300AE8A10 /* WKBReader.cpp */; };
+		58E1A9231EA7004400AE8A10 /* WKBWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7E31EA7004300AE8A10 /* WKBWriter.cpp */; };
+		58E1A9241EA7004400AE8A10 /* WKTReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7E41EA7004300AE8A10 /* WKTReader.cpp */; };
+		58E1A9251EA7004400AE8A10 /* WKTWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7E51EA7004300AE8A10 /* WKTWriter.cpp */; };
+		58E1A9261EA7004400AE8A10 /* Writer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7E61EA7004300AE8A10 /* Writer.cpp */; };
+		58E1A9271EA7004400AE8A10 /* ExtractLineByLocation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7E81EA7004300AE8A10 /* ExtractLineByLocation.cpp */; };
+		58E1A9281EA7004400AE8A10 /* LengthIndexedLine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7E91EA7004300AE8A10 /* LengthIndexedLine.cpp */; };
+		58E1A9291EA7004400AE8A10 /* LengthIndexOfPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7EA1EA7004300AE8A10 /* LengthIndexOfPoint.cpp */; };
+		58E1A92A1EA7004400AE8A10 /* LengthLocationMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7EB1EA7004300AE8A10 /* LengthLocationMap.cpp */; };
+		58E1A92B1EA7004400AE8A10 /* LinearGeometryBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7EC1EA7004300AE8A10 /* LinearGeometryBuilder.cpp */; };
+		58E1A92C1EA7004400AE8A10 /* LinearIterator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7ED1EA7004300AE8A10 /* LinearIterator.cpp */; };
+		58E1A92D1EA7004400AE8A10 /* LinearLocation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7EE1EA7004300AE8A10 /* LinearLocation.cpp */; };
+		58E1A92E1EA7004400AE8A10 /* LocationIndexOfLine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7EF1EA7004300AE8A10 /* LocationIndexOfLine.cpp */; };
+		58E1A92F1EA7004400AE8A10 /* LocationIndexOfPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7F01EA7004300AE8A10 /* LocationIndexOfPoint.cpp */; };
+		58E1A9301EA7004400AE8A10 /* BasicSegmentString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7F21EA7004300AE8A10 /* BasicSegmentString.cpp */; };
+		58E1A9311EA7004400AE8A10 /* FastNodingValidator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7F31EA7004300AE8A10 /* FastNodingValidator.cpp */; };
+		58E1A9321EA7004400AE8A10 /* FastSegmentSetIntersectionFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7F41EA7004300AE8A10 /* FastSegmentSetIntersectionFinder.cpp */; };
+		58E1A9331EA7004400AE8A10 /* GeometryNoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7F51EA7004300AE8A10 /* GeometryNoder.cpp */; };
+		58E1A9341EA7004400AE8A10 /* IntersectionAdder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7F61EA7004300AE8A10 /* IntersectionAdder.cpp */; };
+		58E1A9351EA7004400AE8A10 /* IntersectionFinderAdder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7F71EA7004300AE8A10 /* IntersectionFinderAdder.cpp */; };
+		58E1A9361EA7004400AE8A10 /* IteratedNoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7F81EA7004300AE8A10 /* IteratedNoder.cpp */; };
+		58E1A9371EA7004400AE8A10 /* MCIndexNoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7F91EA7004300AE8A10 /* MCIndexNoder.cpp */; };
+		58E1A9381EA7004400AE8A10 /* MCIndexSegmentSetMutualIntersector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7FA1EA7004300AE8A10 /* MCIndexSegmentSetMutualIntersector.cpp */; };
+		58E1A9391EA7004400AE8A10 /* NodedSegmentString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7FB1EA7004300AE8A10 /* NodedSegmentString.cpp */; };
+		58E1A93A1EA7004400AE8A10 /* NodingValidator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7FC1EA7004300AE8A10 /* NodingValidator.cpp */; };
+		58E1A93B1EA7004400AE8A10 /* Octant.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7FD1EA7004300AE8A10 /* Octant.cpp */; };
+		58E1A93C1EA7004400AE8A10 /* OrientedCoordinateArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7FE1EA7004300AE8A10 /* OrientedCoordinateArray.cpp */; };
+		58E1A93D1EA7004400AE8A10 /* ScaledNoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A7FF1EA7004300AE8A10 /* ScaledNoder.cpp */; };
+		58E1A93E1EA7004400AE8A10 /* SegmentIntersectionDetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8001EA7004300AE8A10 /* SegmentIntersectionDetector.cpp */; };
+		58E1A93F1EA7004400AE8A10 /* SegmentNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8011EA7004300AE8A10 /* SegmentNode.cpp */; };
+		58E1A9401EA7004400AE8A10 /* SegmentNodeList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8021EA7004300AE8A10 /* SegmentNodeList.cpp */; };
+		58E1A9411EA7004400AE8A10 /* SegmentString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8031EA7004300AE8A10 /* SegmentString.cpp */; };
+		58E1A9421EA7004400AE8A10 /* SegmentStringUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8041EA7004300AE8A10 /* SegmentStringUtil.cpp */; };
+		58E1A9431EA7004400AE8A10 /* SimpleNoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8051EA7004300AE8A10 /* SimpleNoder.cpp */; };
+		58E1A9441EA7004400AE8A10 /* SingleInteriorIntersectionFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8061EA7004300AE8A10 /* SingleInteriorIntersectionFinder.cpp */; };
+		58E1A9451EA7004400AE8A10 /* HotPixel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8081EA7004300AE8A10 /* HotPixel.cpp */; };
+		58E1A9461EA7004400AE8A10 /* MCIndexPointSnapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8091EA7004300AE8A10 /* MCIndexPointSnapper.cpp */; };
+		58E1A9471EA7004400AE8A10 /* MCIndexSnapRounder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A80A1EA7004300AE8A10 /* MCIndexSnapRounder.cpp */; };
+		58E1A9481EA7004400AE8A10 /* SimpleSnapRounder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A80B1EA7004300AE8A10 /* SimpleSnapRounder.cpp */; };
+		58E1A9491EA7004400AE8A10 /* BufferBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A80E1EA7004300AE8A10 /* BufferBuilder.cpp */; };
+		58E1A94A1EA7004400AE8A10 /* BufferInputLineSimplifier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A80F1EA7004300AE8A10 /* BufferInputLineSimplifier.cpp */; };
+		58E1A94B1EA7004400AE8A10 /* BufferOp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8101EA7004300AE8A10 /* BufferOp.cpp */; };
+		58E1A94C1EA7004400AE8A10 /* BufferParameters.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8111EA7004300AE8A10 /* BufferParameters.cpp */; };
+		58E1A94D1EA7004400AE8A10 /* BufferSubgraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8121EA7004300AE8A10 /* BufferSubgraph.cpp */; };
+		58E1A94E1EA7004400AE8A10 /* OffsetCurveBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8131EA7004300AE8A10 /* OffsetCurveBuilder.cpp */; };
+		58E1A94F1EA7004400AE8A10 /* OffsetCurveSetBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8141EA7004300AE8A10 /* OffsetCurveSetBuilder.cpp */; };
+		58E1A9501EA7004400AE8A10 /* OffsetSegmentGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8151EA7004300AE8A10 /* OffsetSegmentGenerator.cpp */; };
+		58E1A9511EA7004400AE8A10 /* RightmostEdgeFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8161EA7004300AE8A10 /* RightmostEdgeFinder.cpp */; };
+		58E1A9521EA7004400AE8A10 /* SubgraphDepthLocater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8171EA7004300AE8A10 /* SubgraphDepthLocater.cpp */; };
+		58E1A9531EA7004400AE8A10 /* ConnectedElementLocationFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8191EA7004300AE8A10 /* ConnectedElementLocationFilter.cpp */; };
+		58E1A9541EA7004400AE8A10 /* ConnectedElementPointFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A81A1EA7004300AE8A10 /* ConnectedElementPointFilter.cpp */; };
+		58E1A9551EA7004400AE8A10 /* DistanceOp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A81B1EA7004300AE8A10 /* DistanceOp.cpp */; };
+		58E1A9561EA7004400AE8A10 /* GeometryLocation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A81C1EA7004300AE8A10 /* GeometryLocation.cpp */; };
+		58E1A9571EA7004400AE8A10 /* GeometryGraphOperation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A81D1EA7004300AE8A10 /* GeometryGraphOperation.cpp */; };
+		58E1A9581EA7004400AE8A10 /* Rectangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A81F1EA7004300AE8A10 /* Rectangle.cpp */; };
+		58E1A9591EA7004400AE8A10 /* RectangleIntersection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8201EA7004300AE8A10 /* RectangleIntersection.cpp */; };
+		58E1A95A1EA7004400AE8A10 /* RectangleIntersectionBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8211EA7004300AE8A10 /* RectangleIntersectionBuilder.cpp */; };
+		58E1A95B1EA7004400AE8A10 /* IsSimpleOp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8221EA7004300AE8A10 /* IsSimpleOp.cpp */; };
+		58E1A95C1EA7004400AE8A10 /* EdgeString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8241EA7004300AE8A10 /* EdgeString.cpp */; };
+		58E1A95D1EA7004400AE8A10 /* LineMergeDirectedEdge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8251EA7004300AE8A10 /* LineMergeDirectedEdge.cpp */; };
+		58E1A95E1EA7004400AE8A10 /* LineMergeEdge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8261EA7004300AE8A10 /* LineMergeEdge.cpp */; };
+		58E1A95F1EA7004400AE8A10 /* LineMergeGraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8271EA7004300AE8A10 /* LineMergeGraph.cpp */; };
+		58E1A9601EA7004400AE8A10 /* LineMerger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8281EA7004300AE8A10 /* LineMerger.cpp */; };
+		58E1A9611EA7004400AE8A10 /* LineSequencer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8291EA7004300AE8A10 /* LineSequencer.cpp */; };
+		58E1A9621EA7004400AE8A10 /* EdgeSetNoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A82B1EA7004300AE8A10 /* EdgeSetNoder.cpp */; };
+		58E1A9631EA7004400AE8A10 /* ElevationMatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A82C1EA7004300AE8A10 /* ElevationMatrix.cpp */; };
+		58E1A9641EA7004400AE8A10 /* ElevationMatrixCell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A82D1EA7004300AE8A10 /* ElevationMatrixCell.cpp */; };
+		58E1A9651EA7004400AE8A10 /* LineBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A82E1EA7004300AE8A10 /* LineBuilder.cpp */; };
+		58E1A9661EA7004400AE8A10 /* MaximalEdgeRing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A82F1EA7004300AE8A10 /* MaximalEdgeRing.cpp */; };
+		58E1A9671EA7004400AE8A10 /* MinimalEdgeRing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8301EA7004300AE8A10 /* MinimalEdgeRing.cpp */; };
+		58E1A9681EA7004400AE8A10 /* OverlayNodeFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8311EA7004300AE8A10 /* OverlayNodeFactory.cpp */; };
+		58E1A9691EA7004400AE8A10 /* OverlayOp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8321EA7004300AE8A10 /* OverlayOp.cpp */; };
+		58E1A96A1EA7004400AE8A10 /* PointBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8331EA7004300AE8A10 /* PointBuilder.cpp */; };
+		58E1A96B1EA7004400AE8A10 /* PolygonBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8341EA7004300AE8A10 /* PolygonBuilder.cpp */; };
+		58E1A96C1EA7004400AE8A10 /* GeometrySnapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8361EA7004300AE8A10 /* GeometrySnapper.cpp */; };
+		58E1A96D1EA7004400AE8A10 /* LineStringSnapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8371EA7004300AE8A10 /* LineStringSnapper.cpp */; };
+		58E1A96E1EA7004400AE8A10 /* SnapIfNeededOverlayOp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8381EA7004300AE8A10 /* SnapIfNeededOverlayOp.cpp */; };
+		58E1A96F1EA7004400AE8A10 /* SnapOverlayOp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8391EA7004300AE8A10 /* SnapOverlayOp.cpp */; };
+		58E1A9701EA7004400AE8A10 /* FuzzyPointLocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A83B1EA7004300AE8A10 /* FuzzyPointLocator.cpp */; };
+		58E1A9711EA7004400AE8A10 /* OffsetPointGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A83C1EA7004300AE8A10 /* OffsetPointGenerator.cpp */; };
+		58E1A9721EA7004400AE8A10 /* OverlayResultValidator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A83D1EA7004300AE8A10 /* OverlayResultValidator.cpp */; };
+		58E1A9731EA7004400AE8A10 /* EdgeRing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A83F1EA7004300AE8A10 /* EdgeRing.cpp */; };
+		58E1A9741EA7004400AE8A10 /* PolygonizeDirectedEdge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8401EA7004300AE8A10 /* PolygonizeDirectedEdge.cpp */; };
+		58E1A9751EA7004400AE8A10 /* PolygonizeEdge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8411EA7004300AE8A10 /* PolygonizeEdge.cpp */; };
+		58E1A9761EA7004400AE8A10 /* PolygonizeGraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8421EA7004300AE8A10 /* PolygonizeGraph.cpp */; };
+		58E1A9771EA7004400AE8A10 /* Polygonizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8431EA7004300AE8A10 /* Polygonizer.cpp */; };
+		58E1A9781EA7004400AE8A10 /* RectangleContains.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8451EA7004300AE8A10 /* RectangleContains.cpp */; };
+		58E1A9791EA7004400AE8A10 /* RectangleIntersects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8461EA7004300AE8A10 /* RectangleIntersects.cpp */; };
+		58E1A97A1EA7004400AE8A10 /* SegmentIntersectionTester.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8471EA7004300AE8A10 /* SegmentIntersectionTester.cpp */; };
+		58E1A97B1EA7004400AE8A10 /* EdgeEndBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8491EA7004300AE8A10 /* EdgeEndBuilder.cpp */; };
+		58E1A97C1EA7004400AE8A10 /* EdgeEndBundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A84A1EA7004300AE8A10 /* EdgeEndBundle.cpp */; };
+		58E1A97D1EA7004400AE8A10 /* EdgeEndBundleStar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A84B1EA7004300AE8A10 /* EdgeEndBundleStar.cpp */; };
+		58E1A97E1EA7004400AE8A10 /* RelateComputer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A84C1EA7004300AE8A10 /* RelateComputer.cpp */; };
+		58E1A97F1EA7004400AE8A10 /* RelateNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A84D1EA7004300AE8A10 /* RelateNode.cpp */; };
+		58E1A9801EA7004400AE8A10 /* RelateNodeFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A84E1EA7004300AE8A10 /* RelateNodeFactory.cpp */; };
+		58E1A9811EA7004400AE8A10 /* RelateNodeGraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A84F1EA7004300AE8A10 /* RelateNodeGraph.cpp */; };
+		58E1A9821EA7004400AE8A10 /* RelateOp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8501EA7004300AE8A10 /* RelateOp.cpp */; };
+		58E1A9831EA7004400AE8A10 /* SharedPathsOp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8521EA7004300AE8A10 /* SharedPathsOp.cpp */; };
+		58E1A9841EA7004400AE8A10 /* CascadedPolygonUnion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8541EA7004300AE8A10 /* CascadedPolygonUnion.cpp */; };
+		58E1A9851EA7004400AE8A10 /* CascadedUnion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8551EA7004300AE8A10 /* CascadedUnion.cpp */; };
+		58E1A9861EA7004400AE8A10 /* PointGeometryUnion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8561EA7004300AE8A10 /* PointGeometryUnion.cpp */; };
+		58E1A9871EA7004400AE8A10 /* UnaryUnionOp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8571EA7004300AE8A10 /* UnaryUnionOp.cpp */; };
+		58E1A9881EA7004400AE8A10 /* ConnectedInteriorTester.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8591EA7004300AE8A10 /* ConnectedInteriorTester.cpp */; };
+		58E1A9891EA7004400AE8A10 /* ConsistentAreaTester.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A85A1EA7004300AE8A10 /* ConsistentAreaTester.cpp */; };
+		58E1A98A1EA7004400AE8A10 /* IndexedNestedRingTester.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A85B1EA7004300AE8A10 /* IndexedNestedRingTester.cpp */; };
+		58E1A98C1EA7004400AE8A10 /* IsValidOp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A85D1EA7004300AE8A10 /* IsValidOp.cpp */; };
+		58E1A98D1EA7004400AE8A10 /* QuadtreeNestedRingTester.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A85E1EA7004300AE8A10 /* QuadtreeNestedRingTester.cpp */; };
+		58E1A98E1EA7004400AE8A10 /* RepeatedPointTester.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A85F1EA7004300AE8A10 /* RepeatedPointTester.cpp */; };
+		58E1A98F1EA7004400AE8A10 /* SimpleNestedRingTester.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8601EA7004300AE8A10 /* SimpleNestedRingTester.cpp */; };
+		58E1A9901EA7004400AE8A10 /* SweeplineNestedRingTester.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8611EA7004300AE8A10 /* SweeplineNestedRingTester.cpp */; };
+		58E1A9911EA7004400AE8A10 /* TopologyValidationError.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8621EA7004300AE8A10 /* TopologyValidationError.cpp */; };
+		58E1A9921EA7004400AE8A10 /* ConnectedSubgraphFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8651EA7004300AE8A10 /* ConnectedSubgraphFinder.cpp */; };
+		58E1A9931EA7004400AE8A10 /* DirectedEdge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8661EA7004300AE8A10 /* DirectedEdge.cpp */; };
+		58E1A9941EA7004400AE8A10 /* DirectedEdgeStar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8671EA7004300AE8A10 /* DirectedEdgeStar.cpp */; };
+		58E1A9951EA7004400AE8A10 /* Edge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8681EA7004300AE8A10 /* Edge.cpp */; };
+		58E1A9961EA7004400AE8A10 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8691EA7004300AE8A10 /* Node.cpp */; };
+		58E1A9971EA7004400AE8A10 /* NodeMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A86A1EA7004300AE8A10 /* NodeMap.cpp */; };
+		58E1A9981EA7004400AE8A10 /* PlanarGraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A86B1EA7004300AE8A10 /* PlanarGraph.cpp */; };
+		58E1A9991EA7004400AE8A10 /* Subgraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A86C1EA7004300AE8A10 /* Subgraph.cpp */; };
+		58E1A99A1EA7004400AE8A10 /* CommonBits.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A86E1EA7004300AE8A10 /* CommonBits.cpp */; };
+		58E1A99B1EA7004400AE8A10 /* CommonBitsOp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A86F1EA7004300AE8A10 /* CommonBitsOp.cpp */; };
+		58E1A99C1EA7004400AE8A10 /* CommonBitsRemover.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8701EA7004300AE8A10 /* CommonBitsRemover.cpp */; };
+		58E1A99D1EA7004400AE8A10 /* EnhancedPrecisionOp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8711EA7004300AE8A10 /* EnhancedPrecisionOp.cpp */; };
+		58E1A99E1EA7004400AE8A10 /* GeometryPrecisionReducer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8721EA7004300AE8A10 /* GeometryPrecisionReducer.cpp */; };
+		58E1A99F1EA7004400AE8A10 /* PrecisionReducerCoordinateOperation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8731EA7004300AE8A10 /* PrecisionReducerCoordinateOperation.cpp */; };
+		58E1A9A01EA7004400AE8A10 /* SimpleGeometryPrecisionReducer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8741EA7004300AE8A10 /* SimpleGeometryPrecisionReducer.cpp */; };
+		58E1A9A11EA7004400AE8A10 /* DouglasPeuckerLineSimplifier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8761EA7004300AE8A10 /* DouglasPeuckerLineSimplifier.cpp */; };
+		58E1A9A21EA7004400AE8A10 /* DouglasPeuckerSimplifier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8771EA7004300AE8A10 /* DouglasPeuckerSimplifier.cpp */; };
+		58E1A9A31EA7004400AE8A10 /* LineSegmentIndex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8781EA7004300AE8A10 /* LineSegmentIndex.cpp */; };
+		58E1A9A41EA7004400AE8A10 /* TaggedLineSegment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8791EA7004300AE8A10 /* TaggedLineSegment.cpp */; };
+		58E1A9A51EA7004400AE8A10 /* TaggedLinesSimplifier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A87A1EA7004300AE8A10 /* TaggedLinesSimplifier.cpp */; };
+		58E1A9A61EA7004400AE8A10 /* TaggedLineString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A87B1EA7004300AE8A10 /* TaggedLineString.cpp */; };
+		58E1A9A71EA7004400AE8A10 /* TaggedLineStringSimplifier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A87C1EA7004300AE8A10 /* TaggedLineStringSimplifier.cpp */; };
+		58E1A9A81EA7004400AE8A10 /* TopologyPreservingSimplifier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A87D1EA7004300AE8A10 /* TopologyPreservingSimplifier.cpp */; };
+		58E1A9A91EA7004400AE8A10 /* DelaunayTriangulationBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A87F1EA7004300AE8A10 /* DelaunayTriangulationBuilder.cpp */; };
+		58E1A9AA1EA7004400AE8A10 /* IncrementalDelaunayTriangulator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8801EA7004300AE8A10 /* IncrementalDelaunayTriangulator.cpp */; };
+		58E1A9AB1EA7004400AE8A10 /* LastFoundQuadEdgeLocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8821EA7004300AE8A10 /* LastFoundQuadEdgeLocator.cpp */; };
+		58E1A9AC1EA7004400AE8A10 /* LocateFailureException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8831EA7004300AE8A10 /* LocateFailureException.cpp */; };
+		58E1A9AD1EA7004400AE8A10 /* QuadEdge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8841EA7004300AE8A10 /* QuadEdge.cpp */; };
+		58E1A9AE1EA7004400AE8A10 /* QuadEdgeLocator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8851EA7004300AE8A10 /* QuadEdgeLocator.cpp */; };
+		58E1A9AF1EA7004400AE8A10 /* QuadEdgeSubdivision.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8861EA7004300AE8A10 /* QuadEdgeSubdivision.cpp */; };
+		58E1A9B01EA7004400AE8A10 /* TrianglePredicate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8871EA7004300AE8A10 /* TrianglePredicate.cpp */; };
+		58E1A9B11EA7004400AE8A10 /* TriangleVisitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8881EA7004300AE8A10 /* TriangleVisitor.cpp */; };
+		58E1A9B21EA7004400AE8A10 /* Vertex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8891EA7004300AE8A10 /* Vertex.cpp */; };
+		58E1A9B31EA7004400AE8A10 /* VoronoiDiagramBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A88A1EA7004300AE8A10 /* VoronoiDiagramBuilder.cpp */; };
+		58E1A9B41EA7004400AE8A10 /* Assert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A88C1EA7004300AE8A10 /* Assert.cpp */; };
+		58E1A9B51EA7004400AE8A10 /* GeometricShapeFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A88D1EA7004300AE8A10 /* GeometricShapeFactory.cpp */; };
+		58E1A9B61EA7004400AE8A10 /* Interrupt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A88E1EA7004300AE8A10 /* Interrupt.cpp */; };
+		58E1A9B71EA7004400AE8A10 /* math.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A88F1EA7004300AE8A10 /* math.cpp */; };
+		58E1A9B81EA7004400AE8A10 /* Profiler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1A8901EA7004300AE8A10 /* Profiler.cpp */; };
+		58E1AD6E1EA702B900AE8A10 /* geos_c.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1AD671EA702B900AE8A10 /* geos_c.cpp */; };
+		58E1AD6F1EA702B900AE8A10 /* geos_c.h in Headers */ = {isa = PBXBuildFile; fileRef = 58E1AD681EA702B900AE8A10 /* geos_c.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58E1AD701EA702B900AE8A10 /* geos_ts_c.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58E1AD6B1EA702B900AE8A10 /* geos_ts_c.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		58E196511EA6FA5000AE8A10 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		58E196531EA6FA5000AE8A10 /* libgeos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libgeos.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		58E19AFD1EA6FB4100AE8A10 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		58E1A7461EA7004300AE8A10 /* geos_svn_revision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = geos_svn_revision.h; sourceTree = "<group>"; };
+		58E1A7491EA7004300AE8A10 /* Angle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Angle.cpp; sourceTree = "<group>"; };
+		58E1A74A1EA7004300AE8A10 /* BoundaryNodeRule.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BoundaryNodeRule.cpp; sourceTree = "<group>"; };
+		58E1A74B1EA7004300AE8A10 /* Centroid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Centroid.cpp; sourceTree = "<group>"; };
+		58E1A74C1EA7004300AE8A10 /* CentroidArea.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CentroidArea.cpp; sourceTree = "<group>"; };
+		58E1A74D1EA7004300AE8A10 /* CentroidLine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CentroidLine.cpp; sourceTree = "<group>"; };
+		58E1A74E1EA7004300AE8A10 /* CentroidPoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CentroidPoint.cpp; sourceTree = "<group>"; };
+		58E1A74F1EA7004300AE8A10 /* CGAlgorithms.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CGAlgorithms.cpp; sourceTree = "<group>"; };
+		58E1A7501EA7004300AE8A10 /* ConvexHull.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConvexHull.cpp; sourceTree = "<group>"; };
+		58E1A7521EA7004300AE8A10 /* DiscreteHausdorffDistance.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DiscreteHausdorffDistance.cpp; sourceTree = "<group>"; };
+		58E1A7531EA7004300AE8A10 /* DistanceToPoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DistanceToPoint.cpp; sourceTree = "<group>"; };
+		58E1A7541EA7004300AE8A10 /* HCoordinate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HCoordinate.cpp; sourceTree = "<group>"; };
+		58E1A7551EA7004300AE8A10 /* InteriorPointArea.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InteriorPointArea.cpp; sourceTree = "<group>"; };
+		58E1A7561EA7004300AE8A10 /* InteriorPointLine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InteriorPointLine.cpp; sourceTree = "<group>"; };
+		58E1A7571EA7004300AE8A10 /* InteriorPointPoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InteriorPointPoint.cpp; sourceTree = "<group>"; };
+		58E1A7581EA7004300AE8A10 /* LineIntersector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LineIntersector.cpp; sourceTree = "<group>"; };
+		58E1A75A1EA7004300AE8A10 /* IndexedPointInAreaLocator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IndexedPointInAreaLocator.cpp; sourceTree = "<group>"; };
+		58E1A75B1EA7004300AE8A10 /* PointOnGeometryLocator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PointOnGeometryLocator.cpp; sourceTree = "<group>"; };
+		58E1A75C1EA7004300AE8A10 /* SimplePointInAreaLocator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimplePointInAreaLocator.cpp; sourceTree = "<group>"; };
+		58E1A75D1EA7004300AE8A10 /* MCPointInRing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MCPointInRing.cpp; sourceTree = "<group>"; };
+		58E1A75E1EA7004300AE8A10 /* MinimumDiameter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MinimumDiameter.cpp; sourceTree = "<group>"; };
+		58E1A75F1EA7004300AE8A10 /* NotRepresentableException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NotRepresentableException.cpp; sourceTree = "<group>"; };
+		58E1A7601EA7004300AE8A10 /* PointLocator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PointLocator.cpp; sourceTree = "<group>"; };
+		58E1A7611EA7004300AE8A10 /* RayCrossingCounter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RayCrossingCounter.cpp; sourceTree = "<group>"; };
+		58E1A7621EA7004300AE8A10 /* RobustDeterminant.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RobustDeterminant.cpp; sourceTree = "<group>"; };
+		58E1A7631EA7004300AE8A10 /* SimplePointInRing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimplePointInRing.cpp; sourceTree = "<group>"; };
+		58E1A7641EA7004300AE8A10 /* SIRtreePointInRing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SIRtreePointInRing.cpp; sourceTree = "<group>"; };
+		58E1A7661EA7004300AE8A10 /* Coordinate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Coordinate.cpp; sourceTree = "<group>"; };
+		58E1A7671EA7004300AE8A10 /* CoordinateArraySequence.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CoordinateArraySequence.cpp; sourceTree = "<group>"; };
+		58E1A7681EA7004300AE8A10 /* CoordinateArraySequenceFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CoordinateArraySequenceFactory.cpp; sourceTree = "<group>"; };
+		58E1A7691EA7004300AE8A10 /* CoordinateSequence.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CoordinateSequence.cpp; sourceTree = "<group>"; };
+		58E1A76A1EA7004300AE8A10 /* CoordinateSequenceFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CoordinateSequenceFactory.cpp; sourceTree = "<group>"; };
+		58E1A76B1EA7004300AE8A10 /* Dimension.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Dimension.cpp; sourceTree = "<group>"; };
+		58E1A76C1EA7004300AE8A10 /* Envelope.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Envelope.cpp; sourceTree = "<group>"; };
+		58E1A76D1EA7004300AE8A10 /* Geometry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Geometry.cpp; sourceTree = "<group>"; };
+		58E1A76E1EA7004300AE8A10 /* GeometryCollection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GeometryCollection.cpp; sourceTree = "<group>"; };
+		58E1A76F1EA7004300AE8A10 /* GeometryComponentFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GeometryComponentFilter.cpp; sourceTree = "<group>"; };
+		58E1A7701EA7004300AE8A10 /* GeometryFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GeometryFactory.cpp; sourceTree = "<group>"; };
+		58E1A7711EA7004300AE8A10 /* GeometryList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GeometryList.cpp; sourceTree = "<group>"; };
+		58E1A7721EA7004300AE8A10 /* IntersectionMatrix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IntersectionMatrix.cpp; sourceTree = "<group>"; };
+		58E1A7731EA7004300AE8A10 /* LinearRing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LinearRing.cpp; sourceTree = "<group>"; };
+		58E1A7741EA7004300AE8A10 /* LineSegment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LineSegment.cpp; sourceTree = "<group>"; };
+		58E1A7751EA7004300AE8A10 /* LineString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LineString.cpp; sourceTree = "<group>"; };
+		58E1A7761EA7004300AE8A10 /* Location.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Location.cpp; sourceTree = "<group>"; };
+		58E1A7771EA7004300AE8A10 /* MultiLineString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MultiLineString.cpp; sourceTree = "<group>"; };
+		58E1A7781EA7004300AE8A10 /* MultiPoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MultiPoint.cpp; sourceTree = "<group>"; };
+		58E1A7791EA7004300AE8A10 /* MultiPolygon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MultiPolygon.cpp; sourceTree = "<group>"; };
+		58E1A77A1EA7004300AE8A10 /* Point.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Point.cpp; sourceTree = "<group>"; };
+		58E1A77B1EA7004300AE8A10 /* Polygon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Polygon.cpp; sourceTree = "<group>"; };
+		58E1A77C1EA7004300AE8A10 /* PrecisionModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PrecisionModel.cpp; sourceTree = "<group>"; };
+		58E1A77E1EA7004300AE8A10 /* AbstractPreparedPolygonContains.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AbstractPreparedPolygonContains.cpp; sourceTree = "<group>"; };
+		58E1A77F1EA7004300AE8A10 /* BasicPreparedGeometry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BasicPreparedGeometry.cpp; sourceTree = "<group>"; };
+		58E1A7801EA7004300AE8A10 /* PreparedGeometry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PreparedGeometry.cpp; sourceTree = "<group>"; };
+		58E1A7811EA7004300AE8A10 /* PreparedGeometryFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PreparedGeometryFactory.cpp; sourceTree = "<group>"; };
+		58E1A7821EA7004300AE8A10 /* PreparedLineString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PreparedLineString.cpp; sourceTree = "<group>"; };
+		58E1A7831EA7004300AE8A10 /* PreparedLineStringIntersects.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PreparedLineStringIntersects.cpp; sourceTree = "<group>"; };
+		58E1A7841EA7004300AE8A10 /* PreparedPoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PreparedPoint.cpp; sourceTree = "<group>"; };
+		58E1A7851EA7004300AE8A10 /* PreparedPolygon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PreparedPolygon.cpp; sourceTree = "<group>"; };
+		58E1A7861EA7004300AE8A10 /* PreparedPolygonContains.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PreparedPolygonContains.cpp; sourceTree = "<group>"; };
+		58E1A7871EA7004300AE8A10 /* PreparedPolygonContainsProperly.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PreparedPolygonContainsProperly.cpp; sourceTree = "<group>"; };
+		58E1A7881EA7004300AE8A10 /* PreparedPolygonCovers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PreparedPolygonCovers.cpp; sourceTree = "<group>"; };
+		58E1A7891EA7004300AE8A10 /* PreparedPolygonIntersects.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PreparedPolygonIntersects.cpp; sourceTree = "<group>"; };
+		58E1A78A1EA7004300AE8A10 /* PreparedPolygonPredicate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PreparedPolygonPredicate.cpp; sourceTree = "<group>"; };
+		58E1A78B1EA7004300AE8A10 /* Triangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Triangle.cpp; sourceTree = "<group>"; };
+		58E1A78D1EA7004300AE8A10 /* ComponentCoordinateExtracter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ComponentCoordinateExtracter.cpp; sourceTree = "<group>"; };
+		58E1A78E1EA7004300AE8A10 /* CoordinateOperation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CoordinateOperation.cpp; sourceTree = "<group>"; };
+		58E1A78F1EA7004300AE8A10 /* GeometryCombiner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GeometryCombiner.cpp; sourceTree = "<group>"; };
+		58E1A7901EA7004300AE8A10 /* GeometryEditor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GeometryEditor.cpp; sourceTree = "<group>"; };
+		58E1A7911EA7004300AE8A10 /* GeometryTransformer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GeometryTransformer.cpp; sourceTree = "<group>"; };
+		58E1A7921EA7004300AE8A10 /* LinearComponentExtracter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LinearComponentExtracter.cpp; sourceTree = "<group>"; };
+		58E1A7931EA7004300AE8A10 /* PointExtracter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PointExtracter.cpp; sourceTree = "<group>"; };
+		58E1A7941EA7004300AE8A10 /* PolygonExtracter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PolygonExtracter.cpp; sourceTree = "<group>"; };
+		58E1A7951EA7004300AE8A10 /* ShortCircuitedGeometryVisitor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShortCircuitedGeometryVisitor.cpp; sourceTree = "<group>"; };
+		58E1A7961EA7004300AE8A10 /* SineStarFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SineStarFactory.cpp; sourceTree = "<group>"; };
+		58E1A7981EA7004300AE8A10 /* Depth.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Depth.cpp; sourceTree = "<group>"; };
+		58E1A7991EA7004300AE8A10 /* DirectedEdge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DirectedEdge.cpp; sourceTree = "<group>"; };
+		58E1A79A1EA7004300AE8A10 /* DirectedEdgeStar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DirectedEdgeStar.cpp; sourceTree = "<group>"; };
+		58E1A79B1EA7004300AE8A10 /* Edge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Edge.cpp; sourceTree = "<group>"; };
+		58E1A79C1EA7004300AE8A10 /* EdgeEnd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EdgeEnd.cpp; sourceTree = "<group>"; };
+		58E1A79D1EA7004300AE8A10 /* EdgeEndStar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EdgeEndStar.cpp; sourceTree = "<group>"; };
+		58E1A79E1EA7004300AE8A10 /* EdgeIntersectionList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EdgeIntersectionList.cpp; sourceTree = "<group>"; };
+		58E1A79F1EA7004300AE8A10 /* EdgeList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EdgeList.cpp; sourceTree = "<group>"; };
+		58E1A7A01EA7004300AE8A10 /* EdgeNodingValidator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EdgeNodingValidator.cpp; sourceTree = "<group>"; };
+		58E1A7A11EA7004300AE8A10 /* EdgeRing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EdgeRing.cpp; sourceTree = "<group>"; };
+		58E1A7A21EA7004300AE8A10 /* GeometryGraph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GeometryGraph.cpp; sourceTree = "<group>"; };
+		58E1A7A31EA7004300AE8A10 /* GraphComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GraphComponent.cpp; sourceTree = "<group>"; };
+		58E1A7A51EA7004300AE8A10 /* MonotoneChainEdge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MonotoneChainEdge.cpp; sourceTree = "<group>"; };
+		58E1A7A61EA7004300AE8A10 /* MonotoneChainIndexer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MonotoneChainIndexer.cpp; sourceTree = "<group>"; };
+		58E1A7A71EA7004300AE8A10 /* SegmentIntersector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SegmentIntersector.cpp; sourceTree = "<group>"; };
+		58E1A7A81EA7004300AE8A10 /* SimpleEdgeSetIntersector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleEdgeSetIntersector.cpp; sourceTree = "<group>"; };
+		58E1A7A91EA7004300AE8A10 /* SimpleMCSweepLineIntersector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleMCSweepLineIntersector.cpp; sourceTree = "<group>"; };
+		58E1A7AA1EA7004300AE8A10 /* SimpleSweepLineIntersector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleSweepLineIntersector.cpp; sourceTree = "<group>"; };
+		58E1A7AB1EA7004300AE8A10 /* SweepLineEvent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SweepLineEvent.cpp; sourceTree = "<group>"; };
+		58E1A7AC1EA7004300AE8A10 /* SweepLineSegment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SweepLineSegment.cpp; sourceTree = "<group>"; };
+		58E1A7AD1EA7004300AE8A10 /* Label.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Label.cpp; sourceTree = "<group>"; };
+		58E1A7AE1EA7004300AE8A10 /* Node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Node.cpp; sourceTree = "<group>"; };
+		58E1A7AF1EA7004300AE8A10 /* NodeFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodeFactory.cpp; sourceTree = "<group>"; };
+		58E1A7B01EA7004300AE8A10 /* NodeMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodeMap.cpp; sourceTree = "<group>"; };
+		58E1A7B11EA7004300AE8A10 /* PlanarGraph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlanarGraph.cpp; sourceTree = "<group>"; };
+		58E1A7B21EA7004300AE8A10 /* Position.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Position.cpp; sourceTree = "<group>"; };
+		58E1A7B31EA7004300AE8A10 /* Quadrant.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Quadrant.cpp; sourceTree = "<group>"; };
+		58E1A7B41EA7004300AE8A10 /* TopologyLocation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TopologyLocation.cpp; sourceTree = "<group>"; };
+		58E1A7B71EA7004300AE8A10 /* Bintree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bintree.cpp; sourceTree = "<group>"; };
+		58E1A7B81EA7004300AE8A10 /* Interval.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Interval.cpp; sourceTree = "<group>"; };
+		58E1A7B91EA7004300AE8A10 /* Key.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Key.cpp; sourceTree = "<group>"; };
+		58E1A7BA1EA7004300AE8A10 /* Node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Node.cpp; sourceTree = "<group>"; };
+		58E1A7BB1EA7004300AE8A10 /* NodeBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodeBase.cpp; sourceTree = "<group>"; };
+		58E1A7BC1EA7004300AE8A10 /* Root.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Root.cpp; sourceTree = "<group>"; };
+		58E1A7BE1EA7004300AE8A10 /* MonotoneChain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MonotoneChain.cpp; sourceTree = "<group>"; };
+		58E1A7BF1EA7004300AE8A10 /* MonotoneChainBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MonotoneChainBuilder.cpp; sourceTree = "<group>"; };
+		58E1A7C01EA7004300AE8A10 /* MonotoneChainOverlapAction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MonotoneChainOverlapAction.cpp; sourceTree = "<group>"; };
+		58E1A7C11EA7004300AE8A10 /* MonotoneChainSelectAction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MonotoneChainSelectAction.cpp; sourceTree = "<group>"; };
+		58E1A7C31EA7004300AE8A10 /* IntervalRTreeBranchNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IntervalRTreeBranchNode.cpp; sourceTree = "<group>"; };
+		58E1A7C41EA7004300AE8A10 /* IntervalRTreeLeafNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IntervalRTreeLeafNode.cpp; sourceTree = "<group>"; };
+		58E1A7C51EA7004300AE8A10 /* IntervalRTreeNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IntervalRTreeNode.cpp; sourceTree = "<group>"; };
+		58E1A7C61EA7004300AE8A10 /* SortedPackedIntervalRTree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SortedPackedIntervalRTree.cpp; sourceTree = "<group>"; };
+		58E1A7C81EA7004300AE8A10 /* DoubleBits.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DoubleBits.cpp; sourceTree = "<group>"; };
+		58E1A7C91EA7004300AE8A10 /* IntervalSize.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IntervalSize.cpp; sourceTree = "<group>"; };
+		58E1A7CA1EA7004300AE8A10 /* Key.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Key.cpp; sourceTree = "<group>"; };
+		58E1A7CB1EA7004300AE8A10 /* Node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Node.cpp; sourceTree = "<group>"; };
+		58E1A7CC1EA7004300AE8A10 /* NodeBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodeBase.cpp; sourceTree = "<group>"; };
+		58E1A7CD1EA7004300AE8A10 /* Quadtree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Quadtree.cpp; sourceTree = "<group>"; };
+		58E1A7CE1EA7004300AE8A10 /* Root.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Root.cpp; sourceTree = "<group>"; };
+		58E1A7D01EA7004300AE8A10 /* AbstractNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AbstractNode.cpp; sourceTree = "<group>"; };
+		58E1A7D11EA7004300AE8A10 /* AbstractSTRtree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AbstractSTRtree.cpp; sourceTree = "<group>"; };
+		58E1A7D21EA7004300AE8A10 /* Interval.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Interval.cpp; sourceTree = "<group>"; };
+		58E1A7D31EA7004300AE8A10 /* ItemBoundable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ItemBoundable.cpp; sourceTree = "<group>"; };
+		58E1A7D41EA7004300AE8A10 /* SIRtree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SIRtree.cpp; sourceTree = "<group>"; };
+		58E1A7D51EA7004300AE8A10 /* STRtree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = STRtree.cpp; sourceTree = "<group>"; };
+		58E1A7D71EA7004300AE8A10 /* SweepLineEvent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SweepLineEvent.cpp; sourceTree = "<group>"; };
+		58E1A7D81EA7004300AE8A10 /* SweepLineIndex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SweepLineIndex.cpp; sourceTree = "<group>"; };
+		58E1A7D91EA7004300AE8A10 /* SweepLineInterval.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SweepLineInterval.cpp; sourceTree = "<group>"; };
+		58E1A7DA1EA7004300AE8A10 /* inlines.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = inlines.cpp; sourceTree = "<group>"; };
+		58E1A7DC1EA7004300AE8A10 /* ByteOrderDataInStream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ByteOrderDataInStream.cpp; sourceTree = "<group>"; };
+		58E1A7DD1EA7004300AE8A10 /* ByteOrderValues.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ByteOrderValues.cpp; sourceTree = "<group>"; };
+		58E1A7DE1EA7004300AE8A10 /* CLocalizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CLocalizer.cpp; sourceTree = "<group>"; };
+		58E1A7DF1EA7004300AE8A10 /* ParseException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParseException.cpp; sourceTree = "<group>"; };
+		58E1A7E01EA7004300AE8A10 /* StringTokenizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StringTokenizer.cpp; sourceTree = "<group>"; };
+		58E1A7E11EA7004300AE8A10 /* Unload.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Unload.cpp; sourceTree = "<group>"; };
+		58E1A7E21EA7004300AE8A10 /* WKBReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WKBReader.cpp; sourceTree = "<group>"; };
+		58E1A7E31EA7004300AE8A10 /* WKBWriter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WKBWriter.cpp; sourceTree = "<group>"; };
+		58E1A7E41EA7004300AE8A10 /* WKTReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WKTReader.cpp; sourceTree = "<group>"; };
+		58E1A7E51EA7004300AE8A10 /* WKTWriter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WKTWriter.cpp; sourceTree = "<group>"; };
+		58E1A7E61EA7004300AE8A10 /* Writer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Writer.cpp; sourceTree = "<group>"; };
+		58E1A7E81EA7004300AE8A10 /* ExtractLineByLocation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExtractLineByLocation.cpp; sourceTree = "<group>"; };
+		58E1A7E91EA7004300AE8A10 /* LengthIndexedLine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LengthIndexedLine.cpp; sourceTree = "<group>"; };
+		58E1A7EA1EA7004300AE8A10 /* LengthIndexOfPoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LengthIndexOfPoint.cpp; sourceTree = "<group>"; };
+		58E1A7EB1EA7004300AE8A10 /* LengthLocationMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LengthLocationMap.cpp; sourceTree = "<group>"; };
+		58E1A7EC1EA7004300AE8A10 /* LinearGeometryBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LinearGeometryBuilder.cpp; sourceTree = "<group>"; };
+		58E1A7ED1EA7004300AE8A10 /* LinearIterator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LinearIterator.cpp; sourceTree = "<group>"; };
+		58E1A7EE1EA7004300AE8A10 /* LinearLocation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LinearLocation.cpp; sourceTree = "<group>"; };
+		58E1A7EF1EA7004300AE8A10 /* LocationIndexOfLine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LocationIndexOfLine.cpp; sourceTree = "<group>"; };
+		58E1A7F01EA7004300AE8A10 /* LocationIndexOfPoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LocationIndexOfPoint.cpp; sourceTree = "<group>"; };
+		58E1A7F21EA7004300AE8A10 /* BasicSegmentString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BasicSegmentString.cpp; sourceTree = "<group>"; };
+		58E1A7F31EA7004300AE8A10 /* FastNodingValidator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FastNodingValidator.cpp; sourceTree = "<group>"; };
+		58E1A7F41EA7004300AE8A10 /* FastSegmentSetIntersectionFinder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FastSegmentSetIntersectionFinder.cpp; sourceTree = "<group>"; };
+		58E1A7F51EA7004300AE8A10 /* GeometryNoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GeometryNoder.cpp; sourceTree = "<group>"; };
+		58E1A7F61EA7004300AE8A10 /* IntersectionAdder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IntersectionAdder.cpp; sourceTree = "<group>"; };
+		58E1A7F71EA7004300AE8A10 /* IntersectionFinderAdder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IntersectionFinderAdder.cpp; sourceTree = "<group>"; };
+		58E1A7F81EA7004300AE8A10 /* IteratedNoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IteratedNoder.cpp; sourceTree = "<group>"; };
+		58E1A7F91EA7004300AE8A10 /* MCIndexNoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MCIndexNoder.cpp; sourceTree = "<group>"; };
+		58E1A7FA1EA7004300AE8A10 /* MCIndexSegmentSetMutualIntersector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MCIndexSegmentSetMutualIntersector.cpp; sourceTree = "<group>"; };
+		58E1A7FB1EA7004300AE8A10 /* NodedSegmentString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodedSegmentString.cpp; sourceTree = "<group>"; };
+		58E1A7FC1EA7004300AE8A10 /* NodingValidator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodingValidator.cpp; sourceTree = "<group>"; };
+		58E1A7FD1EA7004300AE8A10 /* Octant.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Octant.cpp; sourceTree = "<group>"; };
+		58E1A7FE1EA7004300AE8A10 /* OrientedCoordinateArray.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OrientedCoordinateArray.cpp; sourceTree = "<group>"; };
+		58E1A7FF1EA7004300AE8A10 /* ScaledNoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScaledNoder.cpp; sourceTree = "<group>"; };
+		58E1A8001EA7004300AE8A10 /* SegmentIntersectionDetector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SegmentIntersectionDetector.cpp; sourceTree = "<group>"; };
+		58E1A8011EA7004300AE8A10 /* SegmentNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SegmentNode.cpp; sourceTree = "<group>"; };
+		58E1A8021EA7004300AE8A10 /* SegmentNodeList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SegmentNodeList.cpp; sourceTree = "<group>"; };
+		58E1A8031EA7004300AE8A10 /* SegmentString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SegmentString.cpp; sourceTree = "<group>"; };
+		58E1A8041EA7004300AE8A10 /* SegmentStringUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SegmentStringUtil.cpp; sourceTree = "<group>"; };
+		58E1A8051EA7004300AE8A10 /* SimpleNoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleNoder.cpp; sourceTree = "<group>"; };
+		58E1A8061EA7004300AE8A10 /* SingleInteriorIntersectionFinder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SingleInteriorIntersectionFinder.cpp; sourceTree = "<group>"; };
+		58E1A8081EA7004300AE8A10 /* HotPixel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HotPixel.cpp; sourceTree = "<group>"; };
+		58E1A8091EA7004300AE8A10 /* MCIndexPointSnapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MCIndexPointSnapper.cpp; sourceTree = "<group>"; };
+		58E1A80A1EA7004300AE8A10 /* MCIndexSnapRounder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MCIndexSnapRounder.cpp; sourceTree = "<group>"; };
+		58E1A80B1EA7004300AE8A10 /* SimpleSnapRounder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleSnapRounder.cpp; sourceTree = "<group>"; };
+		58E1A80E1EA7004300AE8A10 /* BufferBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BufferBuilder.cpp; sourceTree = "<group>"; };
+		58E1A80F1EA7004300AE8A10 /* BufferInputLineSimplifier.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BufferInputLineSimplifier.cpp; sourceTree = "<group>"; };
+		58E1A8101EA7004300AE8A10 /* BufferOp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BufferOp.cpp; sourceTree = "<group>"; };
+		58E1A8111EA7004300AE8A10 /* BufferParameters.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BufferParameters.cpp; sourceTree = "<group>"; };
+		58E1A8121EA7004300AE8A10 /* BufferSubgraph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BufferSubgraph.cpp; sourceTree = "<group>"; };
+		58E1A8131EA7004300AE8A10 /* OffsetCurveBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OffsetCurveBuilder.cpp; sourceTree = "<group>"; };
+		58E1A8141EA7004300AE8A10 /* OffsetCurveSetBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OffsetCurveSetBuilder.cpp; sourceTree = "<group>"; };
+		58E1A8151EA7004300AE8A10 /* OffsetSegmentGenerator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OffsetSegmentGenerator.cpp; sourceTree = "<group>"; };
+		58E1A8161EA7004300AE8A10 /* RightmostEdgeFinder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RightmostEdgeFinder.cpp; sourceTree = "<group>"; };
+		58E1A8171EA7004300AE8A10 /* SubgraphDepthLocater.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SubgraphDepthLocater.cpp; sourceTree = "<group>"; };
+		58E1A8191EA7004300AE8A10 /* ConnectedElementLocationFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConnectedElementLocationFilter.cpp; sourceTree = "<group>"; };
+		58E1A81A1EA7004300AE8A10 /* ConnectedElementPointFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConnectedElementPointFilter.cpp; sourceTree = "<group>"; };
+		58E1A81B1EA7004300AE8A10 /* DistanceOp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DistanceOp.cpp; sourceTree = "<group>"; };
+		58E1A81C1EA7004300AE8A10 /* GeometryLocation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GeometryLocation.cpp; sourceTree = "<group>"; };
+		58E1A81D1EA7004300AE8A10 /* GeometryGraphOperation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GeometryGraphOperation.cpp; sourceTree = "<group>"; };
+		58E1A81F1EA7004300AE8A10 /* Rectangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Rectangle.cpp; sourceTree = "<group>"; };
+		58E1A8201EA7004300AE8A10 /* RectangleIntersection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RectangleIntersection.cpp; sourceTree = "<group>"; };
+		58E1A8211EA7004300AE8A10 /* RectangleIntersectionBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RectangleIntersectionBuilder.cpp; sourceTree = "<group>"; };
+		58E1A8221EA7004300AE8A10 /* IsSimpleOp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IsSimpleOp.cpp; sourceTree = "<group>"; };
+		58E1A8241EA7004300AE8A10 /* EdgeString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EdgeString.cpp; sourceTree = "<group>"; };
+		58E1A8251EA7004300AE8A10 /* LineMergeDirectedEdge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LineMergeDirectedEdge.cpp; sourceTree = "<group>"; };
+		58E1A8261EA7004300AE8A10 /* LineMergeEdge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LineMergeEdge.cpp; sourceTree = "<group>"; };
+		58E1A8271EA7004300AE8A10 /* LineMergeGraph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LineMergeGraph.cpp; sourceTree = "<group>"; };
+		58E1A8281EA7004300AE8A10 /* LineMerger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LineMerger.cpp; sourceTree = "<group>"; };
+		58E1A8291EA7004300AE8A10 /* LineSequencer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LineSequencer.cpp; sourceTree = "<group>"; };
+		58E1A82B1EA7004300AE8A10 /* EdgeSetNoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EdgeSetNoder.cpp; sourceTree = "<group>"; };
+		58E1A82C1EA7004300AE8A10 /* ElevationMatrix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ElevationMatrix.cpp; sourceTree = "<group>"; };
+		58E1A82D1EA7004300AE8A10 /* ElevationMatrixCell.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ElevationMatrixCell.cpp; sourceTree = "<group>"; };
+		58E1A82E1EA7004300AE8A10 /* LineBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LineBuilder.cpp; sourceTree = "<group>"; };
+		58E1A82F1EA7004300AE8A10 /* MaximalEdgeRing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MaximalEdgeRing.cpp; sourceTree = "<group>"; };
+		58E1A8301EA7004300AE8A10 /* MinimalEdgeRing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MinimalEdgeRing.cpp; sourceTree = "<group>"; };
+		58E1A8311EA7004300AE8A10 /* OverlayNodeFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OverlayNodeFactory.cpp; sourceTree = "<group>"; };
+		58E1A8321EA7004300AE8A10 /* OverlayOp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OverlayOp.cpp; sourceTree = "<group>"; };
+		58E1A8331EA7004300AE8A10 /* PointBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PointBuilder.cpp; sourceTree = "<group>"; };
+		58E1A8341EA7004300AE8A10 /* PolygonBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PolygonBuilder.cpp; sourceTree = "<group>"; };
+		58E1A8361EA7004300AE8A10 /* GeometrySnapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GeometrySnapper.cpp; sourceTree = "<group>"; };
+		58E1A8371EA7004300AE8A10 /* LineStringSnapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LineStringSnapper.cpp; sourceTree = "<group>"; };
+		58E1A8381EA7004300AE8A10 /* SnapIfNeededOverlayOp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SnapIfNeededOverlayOp.cpp; sourceTree = "<group>"; };
+		58E1A8391EA7004300AE8A10 /* SnapOverlayOp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SnapOverlayOp.cpp; sourceTree = "<group>"; };
+		58E1A83B1EA7004300AE8A10 /* FuzzyPointLocator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FuzzyPointLocator.cpp; sourceTree = "<group>"; };
+		58E1A83C1EA7004300AE8A10 /* OffsetPointGenerator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OffsetPointGenerator.cpp; sourceTree = "<group>"; };
+		58E1A83D1EA7004300AE8A10 /* OverlayResultValidator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OverlayResultValidator.cpp; sourceTree = "<group>"; };
+		58E1A83F1EA7004300AE8A10 /* EdgeRing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EdgeRing.cpp; sourceTree = "<group>"; };
+		58E1A8401EA7004300AE8A10 /* PolygonizeDirectedEdge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PolygonizeDirectedEdge.cpp; sourceTree = "<group>"; };
+		58E1A8411EA7004300AE8A10 /* PolygonizeEdge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PolygonizeEdge.cpp; sourceTree = "<group>"; };
+		58E1A8421EA7004300AE8A10 /* PolygonizeGraph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PolygonizeGraph.cpp; sourceTree = "<group>"; };
+		58E1A8431EA7004300AE8A10 /* Polygonizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Polygonizer.cpp; sourceTree = "<group>"; };
+		58E1A8451EA7004300AE8A10 /* RectangleContains.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RectangleContains.cpp; sourceTree = "<group>"; };
+		58E1A8461EA7004300AE8A10 /* RectangleIntersects.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RectangleIntersects.cpp; sourceTree = "<group>"; };
+		58E1A8471EA7004300AE8A10 /* SegmentIntersectionTester.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SegmentIntersectionTester.cpp; sourceTree = "<group>"; };
+		58E1A8491EA7004300AE8A10 /* EdgeEndBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EdgeEndBuilder.cpp; sourceTree = "<group>"; };
+		58E1A84A1EA7004300AE8A10 /* EdgeEndBundle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EdgeEndBundle.cpp; sourceTree = "<group>"; };
+		58E1A84B1EA7004300AE8A10 /* EdgeEndBundleStar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EdgeEndBundleStar.cpp; sourceTree = "<group>"; };
+		58E1A84C1EA7004300AE8A10 /* RelateComputer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RelateComputer.cpp; sourceTree = "<group>"; };
+		58E1A84D1EA7004300AE8A10 /* RelateNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RelateNode.cpp; sourceTree = "<group>"; };
+		58E1A84E1EA7004300AE8A10 /* RelateNodeFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RelateNodeFactory.cpp; sourceTree = "<group>"; };
+		58E1A84F1EA7004300AE8A10 /* RelateNodeGraph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RelateNodeGraph.cpp; sourceTree = "<group>"; };
+		58E1A8501EA7004300AE8A10 /* RelateOp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RelateOp.cpp; sourceTree = "<group>"; };
+		58E1A8521EA7004300AE8A10 /* SharedPathsOp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SharedPathsOp.cpp; sourceTree = "<group>"; };
+		58E1A8541EA7004300AE8A10 /* CascadedPolygonUnion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CascadedPolygonUnion.cpp; sourceTree = "<group>"; };
+		58E1A8551EA7004300AE8A10 /* CascadedUnion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CascadedUnion.cpp; sourceTree = "<group>"; };
+		58E1A8561EA7004300AE8A10 /* PointGeometryUnion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PointGeometryUnion.cpp; sourceTree = "<group>"; };
+		58E1A8571EA7004300AE8A10 /* UnaryUnionOp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnaryUnionOp.cpp; sourceTree = "<group>"; };
+		58E1A8591EA7004300AE8A10 /* ConnectedInteriorTester.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConnectedInteriorTester.cpp; sourceTree = "<group>"; };
+		58E1A85A1EA7004300AE8A10 /* ConsistentAreaTester.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConsistentAreaTester.cpp; sourceTree = "<group>"; };
+		58E1A85B1EA7004300AE8A10 /* IndexedNestedRingTester.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IndexedNestedRingTester.cpp; sourceTree = "<group>"; };
+		58E1A85C1EA7004300AE8A10 /* IndexedNestedRingTester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexedNestedRingTester.h; sourceTree = "<group>"; };
+		58E1A85D1EA7004300AE8A10 /* IsValidOp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IsValidOp.cpp; sourceTree = "<group>"; };
+		58E1A85E1EA7004300AE8A10 /* QuadtreeNestedRingTester.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QuadtreeNestedRingTester.cpp; sourceTree = "<group>"; };
+		58E1A85F1EA7004300AE8A10 /* RepeatedPointTester.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RepeatedPointTester.cpp; sourceTree = "<group>"; };
+		58E1A8601EA7004300AE8A10 /* SimpleNestedRingTester.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleNestedRingTester.cpp; sourceTree = "<group>"; };
+		58E1A8611EA7004300AE8A10 /* SweeplineNestedRingTester.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SweeplineNestedRingTester.cpp; sourceTree = "<group>"; };
+		58E1A8621EA7004300AE8A10 /* TopologyValidationError.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TopologyValidationError.cpp; sourceTree = "<group>"; };
+		58E1A8651EA7004300AE8A10 /* ConnectedSubgraphFinder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConnectedSubgraphFinder.cpp; sourceTree = "<group>"; };
+		58E1A8661EA7004300AE8A10 /* DirectedEdge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DirectedEdge.cpp; sourceTree = "<group>"; };
+		58E1A8671EA7004300AE8A10 /* DirectedEdgeStar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DirectedEdgeStar.cpp; sourceTree = "<group>"; };
+		58E1A8681EA7004300AE8A10 /* Edge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Edge.cpp; sourceTree = "<group>"; };
+		58E1A8691EA7004300AE8A10 /* Node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Node.cpp; sourceTree = "<group>"; };
+		58E1A86A1EA7004300AE8A10 /* NodeMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodeMap.cpp; sourceTree = "<group>"; };
+		58E1A86B1EA7004300AE8A10 /* PlanarGraph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlanarGraph.cpp; sourceTree = "<group>"; };
+		58E1A86C1EA7004300AE8A10 /* Subgraph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Subgraph.cpp; sourceTree = "<group>"; };
+		58E1A86E1EA7004300AE8A10 /* CommonBits.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CommonBits.cpp; sourceTree = "<group>"; };
+		58E1A86F1EA7004300AE8A10 /* CommonBitsOp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CommonBitsOp.cpp; sourceTree = "<group>"; };
+		58E1A8701EA7004300AE8A10 /* CommonBitsRemover.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CommonBitsRemover.cpp; sourceTree = "<group>"; };
+		58E1A8711EA7004300AE8A10 /* EnhancedPrecisionOp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EnhancedPrecisionOp.cpp; sourceTree = "<group>"; };
+		58E1A8721EA7004300AE8A10 /* GeometryPrecisionReducer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GeometryPrecisionReducer.cpp; sourceTree = "<group>"; };
+		58E1A8731EA7004300AE8A10 /* PrecisionReducerCoordinateOperation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PrecisionReducerCoordinateOperation.cpp; sourceTree = "<group>"; };
+		58E1A8741EA7004300AE8A10 /* SimpleGeometryPrecisionReducer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleGeometryPrecisionReducer.cpp; sourceTree = "<group>"; };
+		58E1A8761EA7004300AE8A10 /* DouglasPeuckerLineSimplifier.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DouglasPeuckerLineSimplifier.cpp; sourceTree = "<group>"; };
+		58E1A8771EA7004300AE8A10 /* DouglasPeuckerSimplifier.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DouglasPeuckerSimplifier.cpp; sourceTree = "<group>"; };
+		58E1A8781EA7004300AE8A10 /* LineSegmentIndex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LineSegmentIndex.cpp; sourceTree = "<group>"; };
+		58E1A8791EA7004300AE8A10 /* TaggedLineSegment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TaggedLineSegment.cpp; sourceTree = "<group>"; };
+		58E1A87A1EA7004300AE8A10 /* TaggedLinesSimplifier.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TaggedLinesSimplifier.cpp; sourceTree = "<group>"; };
+		58E1A87B1EA7004300AE8A10 /* TaggedLineString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TaggedLineString.cpp; sourceTree = "<group>"; };
+		58E1A87C1EA7004300AE8A10 /* TaggedLineStringSimplifier.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TaggedLineStringSimplifier.cpp; sourceTree = "<group>"; };
+		58E1A87D1EA7004300AE8A10 /* TopologyPreservingSimplifier.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TopologyPreservingSimplifier.cpp; sourceTree = "<group>"; };
+		58E1A87F1EA7004300AE8A10 /* DelaunayTriangulationBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DelaunayTriangulationBuilder.cpp; sourceTree = "<group>"; };
+		58E1A8801EA7004300AE8A10 /* IncrementalDelaunayTriangulator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IncrementalDelaunayTriangulator.cpp; sourceTree = "<group>"; };
+		58E1A8821EA7004300AE8A10 /* LastFoundQuadEdgeLocator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LastFoundQuadEdgeLocator.cpp; sourceTree = "<group>"; };
+		58E1A8831EA7004300AE8A10 /* LocateFailureException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LocateFailureException.cpp; sourceTree = "<group>"; };
+		58E1A8841EA7004300AE8A10 /* QuadEdge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QuadEdge.cpp; sourceTree = "<group>"; };
+		58E1A8851EA7004300AE8A10 /* QuadEdgeLocator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QuadEdgeLocator.cpp; sourceTree = "<group>"; };
+		58E1A8861EA7004300AE8A10 /* QuadEdgeSubdivision.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QuadEdgeSubdivision.cpp; sourceTree = "<group>"; };
+		58E1A8871EA7004300AE8A10 /* TrianglePredicate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TrianglePredicate.cpp; sourceTree = "<group>"; };
+		58E1A8881EA7004300AE8A10 /* TriangleVisitor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TriangleVisitor.cpp; sourceTree = "<group>"; };
+		58E1A8891EA7004300AE8A10 /* Vertex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vertex.cpp; sourceTree = "<group>"; };
+		58E1A88A1EA7004300AE8A10 /* VoronoiDiagramBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VoronoiDiagramBuilder.cpp; sourceTree = "<group>"; };
+		58E1A88C1EA7004300AE8A10 /* Assert.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Assert.cpp; sourceTree = "<group>"; };
+		58E1A88D1EA7004300AE8A10 /* GeometricShapeFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GeometricShapeFactory.cpp; sourceTree = "<group>"; };
+		58E1A88E1EA7004300AE8A10 /* Interrupt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Interrupt.cpp; sourceTree = "<group>"; };
+		58E1A88F1EA7004300AE8A10 /* math.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = math.cpp; sourceTree = "<group>"; };
+		58E1A8901EA7004300AE8A10 /* Profiler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Profiler.cpp; sourceTree = "<group>"; };
+		58E1AD671EA702B900AE8A10 /* geos_c.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = geos_c.cpp; sourceTree = "<group>"; };
+		58E1AD681EA702B900AE8A10 /* geos_c.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = geos_c.h; sourceTree = "<group>"; };
+		58E1AD6B1EA702B900AE8A10 /* geos_ts_c.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = geos_ts_c.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		58E196501EA6FA5000AE8A10 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58E19AFE1EA6FB4100AE8A10 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		58E1964A1EA6FA5000AE8A10 = {
+			isa = PBXGroup;
+			children = (
+				58E196551EA6FA5000AE8A10 /* geos */,
+				58E196541EA6FA5000AE8A10 /* Products */,
+				58E19AFC1EA6FB4100AE8A10 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		58E196541EA6FA5000AE8A10 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				58E196531EA6FA5000AE8A10 /* libgeos.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		58E196551EA6FA5000AE8A10 /* geos */ = {
+			isa = PBXGroup;
+			children = (
+				58E1AD661EA702B900AE8A10 /* capi */,
+				58E1A7461EA7004300AE8A10 /* geos_svn_revision.h */,
+				58E1A7471EA7004300AE8A10 /* src */,
+			);
+			path = geos;
+			sourceTree = "<group>";
+		};
+		58E19AFC1EA6FB4100AE8A10 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				58E19AFD1EA6FB4100AE8A10 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		58E1A7471EA7004300AE8A10 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A7481EA7004300AE8A10 /* algorithm */,
+				58E1A7651EA7004300AE8A10 /* geom */,
+				58E1A7971EA7004300AE8A10 /* geomgraph */,
+				58E1A7B51EA7004300AE8A10 /* index */,
+				58E1A7DA1EA7004300AE8A10 /* inlines.cpp */,
+				58E1A7DB1EA7004300AE8A10 /* io */,
+				58E1A7E71EA7004300AE8A10 /* linearref */,
+				58E1A7F11EA7004300AE8A10 /* noding */,
+				58E1A80C1EA7004300AE8A10 /* operation */,
+				58E1A8631EA7004300AE8A10 /* planargraph */,
+				58E1A86D1EA7004300AE8A10 /* precision */,
+				58E1A8751EA7004300AE8A10 /* simplify */,
+				58E1A87E1EA7004300AE8A10 /* triangulate */,
+				58E1A88B1EA7004300AE8A10 /* util */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		58E1A7481EA7004300AE8A10 /* algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A7491EA7004300AE8A10 /* Angle.cpp */,
+				58E1A74A1EA7004300AE8A10 /* BoundaryNodeRule.cpp */,
+				58E1A74B1EA7004300AE8A10 /* Centroid.cpp */,
+				58E1A74C1EA7004300AE8A10 /* CentroidArea.cpp */,
+				58E1A74D1EA7004300AE8A10 /* CentroidLine.cpp */,
+				58E1A74E1EA7004300AE8A10 /* CentroidPoint.cpp */,
+				58E1A74F1EA7004300AE8A10 /* CGAlgorithms.cpp */,
+				58E1A7501EA7004300AE8A10 /* ConvexHull.cpp */,
+				58E1A7511EA7004300AE8A10 /* distance */,
+				58E1A7541EA7004300AE8A10 /* HCoordinate.cpp */,
+				58E1A7551EA7004300AE8A10 /* InteriorPointArea.cpp */,
+				58E1A7561EA7004300AE8A10 /* InteriorPointLine.cpp */,
+				58E1A7571EA7004300AE8A10 /* InteriorPointPoint.cpp */,
+				58E1A7581EA7004300AE8A10 /* LineIntersector.cpp */,
+				58E1A7591EA7004300AE8A10 /* locate */,
+				58E1A75D1EA7004300AE8A10 /* MCPointInRing.cpp */,
+				58E1A75E1EA7004300AE8A10 /* MinimumDiameter.cpp */,
+				58E1A75F1EA7004300AE8A10 /* NotRepresentableException.cpp */,
+				58E1A7601EA7004300AE8A10 /* PointLocator.cpp */,
+				58E1A7611EA7004300AE8A10 /* RayCrossingCounter.cpp */,
+				58E1A7621EA7004300AE8A10 /* RobustDeterminant.cpp */,
+				58E1A7631EA7004300AE8A10 /* SimplePointInRing.cpp */,
+				58E1A7641EA7004300AE8A10 /* SIRtreePointInRing.cpp */,
+			);
+			path = algorithm;
+			sourceTree = "<group>";
+		};
+		58E1A7511EA7004300AE8A10 /* distance */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A7521EA7004300AE8A10 /* DiscreteHausdorffDistance.cpp */,
+				58E1A7531EA7004300AE8A10 /* DistanceToPoint.cpp */,
+			);
+			path = distance;
+			sourceTree = "<group>";
+		};
+		58E1A7591EA7004300AE8A10 /* locate */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A75A1EA7004300AE8A10 /* IndexedPointInAreaLocator.cpp */,
+				58E1A75B1EA7004300AE8A10 /* PointOnGeometryLocator.cpp */,
+				58E1A75C1EA7004300AE8A10 /* SimplePointInAreaLocator.cpp */,
+			);
+			path = locate;
+			sourceTree = "<group>";
+		};
+		58E1A7651EA7004300AE8A10 /* geom */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A7661EA7004300AE8A10 /* Coordinate.cpp */,
+				58E1A7671EA7004300AE8A10 /* CoordinateArraySequence.cpp */,
+				58E1A7681EA7004300AE8A10 /* CoordinateArraySequenceFactory.cpp */,
+				58E1A7691EA7004300AE8A10 /* CoordinateSequence.cpp */,
+				58E1A76A1EA7004300AE8A10 /* CoordinateSequenceFactory.cpp */,
+				58E1A76B1EA7004300AE8A10 /* Dimension.cpp */,
+				58E1A76C1EA7004300AE8A10 /* Envelope.cpp */,
+				58E1A76D1EA7004300AE8A10 /* Geometry.cpp */,
+				58E1A76E1EA7004300AE8A10 /* GeometryCollection.cpp */,
+				58E1A76F1EA7004300AE8A10 /* GeometryComponentFilter.cpp */,
+				58E1A7701EA7004300AE8A10 /* GeometryFactory.cpp */,
+				58E1A7711EA7004300AE8A10 /* GeometryList.cpp */,
+				58E1A7721EA7004300AE8A10 /* IntersectionMatrix.cpp */,
+				58E1A7731EA7004300AE8A10 /* LinearRing.cpp */,
+				58E1A7741EA7004300AE8A10 /* LineSegment.cpp */,
+				58E1A7751EA7004300AE8A10 /* LineString.cpp */,
+				58E1A7761EA7004300AE8A10 /* Location.cpp */,
+				58E1A7771EA7004300AE8A10 /* MultiLineString.cpp */,
+				58E1A7781EA7004300AE8A10 /* MultiPoint.cpp */,
+				58E1A7791EA7004300AE8A10 /* MultiPolygon.cpp */,
+				58E1A77A1EA7004300AE8A10 /* Point.cpp */,
+				58E1A77B1EA7004300AE8A10 /* Polygon.cpp */,
+				58E1A77C1EA7004300AE8A10 /* PrecisionModel.cpp */,
+				58E1A77D1EA7004300AE8A10 /* prep */,
+				58E1A78B1EA7004300AE8A10 /* Triangle.cpp */,
+				58E1A78C1EA7004300AE8A10 /* util */,
+			);
+			path = geom;
+			sourceTree = "<group>";
+		};
+		58E1A77D1EA7004300AE8A10 /* prep */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A77E1EA7004300AE8A10 /* AbstractPreparedPolygonContains.cpp */,
+				58E1A77F1EA7004300AE8A10 /* BasicPreparedGeometry.cpp */,
+				58E1A7801EA7004300AE8A10 /* PreparedGeometry.cpp */,
+				58E1A7811EA7004300AE8A10 /* PreparedGeometryFactory.cpp */,
+				58E1A7821EA7004300AE8A10 /* PreparedLineString.cpp */,
+				58E1A7831EA7004300AE8A10 /* PreparedLineStringIntersects.cpp */,
+				58E1A7841EA7004300AE8A10 /* PreparedPoint.cpp */,
+				58E1A7851EA7004300AE8A10 /* PreparedPolygon.cpp */,
+				58E1A7861EA7004300AE8A10 /* PreparedPolygonContains.cpp */,
+				58E1A7871EA7004300AE8A10 /* PreparedPolygonContainsProperly.cpp */,
+				58E1A7881EA7004300AE8A10 /* PreparedPolygonCovers.cpp */,
+				58E1A7891EA7004300AE8A10 /* PreparedPolygonIntersects.cpp */,
+				58E1A78A1EA7004300AE8A10 /* PreparedPolygonPredicate.cpp */,
+			);
+			path = prep;
+			sourceTree = "<group>";
+		};
+		58E1A78C1EA7004300AE8A10 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A78D1EA7004300AE8A10 /* ComponentCoordinateExtracter.cpp */,
+				58E1A78E1EA7004300AE8A10 /* CoordinateOperation.cpp */,
+				58E1A78F1EA7004300AE8A10 /* GeometryCombiner.cpp */,
+				58E1A7901EA7004300AE8A10 /* GeometryEditor.cpp */,
+				58E1A7911EA7004300AE8A10 /* GeometryTransformer.cpp */,
+				58E1A7921EA7004300AE8A10 /* LinearComponentExtracter.cpp */,
+				58E1A7931EA7004300AE8A10 /* PointExtracter.cpp */,
+				58E1A7941EA7004300AE8A10 /* PolygonExtracter.cpp */,
+				58E1A7951EA7004300AE8A10 /* ShortCircuitedGeometryVisitor.cpp */,
+				58E1A7961EA7004300AE8A10 /* SineStarFactory.cpp */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		58E1A7971EA7004300AE8A10 /* geomgraph */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A7981EA7004300AE8A10 /* Depth.cpp */,
+				58E1A7991EA7004300AE8A10 /* DirectedEdge.cpp */,
+				58E1A79A1EA7004300AE8A10 /* DirectedEdgeStar.cpp */,
+				58E1A79B1EA7004300AE8A10 /* Edge.cpp */,
+				58E1A79C1EA7004300AE8A10 /* EdgeEnd.cpp */,
+				58E1A79D1EA7004300AE8A10 /* EdgeEndStar.cpp */,
+				58E1A79E1EA7004300AE8A10 /* EdgeIntersectionList.cpp */,
+				58E1A79F1EA7004300AE8A10 /* EdgeList.cpp */,
+				58E1A7A01EA7004300AE8A10 /* EdgeNodingValidator.cpp */,
+				58E1A7A11EA7004300AE8A10 /* EdgeRing.cpp */,
+				58E1A7A21EA7004300AE8A10 /* GeometryGraph.cpp */,
+				58E1A7A31EA7004300AE8A10 /* GraphComponent.cpp */,
+				58E1A7A41EA7004300AE8A10 /* index */,
+				58E1A7AD1EA7004300AE8A10 /* Label.cpp */,
+				58E1A7AE1EA7004300AE8A10 /* Node.cpp */,
+				58E1A7AF1EA7004300AE8A10 /* NodeFactory.cpp */,
+				58E1A7B01EA7004300AE8A10 /* NodeMap.cpp */,
+				58E1A7B11EA7004300AE8A10 /* PlanarGraph.cpp */,
+				58E1A7B21EA7004300AE8A10 /* Position.cpp */,
+				58E1A7B31EA7004300AE8A10 /* Quadrant.cpp */,
+				58E1A7B41EA7004300AE8A10 /* TopologyLocation.cpp */,
+			);
+			path = geomgraph;
+			sourceTree = "<group>";
+		};
+		58E1A7A41EA7004300AE8A10 /* index */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A7A51EA7004300AE8A10 /* MonotoneChainEdge.cpp */,
+				58E1A7A61EA7004300AE8A10 /* MonotoneChainIndexer.cpp */,
+				58E1A7A71EA7004300AE8A10 /* SegmentIntersector.cpp */,
+				58E1A7A81EA7004300AE8A10 /* SimpleEdgeSetIntersector.cpp */,
+				58E1A7A91EA7004300AE8A10 /* SimpleMCSweepLineIntersector.cpp */,
+				58E1A7AA1EA7004300AE8A10 /* SimpleSweepLineIntersector.cpp */,
+				58E1A7AB1EA7004300AE8A10 /* SweepLineEvent.cpp */,
+				58E1A7AC1EA7004300AE8A10 /* SweepLineSegment.cpp */,
+			);
+			path = index;
+			sourceTree = "<group>";
+		};
+		58E1A7B51EA7004300AE8A10 /* index */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A7B61EA7004300AE8A10 /* bintree */,
+				58E1A7BD1EA7004300AE8A10 /* chain */,
+				58E1A7C21EA7004300AE8A10 /* intervalrtree */,
+				58E1A7C71EA7004300AE8A10 /* quadtree */,
+				58E1A7CF1EA7004300AE8A10 /* strtree */,
+				58E1A7D61EA7004300AE8A10 /* sweepline */,
+			);
+			path = index;
+			sourceTree = "<group>";
+		};
+		58E1A7B61EA7004300AE8A10 /* bintree */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A7B71EA7004300AE8A10 /* Bintree.cpp */,
+				58E1A7B81EA7004300AE8A10 /* Interval.cpp */,
+				58E1A7B91EA7004300AE8A10 /* Key.cpp */,
+				58E1A7BA1EA7004300AE8A10 /* Node.cpp */,
+				58E1A7BB1EA7004300AE8A10 /* NodeBase.cpp */,
+				58E1A7BC1EA7004300AE8A10 /* Root.cpp */,
+			);
+			path = bintree;
+			sourceTree = "<group>";
+		};
+		58E1A7BD1EA7004300AE8A10 /* chain */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A7BE1EA7004300AE8A10 /* MonotoneChain.cpp */,
+				58E1A7BF1EA7004300AE8A10 /* MonotoneChainBuilder.cpp */,
+				58E1A7C01EA7004300AE8A10 /* MonotoneChainOverlapAction.cpp */,
+				58E1A7C11EA7004300AE8A10 /* MonotoneChainSelectAction.cpp */,
+			);
+			path = chain;
+			sourceTree = "<group>";
+		};
+		58E1A7C21EA7004300AE8A10 /* intervalrtree */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A7C31EA7004300AE8A10 /* IntervalRTreeBranchNode.cpp */,
+				58E1A7C41EA7004300AE8A10 /* IntervalRTreeLeafNode.cpp */,
+				58E1A7C51EA7004300AE8A10 /* IntervalRTreeNode.cpp */,
+				58E1A7C61EA7004300AE8A10 /* SortedPackedIntervalRTree.cpp */,
+			);
+			path = intervalrtree;
+			sourceTree = "<group>";
+		};
+		58E1A7C71EA7004300AE8A10 /* quadtree */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A7C81EA7004300AE8A10 /* DoubleBits.cpp */,
+				58E1A7C91EA7004300AE8A10 /* IntervalSize.cpp */,
+				58E1A7CA1EA7004300AE8A10 /* Key.cpp */,
+				58E1A7CB1EA7004300AE8A10 /* Node.cpp */,
+				58E1A7CC1EA7004300AE8A10 /* NodeBase.cpp */,
+				58E1A7CD1EA7004300AE8A10 /* Quadtree.cpp */,
+				58E1A7CE1EA7004300AE8A10 /* Root.cpp */,
+			);
+			path = quadtree;
+			sourceTree = "<group>";
+		};
+		58E1A7CF1EA7004300AE8A10 /* strtree */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A7D01EA7004300AE8A10 /* AbstractNode.cpp */,
+				58E1A7D11EA7004300AE8A10 /* AbstractSTRtree.cpp */,
+				58E1A7D21EA7004300AE8A10 /* Interval.cpp */,
+				58E1A7D31EA7004300AE8A10 /* ItemBoundable.cpp */,
+				58E1A7D41EA7004300AE8A10 /* SIRtree.cpp */,
+				58E1A7D51EA7004300AE8A10 /* STRtree.cpp */,
+			);
+			path = strtree;
+			sourceTree = "<group>";
+		};
+		58E1A7D61EA7004300AE8A10 /* sweepline */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A7D71EA7004300AE8A10 /* SweepLineEvent.cpp */,
+				58E1A7D81EA7004300AE8A10 /* SweepLineIndex.cpp */,
+				58E1A7D91EA7004300AE8A10 /* SweepLineInterval.cpp */,
+			);
+			path = sweepline;
+			sourceTree = "<group>";
+		};
+		58E1A7DB1EA7004300AE8A10 /* io */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A7DC1EA7004300AE8A10 /* ByteOrderDataInStream.cpp */,
+				58E1A7DD1EA7004300AE8A10 /* ByteOrderValues.cpp */,
+				58E1A7DE1EA7004300AE8A10 /* CLocalizer.cpp */,
+				58E1A7DF1EA7004300AE8A10 /* ParseException.cpp */,
+				58E1A7E01EA7004300AE8A10 /* StringTokenizer.cpp */,
+				58E1A7E11EA7004300AE8A10 /* Unload.cpp */,
+				58E1A7E21EA7004300AE8A10 /* WKBReader.cpp */,
+				58E1A7E31EA7004300AE8A10 /* WKBWriter.cpp */,
+				58E1A7E41EA7004300AE8A10 /* WKTReader.cpp */,
+				58E1A7E51EA7004300AE8A10 /* WKTWriter.cpp */,
+				58E1A7E61EA7004300AE8A10 /* Writer.cpp */,
+			);
+			path = io;
+			sourceTree = "<group>";
+		};
+		58E1A7E71EA7004300AE8A10 /* linearref */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A7E81EA7004300AE8A10 /* ExtractLineByLocation.cpp */,
+				58E1A7E91EA7004300AE8A10 /* LengthIndexedLine.cpp */,
+				58E1A7EA1EA7004300AE8A10 /* LengthIndexOfPoint.cpp */,
+				58E1A7EB1EA7004300AE8A10 /* LengthLocationMap.cpp */,
+				58E1A7EC1EA7004300AE8A10 /* LinearGeometryBuilder.cpp */,
+				58E1A7ED1EA7004300AE8A10 /* LinearIterator.cpp */,
+				58E1A7EE1EA7004300AE8A10 /* LinearLocation.cpp */,
+				58E1A7EF1EA7004300AE8A10 /* LocationIndexOfLine.cpp */,
+				58E1A7F01EA7004300AE8A10 /* LocationIndexOfPoint.cpp */,
+			);
+			path = linearref;
+			sourceTree = "<group>";
+		};
+		58E1A7F11EA7004300AE8A10 /* noding */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A7F21EA7004300AE8A10 /* BasicSegmentString.cpp */,
+				58E1A7F31EA7004300AE8A10 /* FastNodingValidator.cpp */,
+				58E1A7F41EA7004300AE8A10 /* FastSegmentSetIntersectionFinder.cpp */,
+				58E1A7F51EA7004300AE8A10 /* GeometryNoder.cpp */,
+				58E1A7F61EA7004300AE8A10 /* IntersectionAdder.cpp */,
+				58E1A7F71EA7004300AE8A10 /* IntersectionFinderAdder.cpp */,
+				58E1A7F81EA7004300AE8A10 /* IteratedNoder.cpp */,
+				58E1A7F91EA7004300AE8A10 /* MCIndexNoder.cpp */,
+				58E1A7FA1EA7004300AE8A10 /* MCIndexSegmentSetMutualIntersector.cpp */,
+				58E1A7FB1EA7004300AE8A10 /* NodedSegmentString.cpp */,
+				58E1A7FC1EA7004300AE8A10 /* NodingValidator.cpp */,
+				58E1A7FD1EA7004300AE8A10 /* Octant.cpp */,
+				58E1A7FE1EA7004300AE8A10 /* OrientedCoordinateArray.cpp */,
+				58E1A7FF1EA7004300AE8A10 /* ScaledNoder.cpp */,
+				58E1A8001EA7004300AE8A10 /* SegmentIntersectionDetector.cpp */,
+				58E1A8011EA7004300AE8A10 /* SegmentNode.cpp */,
+				58E1A8021EA7004300AE8A10 /* SegmentNodeList.cpp */,
+				58E1A8031EA7004300AE8A10 /* SegmentString.cpp */,
+				58E1A8041EA7004300AE8A10 /* SegmentStringUtil.cpp */,
+				58E1A8051EA7004300AE8A10 /* SimpleNoder.cpp */,
+				58E1A8061EA7004300AE8A10 /* SingleInteriorIntersectionFinder.cpp */,
+				58E1A8071EA7004300AE8A10 /* snapround */,
+			);
+			path = noding;
+			sourceTree = "<group>";
+		};
+		58E1A8071EA7004300AE8A10 /* snapround */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A8081EA7004300AE8A10 /* HotPixel.cpp */,
+				58E1A8091EA7004300AE8A10 /* MCIndexPointSnapper.cpp */,
+				58E1A80A1EA7004300AE8A10 /* MCIndexSnapRounder.cpp */,
+				58E1A80B1EA7004300AE8A10 /* SimpleSnapRounder.cpp */,
+			);
+			path = snapround;
+			sourceTree = "<group>";
+		};
+		58E1A80C1EA7004300AE8A10 /* operation */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A80D1EA7004300AE8A10 /* buffer */,
+				58E1A8181EA7004300AE8A10 /* distance */,
+				58E1A81D1EA7004300AE8A10 /* GeometryGraphOperation.cpp */,
+				58E1A81E1EA7004300AE8A10 /* intersection */,
+				58E1A8221EA7004300AE8A10 /* IsSimpleOp.cpp */,
+				58E1A8231EA7004300AE8A10 /* linemerge */,
+				58E1A82A1EA7004300AE8A10 /* overlay */,
+				58E1A83E1EA7004300AE8A10 /* polygonize */,
+				58E1A8441EA7004300AE8A10 /* predicate */,
+				58E1A8481EA7004300AE8A10 /* relate */,
+				58E1A8511EA7004300AE8A10 /* sharedpaths */,
+				58E1A8531EA7004300AE8A10 /* union */,
+				58E1A8581EA7004300AE8A10 /* valid */,
+			);
+			path = operation;
+			sourceTree = "<group>";
+		};
+		58E1A80D1EA7004300AE8A10 /* buffer */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A80E1EA7004300AE8A10 /* BufferBuilder.cpp */,
+				58E1A80F1EA7004300AE8A10 /* BufferInputLineSimplifier.cpp */,
+				58E1A8101EA7004300AE8A10 /* BufferOp.cpp */,
+				58E1A8111EA7004300AE8A10 /* BufferParameters.cpp */,
+				58E1A8121EA7004300AE8A10 /* BufferSubgraph.cpp */,
+				58E1A8131EA7004300AE8A10 /* OffsetCurveBuilder.cpp */,
+				58E1A8141EA7004300AE8A10 /* OffsetCurveSetBuilder.cpp */,
+				58E1A8151EA7004300AE8A10 /* OffsetSegmentGenerator.cpp */,
+				58E1A8161EA7004300AE8A10 /* RightmostEdgeFinder.cpp */,
+				58E1A8171EA7004300AE8A10 /* SubgraphDepthLocater.cpp */,
+			);
+			path = buffer;
+			sourceTree = "<group>";
+		};
+		58E1A8181EA7004300AE8A10 /* distance */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A8191EA7004300AE8A10 /* ConnectedElementLocationFilter.cpp */,
+				58E1A81A1EA7004300AE8A10 /* ConnectedElementPointFilter.cpp */,
+				58E1A81B1EA7004300AE8A10 /* DistanceOp.cpp */,
+				58E1A81C1EA7004300AE8A10 /* GeometryLocation.cpp */,
+			);
+			path = distance;
+			sourceTree = "<group>";
+		};
+		58E1A81E1EA7004300AE8A10 /* intersection */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A81F1EA7004300AE8A10 /* Rectangle.cpp */,
+				58E1A8201EA7004300AE8A10 /* RectangleIntersection.cpp */,
+				58E1A8211EA7004300AE8A10 /* RectangleIntersectionBuilder.cpp */,
+			);
+			path = intersection;
+			sourceTree = "<group>";
+		};
+		58E1A8231EA7004300AE8A10 /* linemerge */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A8241EA7004300AE8A10 /* EdgeString.cpp */,
+				58E1A8251EA7004300AE8A10 /* LineMergeDirectedEdge.cpp */,
+				58E1A8261EA7004300AE8A10 /* LineMergeEdge.cpp */,
+				58E1A8271EA7004300AE8A10 /* LineMergeGraph.cpp */,
+				58E1A8281EA7004300AE8A10 /* LineMerger.cpp */,
+				58E1A8291EA7004300AE8A10 /* LineSequencer.cpp */,
+			);
+			path = linemerge;
+			sourceTree = "<group>";
+		};
+		58E1A82A1EA7004300AE8A10 /* overlay */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A82B1EA7004300AE8A10 /* EdgeSetNoder.cpp */,
+				58E1A82C1EA7004300AE8A10 /* ElevationMatrix.cpp */,
+				58E1A82D1EA7004300AE8A10 /* ElevationMatrixCell.cpp */,
+				58E1A82E1EA7004300AE8A10 /* LineBuilder.cpp */,
+				58E1A82F1EA7004300AE8A10 /* MaximalEdgeRing.cpp */,
+				58E1A8301EA7004300AE8A10 /* MinimalEdgeRing.cpp */,
+				58E1A8311EA7004300AE8A10 /* OverlayNodeFactory.cpp */,
+				58E1A8321EA7004300AE8A10 /* OverlayOp.cpp */,
+				58E1A8331EA7004300AE8A10 /* PointBuilder.cpp */,
+				58E1A8341EA7004300AE8A10 /* PolygonBuilder.cpp */,
+				58E1A8351EA7004300AE8A10 /* snap */,
+				58E1A83A1EA7004300AE8A10 /* validate */,
+			);
+			path = overlay;
+			sourceTree = "<group>";
+		};
+		58E1A8351EA7004300AE8A10 /* snap */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A8361EA7004300AE8A10 /* GeometrySnapper.cpp */,
+				58E1A8371EA7004300AE8A10 /* LineStringSnapper.cpp */,
+				58E1A8381EA7004300AE8A10 /* SnapIfNeededOverlayOp.cpp */,
+				58E1A8391EA7004300AE8A10 /* SnapOverlayOp.cpp */,
+			);
+			path = snap;
+			sourceTree = "<group>";
+		};
+		58E1A83A1EA7004300AE8A10 /* validate */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A83B1EA7004300AE8A10 /* FuzzyPointLocator.cpp */,
+				58E1A83C1EA7004300AE8A10 /* OffsetPointGenerator.cpp */,
+				58E1A83D1EA7004300AE8A10 /* OverlayResultValidator.cpp */,
+			);
+			path = validate;
+			sourceTree = "<group>";
+		};
+		58E1A83E1EA7004300AE8A10 /* polygonize */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A83F1EA7004300AE8A10 /* EdgeRing.cpp */,
+				58E1A8401EA7004300AE8A10 /* PolygonizeDirectedEdge.cpp */,
+				58E1A8411EA7004300AE8A10 /* PolygonizeEdge.cpp */,
+				58E1A8421EA7004300AE8A10 /* PolygonizeGraph.cpp */,
+				58E1A8431EA7004300AE8A10 /* Polygonizer.cpp */,
+			);
+			path = polygonize;
+			sourceTree = "<group>";
+		};
+		58E1A8441EA7004300AE8A10 /* predicate */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A8451EA7004300AE8A10 /* RectangleContains.cpp */,
+				58E1A8461EA7004300AE8A10 /* RectangleIntersects.cpp */,
+				58E1A8471EA7004300AE8A10 /* SegmentIntersectionTester.cpp */,
+			);
+			path = predicate;
+			sourceTree = "<group>";
+		};
+		58E1A8481EA7004300AE8A10 /* relate */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A8491EA7004300AE8A10 /* EdgeEndBuilder.cpp */,
+				58E1A84A1EA7004300AE8A10 /* EdgeEndBundle.cpp */,
+				58E1A84B1EA7004300AE8A10 /* EdgeEndBundleStar.cpp */,
+				58E1A84C1EA7004300AE8A10 /* RelateComputer.cpp */,
+				58E1A84D1EA7004300AE8A10 /* RelateNode.cpp */,
+				58E1A84E1EA7004300AE8A10 /* RelateNodeFactory.cpp */,
+				58E1A84F1EA7004300AE8A10 /* RelateNodeGraph.cpp */,
+				58E1A8501EA7004300AE8A10 /* RelateOp.cpp */,
+			);
+			path = relate;
+			sourceTree = "<group>";
+		};
+		58E1A8511EA7004300AE8A10 /* sharedpaths */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A8521EA7004300AE8A10 /* SharedPathsOp.cpp */,
+			);
+			path = sharedpaths;
+			sourceTree = "<group>";
+		};
+		58E1A8531EA7004300AE8A10 /* union */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A8541EA7004300AE8A10 /* CascadedPolygonUnion.cpp */,
+				58E1A8551EA7004300AE8A10 /* CascadedUnion.cpp */,
+				58E1A8561EA7004300AE8A10 /* PointGeometryUnion.cpp */,
+				58E1A8571EA7004300AE8A10 /* UnaryUnionOp.cpp */,
+			);
+			path = union;
+			sourceTree = "<group>";
+		};
+		58E1A8581EA7004300AE8A10 /* valid */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A8591EA7004300AE8A10 /* ConnectedInteriorTester.cpp */,
+				58E1A85A1EA7004300AE8A10 /* ConsistentAreaTester.cpp */,
+				58E1A85B1EA7004300AE8A10 /* IndexedNestedRingTester.cpp */,
+				58E1A85C1EA7004300AE8A10 /* IndexedNestedRingTester.h */,
+				58E1A85D1EA7004300AE8A10 /* IsValidOp.cpp */,
+				58E1A85E1EA7004300AE8A10 /* QuadtreeNestedRingTester.cpp */,
+				58E1A85F1EA7004300AE8A10 /* RepeatedPointTester.cpp */,
+				58E1A8601EA7004300AE8A10 /* SimpleNestedRingTester.cpp */,
+				58E1A8611EA7004300AE8A10 /* SweeplineNestedRingTester.cpp */,
+				58E1A8621EA7004300AE8A10 /* TopologyValidationError.cpp */,
+			);
+			path = valid;
+			sourceTree = "<group>";
+		};
+		58E1A8631EA7004300AE8A10 /* planargraph */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A8641EA7004300AE8A10 /* algorithm */,
+				58E1A8661EA7004300AE8A10 /* DirectedEdge.cpp */,
+				58E1A8671EA7004300AE8A10 /* DirectedEdgeStar.cpp */,
+				58E1A8681EA7004300AE8A10 /* Edge.cpp */,
+				58E1A8691EA7004300AE8A10 /* Node.cpp */,
+				58E1A86A1EA7004300AE8A10 /* NodeMap.cpp */,
+				58E1A86B1EA7004300AE8A10 /* PlanarGraph.cpp */,
+				58E1A86C1EA7004300AE8A10 /* Subgraph.cpp */,
+			);
+			path = planargraph;
+			sourceTree = "<group>";
+		};
+		58E1A8641EA7004300AE8A10 /* algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A8651EA7004300AE8A10 /* ConnectedSubgraphFinder.cpp */,
+			);
+			path = algorithm;
+			sourceTree = "<group>";
+		};
+		58E1A86D1EA7004300AE8A10 /* precision */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A86E1EA7004300AE8A10 /* CommonBits.cpp */,
+				58E1A86F1EA7004300AE8A10 /* CommonBitsOp.cpp */,
+				58E1A8701EA7004300AE8A10 /* CommonBitsRemover.cpp */,
+				58E1A8711EA7004300AE8A10 /* EnhancedPrecisionOp.cpp */,
+				58E1A8721EA7004300AE8A10 /* GeometryPrecisionReducer.cpp */,
+				58E1A8731EA7004300AE8A10 /* PrecisionReducerCoordinateOperation.cpp */,
+				58E1A8741EA7004300AE8A10 /* SimpleGeometryPrecisionReducer.cpp */,
+			);
+			path = precision;
+			sourceTree = "<group>";
+		};
+		58E1A8751EA7004300AE8A10 /* simplify */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A8761EA7004300AE8A10 /* DouglasPeuckerLineSimplifier.cpp */,
+				58E1A8771EA7004300AE8A10 /* DouglasPeuckerSimplifier.cpp */,
+				58E1A8781EA7004300AE8A10 /* LineSegmentIndex.cpp */,
+				58E1A8791EA7004300AE8A10 /* TaggedLineSegment.cpp */,
+				58E1A87A1EA7004300AE8A10 /* TaggedLinesSimplifier.cpp */,
+				58E1A87B1EA7004300AE8A10 /* TaggedLineString.cpp */,
+				58E1A87C1EA7004300AE8A10 /* TaggedLineStringSimplifier.cpp */,
+				58E1A87D1EA7004300AE8A10 /* TopologyPreservingSimplifier.cpp */,
+			);
+			path = simplify;
+			sourceTree = "<group>";
+		};
+		58E1A87E1EA7004300AE8A10 /* triangulate */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A87F1EA7004300AE8A10 /* DelaunayTriangulationBuilder.cpp */,
+				58E1A8801EA7004300AE8A10 /* IncrementalDelaunayTriangulator.cpp */,
+				58E1A8811EA7004300AE8A10 /* quadedge */,
+				58E1A88A1EA7004300AE8A10 /* VoronoiDiagramBuilder.cpp */,
+			);
+			path = triangulate;
+			sourceTree = "<group>";
+		};
+		58E1A8811EA7004300AE8A10 /* quadedge */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A8821EA7004300AE8A10 /* LastFoundQuadEdgeLocator.cpp */,
+				58E1A8831EA7004300AE8A10 /* LocateFailureException.cpp */,
+				58E1A8841EA7004300AE8A10 /* QuadEdge.cpp */,
+				58E1A8851EA7004300AE8A10 /* QuadEdgeLocator.cpp */,
+				58E1A8861EA7004300AE8A10 /* QuadEdgeSubdivision.cpp */,
+				58E1A8871EA7004300AE8A10 /* TrianglePredicate.cpp */,
+				58E1A8881EA7004300AE8A10 /* TriangleVisitor.cpp */,
+				58E1A8891EA7004300AE8A10 /* Vertex.cpp */,
+			);
+			path = quadedge;
+			sourceTree = "<group>";
+		};
+		58E1A88B1EA7004300AE8A10 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				58E1A88C1EA7004300AE8A10 /* Assert.cpp */,
+				58E1A88D1EA7004300AE8A10 /* GeometricShapeFactory.cpp */,
+				58E1A88E1EA7004300AE8A10 /* Interrupt.cpp */,
+				58E1A88F1EA7004300AE8A10 /* math.cpp */,
+				58E1A8901EA7004300AE8A10 /* Profiler.cpp */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		58E1AD661EA702B900AE8A10 /* capi */ = {
+			isa = PBXGroup;
+			children = (
+				58E1AD671EA702B900AE8A10 /* geos_c.cpp */,
+				58E1AD681EA702B900AE8A10 /* geos_c.h */,
+				58E1AD6B1EA702B900AE8A10 /* geos_ts_c.cpp */,
+			);
+			path = capi;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		58E19AFF1EA6FB4800AE8A10 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58E1AD6F1EA702B900AE8A10 /* geos_c.h in Headers */,
+				58E1A8971EA7004400AE8A10 /* geos_svn_revision.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		58E196521EA6FA5000AE8A10 /* geos */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58E1965C1EA6FA5000AE8A10 /* Build configuration list for PBXNativeTarget "geos" */;
+			buildPhases = (
+				58E1964F1EA6FA5000AE8A10 /* Sources */,
+				58E196501EA6FA5000AE8A10 /* Frameworks */,
+				58E196511EA6FA5000AE8A10 /* CopyFiles */,
+				58E19AFF1EA6FB4800AE8A10 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = geos;
+			productName = geos;
+			productReference = 58E196531EA6FA5000AE8A10 /* libgeos.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		58E1964B1EA6FA5000AE8A10 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = brightbeacon;
+				TargetAttributes = {
+					58E196521EA6FA5000AE8A10 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = L2S5E9QH3S;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 58E1964E1EA6FA5000AE8A10 /* Build configuration list for PBXProject "geos" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 58E1964A1EA6FA5000AE8A10;
+			productRefGroup = 58E196541EA6FA5000AE8A10 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				58E196521EA6FA5000AE8A10 /* geos */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		58E1964F1EA6FA5000AE8A10 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58E1A8A01EA7004400AE8A10 /* DiscreteHausdorffDistance.cpp in Sources */,
+				58E1A8E71EA7004400AE8A10 /* EdgeIntersectionList.cpp in Sources */,
+				58E1A9641EA7004400AE8A10 /* ElevationMatrixCell.cpp in Sources */,
+				58E1A98E1EA7004400AE8A10 /* RepeatedPointTester.cpp in Sources */,
+				58E1A9411EA7004400AE8A10 /* SegmentString.cpp in Sources */,
+				58E1A8F51EA7004400AE8A10 /* Label.cpp in Sources */,
+				58E1A9B11EA7004400AE8A10 /* TriangleVisitor.cpp in Sources */,
+				58E1A8B91EA7004400AE8A10 /* Geometry.cpp in Sources */,
+				58E1A8A51EA7004400AE8A10 /* InteriorPointPoint.cpp in Sources */,
+				58E1A97E1EA7004400AE8A10 /* RelateComputer.cpp in Sources */,
+				58E1AD701EA702B900AE8A10 /* geos_ts_c.cpp in Sources */,
+				58E1A97C1EA7004400AE8A10 /* EdgeEndBundle.cpp in Sources */,
+				58E1A8EF1EA7004400AE8A10 /* SegmentIntersector.cpp in Sources */,
+				58E1A8E91EA7004400AE8A10 /* EdgeNodingValidator.cpp in Sources */,
+				58E1A9791EA7004400AE8A10 /* RectangleIntersects.cpp in Sources */,
+				58E1A9061EA7004400AE8A10 /* MonotoneChainSelectAction.cpp in Sources */,
+				58E1A8DE1EA7004400AE8A10 /* PolygonExtracter.cpp in Sources */,
+				58E1A9AD1EA7004400AE8A10 /* QuadEdge.cpp in Sources */,
+				58E1A9031EA7004400AE8A10 /* MonotoneChain.cpp in Sources */,
+				58E1A8EC1EA7004400AE8A10 /* GraphComponent.cpp in Sources */,
+				58E1A8B11EA7004400AE8A10 /* SIRtreePointInRing.cpp in Sources */,
+				58E1A94E1EA7004400AE8A10 /* OffsetCurveBuilder.cpp in Sources */,
+				58E1A8E41EA7004400AE8A10 /* Edge.cpp in Sources */,
+				58E1A9B01EA7004400AE8A10 /* TrianglePredicate.cpp in Sources */,
+				58E1A8A31EA7004400AE8A10 /* InteriorPointArea.cpp in Sources */,
+				58E1A8DF1EA7004400AE8A10 /* ShortCircuitedGeometryVisitor.cpp in Sources */,
+				58E1A99B1EA7004400AE8A10 /* CommonBitsOp.cpp in Sources */,
+				58E1A9231EA7004400AE8A10 /* WKBWriter.cpp in Sources */,
+				58E1A9111EA7004400AE8A10 /* Root.cpp in Sources */,
+				58E1A9551EA7004400AE8A10 /* DistanceOp.cpp in Sources */,
+				58E1A92D1EA7004400AE8A10 /* LinearLocation.cpp in Sources */,
+				58E1A92A1EA7004400AE8A10 /* LengthLocationMap.cpp in Sources */,
+				58E1A8D21EA7004400AE8A10 /* PreparedPolygonContainsProperly.cpp in Sources */,
+				58E1A9991EA7004400AE8A10 /* Subgraph.cpp in Sources */,
+				58E1A8B71EA7004400AE8A10 /* Dimension.cpp in Sources */,
+				58E1A8D31EA7004400AE8A10 /* PreparedPolygonCovers.cpp in Sources */,
+				58E1A8F91EA7004400AE8A10 /* PlanarGraph.cpp in Sources */,
+				58E1A9A91EA7004400AE8A10 /* DelaunayTriangulationBuilder.cpp in Sources */,
+				58E1A9A31EA7004400AE8A10 /* LineSegmentIndex.cpp in Sources */,
+				58E1A9451EA7004400AE8A10 /* HotPixel.cpp in Sources */,
+				58E1A8F81EA7004400AE8A10 /* NodeMap.cpp in Sources */,
+				58E1A9B31EA7004400AE8A10 /* VoronoiDiagramBuilder.cpp in Sources */,
+				58E1A96F1EA7004400AE8A10 /* SnapOverlayOp.cpp in Sources */,
+				58E1A8B01EA7004400AE8A10 /* SimplePointInRing.cpp in Sources */,
+				58E1A9741EA7004400AE8A10 /* PolygonizeDirectedEdge.cpp in Sources */,
+				58E1A8BE1EA7004400AE8A10 /* IntersectionMatrix.cpp in Sources */,
+				58E1A8AB1EA7004400AE8A10 /* MinimumDiameter.cpp in Sources */,
+				58E1A9811EA7004400AE8A10 /* RelateNodeGraph.cpp in Sources */,
+				58E1A91E1EA7004400AE8A10 /* CLocalizer.cpp in Sources */,
+				58E1A95E1EA7004400AE8A10 /* LineMergeEdge.cpp in Sources */,
+				58E1A8EA1EA7004400AE8A10 /* EdgeRing.cpp in Sources */,
+				58E1A89D1EA7004400AE8A10 /* CentroidPoint.cpp in Sources */,
+				58E1A9701EA7004400AE8A10 /* FuzzyPointLocator.cpp in Sources */,
+				58E1A9B21EA7004400AE8A10 /* Vertex.cpp in Sources */,
+				58E1A8BB1EA7004400AE8A10 /* GeometryComponentFilter.cpp in Sources */,
+				58E1A9691EA7004400AE8A10 /* OverlayOp.cpp in Sources */,
+				58E1A8B81EA7004400AE8A10 /* Envelope.cpp in Sources */,
+				58E1A9321EA7004400AE8A10 /* FastSegmentSetIntersectionFinder.cpp in Sources */,
+				58E1A8981EA7004400AE8A10 /* Angle.cpp in Sources */,
+				58E1A9611EA7004400AE8A10 /* LineSequencer.cpp in Sources */,
+				58E1A8AA1EA7004400AE8A10 /* MCPointInRing.cpp in Sources */,
+				58E1A9291EA7004400AE8A10 /* LengthIndexOfPoint.cpp in Sources */,
+				58E1A8A81EA7004400AE8A10 /* PointOnGeometryLocator.cpp in Sources */,
+				58E1A9271EA7004400AE8A10 /* ExtractLineByLocation.cpp in Sources */,
+				58E1A8B21EA7004400AE8A10 /* Coordinate.cpp in Sources */,
+				58E1A8991EA7004400AE8A10 /* BoundaryNodeRule.cpp in Sources */,
+				58E1A9971EA7004400AE8A10 /* NodeMap.cpp in Sources */,
+				58E1A9311EA7004400AE8A10 /* FastNodingValidator.cpp in Sources */,
+				58E1A9831EA7004400AE8A10 /* SharedPathsOp.cpp in Sources */,
+				58E1A9221EA7004400AE8A10 /* WKBReader.cpp in Sources */,
+				58E1A97B1EA7004400AE8A10 /* EdgeEndBuilder.cpp in Sources */,
+				58E1A9521EA7004400AE8A10 /* SubgraphDepthLocater.cpp in Sources */,
+				58E1A9581EA7004400AE8A10 /* Rectangle.cpp in Sources */,
+				58E1A8CD1EA7004400AE8A10 /* PreparedLineString.cpp in Sources */,
+				58E1A95D1EA7004400AE8A10 /* LineMergeDirectedEdge.cpp in Sources */,
+				58E1A96C1EA7004400AE8A10 /* GeometrySnapper.cpp in Sources */,
+				58E1A9661EA7004400AE8A10 /* MaximalEdgeRing.cpp in Sources */,
+				58E1A99C1EA7004400AE8A10 /* CommonBitsRemover.cpp in Sources */,
+				58E1A98C1EA7004400AE8A10 /* IsValidOp.cpp in Sources */,
+				58E1A92E1EA7004400AE8A10 /* LocationIndexOfLine.cpp in Sources */,
+				58E1A91D1EA7004400AE8A10 /* ByteOrderValues.cpp in Sources */,
+				58E1A9AE1EA7004400AE8A10 /* QuadEdgeLocator.cpp in Sources */,
+				58E1A8B51EA7004400AE8A10 /* CoordinateSequence.cpp in Sources */,
+				58E1A8E11EA7004400AE8A10 /* Depth.cpp in Sources */,
+				58E1A8DD1EA7004400AE8A10 /* PointExtracter.cpp in Sources */,
+				58E1A9841EA7004400AE8A10 /* CascadedPolygonUnion.cpp in Sources */,
+				58E1A9171EA7004400AE8A10 /* STRtree.cpp in Sources */,
+				58E1A98F1EA7004400AE8A10 /* SimpleNestedRingTester.cpp in Sources */,
+				58E1A9281EA7004400AE8A10 /* LengthIndexedLine.cpp in Sources */,
+				58E1A9821EA7004400AE8A10 /* RelateOp.cpp in Sources */,
+				58E1A9961EA7004400AE8A10 /* Node.cpp in Sources */,
+				58E1A96B1EA7004400AE8A10 /* PolygonBuilder.cpp in Sources */,
+				58E1A9441EA7004400AE8A10 /* SingleInteriorIntersectionFinder.cpp in Sources */,
+				58E1A95A1EA7004400AE8A10 /* RectangleIntersectionBuilder.cpp in Sources */,
+				58E1A9211EA7004400AE8A10 /* Unload.cpp in Sources */,
+				58E1A9671EA7004400AE8A10 /* MinimalEdgeRing.cpp in Sources */,
+				58E1A99E1EA7004400AE8A10 /* GeometryPrecisionReducer.cpp in Sources */,
+				58E1A94B1EA7004400AE8A10 /* BufferOp.cpp in Sources */,
+				58E1A9571EA7004400AE8A10 /* GeometryGraphOperation.cpp in Sources */,
+				58E1A8BF1EA7004400AE8A10 /* LinearRing.cpp in Sources */,
+				58E1A98D1EA7004400AE8A10 /* QuadtreeNestedRingTester.cpp in Sources */,
+				58E1A8B61EA7004400AE8A10 /* CoordinateSequenceFactory.cpp in Sources */,
+				58E1A8C71EA7004400AE8A10 /* Polygon.cpp in Sources */,
+				58E1A8EB1EA7004400AE8A10 /* GeometryGraph.cpp in Sources */,
+				58E1A90B1EA7004400AE8A10 /* DoubleBits.cpp in Sources */,
+				58E1A95C1EA7004400AE8A10 /* EdgeString.cpp in Sources */,
+				58E1A8C61EA7004400AE8A10 /* Point.cpp in Sources */,
+				58E1A9091EA7004400AE8A10 /* IntervalRTreeNode.cpp in Sources */,
+				58E1A9A21EA7004400AE8A10 /* DouglasPeuckerSimplifier.cpp in Sources */,
+				58E1A90D1EA7004400AE8A10 /* Key.cpp in Sources */,
+				58E1A8B31EA7004400AE8A10 /* CoordinateArraySequence.cpp in Sources */,
+				58E1A9801EA7004400AE8A10 /* RelateNodeFactory.cpp in Sources */,
+				58E1A9721EA7004400AE8A10 /* OverlayResultValidator.cpp in Sources */,
+				58E1A8AD1EA7004400AE8A10 /* PointLocator.cpp in Sources */,
+				58E1A9471EA7004400AE8A10 /* MCIndexSnapRounder.cpp in Sources */,
+				58E1A8CB1EA7004400AE8A10 /* PreparedGeometry.cpp in Sources */,
+				58E1A9381EA7004400AE8A10 /* MCIndexSegmentSetMutualIntersector.cpp in Sources */,
+				58E1A93C1EA7004400AE8A10 /* OrientedCoordinateArray.cpp in Sources */,
+				58E1A9AB1EA7004400AE8A10 /* LastFoundQuadEdgeLocator.cpp in Sources */,
+				58E1A9861EA7004400AE8A10 /* PointGeometryUnion.cpp in Sources */,
+				58E1A9781EA7004400AE8A10 /* RectangleContains.cpp in Sources */,
+				58E1A9B51EA7004400AE8A10 /* GeometricShapeFactory.cpp in Sources */,
+				58E1A9011EA7004400AE8A10 /* NodeBase.cpp in Sources */,
+				58E1A90A1EA7004400AE8A10 /* SortedPackedIntervalRTree.cpp in Sources */,
+				58E1A91A1EA7004400AE8A10 /* SweepLineInterval.cpp in Sources */,
+				58E1A94F1EA7004400AE8A10 /* OffsetCurveSetBuilder.cpp in Sources */,
+				58E1A9B61EA7004400AE8A10 /* Interrupt.cpp in Sources */,
+				58E1A9371EA7004400AE8A10 /* MCIndexNoder.cpp in Sources */,
+				58E1A99D1EA7004400AE8A10 /* EnhancedPrecisionOp.cpp in Sources */,
+				58E1A8DA1EA7004400AE8A10 /* GeometryEditor.cpp in Sources */,
+				58E1A9161EA7004400AE8A10 /* SIRtree.cpp in Sources */,
+				58E1A9B71EA7004400AE8A10 /* math.cpp in Sources */,
+				58E1A93D1EA7004400AE8A10 /* ScaledNoder.cpp in Sources */,
+				58E1A9491EA7004400AE8A10 /* BufferBuilder.cpp in Sources */,
+				58E1A9771EA7004400AE8A10 /* Polygonizer.cpp in Sources */,
+				58E1A8ED1EA7004400AE8A10 /* MonotoneChainEdge.cpp in Sources */,
+				58E1A9951EA7004400AE8A10 /* Edge.cpp in Sources */,
+				58E1A9511EA7004400AE8A10 /* RightmostEdgeFinder.cpp in Sources */,
+				58E1A9421EA7004400AE8A10 /* SegmentStringUtil.cpp in Sources */,
+				58E1A8C91EA7004400AE8A10 /* AbstractPreparedPolygonContains.cpp in Sources */,
+				58E1A89C1EA7004400AE8A10 /* CentroidLine.cpp in Sources */,
+				58E1A8C21EA7004400AE8A10 /* Location.cpp in Sources */,
+				58E1A8F11EA7004400AE8A10 /* SimpleMCSweepLineIntersector.cpp in Sources */,
+				58E1A91F1EA7004400AE8A10 /* ParseException.cpp in Sources */,
+				58E1A9A51EA7004400AE8A10 /* TaggedLinesSimplifier.cpp in Sources */,
+				58E1A8E31EA7004400AE8A10 /* DirectedEdgeStar.cpp in Sources */,
+				58E1A9AF1EA7004400AE8A10 /* QuadEdgeSubdivision.cpp in Sources */,
+				58E1A9A01EA7004400AE8A10 /* SimpleGeometryPrecisionReducer.cpp in Sources */,
+				58E1A9151EA7004400AE8A10 /* ItemBoundable.cpp in Sources */,
+				58E1A8F21EA7004400AE8A10 /* SimpleSweepLineIntersector.cpp in Sources */,
+				58E1A8BA1EA7004400AE8A10 /* GeometryCollection.cpp in Sources */,
+				58E1A9391EA7004400AE8A10 /* NodedSegmentString.cpp in Sources */,
+				58E1A8F61EA7004400AE8A10 /* Node.cpp in Sources */,
+				58E1A9261EA7004400AE8A10 /* Writer.cpp in Sources */,
+				58E1A98A1EA7004400AE8A10 /* IndexedNestedRingTester.cpp in Sources */,
+				58E1A8B41EA7004400AE8A10 /* CoordinateArraySequenceFactory.cpp in Sources */,
+				58E1A8FA1EA7004400AE8A10 /* Position.cpp in Sources */,
+				58E1A94D1EA7004400AE8A10 /* BufferSubgraph.cpp in Sources */,
+				58E1A8F41EA7004400AE8A10 /* SweepLineSegment.cpp in Sources */,
+				58E1A9361EA7004400AE8A10 /* IteratedNoder.cpp in Sources */,
+				58E1A8CF1EA7004400AE8A10 /* PreparedPoint.cpp in Sources */,
+				58E1A9601EA7004400AE8A10 /* LineMerger.cpp in Sources */,
+				58E1A9651EA7004400AE8A10 /* LineBuilder.cpp in Sources */,
+				58E1A8E61EA7004400AE8A10 /* EdgeEndStar.cpp in Sources */,
+				58E1A89B1EA7004400AE8A10 /* CentroidArea.cpp in Sources */,
+				58E1A9531EA7004400AE8A10 /* ConnectedElementLocationFilter.cpp in Sources */,
+				58E1A91B1EA7004400AE8A10 /* inlines.cpp in Sources */,
+				58E1A93E1EA7004400AE8A10 /* SegmentIntersectionDetector.cpp in Sources */,
+				58E1A9341EA7004400AE8A10 /* IntersectionAdder.cpp in Sources */,
+				58E1A9891EA7004400AE8A10 /* ConsistentAreaTester.cpp in Sources */,
+				58E1A9A11EA7004400AE8A10 /* DouglasPeuckerLineSimplifier.cpp in Sources */,
+				58E1A8E01EA7004400AE8A10 /* SineStarFactory.cpp in Sources */,
+				58E1A9931EA7004400AE8A10 /* DirectedEdge.cpp in Sources */,
+				58E1A8BC1EA7004400AE8A10 /* GeometryFactory.cpp in Sources */,
+				58E1A96E1EA7004400AE8A10 /* SnapIfNeededOverlayOp.cpp in Sources */,
+				58E1A92B1EA7004400AE8A10 /* LinearGeometryBuilder.cpp in Sources */,
+				58E1A9921EA7004400AE8A10 /* ConnectedSubgraphFinder.cpp in Sources */,
+				58E1A97A1EA7004400AE8A10 /* SegmentIntersectionTester.cpp in Sources */,
+				58E1A93F1EA7004400AE8A10 /* SegmentNode.cpp in Sources */,
+				58E1A8D01EA7004400AE8A10 /* PreparedPolygon.cpp in Sources */,
+				58E1AD6E1EA702B900AE8A10 /* geos_c.cpp in Sources */,
+				58E1A8BD1EA7004400AE8A10 /* GeometryList.cpp in Sources */,
+				58E1A9591EA7004400AE8A10 /* RectangleIntersection.cpp in Sources */,
+				58E1A8D11EA7004400AE8A10 /* PreparedPolygonContains.cpp in Sources */,
+				58E1A8C81EA7004400AE8A10 /* PrecisionModel.cpp in Sources */,
+				58E1A8C11EA7004400AE8A10 /* LineString.cpp in Sources */,
+				58E1A9751EA7004400AE8A10 /* PolygonizeEdge.cpp in Sources */,
+				58E1A9021EA7004400AE8A10 /* Root.cpp in Sources */,
+				58E1A9A61EA7004400AE8A10 /* TaggedLineString.cpp in Sources */,
+				58E1A9191EA7004400AE8A10 /* SweepLineIndex.cpp in Sources */,
+				58E1A8CA1EA7004400AE8A10 /* BasicPreparedGeometry.cpp in Sources */,
+				58E1A9201EA7004400AE8A10 /* StringTokenizer.cpp in Sources */,
+				58E1A9331EA7004400AE8A10 /* GeometryNoder.cpp in Sources */,
+				58E1A90C1EA7004400AE8A10 /* IntervalSize.cpp in Sources */,
+				58E1A92F1EA7004400AE8A10 /* LocationIndexOfPoint.cpp in Sources */,
+				58E1A8D81EA7004400AE8A10 /* CoordinateOperation.cpp in Sources */,
+				58E1A9131EA7004400AE8A10 /* AbstractSTRtree.cpp in Sources */,
+				58E1A91C1EA7004400AE8A10 /* ByteOrderDataInStream.cpp in Sources */,
+				58E1A8F31EA7004400AE8A10 /* SweepLineEvent.cpp in Sources */,
+				58E1A9101EA7004400AE8A10 /* Quadtree.cpp in Sources */,
+				58E1A94C1EA7004400AE8A10 /* BufferParameters.cpp in Sources */,
+				58E1A9081EA7004400AE8A10 /* IntervalRTreeLeafNode.cpp in Sources */,
+				58E1A8A91EA7004400AE8A10 /* SimplePointInAreaLocator.cpp in Sources */,
+				58E1A8DC1EA7004400AE8A10 /* LinearComponentExtracter.cpp in Sources */,
+				58E1A8D51EA7004400AE8A10 /* PreparedPolygonPredicate.cpp in Sources */,
+				58E1A8A11EA7004400AE8A10 /* DistanceToPoint.cpp in Sources */,
+				58E1A9911EA7004400AE8A10 /* TopologyValidationError.cpp in Sources */,
+				58E1A8A61EA7004400AE8A10 /* LineIntersector.cpp in Sources */,
+				58E1A8AC1EA7004400AE8A10 /* NotRepresentableException.cpp in Sources */,
+				58E1A8C41EA7004400AE8A10 /* MultiPoint.cpp in Sources */,
+				58E1A97D1EA7004400AE8A10 /* EdgeEndBundleStar.cpp in Sources */,
+				58E1A90E1EA7004400AE8A10 /* Node.cpp in Sources */,
+				58E1A93B1EA7004400AE8A10 /* Octant.cpp in Sources */,
+				58E1A9851EA7004400AE8A10 /* CascadedUnion.cpp in Sources */,
+				58E1A8CC1EA7004400AE8A10 /* PreparedGeometryFactory.cpp in Sources */,
+				58E1A9401EA7004400AE8A10 /* SegmentNodeList.cpp in Sources */,
+				58E1A96D1EA7004400AE8A10 /* LineStringSnapper.cpp in Sources */,
+				58E1A8E21EA7004400AE8A10 /* DirectedEdge.cpp in Sources */,
+				58E1A8E51EA7004400AE8A10 /* EdgeEnd.cpp in Sources */,
+				58E1A8D41EA7004400AE8A10 /* PreparedPolygonIntersects.cpp in Sources */,
+				58E1A9051EA7004400AE8A10 /* MonotoneChainOverlapAction.cpp in Sources */,
+				58E1A8C31EA7004400AE8A10 /* MultiLineString.cpp in Sources */,
+				58E1A8EE1EA7004400AE8A10 /* MonotoneChainIndexer.cpp in Sources */,
+				58E1A8FF1EA7004400AE8A10 /* Key.cpp in Sources */,
+				58E1A9121EA7004400AE8A10 /* AbstractNode.cpp in Sources */,
+				58E1A95F1EA7004400AE8A10 /* LineMergeGraph.cpp in Sources */,
+				58E1A9B81EA7004400AE8A10 /* Profiler.cpp in Sources */,
+				58E1A9AA1EA7004400AE8A10 /* IncrementalDelaunayTriangulator.cpp in Sources */,
+				58E1A9351EA7004400AE8A10 /* IntersectionFinderAdder.cpp in Sources */,
+				58E1A90F1EA7004400AE8A10 /* NodeBase.cpp in Sources */,
+				58E1A9251EA7004400AE8A10 /* WKTWriter.cpp in Sources */,
+				58E1A9071EA7004400AE8A10 /* IntervalRTreeBranchNode.cpp in Sources */,
+				58E1A97F1EA7004400AE8A10 /* RelateNode.cpp in Sources */,
+				58E1A8AF1EA7004400AE8A10 /* RobustDeterminant.cpp in Sources */,
+				58E1A9541EA7004400AE8A10 /* ConnectedElementPointFilter.cpp in Sources */,
+				58E1A9981EA7004400AE8A10 /* PlanarGraph.cpp in Sources */,
+				58E1A9711EA7004400AE8A10 /* OffsetPointGenerator.cpp in Sources */,
+				58E1A8D61EA7004400AE8A10 /* Triangle.cpp in Sources */,
+				58E1A9A81EA7004400AE8A10 /* TopologyPreservingSimplifier.cpp in Sources */,
+				58E1A8DB1EA7004400AE8A10 /* GeometryTransformer.cpp in Sources */,
+				58E1A9621EA7004400AE8A10 /* EdgeSetNoder.cpp in Sources */,
+				58E1A9881EA7004400AE8A10 /* ConnectedInteriorTester.cpp in Sources */,
+				58E1A9871EA7004400AE8A10 /* UnaryUnionOp.cpp in Sources */,
+				58E1A9301EA7004400AE8A10 /* BasicSegmentString.cpp in Sources */,
+				58E1A8A41EA7004400AE8A10 /* InteriorPointLine.cpp in Sources */,
+				58E1A9431EA7004400AE8A10 /* SimpleNoder.cpp in Sources */,
+				58E1A89A1EA7004400AE8A10 /* Centroid.cpp in Sources */,
+				58E1A8A21EA7004400AE8A10 /* HCoordinate.cpp in Sources */,
+				58E1A8C51EA7004400AE8A10 /* MultiPolygon.cpp in Sources */,
+				58E1A95B1EA7004400AE8A10 /* IsSimpleOp.cpp in Sources */,
+				58E1A8C01EA7004400AE8A10 /* LineSegment.cpp in Sources */,
+				58E1A9B41EA7004400AE8A10 /* Assert.cpp in Sources */,
+				58E1A8CE1EA7004400AE8A10 /* PreparedLineStringIntersects.cpp in Sources */,
+				58E1A8FE1EA7004400AE8A10 /* Interval.cpp in Sources */,
+				58E1A8A71EA7004400AE8A10 /* IndexedPointInAreaLocator.cpp in Sources */,
+				58E1A8FD1EA7004400AE8A10 /* Bintree.cpp in Sources */,
+				58E1A8F01EA7004400AE8A10 /* SimpleEdgeSetIntersector.cpp in Sources */,
+				58E1A99F1EA7004400AE8A10 /* PrecisionReducerCoordinateOperation.cpp in Sources */,
+				58E1A94A1EA7004400AE8A10 /* BufferInputLineSimplifier.cpp in Sources */,
+				58E1A8D71EA7004400AE8A10 /* ComponentCoordinateExtracter.cpp in Sources */,
+				58E1A9501EA7004400AE8A10 /* OffsetSegmentGenerator.cpp in Sources */,
+				58E1A9A71EA7004400AE8A10 /* TaggedLineStringSimplifier.cpp in Sources */,
+				58E1A9461EA7004400AE8A10 /* MCIndexPointSnapper.cpp in Sources */,
+				58E1A9241EA7004400AE8A10 /* WKTReader.cpp in Sources */,
+				58E1A8FB1EA7004400AE8A10 /* Quadrant.cpp in Sources */,
+				58E1A8D91EA7004400AE8A10 /* GeometryCombiner.cpp in Sources */,
+				58E1A9731EA7004400AE8A10 /* EdgeRing.cpp in Sources */,
+				58E1A9941EA7004400AE8A10 /* DirectedEdgeStar.cpp in Sources */,
+				58E1A9141EA7004400AE8A10 /* Interval.cpp in Sources */,
+				58E1A89E1EA7004400AE8A10 /* CGAlgorithms.cpp in Sources */,
+				58E1A96A1EA7004400AE8A10 /* PointBuilder.cpp in Sources */,
+				58E1A9481EA7004400AE8A10 /* SimpleSnapRounder.cpp in Sources */,
+				58E1A99A1EA7004400AE8A10 /* CommonBits.cpp in Sources */,
+				58E1A9001EA7004400AE8A10 /* Node.cpp in Sources */,
+				58E1A9A41EA7004400AE8A10 /* TaggedLineSegment.cpp in Sources */,
+				58E1A9561EA7004400AE8A10 /* GeometryLocation.cpp in Sources */,
+				58E1A92C1EA7004400AE8A10 /* LinearIterator.cpp in Sources */,
+				58E1A93A1EA7004400AE8A10 /* NodingValidator.cpp in Sources */,
+				58E1A9631EA7004400AE8A10 /* ElevationMatrix.cpp in Sources */,
+				58E1A9041EA7004400AE8A10 /* MonotoneChainBuilder.cpp in Sources */,
+				58E1A9AC1EA7004400AE8A10 /* LocateFailureException.cpp in Sources */,
+				58E1A9681EA7004400AE8A10 /* OverlayNodeFactory.cpp in Sources */,
+				58E1A8E81EA7004400AE8A10 /* EdgeList.cpp in Sources */,
+				58E1A9181EA7004400AE8A10 /* SweepLineEvent.cpp in Sources */,
+				58E1A89F1EA7004400AE8A10 /* ConvexHull.cpp in Sources */,
+				58E1A8F71EA7004400AE8A10 /* NodeFactory.cpp in Sources */,
+				58E1A9901EA7004400AE8A10 /* SweeplineNestedRingTester.cpp in Sources */,
+				58E1A8AE1EA7004400AE8A10 /* RayCrossingCounter.cpp in Sources */,
+				58E1A8FC1EA7004400AE8A10 /* TopologyLocation.cpp in Sources */,
+				58E1A9761EA7004400AE8A10 /* PolygonizeGraph.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		58E1965A1EA6FA5000AE8A10 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		58E1965B1EA6FA5000AE8A10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		58E1965D1EA6FA5000AE8A10 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				DEVELOPMENT_TEAM = L2S5E9QH3S;
+				HEADER_SEARCH_PATHS = (
+					"\"${PROJECT_DIR}/geos/include\"",
+					"\"${PROJECT_DIR}/geos/capi\"",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		58E1965E1EA6FA5000AE8A10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				DEVELOPMENT_TEAM = L2S5E9QH3S;
+				HEADER_SEARCH_PATHS = (
+					"\"${PROJECT_DIR}/geos/include\"",
+					"\"${PROJECT_DIR}/geos/capi\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		58E1964E1EA6FA5000AE8A10 /* Build configuration list for PBXProject "geos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58E1965A1EA6FA5000AE8A10 /* Debug */,
+				58E1965B1EA6FA5000AE8A10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58E1965C1EA6FA5000AE8A10 /* Build configuration list for PBXNativeTarget "geos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58E1965D1EA6FA5000AE8A10 /* Debug */,
+				58E1965E1EA6FA5000AE8A10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 58E1964B1EA6FA5000AE8A10 /* Project object */;
+}

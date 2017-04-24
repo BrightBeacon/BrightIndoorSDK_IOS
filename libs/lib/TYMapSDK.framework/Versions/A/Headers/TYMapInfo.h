@@ -124,6 +124,15 @@ MapSize TYMapSizeMake(double x, double y);
  *  @return 目标楼层信息
  */
 + (TYMapInfo *)searchMapInfoFromArray:(NSArray *)array Floor:(int)floor;
+/**
+ *  从一组地图信息中搜索特定楼层的地图信息
+ *
+ *  @param array 目标地图信息数组
+ *  @param floorName 目标楼层名
+ *
+ *  @return 目标楼层信息
+ */
++ (TYMapInfo *)searchMapInfoFromArray:(NSArray *)array FloorName:(NSString *)floor;
 
 /**
  *  从目标路径的地图信息文件中解析所有地图信息
