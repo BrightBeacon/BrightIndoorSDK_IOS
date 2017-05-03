@@ -78,15 +78,18 @@
 - (AGSPictureMarkerSymbol *)getPicMarkerSymbol {
 
 	AGSPictureMarkerSymbol *picSymbol = [[AGSPictureMarkerSymbol alloc] init];
-	picSymbol.image = [UIImage imageNamed:@"RedPushpin"];
+	picSymbol.image = [UIImage imageNamed:@"redPin"];
 
 	return picSymbol;
 }
 
 
 //初始图层加载完毕之后，才能获取mapView.baseLayer
-- (void)TYMapViewDidLoad:(TYMapView *)mapView {
-
+- (void)TYMapViewDidLoad:(TYMapView *)mapView withError:(NSError *)error {
+    [super TYMapViewDidLoad:mapView withError:error];
+    if (error) {
+        return;
+    }
 	AGSGraphicsLayer *graphicLayer = [AGSGraphicsLayer graphicsLayer];
 	[graphicLayer addGraphic:[AGSGraphic graphicWithGeometry:mapView.baseLayer.fullEnvelope.center symbol:[self getPicMarkerSymbol] attributes:nil]];
 	[self.mapView addMapLayer:graphicLayer withName:@"solid layer"];

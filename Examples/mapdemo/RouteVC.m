@@ -32,13 +32,13 @@
 //初始化路径图标
 - (void)initSymbols
 {
-	AGSPictureMarkerSymbol *startSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"start"];
+	AGSPictureMarkerSymbol *startSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"routeStart"];
 	startSymbol.offset = CGPointMake(0, 22);
 
-	AGSPictureMarkerSymbol *endSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"end"];
+	AGSPictureMarkerSymbol *endSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"routeEnd"];
 	endSymbol.offset = CGPointMake(0, 22);
 
-	AGSPictureMarkerSymbol *switchSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"nav_exit"];
+	AGSPictureMarkerSymbol *switchSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"routeSwitch"];
 
 	AGSSimpleMarkerSymbol *markerSymbol = [AGSSimpleMarkerSymbol simpleMarkerSymbolWithColor:[UIColor greenColor]];
 	markerSymbol.size = CGSizeMake(5, 5);
@@ -53,6 +53,10 @@
     [self.mapView setLocationSymbol:locSymbol];
 }
 - (void)TYMapViewDidLoad:(TYMapView *)mapView withError:(NSError *)error{
+    [super TYMapViewDidLoad:mapView withError:error];
+    if (error) {
+        return;
+    }
 	[self initSymbols];
     [self initLocationSymbol];
 }
@@ -203,7 +207,12 @@
 #pragma mark - **************** 路径规划
 - (void)offlineRouteManager:(TYOfflineRouteManager *)routeManager didFailSolveRouteWithError:(NSError *)error
 {
-	NSLog(@"%@", NSStringFromSelector(_cmd));
+    [[[UIAlertView alloc] initWithTitle:@"没有找到路线" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show];
+    [self.mapView resetRouteLayer];
+    self.startLocalPoint = nil;
+    self.endLocalPoint = nil;
+    isRouting = NO;
+	NSLog(@"%@", error);
 }
 
 - (void)offlineRouteManager:(TYOfflineRouteManager *)routeManager didSolveRouteWithResult:(TYRouteResult *)rs

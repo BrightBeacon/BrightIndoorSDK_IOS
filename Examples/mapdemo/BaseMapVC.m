@@ -22,10 +22,9 @@
 	[super viewDidLoad];
 
     [TYMapEnvironment initMapEnvironment];
-    [TYMapEnvironment setRootDirectoryForMapFiles:[[NSBundle mainBundle] pathForResource:@"Map" ofType:nil]];
-    [self.mapView initMapViewWithBuilding:kBuildingId AppKey:kAppKey];
+    NSLog(@"%@",[TYMapEnvironment getRootDirectoryForMapFiles]);
     self.mapView.mapDelegate = self;
-    [self.mapView setFloor:@"F1"];
+    [self.mapView initMapViewWithBuilding:kBuildingId AppKey:kAppKey];
 
     [self showZoomControl];
 }
@@ -34,14 +33,6 @@
 	NSLog(@"check if '%@' recycled",NSStringFromClass(self.class));
 }
 
-- (void)initMap {
-
-    self.mapView.backgroundColor = [UIColor whiteColor];
-
-    self.mapView.highlightPOIOnSelection = NO;
-    self.mapView.allowRotationByPinching = YES;
-
-}
 
 #pragma mark - **************** 常用控件
 
@@ -88,6 +79,12 @@
 	NSLog(@"%@",NSStringFromSelector(_cmd));
     if (!error) {
         [self showFloorControl];
+        [self.mapView setFloorWithInfo:mapView.allMapInfo.firstObject];
+        self.mapView.backgroundColor = [UIColor whiteColor];
+        self.mapView.highlightPOIOnSelection = NO;
+        self.mapView.allowRotationByPinching = YES;
+    }else{
+        [[[UIAlertView alloc] initWithTitle:error.domain message:[NSString stringWithFormat:@"参考错误码%ld",error.code] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
     }
 }
 

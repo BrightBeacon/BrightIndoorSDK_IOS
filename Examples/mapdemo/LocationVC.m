@@ -42,6 +42,7 @@
 }
 
 - (void)TYMapViewDidLoad:(TYMapView *)mapView withError:(NSError *)error{
+    [super TYMapViewDidLoad:mapView withError:error];
     if (error) {
         return;
     }

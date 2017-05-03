@@ -13,8 +13,11 @@
 
 //**********************************以下必须修改***********************************
 //以下地图初始化参数参看：http://open.brtbeacon.com
-#define kBuildingId @"ZS020006"
-#define kAppKey @"efef3dbde9dd416bb24b213ed546584f"
+//#define kBuildingId @"ZS020006"
+//#define kAppKey @"efef3dbde9dd416bb24b213ed546584f"
+#define kBuildingId @"00270002"
+#define kAppKey @"2d56314c042c4b0ba694f65a0c70ae10"
+
 //**********************************以上必须修改***********************************
 
 @interface BaseMapVC : UIViewController<TYMapViewDelegate,TYOfflineRouteManagerDelegate>

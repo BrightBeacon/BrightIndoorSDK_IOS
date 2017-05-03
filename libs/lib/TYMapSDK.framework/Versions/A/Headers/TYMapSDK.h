@@ -12,7 +12,7 @@
 #import <ArcGIS/ArcGIS.h>
 
 #import <TYMapSDK/TYMapEnviroment.h>
-//#import <TYMapSDK/TYMapDataManager.h>
+
 #import <TYMapSDK/TYMapCredential.h>
 
 #import <TYMapSDK/TYCityManager.h>
@@ -30,5 +30,7 @@
 
 #import <TYMapSDK/TYPoi.h>
 #import <TYMapSDK/TYArcGISDrawer.h>
+
+#import <TYMapSDK/TYSearchAdapter.h>
 
 #endif /* TYMapSDK_h */

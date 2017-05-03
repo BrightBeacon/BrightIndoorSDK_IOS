@@ -8,11 +8,11 @@
 
 **开发包最低兼容IOS7、蓝牙4.0及其以上系统。**
 ### 二、集成开发环境①②③④
-注：使用cocoaPods集成，必须先完成①②；拷贝geos.a库到项目根目录(即.xcodeproj所在目录)。
+**注1：使用cocoaPods集成，必须先完成①②；拷贝geos.a库到项目根目录(即.xcodeproj所在目录)**<br/>
+**注2：运行示例工程仅需要①**
 ***
 只集成地图引人：[TYMapData.framework](libs/lib/TYMapData.framework) 和 [TYMapSDK.framework](libs/lib/TYMapSDK.framework)
 <br/>只集成定位引人：[TYMapData.framework](libs/lib/TYMapData.framework) 和 [TYLocationEngine.framework](libs/lib/TYLocationEngine.framework)
-<br/> **注：运行示例工程仅需要①**
 
 #### ① 安装GIS环境
 
@@ -41,7 +41,7 @@ cd 当前目录/geos-3.5.0
 
 #### ④ 引入图标资源文件
 
-* 添加resource相关图标文件，到你的工程
+* 添加resource相关图标文件，到你的工程（必须）
 
 
 ### 三、开始定位（不支持模拟器）

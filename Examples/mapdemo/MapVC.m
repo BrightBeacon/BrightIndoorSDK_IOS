@@ -22,12 +22,12 @@
 #pragma mark - **************** 地图回调
 
 - (void)TYMapViewDidLoad:(TYMapView *)mapView withError:(NSError *)error{
+    [super TYMapViewDidLoad:mapView withError:error];
     if (error) {
-        [[[UIAlertView alloc] initWithTitle:error.domain message:[NSString stringWithFormat:@"参考错误码%ld",error.code] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
         return;
     }
-	//限制屏幕宽显示范围5米-100米
-	[self setMinMaxResolution:5 :100];
+	//限制屏幕宽显示范围5米-1000米
+	[self setMinMaxResolution:5 :1000];
 }
 - (void)TYMapView:(TYMapView *)mapView didFinishLoadingFloor:(TYMapInfo *)mapInfo {
 	NSLog(@"%@",mapInfo);
@@ -39,13 +39,6 @@
 	if (poi) {
 		[mapView highlightPoi:poi];
 	}
-    if ([mapView.building.buildingID isEqualToString:kBuildingId]) {
-        [mapView switchBuilding:@"ZS010005" AppKey:@"efef3dbde9dd416bb24b213ed546584f"];
-        [mapView setFloor:@"F1"];
-    }else{
-        [mapView switchBuilding:kBuildingId AppKey:kAppKey];
-        [mapView setFloor:@"F1"];
-    }
 }
 
 - (void)TYMapViewDidZoomed:(TYMapView *)mapView {

@@ -287,7 +287,7 @@
 #pragma mark - **************** 配置默认弹出样式（可以自定义customView）
 
 - (BOOL)callout:(AGSCallout *)callout willShowForFeature:(id<AGSFeature>)feature layer:(AGSLayer<AGSHitTestable> *)layer mapPoint:(AGSPoint *)mapPoint{
-    callout.image = [UIImage imageNamed:@"GreenPushpin"];
+    callout.image = [UIImage imageNamed:@"greenPin"];
     callout.detail = self.startLocalPoint?@"终点":@"起点";
     id title = [feature attributeForKey:@"NAME"];
     callout.title = [title isEqual:[NSNull null]]?@"未命名":title;
@@ -319,13 +319,13 @@
 
 - (void)initSymbols
 {
-    startSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"start"];
+    startSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"routeStart"];
     startSymbol.offset = CGPointMake(0, 22);
     
-    endSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"end"];
+    endSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"routeEnd"];
     endSymbol.offset = CGPointMake(0, 22);
     
-    switchSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"nav_exit"];
+    switchSymbol = [AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"routeSwitch"];
     
     markerSymbol = [AGSSimpleMarkerSymbol simpleMarkerSymbolWithColor:[UIColor greenColor]];
     markerSymbol.size = CGSizeMake(5, 5);
@@ -348,7 +348,6 @@
         self.loc = [[TYLocationManager alloc] initWithBuilding:kBuildingId appKey:kAppKey];
         [_loc setRssiThreshold:-100];
         [_loc setBeaconRegion:[[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"FDA50693-A4E2-4FB1-AFCF-C6EB07647825"] identifier:@"identifier1"]];
-        [_loc setBeaconRegion:[[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"E2C56DB5-DFFB-48D2-B060-D0F5A71096E0"] identifier:@"identifier2"]];
         _loc.delegate = self;
     }
     [_loc startUpdateLocation];
