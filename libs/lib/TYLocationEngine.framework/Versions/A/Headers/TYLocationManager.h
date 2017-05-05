@@ -9,7 +9,6 @@
 #import <CoreLocation/CoreLocation.h>
 #import <CoreMotion/CoreMotion.h>
 #import <TYMapData/TYMapData.h>
-//#import <TYMapSDK/TYMapSDK.h>
 
 //@class TYLocationManager;
 
