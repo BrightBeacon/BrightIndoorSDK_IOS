@@ -25,14 +25,12 @@
     NSLog(@"%@",[TYMapEnvironment getRootDirectoryForMapFiles]);
     self.mapView.mapDelegate = self;
     [self.mapView initMapViewWithBuilding:kBuildingId AppKey:kAppKey];
-
     [self showZoomControl];
 }
 
 - (void)dealloc {
 	NSLog(@"check if '%@' recycled",NSStringFromClass(self.class));
 }
-
 
 #pragma mark - **************** 常用控件
 

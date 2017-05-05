@@ -17,4 +17,12 @@
 + (NSString *)getSDKVersion;
 + (NSString *)getLibraryVersion;
 
+
+/**
+ 设置定位权限，默认请求一直需要
+
+ @param whenInUse 是否仅使用时定位
+ */
++ (void)setRequestWhenInUseAuthorization:(BOOL)whenInUse;
++ (BOOL)isWhenInUseAuthorization;
 @end

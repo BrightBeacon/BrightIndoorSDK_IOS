@@ -18,7 +18,6 @@
 }
 
 @property (nonatomic ,strong) TYLocationManager *locationManager;
-
 @property (nonatomic ,assign) IBOutlet UIImageView *northImageView;
 
 @end
@@ -61,13 +60,13 @@
 
 }
 
-//以下
 - (void)startLocation {
     if (!self.locationManager) {
+        [TYBLEEnvironment setRequestWhenInUseAuthorization:YES];
 		self.locationManager = [[TYLocationManager alloc] initWithBuilding:kBuildingId appKey:kAppKey];
         NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:kUUID];
-        CLBeaconRegion *region = [[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:@"id"];
-		[self.locationManager setBeaconRegion:region];
+        CLBeaconRegion *region = [[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:@"regionid"];
+        [self.locationManager setBeaconRegion:region];
 		self.locationManager.delegate = self;
 	}
 	[self.locationManager startUpdateLocation];
@@ -117,7 +116,7 @@
  *  @param manager 定位引擎实例
  */
 - (void)TYLocationManager:(TYLocationManager *)manager didFailUpdateLocation:(NSError *)error {
-	NSLog(@"定位失败");
+	NSLog(@"定位失败：%@",error);
 }
 
 /**

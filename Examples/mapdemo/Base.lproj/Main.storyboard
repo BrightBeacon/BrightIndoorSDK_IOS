@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qyG-Qf-QHi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qyG-Qf-QHi">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -314,12 +314,28 @@
                                 <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入关键字" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bzo-kk-zpZ">
+                                <rect key="frame" x="0.0" y="80" width="320" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="wwp-Fo-6g8"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="textDidChange:" destination="nfu-GX-btG" eventType="editingChanged" id="OOy-AW-2cB"/>
+                                    <outlet property="delegate" destination="nfu-GX-btG" id="W7z-sE-qNu"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="qKC-51-cZV" secondAttribute="trailing" id="1zE-et-LXM"/>
+                            <constraint firstItem="Bzo-kk-zpZ" firstAttribute="leading" secondItem="kOj-nq-AnD" secondAttribute="leading" id="ENz-6D-C70"/>
                             <constraint firstItem="qKC-51-cZV" firstAttribute="top" secondItem="IcC-7T-CvK" secondAttribute="bottom" id="Lwf-Kz-0pv"/>
                             <constraint firstItem="N6R-AF-wrp" firstAttribute="top" secondItem="qKC-51-cZV" secondAttribute="bottom" id="Rwk-dn-v7a"/>
+                            <constraint firstItem="Bzo-kk-zpZ" firstAttribute="top" secondItem="kOj-nq-AnD" secondAttribute="top" constant="80" id="SD8-1F-WeL"/>
+                            <constraint firstAttribute="trailing" secondItem="Bzo-kk-zpZ" secondAttribute="trailing" id="fun-UB-Hae"/>
                             <constraint firstItem="qKC-51-cZV" firstAttribute="leading" secondItem="kOj-nq-AnD" secondAttribute="leading" id="mlA-V6-fWK"/>
                         </constraints>
                     </view>
@@ -330,7 +346,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NDB-vh-S5b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2121" y="2022"/>
+            <point key="canvasLocation" x="2121" y="2226"/>
         </scene>
         <!--TileVC-->
         <scene sceneID="wn4-4r-fKM">

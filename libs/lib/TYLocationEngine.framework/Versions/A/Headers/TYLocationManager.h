@@ -106,22 +106,14 @@
 - (void)TYLocationManager:(TYLocationManager *)manager didUpdateLocation:(TYLocalPoint *)newLocation;
 
 /**
- *  位置更新失败事件回调
+ *  定位引擎失败事件回调
  *
  *  @param manager 定位引擎实例
- *  @param error 定位错误
+ *  @param error 错误信息
  */
 - (void)TYLocationManager:(TYLocationManager *)manager didFailUpdateLocation:(NSError *)error;
 
 @optional
-
-/**
- *  数据更新事件回调
- *
- *  @param manager     定位引擎实例
- *  @param error 加载定位数据错误
- */
-- (void)TYLocationManager:(TYLocationManager *)manager didLoadWithError:(NSError *)error;
 
 /**
  *  位置更新事件回调，位置更新并返回新的位置结果。
