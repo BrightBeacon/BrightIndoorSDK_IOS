@@ -280,29 +280,46 @@
         [hintLayer removeAllGraphics];
         [hintLayer addGraphic:[AGSGraphic graphicWithGeometry:mappoint symbol:markerSymbol attributes:nil]];
     }
-    
-    //弹窗提示（配置了delegate会自动弹窗）
-    //[self.mapView.callout showCalloutAt:mappoint screenOffset:CGPointMake(0, 0) animated:YES];
+    self.mapView.callout.customView = [self calloutView:mappoint];
+    [self.mapView.callout showCalloutAt:mappoint screenOffset:CGPointMake(0, 0) animated:YES];
+}
+
+- (UIView *)calloutView:(AGSPoint *)point {
+    TYPoi *poi = [self.mapView extractRoomPoiOnCurrentFloorWithX:point.x Y:point.y];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 100)];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 160, 25)];
+    titleLabel.text = [poi.name isEqual:[NSNull null]]?@"无名位置":poi.name;
+    [view addSubview:titleLabel];
+
+
+    UIButton *leftbtn = [[UIButton alloc] initWithFrame:CGRectMake(8, 58, 80, 34)];
+    [leftbtn setBackgroundColor:[UIColor greenColor]];
+    [leftbtn setTitle:@"起点" forState:UIControlStateNormal];
+    leftbtn.layer.cornerRadius = 17;
+    leftbtn.tag = 1;
+    [leftbtn addTarget:self action:@selector(calloutButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [view addSubview:leftbtn];
+
+    UIButton *rightbtn = [[UIButton alloc] initWithFrame:CGRectMake(200-8-80, 58, 80, 34)];
+    [rightbtn setBackgroundColor:[UIColor redColor]];
+    [rightbtn setTitle:@"终点" forState:UIControlStateNormal];
+    rightbtn.layer.cornerRadius = 17;
+    [rightbtn setTitle:poi.poiID forState:UIControlStateApplication];
+    [rightbtn addTarget:self action:@selector(calloutButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [view addSubview:rightbtn];
+    return view;
 }
 
 #pragma mark - **************** 配置默认弹出样式（可以自定义customView）
 
-- (BOOL)callout:(AGSCallout *)callout willShowForFeature:(id<AGSFeature>)feature layer:(AGSLayer<AGSHitTestable> *)layer mapPoint:(AGSPoint *)mapPoint{
-    callout.image = [UIImage imageNamed:@"greenPin"];
-    callout.detail = self.startLocalPoint?@"终点":@"起点";
-    id title = [feature attributeForKey:@"NAME"];
-    callout.title = [title isEqual:[NSNull null]]?@"未命名":title;
-    callout.titleColor = [UIColor blackColor];
-    callout.detailColor = [UIColor blackColor];
-    return YES;
-}
-- (void)didClickAccessoryButtonForCallout:(AGSCallout *)callout {
-    if (self.startLocalPoint) {
-        self.endLocalPoint = [TYLocalPoint pointWithX:callout.mapLocation.x Y:callout.mapLocation.y Floor:self.mapView.currentMapInfo.floorNumber];
+- (IBAction)calloutButtonClicked:(UIButton *)sender {
+    AGSPoint *mapLocation = self.mapView.callout.mapLocation;
+    if (sender.tag == 0) {
+        self.endLocalPoint = [TYLocalPoint pointWithX:mapLocation.x Y:mapLocation.y Floor:self.mapView.currentMapInfo.floorNumber];
     }else{
-        self.startLocalPoint = [TYLocalPoint pointWithX:callout.mapLocation.x Y:callout.mapLocation.y Floor:self.mapView.currentMapInfo.floorNumber];;
+        self.startLocalPoint = [TYLocalPoint pointWithX:mapLocation.x Y:mapLocation.y Floor:self.mapView.currentMapInfo.floorNumber];;
     }
-    [callout dismiss];
+    [self.mapView.callout dismiss];
     [self requestRoute];
 }
 

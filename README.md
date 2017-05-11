@@ -22,17 +22,10 @@
 
 #### ② 引入开发库
 1、
-选一种方式获取libgeos.a库文件，然后在target的buiding setting配置库路径：<code>Library Search Paths：你的libgeos.a目录</code>
+引人libgeos.a库文件，然后在target的buiding setting配置库路径：<code>Library Search Paths：你的libgeos.a目录</code>
 
-* 或 打开(或引人)geos目录下[xcode库工程](geos/geos.xcodeproj)编译出(或引用)libgeos.a库文件即可。
-* 或 直接[下载libgeos.a](https://pan.baidu.com/s/1qYU0ztM)库文件(300MB左右)。
-* 或 使用"终端"执行以下编译命令，
+* 直接打开(或引人)geos目录下[xcode库工程](geos/geos.xcodeproj)编译出(或引用)libgeos.a库文件即可。
 
-```
-cd 当前目录/geos-3.5.0
-. geos.sh
-//最终合成的libgeos.a文件在目录/geos-3.5.0/geos/platform/mixd
-```
 
 #### ③ 配置项目编译参数
 

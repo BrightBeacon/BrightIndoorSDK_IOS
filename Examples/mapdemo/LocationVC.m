@@ -18,7 +18,7 @@
 }
 
 @property (nonatomic ,strong) TYLocationManager *locationManager;
-@property (nonatomic ,assign) IBOutlet UIImageView *northImageView;
+@property (nonatomic ,strong) UIImageView *northImageView;
 
 @end
 
@@ -26,6 +26,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.northImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"northarrow"]];
+    self.northImageView.center = CGPointMake(30, 90);
+    [self.view addSubview:self.northImageView];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -64,9 +67,6 @@
     if (!self.locationManager) {
         [TYBLEEnvironment setRequestWhenInUseAuthorization:YES];
 		self.locationManager = [[TYLocationManager alloc] initWithBuilding:kBuildingId appKey:kAppKey];
-        NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:kUUID];
-        CLBeaconRegion *region = [[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:@"regionid"];
-        [self.locationManager setBeaconRegion:region];
 		self.locationManager.delegate = self;
 	}
 	[self.locationManager startUpdateLocation];

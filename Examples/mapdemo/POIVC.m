@@ -20,6 +20,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UITextField *tf = [[UITextField alloc] initWithFrame:CGRectMake(0, 66, self.view.frame.size.width, 44)];
+    tf.translatesAutoresizingMaskIntoConstraints = NO;
+    tf.placeholder = @"搜索";
+    tf.delegate = self;
+    [tf addTarget:self action:@selector(textDidChange:) forControlEvents:UIControlEventEditingChanged];
+    [self.view addSubview:tf];
+
 }
 
 - (void)TYMapView:(TYMapView *)mapView didFinishLoadingFloor:(TYMapInfo *)mapInfo {

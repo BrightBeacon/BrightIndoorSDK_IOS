@@ -39,12 +39,10 @@
 	</dict>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>扫描周边beacon设备</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>只在运行时扫描周边beacon设备</string>
 	<key>UIFileSharingEnabled</key>
 	<true/>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
-	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

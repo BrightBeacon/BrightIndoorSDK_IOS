@@ -22,10 +22,12 @@
 	[super viewDidLoad];
 
     [TYMapEnvironment initMapEnvironment];
-    NSLog(@"%@",[TYMapEnvironment getRootDirectoryForMapFiles]);
+    self.mapView = [[TYMapView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:self.mapView];
     self.mapView.mapDelegate = self;
     [self.mapView initMapViewWithBuilding:kBuildingId AppKey:kAppKey];
     [self showZoomControl];
+
 }
 
 - (void)dealloc {

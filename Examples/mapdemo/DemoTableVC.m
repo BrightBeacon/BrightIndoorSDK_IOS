@@ -61,7 +61,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 	NSDictionary *dic = indexPath.section==0?self.mapDemoArr[indexPath.row]:self.locDemoArr[indexPath.row];
-	UIViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:dic.allValues[0]];
+	Class cls = NSClassFromString(dic.allValues[0]);
+    UIViewController *vc = [[cls alloc] init];
 	vc.title = dic.allKeys[0];
 	[self.navigationController pushViewController:vc animated:YES];
 }

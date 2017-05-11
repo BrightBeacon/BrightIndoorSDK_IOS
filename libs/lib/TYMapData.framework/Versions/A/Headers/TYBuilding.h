@@ -60,6 +60,11 @@ typedef struct offsetSize {
  */
 @property (assign) int status;
 
+/**
+ * 建筑类型
+ */
+@property (assign) int type;
+
 
 /**
  *  建筑类的实例化方法

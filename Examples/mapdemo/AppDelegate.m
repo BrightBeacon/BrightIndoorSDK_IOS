@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "DemoTableVC.h"
 
 @interface AppDelegate ()
 
@@ -16,6 +17,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[DemoTableVC new]];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

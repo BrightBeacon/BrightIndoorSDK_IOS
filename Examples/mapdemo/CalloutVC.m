@@ -26,25 +26,27 @@
 //自定义View
 - (UIView *)customView:(TYPoi *)poi {
 	UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 100)];
-	UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 25)];
+	UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 0, 160, 25)];
 	titleLabel.text = @"自定义弹窗";
 	[view addSubview:titleLabel];
 
 
-	UILabel *detailLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 25, 200, 25)];
+	UILabel *detailLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 25, 160, 25)];
 	detailLabel.text = poi.name;
 	[view addSubview:detailLabel];
 
-	UIButton *leftbtn = [[UIButton alloc] initWithFrame:CGRectMake(8, 58, 80, 44)];
+	UIButton *leftbtn = [[UIButton alloc] initWithFrame:CGRectMake(8, 58, 80, 30)];
 	[leftbtn setBackgroundColor:[UIColor redColor]];
 	[leftbtn setTitle:@"取消" forState:UIControlStateNormal];
+    leftbtn.layer.cornerRadius = 15;
 	[leftbtn addTarget:self.mapView.callout action:@selector(dismiss) forControlEvents:UIControlEventTouchUpInside];
 	[view addSubview:leftbtn];
 
-	UIButton *rightbtn = [[UIButton alloc] initWithFrame:CGRectMake(200-8-80, 58, 80, 44)];
+	UIButton *rightbtn = [[UIButton alloc] initWithFrame:CGRectMake(200-8-80, 58, 80, 30)];
 	[rightbtn setBackgroundColor:[UIColor greenColor]];
 	[rightbtn setTitle:@"确定" forState:UIControlStateNormal];
 	[rightbtn setTitle:poi.poiID forState:UIControlStateApplication];
+    rightbtn.layer.cornerRadius = 15;
 	[rightbtn addTarget:self action:@selector(doneButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
 	[view addSubview:rightbtn];
 	return view;
