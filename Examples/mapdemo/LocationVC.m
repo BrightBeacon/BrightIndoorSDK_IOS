@@ -53,7 +53,7 @@
 	[self.mapView setLocationSymbol:locSymbol];
 
 	//设置方向跟随模式(定位图标旋转/整个地图旋转)
-	[self.mapView setMapMode:TYMapViewModeFollowing];
+//	[self.mapView setMapMode:TYMapViewModeFollowing];
 
 	//设置指北针
 	self.northImageView.mapViewForNorthArrow  = self.mapView;
@@ -73,11 +73,6 @@
 }
 
 - (void)TYLocationManager:(TYLocationManager *)manager didUpdateLocation:(TYLocalPoint *)newLocation {
-    NSLog(@"您的位置：%@",newLocation);
-    //平滑显示定位点
-    [NSObject cancelPreviousPerformRequestsWithTarget:self];
-    if(currentLocation)lastLocation = currentLocation;
-    [self showSmoothLocation:newLocation];
 }
 
 - (void)showSmoothLocation:(TYLocalPoint *)newLocation{
@@ -108,6 +103,12 @@
 - (void)TYLocationManager:(TYLocationManager *)manager didUpdateImmediateLocation:(TYLocalPoint *)newImmediateLocation {
 	//NSLog(@"您的位置：%@",newImmediateLocation);
 	//[self.mapView showLocation:newImmediateLocation];
+
+    NSLog(@"您的位置：%@",newImmediateLocation);
+    //平滑显示定位点
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    if(currentLocation)lastLocation = currentLocation;
+    [self showSmoothLocation:newImmediateLocation];
 }
 
 /**
@@ -137,6 +138,18 @@
  */
 - (void)TYLocationManager:(TYLocationManager *)manager didRangedLocationBeacons:(NSArray *)beacons {
 	NSLog(@"location beacons find:%d",(int)beacons.count);
+    AGSGraphicsLayer *layer = [self.mapView mapLayerForName:@"test"];
+    if (layer == nil) {
+        layer = [AGSGraphicsLayer graphicsLayer];
+        [self.mapView addMapLayer:layer withName:@"test"];
+    }
+    [layer removeAllGraphics];
+    NSMutableArray *marray = [NSMutableArray array];
+    for (TYPublicBeacon *b in beacons) {
+        AGSGraphic *g = [AGSGraphic graphicWithGeometry:[AGSPoint pointWithX:b.location.x y:b.location.y spatialReference:self.mapView.spatialReference] symbol:[AGSTextSymbol textSymbolWithText:[NSString stringWithFormat:@"%d",b.rssi] color:[UIColor redColor]] attributes:nil];
+        [marray addObject:g];
+    }
+    [layer addGraphics:marray];
 }
 
 /**
