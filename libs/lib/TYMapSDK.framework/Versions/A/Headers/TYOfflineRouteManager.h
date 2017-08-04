@@ -79,4 +79,19 @@
  */
 - (void)requestRouteWithStart:(TYLocalPoint *)start End:(TYLocalPoint *)end;
 
+
+/**
+ 计算距离路网最近的点
+
+ @param point 目标点
+ @return 路网上的点,未成功直接返回原点
+ */
+- (TYLocalPoint *)nearestPointOnRoute:(TYLocalPoint *)point;
+
+/**
+ 路网
+
+ @return 整条路线
+ */
+- (AGSPolyline *)route;
 @end

@@ -1,946 +1,782 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>TYBeacon Class Reference</title>
-		<meta id="xcode-display" name="xcode-display" content="render"/>
-		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
-		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.2 (build 963)" />
-	</head>
-	<body>
-		<header id="top_header">
-			<div id="library" class="hideInXcode">
-				<h1><a id="libraryTitle" href="../index.html">TYLocationEngine </a></h1>
-				<a id="developerHome" href="../index.html">智石科技</a>
-			</div>
+<head>
+	<meta charset="utf-8">
+
+	<title>TYBeacon Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
 			
-			<div id="title" role="banner">
-				<h1 class="hideInXcode">TYBeacon Class Reference</h1>
-			</div>
-			<ul id="headerButtons" role="toolbar">
-				<li id="toc_button">
-					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
-				</li>
-				<li id="jumpto_button" role="navigation">
-					<select id="jumpTo">
+			<h1 id="library-title">
+				<a href="../index.html">TYLocationDoc </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">智石科技</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
 	<option value="overview">Overview</option>
 	
-	
+
 	
 	
 	<option value="tasks">Tasks</option>
 	
 	
+
 	
 	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/UUID">UUID</option>
+		
+		<option value="//api/name/accuracy">accuracy</option>
+		
+		<option value="//api/name/major">major</option>
+		
+		<option value="//api/name/minor">minor</option>
+		
+		<option value="//api/name/proximity">proximity</option>
+		
+		<option value="//api/name/rssi">rssi</option>
+		
+		<option value="//api/name/tag">tag</option>
+		
+		<option value="//api/name/type">type</option>
+		
+	</optgroup>
 	
-	<option value="properties">Properties</option>
+
 	
-	<option value="//api/name/UUID">&nbsp;&nbsp;&nbsp;&nbsp;UUID</option>
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/beaconWithUUID:Major:Minor:Tag:">+ beaconWithUUID:Major:Minor:Tag:</option>
+		
+		<option value="//api/name/beaconWithUUID:Major:Minor:Tag:Type:">+ beaconWithUUID:Major:Minor:Tag:Type:</option>
+		
+	</optgroup>
 	
-	<option value="//api/name/accuracy">&nbsp;&nbsp;&nbsp;&nbsp;accuracy</option>
+
 	
-	<option value="//api/name/major">&nbsp;&nbsp;&nbsp;&nbsp;major</option>
-	
-	<option value="//api/name/minor">&nbsp;&nbsp;&nbsp;&nbsp;minor</option>
-	
-	<option value="//api/name/proximity">&nbsp;&nbsp;&nbsp;&nbsp;proximity</option>
-	
-	<option value="//api/name/rssi">&nbsp;&nbsp;&nbsp;&nbsp;rssi</option>
-	
-	<option value="//api/name/tag">&nbsp;&nbsp;&nbsp;&nbsp;tag</option>
-	
-	<option value="//api/name/type">&nbsp;&nbsp;&nbsp;&nbsp;type</option>
-	
-	
-	
-	
-	<option value="class_methods">Class Methods</option>
-	
-	<option value="//api/name/beaconWithUUID:Major:Minor:Tag:">&nbsp;&nbsp;&nbsp;&nbsp;+ beaconWithUUID:Major:Minor:Tag:</option>
-	
-	<option value="//api/name/beaconWithUUID:Major:Minor:Tag:Type:">&nbsp;&nbsp;&nbsp;&nbsp;+ beaconWithUUID:Major:Minor:Tag:Type:</option>
-	
-	
-	
-	
-	<option value="instance_methods">Instance Methods</option>
-	
-	<option value="//api/name/initWithUUID:Major:Minor:Tag:Type:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithUUID:Major:Minor:Tag:Type:</option>
-	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initWithUUID:Major:Minor:Tag:Type:">- initWithUUID:Major:Minor:Tag:Type:</option>
+		
+	</optgroup>
 	
 	
 </select>
-				</li>
-			</ul>
-		</header>
-		<nav id="tocContainer" class="isShowingTOC">
-			<ul id="toc" role="tree">
-				
-<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
 
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">TYBeacon Class Reference</h1>
 
-
-
-<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
-	
-</ul></li>
-
-
-
-
-
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/UUID">UUID</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/accuracy">accuracy</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/major">major</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/minor">minor</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/proximity">proximity</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/rssi">rssi</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/tag">tag</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/type">type</a></span></li>
-	
-</ul></li>
-
-
-
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/beaconWithUUID:Major:Minor:Tag:">beaconWithUUID:Major:Minor:Tag:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/beaconWithUUID:Major:Minor:Tag:Type:">beaconWithUUID:Major:Minor:Tag:Type:</a></span></li>
-	
-</ul></li>
-
-
-
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithUUID:Major:Minor:Tag:Type:">initWithUUID:Major:Minor:Tag:Type:</a></span></li>
-	
-</ul></li>
-
-
-			</ul>
-		</nav>
-		<article>
-			<div id="contents" class="isShowingTOC" role="main">
-				<a title="TYBeacon Class Reference" name="top"></a>
-				<div class="main-navigation navigation-top">
-					<ul>
-	<li><a href="../index.html">Index</a></li>
-	<li><a href="../hierarchy.html">Hierarchy</a></li>
-</ul>
-				</div>
-				<div id="header">
-					<div class="section-header">
-						<h1 class="title title-header">TYBeacon Class Reference</h1>
-					</div>		
-				</div>
-				<div id="container">	
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<td class="specification-title">Inherits from</td>
-	<td class="specification-value">NSObject</td>
+	<th>Inherits from</th>
+	<td>NSObject</td>
 </tr><tr>
-	<td class="specification-title">Declared in</td>
-	<td class="specification-value">TYBeacon.h<br />TYBeacon.m</td>
+	<th>Declared in</th>
+	<td>TYBeacon.h</td>
 </tr>
 						</tbody></table></div>
 					
-                    
+
                     
 					
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>图呀Beacon类</p>
+						<p>智石Beacon类</p>
 					</div>
 					
 					
-					
+
 					
 					
 					<div class="section section-tasks">
 						<a title="Tasks" name="tasks"></a>
-						<h2 class="subtitle subtitle-tasks">Tasks</h2>
 						
-						
+
 						
 						
 
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/UUID">&nbsp;&nbsp;UUID</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/major">&nbsp;&nbsp;major</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/minor">&nbsp;&nbsp;minor</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/tag">&nbsp;&nbsp;tag</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/rssi">&nbsp;&nbsp;rssi</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/accuracy">&nbsp;&nbsp;accuracy</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/proximity">&nbsp;&nbsp;proximity</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/type">&nbsp;&nbsp;type</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/beaconWithUUID:Major:Minor:Tag:">+&nbsp;beaconWithUUID:Major:Minor:Tag:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/beaconWithUUID:Major:Minor:Tag:Type:">+&nbsp;beaconWithUUID:Major:Minor:Tag:Type:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/initWithUUID:Major:Minor:Tag:Type:">&ndash;&nbsp;initWithUUID:Major:Minor:Tag:Type:</a></code>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-					</div>
-					
-					
-					
-					
-					
-					<div class="section section-methods">
-						<a title="Properties" name="properties"></a>
-						<h2 class="subtitle subtitle-methods">Properties</h2>
-						
-						<div class="section-method">
+						<div class="task-list">
+							<div class="section-method">
 	<a name="//api/name/UUID" title="UUID"></a>
-	<h3 class="subsubtitle method-title">UUID</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>UUID</p>
-	</div>		
-	
-    
+	<h3 class="method-title"><code><a href="#//api/name/UUID">&nbsp;&nbsp;UUID</a></code>
+</h3>
 
-	<div class="method-subsection method-declaration"><code>@property (readonly, strong) NSString *UUID</code></div>
+	<div class="method-info">
+		<div class="pointy-thing"></div>
 
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>UUID</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">TYBeacon.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/accuracy" title="accuracy"></a>
-	<h3 class="subsubtitle method-title">accuracy</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>距离Beacon相对距离的准确性，单位为米</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) double accuracy</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>距离Beacon相对距离的准确性，单位为米</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">TYBeacon.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/major" title="major"></a>
-	<h3 class="subsubtitle method-title">major</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Major</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (readonly, strong) NSNumber *major</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Major</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">TYBeacon.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/minor" title="minor"></a>
-	<h3 class="subsubtitle method-title">minor</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Minor</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (readonly, strong) NSNumber *minor</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Minor</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">TYBeacon.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/proximity" title="proximity"></a>
-	<h3 class="subsubtitle method-title">proximity</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>距离Beacon的相对距离</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) TYProximity proximity</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>距离Beacon的相对距离</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">TYBeacon.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/rssi" title="rssi"></a>
-	<h3 class="subsubtitle method-title">rssi</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>扫描到Beacon的信号强度</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) int rssi</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>扫描到Beacon的信号强度</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">TYBeacon.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/tag" title="tag"></a>
-	<h3 class="subsubtitle method-title">tag</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Beacon的Tag，用于标识Beacon，如Mac地址，序列号等</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (readonly, strong) NSString *tag</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Beacon的Tag，用于标识Beacon，如Mac地址，序列号等</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">TYBeacon.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/type" title="type"></a>
-	<h3 class="subsubtitle method-title">type</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Beacon用途类型，如用于定位、营销等</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (assign) TYPE type</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Beacon用途类型，如用于定位、营销等</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">TYBeacon.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-					</div>
-					
-					
-					
-					<div class="section section-methods">
-						<a title="Class Methods" name="class_methods"></a>
-						<h2 class="subtitle subtitle-methods">Class Methods</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/beaconWithUUID:Major:Minor:Tag:" title="beaconWithUUID:Major:Minor:Tag:"></a>
-	<h3 class="subsubtitle method-title">beaconWithUUID:Major:Minor:Tag:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>初始化Beacon的类方法</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (TYBeacon *)beaconWithUUID:(NSString *)<em>uuid</em> Major:(NSNumber *)<em>major</em> Minor:(NSNumber *)<em>minor</em> Tag:(NSString *)<em>tag</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>uuid</em></dt>
-			<dd><p><a href="#//api/name/UUID">UUID</a></p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>major</em></dt>
-			<dd><p>Major</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>minor</em></dt>
-			<dd><p>Minor</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>tag</em></dt>
-			<dd><p>标识</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>Beacon实例</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>初始化Beacon的类方法</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">TYBeacon.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/beaconWithUUID:Major:Minor:Tag:Type:" title="beaconWithUUID:Major:Minor:Tag:Type:"></a>
-	<h3 class="subsubtitle method-title">beaconWithUUID:Major:Minor:Tag:Type:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>初始化Beacon的类方法</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (TYBeacon *)beaconWithUUID:(NSString *)<em>uuid</em> Major:(NSNumber *)<em>major</em> Minor:(NSNumber *)<em>minor</em> Tag:(NSString *)<em>tag</em> Type:(TYPE)<em>type</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>uuid</em></dt>
-			<dd><p><a href="#//api/name/UUID">UUID</a></p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>major</em></dt>
-			<dd><p>Major</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>minor</em></dt>
-			<dd><p>Minor</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>tag</em></dt>
-			<dd><p>标识</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>type</em></dt>
-			<dd><p>类型</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>Beacon实例</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>初始化Beacon的类方法</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">TYBeacon.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-					</div>
-					
-					
-					
-					<div class="section section-methods">
-						<a title="Instance Methods" name="instance_methods"></a>
-						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/initWithUUID:Major:Minor:Tag:Type:" title="initWithUUID:Major:Minor:Tag:Type:"></a>
-	<h3 class="subsubtitle method-title">initWithUUID:Major:Minor:Tag:Type:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>初始化Beacon的方法</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (id)initWithUUID:(NSString *)<em>uuid</em> Major:(NSNumber *)<em>major</em> Minor:(NSNumber *)<em>minor</em> Tag:(NSString *)<em>tag</em> Type:(TYPE)<em>type</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>uuid</em></dt>
-			<dd><p><a href="../Classes/TYBeacon.html#//api/name/UUID">UUID</a></p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>major</em></dt>
-			<dd><p>Major</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>minor</em></dt>
-			<dd><p>Minor</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>tag</em></dt>
-			<dd><p>标识</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>type</em></dt>
-			<dd><p>类型</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>Beacon实例</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>初始化Beacon的方法</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">TYBeacon.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-					</div>
-					
-					
-                    
-                    
-				</div>
-				<div class="main-navigation navigation-bottom">
-					<ul>
-	<li><a href="../index.html">Index</a></li>
-	<li><a href="../hierarchy.html">Hierarchy</a></li>
-</ul>
-				</div>
-				<div id="footer">
-					<hr />
-					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2017 智石科技. All rights reserved. (Last updated: 2017-04-13)</span><br />
-						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
-						
-					</div>
-				</div>
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>UUID 设备通用标识，可用于表示建筑、大区域范围</p>
 			</div>
-		</article>
-		<script type="text/javascript">
-			function jumpToChange()
-			{
-				window.location.hash = this.options[this.selectedIndex].value;
-			}
 			
-			function toggleTOC()
-			{
-				var contents = document.getElementById('contents');
-				var tocContainer = document.getElementById('tocContainer');
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, strong) NSString *UUID</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>UUID 设备通用标识，可用于表示建筑、大区域范围</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TYBeacon.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/major" title="major"></a>
+	<h3 class="method-title"><code><a href="#//api/name/major">&nbsp;&nbsp;major</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Major 主标识，可用于表示楼层、小区域范围等</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, strong) NSNumber *major</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Major 主标识，可用于表示楼层、小区域范围等</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TYBeacon.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/minor" title="minor"></a>
+	<h3 class="method-title"><code><a href="#//api/name/minor">&nbsp;&nbsp;minor</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Minor 次标识，可用于表示具体位置、物品等</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, strong) NSNumber *minor</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Minor 次标识，可用于表示具体位置、物品等</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TYBeacon.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tag" title="tag"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tag">&nbsp;&nbsp;tag</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Beacon的Tag，用于标识Beacon，如Mac地址，序列号等</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, strong) NSString *tag</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Beacon的Tag，用于标识Beacon，如Mac地址，序列号等</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TYBeacon.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rssi" title="rssi"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rssi">&nbsp;&nbsp;rssi</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>扫描到Beacon的信号强度</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) int rssi</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>扫描到Beacon的信号强度</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TYBeacon.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/accuracy" title="accuracy"></a>
+	<h3 class="method-title"><code><a href="#//api/name/accuracy">&nbsp;&nbsp;accuracy</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>距离Beacon相对距离的准确性，单位为米，常用于相对远近比较</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) double accuracy</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>距离Beacon相对距离的准确性，单位为米，常用于相对远近比较</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TYBeacon.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/proximity" title="proximity"></a>
+	<h3 class="method-title"><code><a href="#//api/name/proximity">&nbsp;&nbsp;proximity</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>距离Beacon的相对距离，远/中/近</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) TYProximity proximity</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>距离Beacon的相对距离，远/中/近</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TYBeacon.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/type" title="type"></a>
+	<h3 class="method-title"><code><a href="#//api/name/type">&nbsp;&nbsp;type</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Beacon用途类型，如用于定位、营销等</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (assign) TYPE type</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Beacon用途类型，如用于定位、营销等</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TYBeacon.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/beaconWithUUID:Major:Minor:Tag:" title="beaconWithUUID:Major:Minor:Tag:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/beaconWithUUID:Major:Minor:Tag:">+&nbsp;beaconWithUUID:Major:Minor:Tag:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>初始化Beacon的类方法</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (TYBeacon *)beaconWithUUID:(NSString *)<em>uuid</em> Major:(NSNumber *)<em>major</em> Minor:(NSNumber *)<em>minor</em> Tag:(NSString *)<em>tag</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
 				
-				if (this.getAttribute('class') == 'open')
-				{
-					this.setAttribute('class', '');
-					contents.setAttribute('class', '');
-					tocContainer.setAttribute('class', '');
+					<tr>
+						<th scope="row" class="argument-name"><code>uuid</code></th>
+						<td><p><a href="#//api/name/UUID">UUID</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>major</code></th>
+						<td><p>Major</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>minor</code></th>
+						<td><p>Minor</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tag</code></th>
+						<td><p>标识</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Beacon实例</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>初始化Beacon的类方法</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TYBeacon.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/beaconWithUUID:Major:Minor:Tag:Type:" title="beaconWithUUID:Major:Minor:Tag:Type:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/beaconWithUUID:Major:Minor:Tag:Type:">+&nbsp;beaconWithUUID:Major:Minor:Tag:Type:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>初始化Beacon的类方法</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (TYBeacon *)beaconWithUUID:(NSString *)<em>uuid</em> Major:(NSNumber *)<em>major</em> Minor:(NSNumber *)<em>minor</em> Tag:(NSString *)<em>tag</em> Type:(TYPE)<em>type</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>uuid</code></th>
+						<td><p><a href="#//api/name/UUID">UUID</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>major</code></th>
+						<td><p>Major</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>minor</code></th>
+						<td><p>Minor</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tag</code></th>
+						<td><p>标识</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>type</code></th>
+						<td><p>类型</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Beacon实例</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>初始化Beacon的类方法</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TYBeacon.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithUUID:Major:Minor:Tag:Type:" title="initWithUUID:Major:Minor:Tag:Type:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithUUID:Major:Minor:Tag:Type:">&ndash;&nbsp;initWithUUID:Major:Minor:Tag:Type:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>初始化Beacon的方法</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)initWithUUID:(NSString *)<em>uuid</em> Major:(NSNumber *)<em>major</em> Minor:(NSNumber *)<em>minor</em> Tag:(NSString *)<em>tag</em> Type:(TYPE)<em>type</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>uuid</code></th>
+						<td><p><a href="#//api/name/UUID">UUID</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>major</code></th>
+						<td><p>Major</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>minor</code></th>
+						<td><p>Minor</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tag</code></th>
+						<td><p>标识</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>type</code></th>
+						<td><p>类型</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Beacon实例</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>初始化Beacon的方法</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TYBeacon.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
 					
-					window.name = "hideTOC";
-				}
-				else
-				{
-					this.setAttribute('class', 'open');
-					contents.setAttribute('class', 'isShowingTOC');
-					tocContainer.setAttribute('class', 'isShowingTOC');
 					
-					window.name = "";
-				}
-				return false;
-			}
-			
-			function toggleTOCEntryChildren(e)
-			{
-				e.stopPropagation();
-				var currentClass = this.getAttribute('class');
-				if (currentClass == 'children') {
-					this.setAttribute('class', 'children open');
-				}
-				else if (currentClass == 'children open') {
-					this.setAttribute('class', 'children');
-				}
-				return false;
-			}
-			
-			function tocEntryClick(e)
-			{
-				e.stopPropagation();
-				return true;
-			}
-			
-			function init()
-			{
-				var selectElement = document.getElementById('jumpTo');
-				selectElement.addEventListener('change', jumpToChange, false);
-				
-				var tocButton = document.getElementById('table_of_contents');
-				tocButton.addEventListener('click', toggleTOC, false);
-				
-				var taskTreeItem = document.getElementById('task_treeitem');
-				if (taskTreeItem.getElementsByTagName('li').length > 0)
-				{
-					taskTreeItem.setAttribute('class', 'children');
-					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
-				}
-				
-				var tocList = document.getElementById('toc');
-				
-				var tocEntries = tocList.getElementsByTagName('li');
-				for (var i = 0; i < tocEntries.length; i++) {
-					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
-				}
-				
-				var tocLinks = tocList.getElementsByTagName('a');
-				for (var i = 0; i < tocLinks.length; i++) {
-					tocLinks[i].addEventListener('click', tocEntryClick, false);
-				}
-				
-				if (window.name == "hideTOC") {
-					toggleTOC.call(tocButton);
-				}
-			}
-			
-			window.onload = init;
-			
-			// If showing in Xcode, hide the TOC and Header
-			if (navigator.userAgent.match(/xcode/i)) {
-				document.getElementById("contents").className = "hideInXcode"
-				document.getElementById("tocContainer").className = "hideInXcode"
-				document.getElementById("top_header").className = "hideInXcode"
-			}
-			
-		</script>
-	</body>
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2017 智石科技. All rights reserved. Updated: 2017-08-05</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
 </html>

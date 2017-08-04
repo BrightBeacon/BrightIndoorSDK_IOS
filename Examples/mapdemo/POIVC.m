@@ -8,7 +8,7 @@
 
 #import "POIVC.h"
 
-@interface POIVC ()<UITextFieldDelegate> {
+@interface POIVC ()<UITextFieldDelegate,AGSCalloutDelegate> {
     AGSGraphicsLayer *poiLayer;
 }
 
@@ -20,17 +20,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UITextField *tf = [[UITextField alloc] initWithFrame:CGRectMake(0, 66, self.view.frame.size.width, 44)];
-    tf.translatesAutoresizingMaskIntoConstraints = NO;
-    tf.placeholder = @"搜索";
-    tf.delegate = self;
-    [tf addTarget:self action:@selector(textDidChange:) forControlEvents:UIControlEventEditingChanged];
-    [self.view addSubview:tf];
-
+    
+    self.mapView.allowCallout = YES;
+    self.mapView.callout.delegate = self;
 }
 
 - (void)TYMapView:(TYMapView *)mapView didFinishLoadingFloor:(TYMapInfo *)mapInfo {
-
+    [super TYMapView:mapView didFinishLoadingFloor:mapInfo];
     if (poiLayer == nil) {
         poiLayer = [AGSGraphicsLayer graphicsLayer];
         //    poiLayer.renderer = [AGSSimpleRenderer simpleRendererWithSymbol:marker];
@@ -38,22 +34,27 @@
     }
 }
 
+- (void)TYMapView:(TYMapView *)mapView PoiSelected:(NSArray *)array {
+    [poiLayer removeAllGraphics];
+    for (TYPoi *poi in array) {
+        if (poi.layer == POI_ROOM) {
+            AGSSimpleFillSymbol *fillSymbol = [[AGSSimpleFillSymbol alloc] initWithColor:[UIColor colorWithWhite:125./255. alpha:0.3] outlineColor:[UIColor redColor]];
+            AGSGraphic *graphic = [[AGSGraphic alloc] initWithGeometry:poi.geometry symbol:fillSymbol attributes:@{@"NAME":poi.name}];
+            [poiLayer addGraphic:graphic];
+        }else if(poi.layer == POI_FACILITY){
+            [mapView highlightPoi:poi];
+        }else{
+            [mapView highlightPoi:poi];
+        }
+    }
+    //高亮POI
+    //[mapView highlightPois:array];
+    
+    //高亮指定的POIID
+    //[mapView highlightPoi:[mapView getPoiOnCurrentFloorWithPoiID:@"POIID" layer:POI_FACILITY]];
+}
 
 - (void)TYMapView:(TYMapView *)mapView didClickAtPoint:(CGPoint)screen mapPoint:(AGSPoint *)mappoint {
-	AGSGeometryEngine *engine = [AGSGeometryEngine defaultGeometryEngine];
-	double nearestDistance = MAXFLOAT;
-	AGSGraphic *graphic = nil;
-	for (AGSGraphic *g in poiLayer.graphics) {
-		double distance = [engine distanceFromGeometry:mappoint toGeometry:g.geometry];
-		if (distance<nearestDistance) {
-			nearestDistance = distance;
-			graphic = g;
-		}
-	}
-	PoiEntity *pe = [self.poiDict valueForKey:[graphic attributeForKey:@"POI_ID"]];
-	mapView.callout.title = pe.name;
-	mapView.callout.detail = pe.poiId;
-	[mapView.callout showCalloutAt:mappoint screenOffset:CGPointZero animated:YES];
 }
 
 - (IBAction)textDidChange:(UITextField*)sender  {
@@ -63,13 +64,37 @@
     }
     self.poiDict = [NSMutableDictionary dictionary];
     TYSearchAdapter *searchAdapter = [[TYSearchAdapter alloc] initWithBuildingID:self.mapView.building.buildingID];
-    NSArray *peArray = [searchAdapter queryPoi:sender.text andFloor:self.mapView.currentMapInfo.floorNumber];
-    for (PoiEntity *pe in peArray) {
+    NSArray *peArray = [searchAdapter querySql:[NSString stringWithFormat:@"select * from POI where name like '%%%@%%' order by name,floor_number",sender.text]];
+
+    NSMutableArray *distinctArray = [NSMutableArray array];
+    for (PoiEntity *entity in peArray) {
+        BOOL isExsit = NO;
+        for (PoiEntity *tmp in distinctArray) {
+            if (tmp.floorNumber==entity.floorNumber&&[tmp.name isEqualToString:entity.name]&&ABS(tmp.labelX - entity.labelX)<1&&ABS(tmp.labelY - entity.labelY)<1) {
+                isExsit = YES;
+                break;
+            }
+        }
+        if(isExsit == NO){
+            [distinctArray addObject:entity];
+        }
+    }
+    for (PoiEntity *pe in distinctArray) {
+        if (pe.floorNumber != self.mapView.currentMapInfo.floorNumber) {
+            continue;
+        }
         AGSPoint *pt = [AGSPoint pointWithX:pe.labelX y:pe.labelY spatialReference:self.mapView.spatialReference];
 
-        AGSSimpleMarkerSymbol *marker = [AGSSimpleMarkerSymbol simpleMarkerSymbolWithColor:[UIColor greenColor]];
-        marker.size = CGSizeMake(10, 10);
-        AGSGraphic *graphic = [AGSGraphic graphicWithGeometry:pt symbol:marker attributes:@{@"POI_ID":pe.poiId}];
+        AGSPictureMarkerSymbol *picSymbol = [[AGSPictureMarkerSymbol alloc] init];
+        picSymbol.image = [UIImage imageNamed:@"cell_poi"];
+        AGSGraphic *graphic = [AGSGraphic graphicWithGeometry:pt symbol:picSymbol attributes:@{@"POI_ID":pe.poiId}];
+        [poiLayer addGraphic:graphic];
+
+        AGSTextSymbol *numSymbol = [[AGSTextSymbol alloc] initWithText:@"1" color:[UIColor whiteColor]];
+        numSymbol.size = picSymbol.size;
+        numSymbol.hAlignment = AGSTextSymbolHAlignmentCenter;
+        numSymbol.vAlignment = AGSTextSymbolVAlignmentMiddle;
+        graphic = [AGSGraphic graphicWithGeometry:pt symbol:numSymbol attributes:@{@"POI_ID":pe.poiId}];
         [poiLayer addGraphic:graphic];
 
         [self.poiDict setObject:pe forKey:pe.poiId];
@@ -78,5 +103,31 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return NO;
+}
+
+//需要预先设置弹窗委托self.mapView.callout.delegate = self;
+//弹窗即将出现回调；return NO;或self.mapView.allowCallout = NO;均可以控制取消弹窗。
+-(BOOL)callout:(AGSCallout*)callout willShowForFeature:(id<AGSFeature>)feature layer:(AGSLayer<AGSHitTestable>*)layer mapPoint:(AGSPoint *)mapPoint {
+    NSLog(@"%@",layer.description);
+    if ([feature attributeForKey:@"NAME"]) {
+        callout.title = (NSString*)[feature attributeForKey:@"NAME"];
+        callout.image = [UIImage imageNamed:@"redPin"];
+        callout.accessoryButtonImage = [UIImage imageNamed:@"locationArrow"];
+        return YES;
+    }
+    return NO;
+}
+//点击空白区域消失，或手动消失[self.mapView.callout dissmiss];
+-(void)calloutWillDismiss:(AGSCallout*)callout {
+    
+}
+-(void)calloutDidDismiss:(AGSCallout*)callout {
+    
+}
+//右侧按钮点击
+- (void)didClickAccessoryButtonForCallout:(AGSCallout *)callout {
+    NSLog(@"at layer:%@, with feature:%@",callout.representedLayer,callout.representedObject);
+    [poiLayer addGraphic:[AGSGraphic graphicWithGeometry:callout.mapLocation symbol:[AGSSimpleMarkerSymbol simpleMarkerSymbolWithColor:[UIColor greenColor]] attributes:nil]];
+    [callout dismiss];
 }
 @end

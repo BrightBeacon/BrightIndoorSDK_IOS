@@ -8,38 +8,46 @@
 
 #import "TileVC.h"
 #import <TYTileMapSDK/TYTileMapSDK.h>
+#import <TYMapSDK/TYMapSDK.h>
 
-@interface TileVC ()
-@property (nonatomic,strong) TYTiledLayer *tileLayer;
+@interface TileVC () {
+
+    TYTiledManager *tileManager;
+
+}
 @end
-
 @implementation TileVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-	
+    tileManager = [[TYTiledManager alloc] initWithBuilding:@"00210025"];
+    TYMapView *mapView = [[TYMapView alloc] initWithFrame:self.view.bounds];
+    mapView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+    [self.view addSubview:mapView];
+    
+    //测试；实际请加载到对应矢量地图楼层加载处
+    [self TYMapView:mapView didFinishLoadingFloor:@"1"];
 }
 
-- (void)TYMapView:(TYMapView *)mapView didFinishLoadingFloor:(TYMapInfo *)mapInfo {
-	[mapView removeMapLayer:_tileLayer];
-	NSString *dir = [TYMapEnvironment getRootDirectoryForMapFiles];
-    TYTiledLayer *tileLayer = (TYTiledLayer *)[self.mapView mapLayerForName:mapInfo.buildingID];
-    [self.mapView removeMapLayer:tileLayer];
+- (void)TYMapView:(TYMapView *)mapView didFinishLoadingFloor:(NSString *)floorName {
 
-    NSString *tileInfoPath = [dir stringByAppendingPathComponent:@"tileInfo.json"];
-    NSArray *tileInfos = [TYTiledManager tileInfoByServer:@"http:/files.brtbeacon.com" buildingId:mapInfo.buildingID toPath:tileInfoPath];
-    tileLayer = [[TYTiledLayer alloc] initWithTileRoot:dir withTileInfo:[TYTiledManager findTileInfo:tileInfos byMapID:mapInfo.mapID]];
+    TYTiledLayer *tileLayer = (TYTiledLayer *)[mapView mapLayerForName:@"layerid"];
+    [mapView removeMapLayer:tileLayer];
+
+    NSString *dir = [TYMapEnvironment getRootDirectoryForMapFiles];
+    tileLayer = [[TYTiledLayer alloc] initWithTileRoot:dir withTileInfo:[tileManager tileInfoByFloor:floorName]];
     if(tileLayer&&!tileLayer.error){
-        [self.mapView insertMapLayer:tileLayer withName:mapInfo.buildingID atIndex:0];
+        [mapView insertMapLayer:tileLayer withName:@"layerid" atIndex:0];
+        AGSPoint *center = tileLayer.fullEnvelope.center;
+        [mapView centerAtPoint:center animated:YES];
     }else{
         [[[UIAlertView alloc]initWithTitle:@"无法加载图层数据" message:[tileLayer.error localizedDescription] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
     }
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

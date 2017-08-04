@@ -5,9 +5,9 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.智石科技.tymapdoc.TYMapDoc</string>
+	<string>com.com.brtbeacon.tymapsdk.TYMapSDK</string>
 	<key>CFBundleName</key>
-	<string>TYMapDoc Documentation</string>
+	<string>TYMapSDK Documentation</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
@@ -17,7 +17,7 @@
 	
 	
 	<key>DocSetFeedName</key>
-	<string>TYMapDoc Documentation</string>
+	<string>TYMapSDK Documentation</string>
 	
 	<key>DocSetMinimumXcodeVersion</key>
 	<string>3.0</string>
@@ -25,10 +25,10 @@
 	<key>DashDocSetFamily</key>
 	<string>appledoc</string>
 	<key>DocSetPublisherIdentifier</key>
-	<string>com.智石科技.tymapdoc.documentation</string>
+	<string>com.com.brtbeacon.tymapsdk.documentation</string>
 	<key>DocSetPublisherName</key>
-	<string>智石科技</string>
+	<string>com.brtbeacon</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2017 智石科技. All rights reserved.</string>
+	<string>Copyright © 2017 com.brtbeacon. All rights reserved.</string>
 </dict>
 </plist>

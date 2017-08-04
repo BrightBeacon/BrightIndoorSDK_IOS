@@ -8,8 +8,8 @@
 
 **开发包最低兼容IOS7、蓝牙4.0及其以上系统。**
 ### 二、集成开发环境①②③④
-**注1：使用cocoaPods集成，必须先完成①②；拷贝geos.a库到项目根目录(即.xcodeproj所在目录)**<br/>
-**注2：运行示例工程仅需要①**
+**注1：使用cocoaPods仅需①；并在Podfile添加依赖参见[CocoaPods/README.md](CocoaPods/README.md)**<br/>
+**注2：运行示例工程仅需①**
 ***
 只集成地图引人：[TYMapData.framework](libs/lib/TYMapData.framework) 和 [TYMapSDK.framework](libs/lib/TYMapSDK.framework)
 <br/>只集成定位引人：[TYMapData.framework](libs/lib/TYMapData.framework) 和 [TYLocationEngine.framework](libs/lib/TYLocationEngine.framework)
@@ -21,7 +21,6 @@
 <code>$HOME/Library/SDKs/ArcGIS/iOS</code>
 
 #### ② 引入开发库
-1、
 引人libgeos.a库文件，然后在target的buiding setting配置库路径：<code>Library Search Paths：你的libgeos.a目录</code>
 
 * 直接打开(或引人)geos目录下[xcode库工程](geos/geos.xcodeproj)编译出(或引用)libgeos.a库文件即可。
@@ -40,12 +39,12 @@
 ### 三、开始定位（不支持模拟器）
 
 #### 以下参数仅为配置示例工程定位
-使用与地图数据配套的iBeacon设备部署方案，才可以实现室内地图定位。示例地图，需要准备5个iBeacon设备；配置参数列表如下：
+使用与地图数据配套的iBeacon设备部署方案，才可以实现室内地图定位。请下载配置端[BrightBeacon](http://app.brtbeacon.com) 本示例地图，需要准备6个iBeacon设备；配置参数列表如下：
 
 <table>
 <thead>
 <tr>
-<th>No.</th>
+<th>Floor</th>
 <th>UUID </th>
 <th> Major </th>
 <th> Minor</th>
@@ -53,34 +52,40 @@
 </thead>
 <tbody>
 <tr>
-<td>区域1</td>
-<td rowspan＝'2'> FDA50693-A4E2-4FB1-AFCF-C6EB07647825 </td>
-<td> 10046  </td>
-<td> 11048</td>
+<td>F1</td>
+<td rowspan＝'2'> E2C56DB5-DFFB-48D2-B060-D0F5A71096E0 </td>
+<td> 10000  </td>
+<td> 11261 </td>
 </tr>
 <tr>
-<td>区域2</td>
-<td> FDA50693-A4E2-4FB1-AFCF-C6EB07647825 </td>
-<td> 10046  </td>
-<td> 11049</td>
+<td>F1</td>
+<td> E2C56DB5-DFFB-48D2-B060-D0F5A71096E0 </td>
+<td> 10000  </td>
+<td> 11262 </td>
 </tr>
 <tr>
-<td>区域3</td>
-<td> FDA50693-A4E2-4FB1-AFCF-C6EB07647825 </td>
-<td> 10046  </td>
-<td> 11050</td>
+<td>F1</td>
+<td> E2C56DB5-DFFB-48D2-B060-D0F5A71096E0 </td>
+<td> 10000  </td>
+<td> 11263 </td>
 </tr>
 <tr>
-<td>区域4</td>
-<td> FDA50693-A4E2-4FB1-AFCF-C6EB07647825 </td>
-<td> 10046  </td>
-<td> 11053</td>
+<td>F1</td>
+<td> E2C56DB5-DFFB-48D2-B060-D0F5A71096E0 </td>
+<td> 10000  </td>
+<td> 11264 </td>
 </tr>
 <tr>
-<td>区域5</td>
-<td> FDA50693-A4E2-4FB1-AFCF-C6EB07647825 </td>
-<td> 10046  </td>
-<td> 11055</td>
+<td>F2</td>
+<td> E2C56DB5-DFFB-48D2-B060-D0F5A71096E0 </td>
+<td> 10000  </td>
+<td> 11265 </td>
+</tr>
+<tr>
+<td>F2</td>
+<td> E2C56DB5-DFFB-48D2-B060-D0F5A71096E0 </td>
+<td> 10000  </td>
+<td> 11266 </td>
 </tr>
 </tbody>
 </table>
@@ -88,7 +93,7 @@
 ### 四、使用你的地图
 ***
 #### 获取你的地图参数
-①前往[开发者中心http://open.brtbeacon.com](http://open.brtbeacon.com)并登录
+①前往[开发者中心 http://open.brtbeacon.com](http://open.brtbeacon.com)并登录
 
 ②首次注册用户需创建【应用AppKey】，即可申请试用地图
 

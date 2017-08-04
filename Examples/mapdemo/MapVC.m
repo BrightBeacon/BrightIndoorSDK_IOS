@@ -16,7 +16,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self.mapView setGridLineWidth:4];
+    [self.mapView setGridLineColor:[UIColor lightGrayColor]];
+    
+    [self.mapView setGridSize:8];
+    [self.mapView setBackgroundColor:[UIColor darkGrayColor]];
 }
 
 #pragma mark - **************** 地图回调
@@ -26,17 +30,18 @@
     if (error) {
         return;
     }
-	//限制屏幕宽显示范围5米-1000米
-	[self setMinMaxResolution:5 :1000];
+	//限制基于屏幕宽缩放，最小1~最大8倍
+//	[self setMinMaxResolution:1:8];
 }
 - (void)TYMapView:(TYMapView *)mapView didFinishLoadingFloor:(TYMapInfo *)mapInfo {
+    [super TYMapView:mapView didFinishLoadingFloor:mapInfo];
 	NSLog(@"%@",mapInfo);
 }
 
 - (void)TYMapView:(TYMapView *)mapView didClickAtPoint:(CGPoint)screen mapPoint:(AGSPoint *)mappoint {
-	NSLog(@"%@",mappoint);
+	NSLog(@"%@,%@,%@",mappoint,[mapView toMapPoint:CGPointMake(mappoint.x, mappoint.y)],NSStringFromCGPoint([mapView toScreenPoint:mappoint]));
 	TYPoi *poi = [mapView extractRoomPoiOnCurrentFloorWithX:mappoint.x Y:mappoint.y];
-	if (poi) {
+	if (poi.name&&![poi.name isEqual:[NSNull null]]) {
 		[mapView highlightPoi:poi];
 	}
 }
@@ -46,12 +51,14 @@
 }
 
 #pragma mark - **************** 分辨率
-//设置当前屏幕宽能显示的最小、最大实际距离(米)
-- (void) setMinMaxResolution:(double) min :(double) max {
-	//resolution 实际距离（米）/屏幕像素
-	double width = [UIScreen mainScreen].bounds.size.width;
-	[self.mapView setMaxResolution:max/width];//分辨率：max米/屏幕宽像素
-	[self.mapView setMinResolution:min/width];//分辨率：min米/屏幕宽像素
+//设置以当前地图宽为基准，最大maxScale倍数，和最小倍数minScale
+- (void) setMinMaxResolution:(double) minScale :(double) maxScale {
+	double width = self.mapView.frame.size.width;
+    double distance = self.mapView.currentMapInfo.mapSize.x;
+    double resolution = distance/width;
+
+	[self.mapView setMaxResolution:minScale*resolution];
+	[self.mapView setMinResolution:resolution/maxScale];
 }
 
 - (IBAction)resolutionButtonClicked:(UISlider *)sender {

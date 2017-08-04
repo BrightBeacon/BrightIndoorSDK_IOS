@@ -72,6 +72,14 @@
  */
 - (void)setRssiThreshold:(int)threshold;
 
+
+/**
+ 设置上传定位数据构建后台热力图
+
+ @param enable 是否上传
+ */
+- (void)enableHeatData:(BOOL)enable;
+
 /**
  *  请求超时时间，即超过此时间没有结果返回认为定位失败
  */

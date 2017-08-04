@@ -28,6 +28,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^{
+        [self.mapView routeManager];
+    });
+}
+
+- (void)dealloc {
+    
 }
 //初始化路径图标
 - (void)initSymbols
@@ -45,7 +52,7 @@
 
 	[self.mapView setRouteStartSymbol:startSymbol];
 	[self.mapView setRouteEndSymbol:endSymbol];
-	[self.mapView setRouteSwitchSymbol:switchSymbol];
+    [self.mapView setRouteSwitchSymbol:switchSymbol];
 }
 - (void)initLocationSymbol {
     //设置地图显示定位图标
@@ -113,24 +120,24 @@
 - (void)TYMapView:(TYMapView *)mapView didClickAtPoint:(CGPoint)screen mapPoint:(AGSPoint *)mappoint {
     if (isRouting) {
         TYLocalPoint *localPoint = [TYLocalPoint pointWithX:mappoint.x Y:mappoint.y Floor:mapView.currentMapInfo.floorNumber];
-        double distance2end = [self.endLocalPoint distanceWith:localPoint];
-        if (distance2end<2) {
+        TYRoutePart *part = [routeResult getNearestRoutePart:localPoint];
+        double distance2end = part?[routeResult distanceToRouteEnd:localPoint]:MAXFLOAT;
+        if (distance2end<5) {
             [mapView resetRouteLayer];
             isRouting = NO;
             [mapView showLocation:localPoint];
             self.startLocalPoint = nil;
             self.endLocalPoint = nil;
             self.currentLocalPoint = nil;
-            [self textToSpeech:@"已到达终点附近。"];
-            NSLog(@"已到达终点附近。");
+            [self textToSpeech:@"已到达终点5米附近。"];
             return;
         }
 
-		if ([routeResult isDeviatingFromRoute:localPoint WithThrehold:2]) {
+		if ([routeResult isDeviatingFromRoute:localPoint WithThrehold:5]) {
 			//模拟偏航2米，重新规划路径
 			self.currentLocalPoint = localPoint;
             [self startButtonClicked:nil];
-            [self textToSpeech:@"你已偏航，重新规划路线。"];
+            [self textToSpeech:@"你已偏航5米，重新规划路线。"];
             //模拟定位点，显示导航路径
             [mapView showLocation:localPoint];
             return;
@@ -139,28 +146,26 @@
         [mapView showPassedAndRemainingRouteResultOnCurrentFloor:localPoint];
 
         //导航中，未偏航，可以直接吸附到最近的路径上。注意：同层如有隔断，会出现多路径线段TYRoutePart
-        AGSGeometryEngine *engine = [AGSGeometryEngine defaultGeometryEngine];
-        TYRoutePart *part = [routeResult getNearestRoutePart:localPoint];
         if (part) {
-            AGSProximityResult *result = [engine nearestCoordinateInGeometry:part.route toPoint:mappoint];
-            mappoint = result.point;
-            localPoint = [TYLocalPoint pointWithX:mappoint.x Y:mappoint.y Floor:mapView.currentMapInfo.floorNumber];
-        }
+            localPoint = [routeResult getNearPointOnRoute:localPoint];
         //导航提示
         NSArray *routeGuides = [routeResult getRouteDirectionalHint:part];
         if (routeGuides.count) {
             TYDirectionalHint *hint = [routeResult getDirectionHintForLocation:localPoint FromHints:routeGuides];
+            [self.mapView setRotationAngle:hint.currentAngle aroundMapPoint:mappoint animated:YES];
+            [self.mapView centerAtPoint:mappoint animated:NO];
 //            [self.mapView showRouteHintForDirectionHint:hint Centered:NO];
             float len2Start = [localPoint distanceWith:(TYLocalPoint*)hint.startPoint];
             float len2End = [localPoint distanceWith:(TYLocalPoint*)hint.endPoint];
-            if (len2Start<MIN(hint.length/5.0, 2)) {
+            if (len2Start<MIN(hint.length/5.0, 10)) {
                 [self textToSpeech:[hint getDirectionString]];
-            }else if(len2End<MIN(hint.length/3.0, 10)){
+            }else if(len2End<MIN(hint.length/3.0, 15)){
                 if(hint.nextHint)[self textToSpeech:[NSString stringWithFormat:@"前方%.0f米%@",len2End,[hint.nextHint getDirectionString]]];
-                else [self textToSpeech:@"请保持直行"];
+                else [self textToSpeech:@"请保持前行"];
             }else{
-                [self textToSpeech:[NSString stringWithFormat:@"请沿当前路线前行%.0f米",len2End]];
+                [self textToSpeech:[NSString stringWithFormat:@"沿路前行%.0f米",len2End]];
             }
+        }
         }
 		//模拟定位点，显示导航路径
 		[mapView showLocation:localPoint];
@@ -199,6 +204,7 @@
 
 - (void)TYMapView:(TYMapView *)mapView didFinishLoadingFloor:(TYMapInfo *)mapInfo
 {
+    [super TYMapView:mapView didFinishLoadingFloor:mapInfo];
 	//显示当前楼层导航信息
 	if (isRouting) {
 		[self.mapView showRouteResultOnCurrentFloor];

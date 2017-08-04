@@ -10,6 +10,6 @@
 * 拷贝文件geos.podspec.json所在路径，粘贴到Podfile：
 
 ```
-pod 'BrightIndoorSDK', '1.1.0'
-pod 'geos', :podspec => '~/Downloads/BrightIndoorSDK_IOS/CocoaPods/geos.podspec.json'
+pod 'BrightIndoorSDK'
+pod 'geos', :podspec => '文件所在目录完整路径/geos.podspec.json'
 ```

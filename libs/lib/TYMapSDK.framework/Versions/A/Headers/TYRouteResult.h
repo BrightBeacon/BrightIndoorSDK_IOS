@@ -15,6 +15,12 @@
  */
 @interface TYRouteResult : NSObject
 
+
+/**
+ 路径总长度
+ */
+@property (nonatomic,readonly) double length;
+
 /**
  *  路径结果的所有路径段
  */
@@ -45,6 +51,27 @@
 - (BOOL)isDeviatingFromRoute:(TYLocalPoint *)point WithThrehold:(double)distance;
 
 /**
+ * 获取路径上最近的点
+ *
+ * 如果本层无路径数据，仅返回传入点
+ *
+ * @param lp
+ * @return 路径上最近的点
+ */
+- (TYLocalPoint *)getNearPointOnRoute:(TYLocalPoint *)lp;
+
+/**
+ * 获取距终点长度
+ *
+ * 如果lp不在路径上，会额外增加距离路径的长度；
+ * 如果lp非路径楼层数据，返回路径全长；
+ *
+ * @param point
+ * @return 距终点全长
+ */
+- (double)distanceToRouteEnd:(TYLocalPoint *)point;
+
+/**
  *  获取距离目标位置点最近的路径段
  *
  *  @param location 目标位置点
@@ -72,13 +99,24 @@
 - (TYRoutePart *)getRoutePart:(int)index;
 
 /**
- *  获取目标路径段的导航提示
+ *  获取目标路径段的导航提示(默认忽略距离<6米，转角<15度的线段)
  *
  *  @param rp 目标路径段
  *
  *  @return 目标路径段的导航提示
  */
 - (NSArray *)getRouteDirectionalHint:(TYRoutePart *)rp;
+
+
+/**
+ 获取目标路径段按自定义距离、角度忽略的导航提示
+
+ @param rp 目标路径段
+ @param distanceThrehold 忽略角度
+ @param angleThrehold 忽略距离
+ @return 目标路径段的导航提示
+ */
+- (NSArray *)getRouteDirectionalHint:(TYRoutePart *)rp distanceThrehold:(double)distanceThrehold angleThrehold:(double)angleThrehold;
 
 /**
  *  从一组导航提示中获取与目标位置点对应的导航提示

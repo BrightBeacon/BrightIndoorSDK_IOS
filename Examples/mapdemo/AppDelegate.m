@@ -20,6 +20,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[DemoTableVC new]];
     [self.window makeKeyAndVisible];
+    NSLog(@"%@",NSHomeDirectory());
     return YES;
 }
 

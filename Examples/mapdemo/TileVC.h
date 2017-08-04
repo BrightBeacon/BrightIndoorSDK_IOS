@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseMapVC.h"
 
-@interface TileVC : BaseMapVC
+@interface TileVC : UIViewController
 
 @end

@@ -8,8 +8,8 @@
 
 #import "BaseMapVC.h"
 
-@interface BaseMapVC (){
-    UISegmentedControl *_floorSegment;
+@interface BaseMapVC ()<UIActionSheetDelegate>{
+    UIButton *_floorButton;
 }
 
 @property (nonatomic,strong) TYBuilding *currentBuilding;
@@ -21,13 +21,15 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 
-    [TYMapEnvironment initMapEnvironment];
+//      去水印
+//    [TYMapEnvironment initMapEnvironment];
     self.mapView = [[TYMapView alloc] initWithFrame:self.view.bounds];
+    self.mapView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:self.mapView];
+    
     self.mapView.mapDelegate = self;
     [self.mapView initMapViewWithBuilding:kBuildingId AppKey:kAppKey];
     [self showZoomControl];
-
 }
 
 - (void)dealloc {
@@ -38,20 +40,31 @@
 
 - (void)showFloorControl
 {
-    [_floorSegment removeFromSuperview];
-	if (self.mapView.allMapInfo.count<=1) {
-		return;
-	}
-	NSMutableArray *floorNameArray = [[NSMutableArray alloc] init];
-	for (TYMapInfo *mapInfo in self.mapView.allMapInfo) {
-		[floorNameArray addObject:mapInfo.floorName];
-	}
-    _floorSegment = [[UISegmentedControl alloc] initWithItems:floorNameArray];
-	_floorSegment.frame = CGRectMake(20, 80, self.view.frame.size.width - 20 * 2, 30);
-	_floorSegment.tintColor = [UIColor blueColor];
-	_floorSegment.selectedSegmentIndex = 0;
-	[_floorSegment addTarget:self action:@selector(floorChanged:) forControlEvents:UIControlEventValueChanged];
-	[self.view addSubview:_floorSegment];
+    [_floorButton removeFromSuperview];
+    
+    _floorButton = [[UIButton alloc] initWithFrame:CGRectMake(100, self.view.frame.size.height-120, self.view.bounds.size.width-200, 42)];
+    _floorButton.layer.cornerRadius = 21;
+    [_floorButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    _floorButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    _floorButton.layer.borderWidth = 1.0;
+    [_floorButton setBackgroundColor:[UIColor whiteColor]];
+    [_floorButton setTitle:[self.mapView.allMapInfo.firstObject valueForKey:@"floorName"] forState:UIControlStateNormal];
+    [_floorButton addTarget:self action:@selector(showFloor:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_floorButton];
+}
+
+- (void)showFloor:(UIButton *)sender {
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:nil];
+    for (TYMapInfo *mapInfo in self.mapView.allMapInfo) {
+        [sheet addButtonWithTitle:mapInfo.floorName];
+    }
+    [sheet showInView:self.view];
+}
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if(buttonIndex != actionSheet.cancelButtonIndex){
+        [self.mapView setFloor:[actionSheet buttonTitleAtIndex:buttonIndex]];
+        [_floorButton setTitle:[actionSheet buttonTitleAtIndex:buttonIndex] forState:UIControlStateNormal];
+    }
 }
 //地图按2倍率缩放
 - (void)showZoomControl {
@@ -68,14 +81,9 @@
 	[self.view addSubview:zout];
 }
 
-//切换楼层
-- (IBAction)floorChanged:(UISegmentedControl *)sender {
-	[self.mapView setFloorWithInfo:[self.mapView.allMapInfo objectAtIndex:sender.selectedSegmentIndex]];
-}
-
 #pragma mark - **************** 地图回调
 //加载地图回调
-- (void)TYMapViewDidLoad:(TYMapView *)mapView withError:(NSError *)error{
+- (void)TYMapViewDidLoad:(TYMapView *)mapView withError:(NSError *)error {
 	NSLog(@"%@",NSStringFromSelector(_cmd));
     if (!error) {
         [self showFloorControl];
@@ -91,25 +99,29 @@
 //地图楼层切换
 - (void)TYMapView:(TYMapView *)mapView didFinishLoadingFloor:(TYMapInfo *)mapInfo
 {
-	NSLog(@"%@",NSStringFromSelector(_cmd));
 }
 
 //Poi选中
 - (void)TYMapView:(TYMapView *)mapView PoiSelected:(NSArray *)array {
-//	TYPoi *poi = array.firstObject;
-//	if (![poi isEqual:[NSNull null]]) {
-//		[mapView highlightPoi:poi];
-//	}
+    for (TYPoi *poi in array) {
+        NSLog(@"POI:%@->分类：%d",poi.name,poi.categoryID);
+    }
 }
 
 //地图点击
 - (void)TYMapView:(TYMapView *)mapView didClickAtPoint:(CGPoint)screen mapPoint:(AGSPoint *)mappoint {
-//	TYPoi *poi = [mapView extractRoomPoiOnCurrentFloorWithX:mappoint.x Y:mappoint.y];
-//	if (![poi isEqual:[NSNull null]]) {
-//		[mapView highlightPoi:poi];
-//	}
+    NSLog(@"%@",mappoint);
+	TYPoi *poi = [mapView extractRoomPoiOnCurrentFloorWithX:mappoint.x Y:mappoint.y];
+	if (poi) {
+		[mapView highlightPoi:poi];
+    }else{
+        NSLog(@"请选择地图内的点");
+    }
 }
 
+- (BOOL)TYMapView:(TYMapView *)mapView shouldProcessClickAtPoint:(CGPoint)screen mapPoint:(AGSPoint *)mappoint {
+    return YES;
+}
 #pragma mark - **************** 路径规划
 
 //路径规划失败
@@ -119,6 +131,8 @@
 //路径规划成功
 - (void)offlineRouteManager:(TYOfflineRouteManager *)routeManager didSolveRouteWithResult:(TYRouteResult *)rs
 {
+    [self.mapView setRouteResult:rs];
+    [self.mapView showRouteResultOnCurrentFloor];
 }
 
 #pragma mark - **************** 默认弹窗

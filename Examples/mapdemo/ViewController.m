@@ -12,8 +12,6 @@
 
 @interface ViewController ()<TYMapViewDelegate,TYOfflineRouteManagerDelegate,AGSCalloutDelegate,TYLocationManagerDelegate,UISearchBarDelegate>{
     BOOL isRouting;
-    BOOL isFirstlocation;
-    
     // 路径规划结果
     TYRouteResult *routeResult;
     TYRoutePart *currentRoutePart;
@@ -34,7 +32,7 @@
 @property(nonatomic,strong) TYLocalPoint *currentLocalPoint;
 @property(nonatomic,strong) TYLocalPoint *lastLocalPoint;
 
-
+//语音合成器
 @property (nonatomic,strong) AVSpeechSynthesizer *speech;
 //定位管理器
 @property (nonatomic,strong) TYLocationManager *loc;
@@ -44,7 +42,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    isFirstlocation = YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -72,10 +69,9 @@
     hintLayer = [AGSGraphicsLayer graphicsLayer];
     [self.mapView addMapLayer:hintLayer];
     
-    //设置地图导航旋转模式
-    [self.mapView setMapMode:TYMapViewModeFollowing];
-    //设置地图选中高亮（本例已在TYMapView:PoiSelected回调中高亮Poi）
-    //    [self.mapView setHighlightPOIOnSelection:YES];
+    //设置地图导航旋转模式(默认旋转定位图标)
+    [self.mapView setMapMode:TYMapViewModeDefault];
+    
     //设置地图弹窗
     self.mapView.callout.delegate = self;
 }
@@ -119,8 +115,7 @@
 }
 
 - (void)TYLocationManager:(TYLocationManager *)manager didUpdateLocation:(TYLocalPoint *)newLocation{
-    if (isFirstlocation) {
-        isFirstlocation = NO;
+    if (manager.getLastLocation == nil) {
         AGSPoint *pt = [AGSPoint pointWithX:newLocation.x y:newLocation.y spatialReference:self.mapView.spatialReference];
         [self.mapView centerAtPoint:pt animated:YES];
     }
@@ -130,63 +125,57 @@
     // 判断地图当前显示楼层是否与定位结果一致，若不一致则切换到定位结果所在楼层（楼层自动切换）
     if (self.mapView.currentMapInfo.floorNumber!=newLocation.floor) {
         [self.mapView setFloor:[NSString stringWithFormat:@"%d",newLocation.floor]];
+        [self.mapView showLocation:newLocation];
         return;
     }
     TYLocalPoint *localPoint = newLocation;
     if (isRouting) {
-        double distance2end = [self.endLocalPoint distanceWith:localPoint];
-        if (distance2end<2) {
+        double distance2end = [routeResult distanceToRouteEnd:localPoint];
+        if (distance2end<5) {
             [self.mapView resetRouteLayer];
             isRouting = NO;
             [self.mapView showLocation:localPoint];
             self.startLocalPoint = nil;
             self.endLocalPoint = nil;
             self.currentLocalPoint = nil;
-            [self textToSpeech:@"已到达终点附近。"];
-            NSLog(@"已到达终点附近。");
+            [self textToSpeech:@"已到达终点5米附近。"];
             return;
         }
-        if ([routeResult isDeviatingFromRoute:localPoint WithThrehold:2]) {
-            //偏航2米，重新规划路径
+        if ([routeResult isDeviatingFromRoute:localPoint WithThrehold:5]) {
+            //偏航5米，重新规划路径
             self.startLocalPoint = localPoint;
             [self requestRoute];
-            [self textToSpeech:@"你已偏航，重新规划路线。"];
+            [self textToSpeech:@"你已偏航5米，重新规划路线。"];
             [self.mapView showLocation:localPoint];
             return;
         }
         //显示路过和余下线段
         [self.mapView showPassedAndRemainingRouteResultOnCurrentFloor:localPoint];
 
-        //导航中，未偏航，可以直接吸附到最近的路径上。注意：同层如有隔断，会出现多路径线段TYRoutePart
-        AGSGeometryEngine *engine = [AGSGeometryEngine defaultGeometryEngine];
+        //导航中，未偏航，可以直接吸附到最近的路径上。注意：同层如有全隔断，会出现多路径线段TYRoutePart
         TYRoutePart *part = [routeResult getNearestRoutePart:localPoint];
         if (part) {
-            AGSProximityResult *result = [engine nearestCoordinateInGeometry:part.route toPoint:[AGSPoint pointWithX:newLocation.x y:newLocation.y spatialReference:self.mapView.spatialReference]];
-
-            localPoint = [TYLocalPoint pointWithX:result.point.x Y:result.point.y Floor:self.mapView.currentMapInfo.floorNumber];
+            localPoint = [routeResult getNearPointOnRoute:localPoint];
         //移动位置超过2米，进行导航提示
         NSArray *routeGuides = [routeResult getRouteDirectionalHint:part];
         if (routeGuides.count&&[localPoint distanceWith:self.lastLocalPoint]>2) {
             self.lastLocalPoint = localPoint;
             //地图显示本线段
             TYDirectionalHint *hint = [routeResult getDirectionHintForLocation:localPoint FromHints:routeGuides];
-            if (![hint.routePart.route.envelope containsPoint:result.point]) {
-                //点不在线段上
-                return;
-            }
             [self.mapView showRouteHintForDirectionHint:hint Centered:NO];
-            //计算当前位置点，距离本路段起点、终点距离
+            self.mapView.rotationAngle = hint.currentAngle;
+            //计算当前位置点，距离本段起点、终点距离
             float len2Start = [localPoint distanceWith:(TYLocalPoint*)hint.startPoint];
             float len2End = [localPoint distanceWith:(TYLocalPoint*)hint.endPoint];
-            //当前路段开始2米、或1/5以内提示本段方向
-            if (len2Start<MIN(hint.length/5.0, 2)) {
+            if (len2Start<MIN(hint.length/5.0, 5)) {
+                //当前路段开始5米、或1/5以内提示本段方向
                 [self textToSpeech:[hint getDirectionString]];
             }else if(len2End<MIN(hint.length/3.0, 10)){
                 //当前路段末尾10米、或最后1/3以内提示下一段方向（有可能无提示）
                 if(hint.nextHint)[self textToSpeech:[NSString stringWithFormat:@"前方%.0f米%@",len2End,[hint.nextHint getDirectionString]]];
-                else [self textToSpeech:@"请保持直行"];
+                else [self textToSpeech:@"请沿路前行"];
             }else{
-                //中间路段，含微小弯道或直行部分
+                //当前路段中间，或含微小弯道或直行部分
                 [self textToSpeech:[NSString stringWithFormat:@"继续沿路前行%.0f米",len2End]];
             }
         }
@@ -245,6 +234,7 @@
 
 - (void)TYMapView:(TYMapView *)mapView didFinishLoadingFloor:(TYMapInfo *)mapInfo
 {
+    [super TYMapView:mapView didFinishLoadingFloor:mapInfo];
     if (isRouting) {
         [self.mapView showRouteResultOnCurrentFloor];
     }
@@ -256,22 +246,7 @@
         [self.mapView showRouteResultOnCurrentFloor];
     }
 }
-- (void)TYMapView:(TYMapView *)mapView PoiSelected:(NSArray *)array {
-    TYPoi *poi = array.firstObject;
-    if (poi) {
-        [mapView highlightPoi:poi];
-        //        AGSPoint *location = nil;
-        //        if ([poi.geometry isKindOfClass:[AGSPolygon class]]) {
-        //            location = [[AGSGeometryEngine defaultGeometryEngine] labelPointForPolygon:(AGSPolygon *)poi.geometry];
-        //        }else{
-        //            location = (AGSPoint *)poi.geometry;
-        //        }
-        //        mapView.callout.delegate = self;
-        //        mapView.callout.title = poi.name;
-        //        mapView.callout.detail = poi.poiID;
-        //        [mapView.callout showCalloutAt:location screenOffset:CGPointZero animated:YES];
-    }
-}
+
 - (void)TYMapView:(TYMapView *)mapView didClickAtPoint:(CGPoint)screen mapPoint:(AGSPoint *)mappoint
 {
     [self.view endEditing:YES];
@@ -279,9 +254,9 @@
     if ([mapView.baseLayer.fullEnvelope containsPoint:mappoint]) {
         [hintLayer removeAllGraphics];
         [hintLayer addGraphic:[AGSGraphic graphicWithGeometry:mappoint symbol:markerSymbol attributes:nil]];
+        self.mapView.callout.customView = [self calloutView:mappoint];
+        [self.mapView.callout showCalloutAt:mappoint screenOffset:CGPointMake(0, 0) animated:YES];
     }
-    self.mapView.callout.customView = [self calloutView:mappoint];
-    [self.mapView.callout showCalloutAt:mappoint screenOffset:CGPointMake(0, 0) animated:YES];
 }
 
 - (UIView *)calloutView:(AGSPoint *)point {
@@ -390,15 +365,4 @@
     [self.view endEditing:YES];
 }
 
-#pragma mark - SearchDelgate
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    if (searchBar.text.length) {
-        //to do
-        
-        TYPoi *poi = [self.mapView getPoiOnCurrentFloorWithPoiID:searchBar.text layer:POI_ROOM];
-        if (poi&&poi.categoryID!=800&&poi.categoryID!=300) {
-            [self.mapView highlightPoi:poi];
-        }
-    }
-}
 @end

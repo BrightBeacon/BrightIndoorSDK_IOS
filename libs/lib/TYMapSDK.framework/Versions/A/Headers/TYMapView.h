@@ -34,6 +34,8 @@ typedef enum {
 @protocol TYMapViewDelegate <NSObject>
 
 @optional
+
+- (BOOL)TYMapView:(TYMapView *)mapView shouldProcessClickAtPoint:(CGPoint)screen mapPoint:(AGSPoint *)mappoint;
 /**
  *  地图点选事件回调方法
  *
@@ -215,11 +217,32 @@ typedef enum {
 - (void)setRouteSwitchSymbol:(AGSPictureMarkerSymbol *)symbol;
 
 /**
+ *  设置导航线符号
+ *
+ *  @param symbol 标识符号
+ */
+- (void)setRouteSymbol:(AGSSymbol*) symbol;
+
+/**
+ *  设置导航经过线符号
+ *
+ *  @param symbol 标识符号
+ */
+- (void) setPassedRouteSymbol:(AGSSymbol*) symbol;
+
+/**
  *  设置导航结果
  *
  *  @param result 导航结果
  */
 - (void)setRouteResult:(TYRouteResult *)result;
+
+/*
+ *  获取导航结果
+ *  
+ *  @retrun result 导航结果
+ */
+- (TYRouteResult *)routeResult;
 
 /**
  *  设置导航起点
@@ -228,12 +251,26 @@ typedef enum {
  */
 - (void)setRouteStart:(TYLocalPoint *)start;
 
+/*
+ * 获取导航起点
+ *
+ * @return 导航起点
+ */
+- (TYLocalPoint *)routeStart;
+
 /**
  *  设置导航终点
  *
  *  @param end 导航终点
  */
 - (void)setRouteEnd:(TYLocalPoint *)end;
+
+/*
+ * 获取导航终点
+ *
+ * @return 导航终点
+ */
+- (TYLocalPoint *)routeEnd;
 
 /**
  *  重置导航层，移除显示的结果，并将导航结果清空
@@ -388,6 +425,16 @@ typedef enum {
 - (TYPoi *)extractRoomPoiOnCurrentFloorWithX:(double)x Y:(double)y;
 
 /**
+ *  根据坐标x和y提取当前所在区域Poi
+ *
+ *  @param x 坐标x
+ *  @param y 坐标y
+ *
+ *  @return REGION POI
+ */
+- (TYPoi *)extractRegionOnCurrentFloorWithX:(double)x Y:(double)y;
+
+/**
  *  设置是否启用路线修正功能，需要添加额外的路线数据
  *
  *  @param enabled 是否启用
@@ -455,7 +502,7 @@ typedef enum {
 - (BOOL)isLabelOverlapDetectingEnabled;
 
 /**
- *  设置地图的自定义放缩层级，用于按层级显示标签。
+ *  设置地图的自定义放缩层级，用于按层级显示标签和设施。
  *
  *  @param dict 自定义放缩层级，{Integer: Double} -> {Level : MapScale}
  */
@@ -467,6 +514,12 @@ typedef enum {
  *  @return 当前所处的放缩层级
  */
 - (int)getCurrentLevel;
+
+/**
+ *  设置文字高于设施碰撞优先级
+ *
+ */
+- (void)setLabelPriority;
 
 @end
 

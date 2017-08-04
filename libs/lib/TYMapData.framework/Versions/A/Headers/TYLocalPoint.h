@@ -44,11 +44,11 @@
 + (TYLocalPoint *)pointWithX:(double)x Y:(double)y Floor:(int)f;
 
 /**
- *  计算当前点P到特定点P'的距离
+ *  计算当前点P到特定点P'的直线距离
  *
  *  @param p 特定点P'
  *
- *  @return 两点间距离
+ *  @return 同层两点间直线距离
  */
 - (double)distanceWith:(TYLocalPoint *)p;
 

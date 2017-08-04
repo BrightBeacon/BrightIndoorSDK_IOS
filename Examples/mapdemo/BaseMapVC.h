@@ -8,18 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import <TYMapSDK/TYMapSDK.h>
-//防止数据中出现NSNull崩溃
-#import "NSNull+OVNatural.h"
-
 //**********************************以下必须修改***********************************
 //以下地图初始化参数参看：http://open.brtbeacon.com
- #define kBuildingId @"ZS020006"
- #define kAppKey @"efef3dbde9dd416bb24b213ed546584f"
+ #define kBuildingId @"00230021"
+ #define kAppKey @"2db1ef00cba1434297fc93a99ae54e37"
 //**********************************以上必须修改***********************************
 
 @interface BaseMapVC : UIViewController<TYMapViewDelegate,TYOfflineRouteManagerDelegate>
 
-@property (nonatomic,strong) IBOutlet TYMapView *mapView;
+@property (nonatomic,strong) TYMapView *mapView;
 
 
 - (void)showFloorControl;

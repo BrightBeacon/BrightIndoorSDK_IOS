@@ -7,11 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58138A611F1E4238006A4A7F /* MapInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58138A601F1E4238006A4A7F /* MapInfoVC.m */; };
+		5814CF541ECD57160004962B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 58E56A391D4A1B8D00823924 /* libz.tbd */; };
 		581A7B6A1CEEA206008F791C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 581A7B691CEEA206008F791C /* main.m */; };
 		581A7B6D1CEEA206008F791C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 581A7B6C1CEEA206008F791C /* AppDelegate.m */; };
 		581A7B701CEEA206008F791C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 581A7B6F1CEEA206008F791C /* ViewController.m */; };
-		581A7BBC1CEEAC61008F791C /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 581A7BBB1CEEAC61008F791C /* libsqlite3.0.tbd */; };
+		581EE2731F208A690088256F /* MapSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 581EE2721F208A690088256F /* MapSetting.m */; };
+		581EE2761F20A3730088256F /* MapCoorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 581EE2751F20A3730088256F /* MapCoorVC.m */; };
+		58277FA71F30061F008D4518 /* RouteHintVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58277FA61F30061F008D4518 /* RouteHintVC.m */; };
 		5836E49F1E07D737008F5BB0 /* POIVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5836E49E1E07D737008F5BB0 /* POIVC.m */; };
+		583964B71F31581100D4A0AC /* LocationSnapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 583964B61F31581100D4A0AC /* LocationSnapVC.m */; };
 		584CD63E1E03DA2500EC1757 /* LayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 584CD63D1E03DA2500EC1757 /* LayerVC.m */; };
 		584CD6441E03E0B100EC1757 /* RouteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 584CD6431E03E0B100EC1757 /* RouteVC.m */; };
 		584CD6471E03E0BC00EC1757 /* LocationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 584CD6461E03E0BC00EC1757 /* LocationVC.m */; };
@@ -20,18 +25,32 @@
 		586C224F1DDD86E300C31931 /* TYMapData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586C224D1DDD86E300C31931 /* TYMapData.framework */; };
 		5875716B1E079F8600E96CA4 /* UIImageView+AGSNorthArrow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5875716A1E079F8600E96CA4 /* UIImageView+AGSNorthArrow.m */; };
 		58948AAB1E8D296800BA5E88 /* TYTileMapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58948AAA1E8D296800BA5E88 /* TYTileMapSDK.framework */; };
-		58B445361EAF1BFF00695228 /* libgeos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B445331EAF1BEE00695228 /* libgeos.a */; };
 		58D877B41E261163000F31DD /* TileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D877B31E261163000F31DD /* TileVC.m */; };
 		58F2ADBC1EC9C8EB00460823 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58F2ADBB1EC9C8EB00460823 /* Assets.xcassets */; };
 		58F449AF1DFFE9830025B433 /* DemoTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F449AE1DFFE9830025B433 /* DemoTableVC.m */; };
 		58F449B21DFFF2470025B433 /* BaseMapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F449B11DFFF2470025B433 /* BaseMapVC.m */; };
 		58F449B51E0000CC0025B433 /* MapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F449B41E0000CC0025B433 /* MapVC.m */; };
 		58F449B91E012DBD0025B433 /* CalloutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F449B81E012DBD0025B433 /* CalloutVC.m */; };
-		58F449BD1E0135F50025B433 /* NSNull+OVNatural.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F449BC1E0135F50025B433 /* NSNull+OVNatural.m */; };
-		58FF19E11D59D9C10060EF7B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 58E56A391D4A1B8D00823924 /* libz.tbd */; };
+		58F64B901F2B2AB400B23FDE /* MapLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F64B8F1F2B2AB400B23FDE /* MapLayer.m */; };
+		58F64B931F2EA7D100B23FDE /* GestureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F64B921F2EA7D100B23FDE /* GestureVC.m */; };
+		58F64B971F2EC19900B23FDE /* ControlNorthVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F64B961F2EC19900B23FDE /* ControlNorthVC.m */; };
+		58F64B9A1F2ECB8300B23FDE /* LineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F64B991F2ECB8300B23FDE /* LineVC.m */; };
+		58F64B9D1F2ECF4100B23FDE /* AreaVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F64B9C1F2ECF4100B23FDE /* AreaVC.m */; };
+		58F64BA01F2ED71400B23FDE /* FenceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F64B9F1F2ED71400B23FDE /* FenceVC.m */; };
+		58F64BA41F2EFD2700B23FDE /* SearchNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F64BA31F2EFD2700B23FDE /* SearchNameVC.m */; };
+		58F64BA71F2F000100B23FDE /* SearchFacilityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F64BA61F2F000100B23FDE /* SearchFacilityVC.m */; };
+		58F64BAA1F2F2D2200B23FDE /* SearchDistanceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F64BA91F2F2D2200B23FDE /* SearchDistanceVC.m */; };
+		58F64BAD1F2F5D6800B23FDE /* RouteDistanceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F64BAC1F2F5D6800B23FDE /* RouteDistanceVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5881DD9A1ECEE83200A43BC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 58B4452E1EAF1BEE00695228 /* geos.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 58E196521EA6FA5000AE8A10;
+			remoteInfo = geos;
+		};
 		58B445321EAF1BEE00695228 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 58B4452E1EAF1BEE00695228 /* geos.xcodeproj */;
@@ -39,16 +58,11 @@
 			remoteGlobalIDString = 58E196531EA6FA5000AE8A10;
 			remoteInfo = geos;
 		};
-		58B445341EAF1BF600695228 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 58B4452E1EAF1BEE00695228 /* geos.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 58E196521EA6FA5000AE8A10;
-			remoteInfo = geos;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		58138A5F1F1E4238006A4A7F /* MapInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapInfoVC.h; sourceTree = "<group>"; };
+		58138A601F1E4238006A4A7F /* MapInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapInfoVC.m; sourceTree = "<group>"; };
 		581A7B651CEEA206008F791C /* mapdemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mapdemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		581A7B691CEEA206008F791C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		581A7B6B1CEEA206008F791C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -57,11 +71,19 @@
 		581A7B6F1CEEA206008F791C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; wrapsLines = 0; };
 		581A7B791CEEA206008F791C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		581A7BBB1CEEAC61008F791C /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		581EE2711F208A690088256F /* MapSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapSetting.h; sourceTree = "<group>"; };
+		581EE2721F208A690088256F /* MapSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapSetting.m; sourceTree = "<group>"; };
+		581EE2741F20A3730088256F /* MapCoorVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapCoorVC.h; sourceTree = "<group>"; };
+		581EE2751F20A3730088256F /* MapCoorVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapCoorVC.m; sourceTree = "<group>"; };
+		58277FA51F30061F008D4518 /* RouteHintVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteHintVC.h; sourceTree = "<group>"; };
+		58277FA61F30061F008D4518 /* RouteHintVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteHintVC.m; sourceTree = "<group>"; };
 		583237701EA46B280037940B /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		583237721EA46BD20037940B /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		583237761EA470100037940B /* libstdc++.6.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.tbd"; path = "usr/lib/libstdc++.6.tbd"; sourceTree = SDKROOT; };
 		5836E49D1E07D737008F5BB0 /* POIVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POIVC.h; sourceTree = "<group>"; };
 		5836E49E1E07D737008F5BB0 /* POIVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POIVC.m; sourceTree = "<group>"; };
+		583964B51F31581100D4A0AC /* LocationSnapVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationSnapVC.h; sourceTree = "<group>"; };
+		583964B61F31581100D4A0AC /* LocationSnapVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationSnapVC.m; sourceTree = "<group>"; };
 		584CD63C1E03DA2500EC1757 /* LayerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerVC.h; sourceTree = "<group>"; };
 		584CD63D1E03DA2500EC1757 /* LayerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayerVC.m; sourceTree = "<group>"; };
 		584CD6421E03E0B100EC1757 /* RouteVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteVC.h; sourceTree = "<group>"; };
@@ -89,8 +111,26 @@
 		58F449B41E0000CC0025B433 /* MapVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapVC.m; sourceTree = "<group>"; };
 		58F449B71E012DBD0025B433 /* CalloutVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalloutVC.h; sourceTree = "<group>"; };
 		58F449B81E012DBD0025B433 /* CalloutVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalloutVC.m; sourceTree = "<group>"; };
-		58F449BB1E0135F50025B433 /* NSNull+OVNatural.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNull+OVNatural.h"; sourceTree = "<group>"; };
-		58F449BC1E0135F50025B433 /* NSNull+OVNatural.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNull+OVNatural.m"; sourceTree = "<group>"; };
+		58F64B8E1F2B2AB400B23FDE /* MapLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapLayer.h; sourceTree = "<group>"; };
+		58F64B8F1F2B2AB400B23FDE /* MapLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapLayer.m; sourceTree = "<group>"; };
+		58F64B911F2EA7D100B23FDE /* GestureVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureVC.h; sourceTree = "<group>"; };
+		58F64B921F2EA7D100B23FDE /* GestureVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureVC.m; sourceTree = "<group>"; };
+		58F64B951F2EC19900B23FDE /* ControlNorthVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlNorthVC.h; sourceTree = "<group>"; };
+		58F64B961F2EC19900B23FDE /* ControlNorthVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlNorthVC.m; sourceTree = "<group>"; };
+		58F64B981F2ECB8300B23FDE /* LineVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineVC.h; sourceTree = "<group>"; };
+		58F64B991F2ECB8300B23FDE /* LineVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineVC.m; sourceTree = "<group>"; };
+		58F64B9B1F2ECF4100B23FDE /* AreaVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaVC.h; sourceTree = "<group>"; };
+		58F64B9C1F2ECF4100B23FDE /* AreaVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AreaVC.m; sourceTree = "<group>"; };
+		58F64B9E1F2ED71400B23FDE /* FenceVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FenceVC.h; sourceTree = "<group>"; };
+		58F64B9F1F2ED71400B23FDE /* FenceVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FenceVC.m; sourceTree = "<group>"; };
+		58F64BA21F2EFD2700B23FDE /* SearchNameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchNameVC.h; sourceTree = "<group>"; };
+		58F64BA31F2EFD2700B23FDE /* SearchNameVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchNameVC.m; sourceTree = "<group>"; };
+		58F64BA51F2F000100B23FDE /* SearchFacilityVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchFacilityVC.h; sourceTree = "<group>"; };
+		58F64BA61F2F000100B23FDE /* SearchFacilityVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchFacilityVC.m; sourceTree = "<group>"; };
+		58F64BA81F2F2D2200B23FDE /* SearchDistanceVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchDistanceVC.h; sourceTree = "<group>"; };
+		58F64BA91F2F2D2200B23FDE /* SearchDistanceVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchDistanceVC.m; sourceTree = "<group>"; };
+		58F64BAB1F2F5D6800B23FDE /* RouteDistanceVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteDistanceVC.h; sourceTree = "<group>"; };
+		58F64BAC1F2F5D6800B23FDE /* RouteDistanceVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteDistanceVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,13 +138,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58B445361EAF1BFF00695228 /* libgeos.a in Frameworks */,
+				5814CF541ECD57160004962B /* libz.tbd in Frameworks */,
 				58948AAB1E8D296800BA5E88 /* TYTileMapSDK.framework in Frameworks */,
 				586C224F1DDD86E300C31931 /* TYMapData.framework in Frameworks */,
-				58FF19E11D59D9C10060EF7B /* libz.tbd in Frameworks */,
 				586C224B1DDD86DB00C31931 /* TYMapSDK.framework in Frameworks */,
 				586C224E1DDD86E300C31931 /* TYLocationEngine.framework in Frameworks */,
-				581A7BBC1CEEAC61008F791C /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,13 +175,12 @@
 				58F449AE1DFFE9830025B433 /* DemoTableVC.m */,
 				58F449B01DFFF2470025B433 /* BaseMapVC.h */,
 				58F449B11DFFF2470025B433 /* BaseMapVC.m */,
-				58F449BA1E0135F50025B433 /* NSNull */,
 				58F449AC1DFFE94A0025B433 /* 显示地图 */,
-				58F449B61E012DA40025B433 /* 使用弹窗 */,
-				584CD6311E02727C00EC1757 /* 使用图层 */,
-				5836E48F1E07D664008F5BB0 /* 显示POI */,
+				5836E48F1E07D664008F5BB0 /* 地图事件 */,
+				58F64B941F2EBDD200B23FDE /* 地图控件 */,
+				584CD6311E02727C00EC1757 /* 标注弹窗 */,
+				58F64BA11F2EFD0200B23FDE /* POI搜索 */,
 				584CD63F1E03DDFE00EC1757 /* 路径规划 */,
-				58D877B11E2610CF000F31DD /* 瓦片地图 */,
 				584CD6401E03E07D00EC1757 /* 显示定位 */,
 				581A7B6E1CEEA206008F791C /* ViewController.h */,
 				581A7B6F1CEEA206008F791C /* ViewController.m */,
@@ -164,22 +201,32 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		5836E48F1E07D664008F5BB0 /* 显示POI */ = {
+		5836E48F1E07D664008F5BB0 /* 地图事件 */ = {
 			isa = PBXGroup;
 			children = (
 				5836E49D1E07D737008F5BB0 /* POIVC.h */,
 				5836E49E1E07D737008F5BB0 /* POIVC.m */,
+				58F64B911F2EA7D100B23FDE /* GestureVC.h */,
+				58F64B921F2EA7D100B23FDE /* GestureVC.m */,
 			);
-			name = "显示POI";
+			name = "地图事件";
 			sourceTree = "<group>";
 		};
-		584CD6311E02727C00EC1757 /* 使用图层 */ = {
+		584CD6311E02727C00EC1757 /* 标注弹窗 */ = {
 			isa = PBXGroup;
 			children = (
 				584CD63C1E03DA2500EC1757 /* LayerVC.h */,
 				584CD63D1E03DA2500EC1757 /* LayerVC.m */,
+				58F64B981F2ECB8300B23FDE /* LineVC.h */,
+				58F64B991F2ECB8300B23FDE /* LineVC.m */,
+				58F64B9B1F2ECF4100B23FDE /* AreaVC.h */,
+				58F64B9C1F2ECF4100B23FDE /* AreaVC.m */,
+				58F449B71E012DBD0025B433 /* CalloutVC.h */,
+				58F449B81E012DBD0025B433 /* CalloutVC.m */,
+				58F64B9E1F2ED71400B23FDE /* FenceVC.h */,
+				58F64B9F1F2ED71400B23FDE /* FenceVC.m */,
 			);
-			name = "使用图层";
+			name = "标注弹窗";
 			sourceTree = "<group>";
 		};
 		584CD63F1E03DDFE00EC1757 /* 路径规划 */ = {
@@ -187,6 +234,10 @@
 			children = (
 				584CD6421E03E0B100EC1757 /* RouteVC.h */,
 				584CD6431E03E0B100EC1757 /* RouteVC.m */,
+				58F64BAB1F2F5D6800B23FDE /* RouteDistanceVC.h */,
+				58F64BAC1F2F5D6800B23FDE /* RouteDistanceVC.m */,
+				58277FA51F30061F008D4518 /* RouteHintVC.h */,
+				58277FA61F30061F008D4518 /* RouteHintVC.m */,
 			);
 			name = "路径规划";
 			sourceTree = "<group>";
@@ -194,9 +245,10 @@
 		584CD6401E03E07D00EC1757 /* 显示定位 */ = {
 			isa = PBXGroup;
 			children = (
-				5875716C1E07A21400E96CA4 /* 指北针 */,
 				584CD6451E03E0BC00EC1757 /* LocationVC.h */,
 				584CD6461E03E0BC00EC1757 /* LocationVC.m */,
+				583964B51F31581100D4A0AC /* LocationSnapVC.h */,
+				583964B61F31581100D4A0AC /* LocationSnapVC.m */,
 			);
 			name = "显示定位";
 			sourceTree = "<group>";
@@ -221,15 +273,6 @@
 			path = lib;
 			sourceTree = "<group>";
 		};
-		5875716C1E07A21400E96CA4 /* 指北针 */ = {
-			isa = PBXGroup;
-			children = (
-				587571691E079F8600E96CA4 /* UIImageView+AGSNorthArrow.h */,
-				5875716A1E079F8600E96CA4 /* UIImageView+AGSNorthArrow.m */,
-			);
-			name = "指北针";
-			sourceTree = "<group>";
-		};
 		58B4452F1EAF1BEE00695228 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,41 +281,48 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		58D877B11E2610CF000F31DD /* 瓦片地图 */ = {
-			isa = PBXGroup;
-			children = (
-				58D877B21E261163000F31DD /* TileVC.h */,
-				58D877B31E261163000F31DD /* TileVC.m */,
-				58948AAA1E8D296800BA5E88 /* TYTileMapSDK.framework */,
-			);
-			name = "瓦片地图";
-			sourceTree = "<group>";
-		};
 		58F449AC1DFFE94A0025B433 /* 显示地图 */ = {
 			isa = PBXGroup;
 			children = (
 				58F449B31E0000CC0025B433 /* MapVC.h */,
 				58F449B41E0000CC0025B433 /* MapVC.m */,
+				58138A5F1F1E4238006A4A7F /* MapInfoVC.h */,
+				58138A601F1E4238006A4A7F /* MapInfoVC.m */,
+				581EE2711F208A690088256F /* MapSetting.h */,
+				581EE2721F208A690088256F /* MapSetting.m */,
+				58F64B8E1F2B2AB400B23FDE /* MapLayer.h */,
+				58F64B8F1F2B2AB400B23FDE /* MapLayer.m */,
+				581EE2741F20A3730088256F /* MapCoorVC.h */,
+				581EE2751F20A3730088256F /* MapCoorVC.m */,
+				58D877B21E261163000F31DD /* TileVC.h */,
+				58D877B31E261163000F31DD /* TileVC.m */,
+				58948AAA1E8D296800BA5E88 /* TYTileMapSDK.framework */,
 			);
 			name = "显示地图";
 			sourceTree = "<group>";
 		};
-		58F449B61E012DA40025B433 /* 使用弹窗 */ = {
+		58F64B941F2EBDD200B23FDE /* 地图控件 */ = {
 			isa = PBXGroup;
 			children = (
-				58F449B71E012DBD0025B433 /* CalloutVC.h */,
-				58F449B81E012DBD0025B433 /* CalloutVC.m */,
+				587571691E079F8600E96CA4 /* UIImageView+AGSNorthArrow.h */,
+				5875716A1E079F8600E96CA4 /* UIImageView+AGSNorthArrow.m */,
+				58F64B951F2EC19900B23FDE /* ControlNorthVC.h */,
+				58F64B961F2EC19900B23FDE /* ControlNorthVC.m */,
 			);
-			name = "使用弹窗";
+			name = "地图控件";
 			sourceTree = "<group>";
 		};
-		58F449BA1E0135F50025B433 /* NSNull */ = {
+		58F64BA11F2EFD0200B23FDE /* POI搜索 */ = {
 			isa = PBXGroup;
 			children = (
-				58F449BB1E0135F50025B433 /* NSNull+OVNatural.h */,
-				58F449BC1E0135F50025B433 /* NSNull+OVNatural.m */,
+				58F64BA21F2EFD2700B23FDE /* SearchNameVC.h */,
+				58F64BA31F2EFD2700B23FDE /* SearchNameVC.m */,
+				58F64BA51F2F000100B23FDE /* SearchFacilityVC.h */,
+				58F64BA61F2F000100B23FDE /* SearchFacilityVC.m */,
+				58F64BA81F2F2D2200B23FDE /* SearchDistanceVC.h */,
+				58F64BA91F2F2D2200B23FDE /* SearchDistanceVC.m */,
 			);
-			path = NSNull;
+			name = "POI搜索";
 			sourceTree = "<group>";
 		};
 		775DCDEA34FF5F233A7D4C84 /* Frameworks */ = {
@@ -302,7 +352,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				58B445351EAF1BF600695228 /* PBXTargetDependency */,
+				5881DD9B1ECEE83200A43BC8 /* PBXTargetDependency */,
 			);
 			name = mapdemo;
 			productName = mapdemo;
@@ -374,19 +424,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				581EE2761F20A3730088256F /* MapCoorVC.m in Sources */,
 				584CD63E1E03DA2500EC1757 /* LayerVC.m in Sources */,
+				58F64BA41F2EFD2700B23FDE /* SearchNameVC.m in Sources */,
+				583964B71F31581100D4A0AC /* LocationSnapVC.m in Sources */,
 				581A7B701CEEA206008F791C /* ViewController.m in Sources */,
 				58F449B91E012DBD0025B433 /* CalloutVC.m in Sources */,
 				581A7B6D1CEEA206008F791C /* AppDelegate.m in Sources */,
 				584CD6441E03E0B100EC1757 /* RouteVC.m in Sources */,
 				581A7B6A1CEEA206008F791C /* main.m in Sources */,
+				58277FA71F30061F008D4518 /* RouteHintVC.m in Sources */,
 				5875716B1E079F8600E96CA4 /* UIImageView+AGSNorthArrow.m in Sources */,
+				58F64BA71F2F000100B23FDE /* SearchFacilityVC.m in Sources */,
+				58F64B9A1F2ECB8300B23FDE /* LineVC.m in Sources */,
+				58138A611F1E4238006A4A7F /* MapInfoVC.m in Sources */,
+				58F64BAA1F2F2D2200B23FDE /* SearchDistanceVC.m in Sources */,
 				58D877B41E261163000F31DD /* TileVC.m in Sources */,
 				58F449B21DFFF2470025B433 /* BaseMapVC.m in Sources */,
 				58F449B51E0000CC0025B433 /* MapVC.m in Sources */,
+				581EE2731F208A690088256F /* MapSetting.m in Sources */,
+				58F64B901F2B2AB400B23FDE /* MapLayer.m in Sources */,
+				58F64B9D1F2ECF4100B23FDE /* AreaVC.m in Sources */,
 				584CD6471E03E0BC00EC1757 /* LocationVC.m in Sources */,
-				58F449BD1E0135F50025B433 /* NSNull+OVNatural.m in Sources */,
+				58F64B971F2EC19900B23FDE /* ControlNorthVC.m in Sources */,
 				5836E49F1E07D737008F5BB0 /* POIVC.m in Sources */,
+				58F64B931F2EA7D100B23FDE /* GestureVC.m in Sources */,
+				58F64BAD1F2F5D6800B23FDE /* RouteDistanceVC.m in Sources */,
+				58F64BA01F2ED71400B23FDE /* FenceVC.m in Sources */,
 				58F449AF1DFFE9830025B433 /* DemoTableVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,10 +458,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		58B445351EAF1BF600695228 /* PBXTargetDependency */ = {
+		5881DD9B1ECEE83200A43BC8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = geos;
-			targetProxy = 58B445341EAF1BF600695228 /* PBXContainerItemProxy */;
+			targetProxy = 5881DD9A1ECEE83200A43BC8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -494,18 +558,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
-					$HOME/Library/SDKs/ArcGIS/iOS,
+					/Library/SDKs/ArcGIS/iOS,
 					"$(inherited)",
 					"$(SRCROOT)/../libs/lib/",
 					"$(PROJECT_DIR)/mapdemo",
 				);
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "/Users/thomasho/Desktop/TY-Framework";
 				INFOPLIST_FILE = mapdemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -532,7 +597,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				REZ_SEARCH_PATHS = "";
-				VALID_ARCHS = arm64;
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Debug;
 		};
@@ -540,23 +605,24 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
-					$HOME/Library/SDKs/ArcGIS/iOS,
+					/Library/SDKs/ArcGIS/iOS,
 					"$(inherited)",
 					"$(SRCROOT)/../libs/lib/",
 					"$(PROJECT_DIR)/mapdemo",
 				);
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "/Users/thomasho/Desktop/TY-Framework";
 				INFOPLIST_FILE = mapdemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -578,7 +644,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				REZ_SEARCH_PATHS = "";
-				VALID_ARCHS = arm64;
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Release;
 		};

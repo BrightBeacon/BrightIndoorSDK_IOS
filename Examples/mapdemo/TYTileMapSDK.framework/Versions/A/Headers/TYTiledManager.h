@@ -11,23 +11,24 @@
 
 @interface TYTiledManager : NSObject
 
-/**
- 默认从path获取数据，如无则从url同步下载
+@property (nonatomic,assign) BOOL isLoad;
+@property (nonatomic,strong) NSArray *allTileInfo;
 
- @param server 服务器地址
+/**
+ 默认从本地获取数据，如无则从url下载
+
  @param buildingId 建筑id
- @param path 本地文件路径
  @return 瓦片楼层描述数据
  */
-+ (NSArray *)tileInfoByServer:(NSString *)server buildingId:(NSString *)buildingId toPath:(NSString *)path;
+- (instancetype)initWithBuilding:(NSString *)buildingId;
 
 
 /**
- 通过mapID索引到瓦片当层数据
+ 通过楼层名索引到瓦片数据
 
- @param tileInfos 所有瓦片数据
- @param mapID 楼层ID
+ @param floorName 楼层名
  @return 当层瓦片数据
  */
-+ (NSDictionary *)findTileInfo:(NSArray *)tileInfos byMapID:(NSString *)mapID;
+- (NSDictionary *)tileInfoByFloor:(NSString *)floorName;
+
 @end
