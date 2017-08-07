@@ -22,8 +22,9 @@
     self.tipsLabel.numberOfLines = 0;
     [self.view addSubview:self.tipsLabel];
     
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height-60, 144, 44)];
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height-60, 44, 44)];
     [btn setTitle:@"重置" forState:UIControlStateNormal];
+    [btn setBackgroundImage:[UIImage imageNamed:@"btn_bg"] forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(resetButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];

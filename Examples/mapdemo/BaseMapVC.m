@@ -21,8 +21,7 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 
-//      去水印
-//    [TYMapEnvironment initMapEnvironment];
+    [TYMapEnvironment initMapEnvironment];
     self.mapView = [[TYMapView alloc] initWithFrame:self.view.bounds];
     self.mapView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:self.mapView];
@@ -42,7 +41,7 @@
 {
     [_floorButton removeFromSuperview];
     
-    _floorButton = [[UIButton alloc] initWithFrame:CGRectMake(100, self.view.frame.size.height-120, self.view.bounds.size.width-200, 42)];
+    _floorButton = [[UIButton alloc] initWithFrame:CGRectMake(100, self.view.frame.size.height-60, self.view.bounds.size.width-200, 42)];
     _floorButton.layer.cornerRadius = 21;
     [_floorButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
     _floorButton.layer.borderColor = [UIColor lightGrayColor].CGColor;

@@ -22,7 +22,7 @@
     [super viewDidLoad];
     
     self.selectedIndex = [NSMutableArray array];
-    self.title = @"智石地图/定位演示";
+    self.title = @"智石演示";
     self.mapDemoList = @{@"显示地图":@[@{@"·基础地图":@"MapVC"},
                                     @{@"·地图信息":@"MapInfoVC"},
                                     @{@"·地图设置":@"MapSetting"},

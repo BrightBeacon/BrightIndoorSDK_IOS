@@ -115,7 +115,7 @@
     NSArray *hints = [rs getRouteDirectionalHint:part];
     TYDirectionalHint *hint = [rs getDirectionHintForLocation:tmp FromHints:hints];
     if (hint) {
-        self.mapView.rotationAngle = hint.currentAngle;
+        [self.mapView setRotationAngle: hint.currentAngle animated:YES];
         [self.mapView processDeviceRotation:hint.currentAngle-self.mapView.building.initAngle];
         [self.mapView showRouteHintForDirectionHint:hint Centered:NO];
     }
@@ -136,7 +136,7 @@
                 [self.mapView centerAtPoint:pt animated:NO];
                 [self showCurrentHint:[self p2lp:pt]];
                 [self.mapView showLocation:[self p2lp:pt]];
-                [self animateUpdateGraphic:offset+1 start:start end:end];
+                [self animateUpdateGraphic:offset+0.1 start:start end:end];
             }else {
                 [self showCurrentHint:end];
                 [self moveToLocalPoint:end];
