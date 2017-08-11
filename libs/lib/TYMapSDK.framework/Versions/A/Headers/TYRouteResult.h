@@ -55,7 +55,7 @@
  *
  * 如果本层无路径数据，仅返回传入点
  *
- * @param lp
+ * @param lp 传入点
  * @return 路径上最近的点
  */
 - (TYLocalPoint *)getNearPointOnRoute:(TYLocalPoint *)lp;
@@ -66,10 +66,10 @@
  * 如果lp不在路径上，会额外增加距离路径的长度；
  * 如果lp非路径楼层数据，返回路径全长；
  *
- * @param point
+ * @param lp 传入点
  * @return 距终点全长
  */
-- (double)distanceToRouteEnd:(TYLocalPoint *)point;
+- (double)distanceToRouteEnd:(TYLocalPoint *)lp;
 
 /**
  *  获取距离目标位置点最近的路径段

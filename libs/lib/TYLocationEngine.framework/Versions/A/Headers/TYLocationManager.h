@@ -9,12 +9,14 @@
 #import <CoreLocation/CoreLocation.h>
 #import <CoreMotion/CoreMotion.h>
 #import <TYMapData/TYMapData.h>
-
-//@class TYLocationManager;
-
+#import <TYLocationEngine/TYLocationError.h>
 
 @protocol TYLocationManagerDelegate;
 
+
+/**
+ 定位引擎
+ */
 @interface TYLocationManager : NSObject
 
 /**
@@ -124,9 +126,10 @@
 
 /**
  *  位置更新事件回调，位置更新并返回新的位置结果。
- 与[TYLocationManager:didUpdateLocatin:]方法相近，此方法回调结果未融合计步器信息，灵敏度较高，适合用于行车场景下
+ *  
+ *  与[TYLocationManager:didUpdateLocatin:]方法相近，此方法回调结果未融合计步器信息，灵敏度较高，适合用于行车场景下
  *
- *  @param manager     定位引擎实例
+ *  @param manager 定位引擎实例
  *  @param newImmediateLocation 新的位置结果
  */
 - (void)TYLocationManager:(TYLocationManager *)manager didUpdateImmediateLocation:(TYLocalPoint *)newImmediateLocation;

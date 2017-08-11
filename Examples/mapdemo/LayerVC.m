@@ -142,7 +142,7 @@
 	[self.mapView addMapLayer:graphicLayer withName:@"静态图层"];
 
 	AGSGraphicsLayer *dynamicLayer = [[AGSGraphicsLayer alloc] initWithFullEnvelope:self.mapView.baseLayer.fullEnvelope renderingMode:AGSGraphicsLayerRenderingModeDynamic];
-    [dynamicLayer addGraphic:[AGSGraphic graphicWithGeometry:center symbol:[self getTextSymbol:@"动态图层文字"] attributes:nil]];
+    [dynamicLayer addGraphic:[AGSGraphic graphicWithGeometry:center symbol:[self getTextSymbol:@"动态图层文字，旋转试试"] attributes:nil]];
 	[self.mapView insertMapLayer:dynamicLayer withName:@"动态图层" atIndex:[mapView.mapLayers indexOfObject:graphicLayer]];
 }
 

@@ -16,7 +16,6 @@
 #import "TYMapError.h"
 #import "TYOfflineRouteManager.h"
 
-typedef void(^OnMapDataCompletion)(NSString *version, NSError* error);
 
 /**
     地图模式类型：默认模式和跟随模式
@@ -73,9 +72,8 @@ typedef enum {
  *  地图加载完成事件回调
  *
  *  @param mapView 地图视图
+ *  @param error 错误信息，参见TYMapError.h
  */
-//- (void)TYMapViewDidLoad:(TYMapView *)mapView;
-
 - (void)TYMapViewDidLoad:(TYMapView *)mapView withError:(NSError *)error;
 
 /**

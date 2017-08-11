@@ -37,6 +37,7 @@
 - (void)TYMapView:(TYMapView *)mapView PoiSelected:(NSArray *)array {
     [poiLayer removeAllGraphics];
     for (TYPoi *poi in array) {
+        NSLog(@"%d",poi.categoryID);
         if (poi.layer == POI_ROOM) {
             AGSSimpleFillSymbol *fillSymbol = [[AGSSimpleFillSymbol alloc] initWithColor:[UIColor colorWithWhite:125./255. alpha:0.3] outlineColor:[UIColor redColor]];
             AGSGraphic *graphic = [[AGSGraphic alloc] initWithGeometry:poi.geometry symbol:fillSymbol attributes:@{@"NAME":poi.name}];
@@ -63,26 +64,9 @@
         return;
     }
     self.poiDict = [NSMutableDictionary dictionary];
-    TYSearchAdapter *searchAdapter = [[TYSearchAdapter alloc] initWithBuildingID:self.mapView.building.buildingID];
-    NSArray *peArray = [searchAdapter querySql:[NSString stringWithFormat:@"select * from POI where name like '%%%@%%' order by name,floor_number",sender.text]];
-
-    NSMutableArray *distinctArray = [NSMutableArray array];
-    for (PoiEntity *entity in peArray) {
-        BOOL isExsit = NO;
-        for (PoiEntity *tmp in distinctArray) {
-            if (tmp.floorNumber==entity.floorNumber&&[tmp.name isEqualToString:entity.name]&&ABS(tmp.labelX - entity.labelX)<1&&ABS(tmp.labelY - entity.labelY)<1) {
-                isExsit = YES;
-                break;
-            }
-        }
-        if(isExsit == NO){
-            [distinctArray addObject:entity];
-        }
-    }
+    TYSearchAdapter *searchAdapter = [[TYSearchAdapter alloc] initWithBuildingID:self.mapView.building.buildingID distinct:1.0];
+    NSArray *distinctArray = [searchAdapter queryPoi:sender.text andFloor:self.mapView.currentMapInfo.floorNumber];
     for (PoiEntity *pe in distinctArray) {
-        if (pe.floorNumber != self.mapView.currentMapInfo.floorNumber) {
-            continue;
-        }
         AGSPoint *pt = [AGSPoint pointWithX:pe.labelX y:pe.labelY spatialReference:self.mapView.spatialReference];
 
         AGSPictureMarkerSymbol *picSymbol = [[AGSPictureMarkerSymbol alloc] init];
@@ -108,7 +92,7 @@
 //需要预先设置弹窗委托self.mapView.callout.delegate = self;
 //弹窗即将出现回调；return NO;或self.mapView.allowCallout = NO;均可以控制取消弹窗。
 -(BOOL)callout:(AGSCallout*)callout willShowForFeature:(id<AGSFeature>)feature layer:(AGSLayer<AGSHitTestable>*)layer mapPoint:(AGSPoint *)mapPoint {
-    NSLog(@"%@",layer.description);
+    NSLog(@"%@",feature);
     if ([feature attributeForKey:@"NAME"]) {
         callout.title = (NSString*)[feature attributeForKey:@"NAME"];
         callout.image = [UIImage imageNamed:@"redPin"];

@@ -27,7 +27,7 @@
  *  解析目标城市特定ID的建筑信息
  *
  *  @param buildingID 目标建筑ID
- *  @param city       目标城市ID,传nil自动拾取buildingID前4位
+ *  @param cityID     目标城市ID,默认nil截取buildingID前4位
  *
  *  @return 目标建筑信息
  */

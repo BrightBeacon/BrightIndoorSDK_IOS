@@ -10,17 +10,30 @@
 #define TYLocationError_h
 
 #define TYLocationErrorDomain @"TYLocationErrorDomain"
-
+/**
+ 定位数据、定位超时错误对照
+ */
 typedef NS_ENUM(NSUInteger, TYLocationError) {
-    kTYLocationErrorLicenseUpdateFailed = 100,  //权限更新失败
-    kTYLocationErrorLicenseUpdateDenied,  //权限更新接口验证失败
-    kTYLocationErrorVersionUpdateFailed,  //定位数据版本检查失败
-    kTYLocationErrorVersionUpdateDenied,  //定位数据版本检查接口验证失败
-    kTYLocationErrorDataUpdateFailed,     //定位数据更新失败
-    kTYLocationErrorDataUpdateDenied,     //定位数据更新接口验证失败
-    kTYLocationErrorDataZipFailed,        //定位数据文件有误
-    kTYLocationErrorInvalidCode,          //定位数据校验失败
-    kTYLocationErrorTimeOut               //定位超时
+    /** 
+     * 权限更新失败
+     */
+    kTYLocationErrorLicenseUpdateFailed = 100,
+    /** 权限更新接口验证失败*/
+    kTYLocationErrorLicenseUpdateDenied,
+    /** 定位数据版本检查失败*/
+    kTYLocationErrorVersionUpdateFailed,
+    /** 定位数据版本检查接口验证失败*/
+    kTYLocationErrorVersionUpdateDenied,
+    /** 定位数据更新失败*/
+    kTYLocationErrorDataUpdateFailed,
+    /** 定位数据更新接口验证失败*/
+    kTYLocationErrorDataUpdateDenied,
+    /** 定位数据文件有误*/
+    kTYLocationErrorDataZipFailed,
+    /** 定位数据校验失败*/
+    kTYLocationErrorInvalidCode,
+    /** 定位超时*/
+    kTYLocationErrorTimeOut
 };
 
 #endif /* TYLocationError_h */

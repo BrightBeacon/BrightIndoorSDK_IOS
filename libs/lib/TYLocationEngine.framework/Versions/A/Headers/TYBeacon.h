@@ -12,22 +12,22 @@ typedef enum proximity {
 } TYProximity;
 
 /**
- *  图呀Beacon类
+ *  智石Beacon类
  */
 @interface TYBeacon : NSObject
 
 /**
- *  UUID
+ *  UUID 设备通用标识，可用于表示建筑、大区域范围
  */
 @property (readonly, strong) NSString *UUID;
 
 /**
- *  Major
+ *  Major 主标识，可用于表示楼层、小区域范围等
  */
 @property (readonly, strong) NSNumber *major;
 
 /**
- *  Minor
+ *  Minor 次标识，可用于表示具体位置、物品等
  */
 @property (readonly, strong) NSNumber *minor;
 
@@ -42,12 +42,12 @@ typedef enum proximity {
 @property (nonatomic, assign) int rssi;
 
 /**
- *  距离Beacon相对距离的准确性，单位为米
+ *  距离Beacon相对距离的准确性，单位为米，常用于相对远近比较
  */
 @property (nonatomic, assign) double accuracy;
 
 /**
- *  距离Beacon的相对距离
+ *  距离Beacon的相对距离，远/中/近
  */
 @property (nonatomic, assign) TYProximity proximity;
 

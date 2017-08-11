@@ -7,6 +7,7 @@
 //
 
 #import "BaseMapVC.h"
+#import <TYMapData/BRTStatisticManager.h>
 
 @interface BaseMapVC ()<UIActionSheetDelegate>{
     UIButton *_floorButton;
@@ -29,6 +30,7 @@
     self.mapView.mapDelegate = self;
     [self.mapView initMapViewWithBuilding:kBuildingId AppKey:kAppKey];
     [self showZoomControl];
+    [BRTStatisticManager statisticEnable:YES];
 }
 
 - (void)dealloc {

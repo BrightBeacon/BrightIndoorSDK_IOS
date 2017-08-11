@@ -10,8 +10,8 @@
 #import <TYMapSDK/TYMapSDK.h>
 //**********************************以下必须修改***********************************
 //以下地图初始化参数参看：http://open.brtbeacon.com
- #define kBuildingId @"00230021"
- #define kAppKey @"2db1ef00cba1434297fc93a99ae54e37"
+#define kBuildingId @"ZS030002"
+#define kAppKey @"ZSYSJZ83ce7c4cf094cd17d170b3d880"
 //**********************************以上必须修改***********************************
 
 @interface BaseMapVC : UIViewController<TYMapViewDelegate,TYOfflineRouteManagerDelegate>

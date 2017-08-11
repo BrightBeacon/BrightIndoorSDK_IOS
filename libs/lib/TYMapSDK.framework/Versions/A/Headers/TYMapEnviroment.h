@@ -22,6 +22,13 @@ typedef enum {
  */
 @interface TYMapEnvironment : NSObject
 
+
+/**
+ 地图引擎版本
+
+ @return 版本号
+ */
+
 + (NSString *)getSDKVersion;
 /**
  *  默认坐标系空间参考
@@ -45,7 +52,7 @@ typedef enum {
 + (void)initMapEnvironment;
 
 /**
- *  设置当前地图文件的根目录
+ *  设置当前地图文件的根目录(可选默认)
  *
  *  @param dir 地图文件根目录
  */
@@ -101,7 +108,6 @@ typedef enum {
  *  license 离线验证
  *  buildingId 建筑Id
  *  appkey 用户appkey
- *  @return 主机名
  */
 + (void)setLicense:(NSString *)license forBuildingId:(NSString *)buildingId appKey:(NSString *)appkey;
 

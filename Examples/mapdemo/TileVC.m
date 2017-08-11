@@ -10,7 +10,7 @@
 #import <TYTileMapSDK/TYTileMapSDK.h>
 #import <TYMapSDK/TYMapSDK.h>
 
-@interface TileVC () {
+@interface TileVC ()<AGSMapViewTouchDelegate> {
 
     TYTiledManager *tileManager;
 
@@ -20,13 +20,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    tileManager = [[TYTiledManager alloc] initWithBuilding:@"00210025"];
+    tileManager = [[TYTiledManager alloc] initWithBuilding:@"00210105"];
     TYMapView *mapView = [[TYMapView alloc] initWithFrame:self.view.bounds];
     mapView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:mapView];
     
+    mapView.allowRotationByPinching  = YES;
+    mapView.touchDelegate = self;
     //测试；实际请加载到对应矢量地图楼层加载处
-    [self TYMapView:mapView didFinishLoadingFloor:@"1"];
+    [self TYMapView:mapView didFinishLoadingFloor:@"-1"];
 }
 
 - (void)TYMapView:(TYMapView *)mapView didFinishLoadingFloor:(NSString *)floorName {
@@ -46,8 +48,8 @@
 
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+- (void)mapView:(AGSMapView *)mapView didClickAtPoint:(CGPoint)screen mapPoint:(AGSPoint *)mappoint features:(NSDictionary *)features {
+    NSLog(@"%.2f,%.2f",mappoint.x,mappoint.y);
 }
 
 @end
