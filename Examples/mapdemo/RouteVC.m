@@ -237,7 +237,7 @@
 
 	//缩放到路段
 	if (currentRoutePart) {
-		[self.mapView zoomToGeometry:currentRoutePart.route.envelope withPadding:80 animated:YES];
+//		[self.mapView zoomToGeometry:currentRoutePart.route.envelope withPadding:80 animated:YES];
 	}
 }
 

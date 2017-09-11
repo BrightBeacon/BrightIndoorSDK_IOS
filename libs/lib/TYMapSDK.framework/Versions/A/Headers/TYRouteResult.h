@@ -112,8 +112,8 @@
  获取目标路径段按自定义距离、角度忽略的导航提示
 
  @param rp 目标路径段
- @param distanceThrehold 忽略角度
- @param angleThrehold 忽略距离
+ @param distanceThrehold 忽略距离
+ @param angleThrehold 忽略角度
  @return 目标路径段的导航提示
  */
 - (NSArray *)getRouteDirectionalHint:(TYRoutePart *)rp distanceThrehold:(double)distanceThrehold angleThrehold:(double)angleThrehold;

@@ -132,7 +132,7 @@ typedef enum {
 @property (nonatomic, readonly) NSArray *allMapInfo;
 
 /**
- *  路径规划管理器
+ *  路径规划管理器，需在地图数据加载完成之后使用
  */
 @property (nonatomic, readonly) TYOfflineRouteManager *routeManager;
 

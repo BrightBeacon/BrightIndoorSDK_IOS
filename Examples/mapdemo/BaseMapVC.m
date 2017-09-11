@@ -30,7 +30,6 @@
     self.mapView.mapDelegate = self;
     [self.mapView initMapViewWithBuilding:kBuildingId AppKey:kAppKey];
     [self showZoomControl];
-    [BRTStatisticManager statisticEnable:YES];
 }
 
 - (void)dealloc {

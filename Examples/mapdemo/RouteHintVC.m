@@ -112,7 +112,7 @@
     TYLocalPoint *tmp = [TYLocalPoint pointWithX:pt.x Y:pt.y Floor:floor];
     [self animateUpdateGraphic:0 start:lp end:tmp];
     
-    NSArray *hints = [rs getRouteDirectionalHint:part];
+    NSArray *hints = [rs getRouteDirectionalHint:part distanceThrehold:2 angleThrehold:10];
     TYDirectionalHint *hint = [rs getDirectionHintForLocation:tmp FromHints:hints];
     if (hint) {
         [self.mapView setRotationAngle: hint.currentAngle animated:YES];
@@ -148,7 +148,7 @@
 - (void)showCurrentHint:(TYLocalPoint *)lp {
     TYRoutePart *part = [self.mapView.routeResult getNearestRoutePart:lp];
     if (part) {
-        NSArray *hints = [self.mapView.routeResult getRouteDirectionalHint:part];
+        NSArray *hints = [self.mapView.routeResult getRouteDirectionalHint:part distanceThrehold:2 angleThrehold:10];
         TYDirectionalHint *hint = [self.mapView.routeResult getDirectionHintForLocation:lp FromHints:hints];
         if (hint) {
             self.tipsLabel.text = [NSString stringWithFormat:@"方向：%@\n本段长度%.2f\n本段角度%.2f\n剩余/全长：%.2f/%.2f",hint.getDirectionString,hint.length,hint.currentAngle,[self.mapView.routeResult distanceToRouteEnd:lp],self.mapView.routeResult.length];
