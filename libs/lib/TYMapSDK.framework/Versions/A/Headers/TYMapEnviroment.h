@@ -68,11 +68,11 @@ typedef enum {
 /**
  *  获取目标建筑的目录路径
  *
- *  @param building 目标建筑
+ *  @param buildingID 目标建筑ID
  *
  *  @return 目标建筑的文件路径
  */
-+ (NSString *)getBuildingDirectory:(TYBuilding *)building;
++ (NSString *)getBuildingDirectory:(NSString *)buildingID;
 
 /**
  *  设置当前地图显示的语言类型

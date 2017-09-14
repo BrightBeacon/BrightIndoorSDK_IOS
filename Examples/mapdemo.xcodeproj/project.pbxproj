@@ -24,6 +24,7 @@
 		586C224E1DDD86E300C31931 /* TYLocationEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586C224C1DDD86E300C31931 /* TYLocationEngine.framework */; };
 		586C224F1DDD86E300C31931 /* TYMapData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586C224D1DDD86E300C31931 /* TYMapData.framework */; };
 		5875716B1E079F8600E96CA4 /* UIImageView+AGSNorthArrow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5875716A1E079F8600E96CA4 /* UIImageView+AGSNorthArrow.m */; };
+		5886912E1F692B5E00DD23DB /* RouteOnlyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5886912D1F692B5E00DD23DB /* RouteOnlyVC.m */; };
 		58948AAB1E8D296800BA5E88 /* TYTileMapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58948AAA1E8D296800BA5E88 /* TYTileMapSDK.framework */; };
 		58D877B41E261163000F31DD /* TileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D877B31E261163000F31DD /* TileVC.m */; };
 		58F2ADBC1EC9C8EB00460823 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58F2ADBB1EC9C8EB00460823 /* Assets.xcassets */; };
@@ -95,6 +96,9 @@
 		586C224D1DDD86E300C31931 /* TYMapData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TYMapData.framework; sourceTree = "<group>"; };
 		587571691E079F8600E96CA4 /* UIImageView+AGSNorthArrow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AGSNorthArrow.h"; sourceTree = "<group>"; };
 		5875716A1E079F8600E96CA4 /* UIImageView+AGSNorthArrow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AGSNorthArrow.m"; sourceTree = "<group>"; };
+		5886912C1F692B5E00DD23DB /* RouteOnlyVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteOnlyVC.h; sourceTree = "<group>"; };
+		5886912D1F692B5E00DD23DB /* RouteOnlyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteOnlyVC.m; sourceTree = "<group>"; };
+		588691371F6A695D00DD23DB /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		588877901EA06CC8004111C3 /* libgeos.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgeos.a; path = "../../../../../Desktop/geos-3.5.0/geos/platform/mixd/libgeos.a"; sourceTree = "<group>"; };
 		58948AAA1E8D296800BA5E88 /* TYTileMapSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TYTileMapSDK.framework; sourceTree = "<group>"; };
 		58B4452E1EAF1BEE00695228 /* geos.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = geos.xcodeproj; path = ../geos/geos.xcodeproj; sourceTree = "<group>"; };
@@ -197,6 +201,7 @@
 				581A7BBB1CEEAC61008F791C /* libsqlite3.0.tbd */,
 				581A7B791CEEA206008F791C /* Info.plist */,
 				581A7B691CEEA206008F791C /* main.m */,
+				588691371F6A695D00DD23DB /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -238,6 +243,8 @@
 				58F64BAC1F2F5D6800B23FDE /* RouteDistanceVC.m */,
 				58277FA51F30061F008D4518 /* RouteHintVC.h */,
 				58277FA61F30061F008D4518 /* RouteHintVC.m */,
+				5886912C1F692B5E00DD23DB /* RouteOnlyVC.h */,
+				5886912D1F692B5E00DD23DB /* RouteOnlyVC.m */,
 			);
 			name = "路径规划";
 			sourceTree = "<group>";
@@ -435,6 +442,7 @@
 				581A7B6A1CEEA206008F791C /* main.m in Sources */,
 				58277FA71F30061F008D4518 /* RouteHintVC.m in Sources */,
 				5875716B1E079F8600E96CA4 /* UIImageView+AGSNorthArrow.m in Sources */,
+				5886912E1F692B5E00DD23DB /* RouteOnlyVC.m in Sources */,
 				58F64BA71F2F000100B23FDE /* SearchFacilityVC.m in Sources */,
 				58F64B9A1F2ECB8300B23FDE /* LineVC.m in Sources */,
 				58138A611F1E4238006A4A7F /* MapInfoVC.m in Sources */,
@@ -570,6 +578,8 @@
 					"$(SRCROOT)/../libs/lib/",
 					"$(PROJECT_DIR)/mapdemo",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/mapdemo/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = "/Users/thomasho/Desktop/TY-Framework";
 				INFOPLIST_FILE = mapdemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
@@ -617,6 +627,8 @@
 					"$(SRCROOT)/../libs/lib/",
 					"$(PROJECT_DIR)/mapdemo",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/mapdemo/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = "/Users/thomasho/Desktop/TY-Framework";
 				INFOPLIST_FILE = mapdemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;

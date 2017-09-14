@@ -33,4 +33,6 @@
 
 #import <TYMapSDK/TYSearchAdapter.h>
 
+#import <TYMapSDK/TYDownloader.h>
+
 #endif /* TYMapSDK_h */

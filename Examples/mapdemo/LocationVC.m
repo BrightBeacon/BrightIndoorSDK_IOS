@@ -15,6 +15,7 @@
 }
 
 @property (nonatomic ,strong) TYLocationManager *locationManager;
+@property (nonatomic ,strong) CLLocationManager *lm;
 
 @end
 
@@ -78,9 +79,10 @@
     if (error) {
         return;
     }
-
-	//设置方向跟随模式(定位图标旋转/整个地图旋转)
-//	[self.mapView setMapMode:TYMapViewModeFollowing];
+    
+    [self.mapView setLocationSymbol:[AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"locationArrow"]];
+	//设置地图方向跟随模式(定位图标旋转/整个地图旋转)
+	[self.mapView setMapMode:TYMapViewModeFollowing];
 
 }
 
@@ -91,8 +93,9 @@
     }
     
     
+    [self.mapView setLocationSymbol:[AGSPictureMarkerSymbol pictureMarkerSymbolWithImageNamed:@"locationArrow"]];
     [self.mapView showLocation:[TYLocalPoint pointWithX:mappoint.x Y:mappoint.y Floor:mapView.currentMapInfo.floorNumber]];
-    [self animateLocationSymbol];
+//    [self animateLocationSymbol];
 }
 
 
@@ -107,7 +110,7 @@
 - (void)TYLocationManager:(TYLocationManager *)manager didUpdateLocation:(TYLocalPoint *)newLocation {
     if(self.mapView.loaded){
         [self.mapView showLocation:newLocation];
-        [self animateLocationSymbol];
+//        [self animateLocationSymbol];
     }
 }
 

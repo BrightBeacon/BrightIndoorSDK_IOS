@@ -35,7 +35,7 @@
                                    @{@"·形状标注":@"AreaVC"},@{@"·展示弹窗":@"CalloutVC"},
                                    @{@"·围栏示例":@"FenceVC"}],
                          @"POI搜索":@[@{@"·名称搜索":@"SearchNameVC"},@{@"·设施搜索":@"SearchFacilityVC"},@{@"·距离搜索":@"SearchDistanceVC"}],
-                         @"路径规划":@[@{@"·路径规划":@"RouteVC"},@{@"·距离计算":@"RouteDistanceVC"},@{@"·路径提示":@"RouteHintVC"}],
+                         @"路径规划":@[@{@"·路径规划":@"RouteVC"},@{@"·距离计算":@"RouteDistanceVC"},@{@"·路径提示":@"RouteHintVC"},@{@"·仅路径":@"RouteOnlyVC"}],
                          @"定位导航":@[@{@"·开始定位":@"LocationVC"},@{@"·定位吸附":@"LocationSnapVC"},@{@"·导航示例":@"ViewController"}]
                          };
     self.sortedKey = @[@"显示地图",@"地图事件",@"地图控件",@"标注弹窗",@"POI搜索",@"路径规划",@"定位导航"];

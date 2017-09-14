@@ -15,9 +15,8 @@
  *  地图错误码对照
  */
 typedef NS_ENUM(NSInteger,TYMapError) {
-    /** 
-     * 本地权限验证失败 code = 100
-     */
+    kTYMapErrorNone = 0,
+    /** 本地权限验证失败 code = 100*/
     kTYMapErrorLicenseInvalid = 100,
     /** 本地权限过期*/
     kTYMapErrorLicenseExpired,
