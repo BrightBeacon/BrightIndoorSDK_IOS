@@ -16,8 +16,8 @@
 
 #### ① 安装GIS环境
 
-* 点击安装[AGSRuntimeSDKiOSv10.2.5.pkg](./AGSRuntimeSDKiOSv10.2.5.pkg)文件
-* 设置项目引用路径Target->Building Setting->Framework Search Paths: （请安装完成后确定实际路径）
+* 点击安装[AGSRuntimeSDKiOSv10.2.5.pkg](https://pan.baidu.com/s/1b56UIE)文件
+* 设置项目引用路径Target->Building Setting->Framework Search Paths: （请安装完成后查看实际路径）
 <code>$HOME/Library/SDKs/ArcGIS/iOS</code>或
 <code>/Library/SDKs/ArcGIS/iOS</code>
 

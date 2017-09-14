@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.documentation_url = 'http://help.brtbeacon.com'
   s.requires_arc = true
   s.platform     = :ios,'7.0'
-  s.source       = { :git => "https://github.com/BrightBeacon/BrightIndoorSDK_IOS.git", :tag => "2.3}
+  s.source       = { :git => "https://github.com/BrightBeacon/BrightIndoorSDK_IOS.git", :tag => "2.3"}
   #s.source_files =  "libs/lib/TYLocationEngine/*.{h,m}"
   s.preserve_paths = 'libs/lib/TYLocationEngine.framework','libs/lib/TYMapData.framework','libs/lib/TYMapSDK.framework'
 
