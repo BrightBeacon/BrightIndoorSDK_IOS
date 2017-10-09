@@ -573,14 +573,14 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
-					/Library/SDKs/ArcGIS/iOS,
+					"$(HOME)/Library/SDKs/ArcGIS/iOS",
 					"$(inherited)",
 					"$(SRCROOT)/../libs/lib/",
 					"$(PROJECT_DIR)/mapdemo",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/mapdemo/PrefixHeader.pch";
-				HEADER_SEARCH_PATHS = "/Users/thomasho/Desktop/TY-Framework";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../libs/lib/";
 				INFOPLIST_FILE = mapdemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -622,14 +622,14 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
-					/Library/SDKs/ArcGIS/iOS,
+					"$(HOME)/Library/SDKs/ArcGIS/iOS",
 					"$(inherited)",
 					"$(SRCROOT)/../libs/lib/",
 					"$(PROJECT_DIR)/mapdemo",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/mapdemo/PrefixHeader.pch";
-				HEADER_SEARCH_PATHS = "/Users/thomasho/Desktop/TY-Framework";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../libs/lib/";
 				INFOPLIST_FILE = mapdemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

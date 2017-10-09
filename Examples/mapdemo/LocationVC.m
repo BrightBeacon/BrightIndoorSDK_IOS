@@ -50,6 +50,8 @@
         //设置定位设备信号阀值
         [self.locationManager setRssiThreshold:-90];
         self.locationManager.delegate = self;
+        
+        self.locationManager.requestTimeOut =  10;
        
         //开启定位热力数据上传
         [self.locationManager enableHeatData:YES];

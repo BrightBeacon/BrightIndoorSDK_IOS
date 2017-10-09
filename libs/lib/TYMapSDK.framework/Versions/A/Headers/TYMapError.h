@@ -35,7 +35,9 @@ typedef NS_ENUM(NSInteger,TYMapError) {
     /** 地图数据目录写入失败*/
     kTYMapErrorDataWriteFailed,
     /** 地图数据解压失败*/
-    kTYMapErrorZipFailed
+    kTYMapErrorZipFailed,
+    /** 地图数据读取失败*/
+    kTYMapErrorDataReadingFailed
 };
 
 #endif /* TYMapError_h */
