@@ -20,6 +20,7 @@
 		584CD63E1E03DA2500EC1757 /* LayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 584CD63D1E03DA2500EC1757 /* LayerVC.m */; };
 		584CD6441E03E0B100EC1757 /* RouteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 584CD6431E03E0B100EC1757 /* RouteVC.m */; };
 		584CD6471E03E0BC00EC1757 /* LocationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 584CD6461E03E0BC00EC1757 /* LocationVC.m */; };
+		58545D9A1FA09C79004C2340 /* RouteForbiddenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58545D991FA09C79004C2340 /* RouteForbiddenVC.m */; };
 		586C224B1DDD86DB00C31931 /* TYMapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586C224A1DDD86DB00C31931 /* TYMapSDK.framework */; };
 		586C224E1DDD86E300C31931 /* TYLocationEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586C224C1DDD86E300C31931 /* TYLocationEngine.framework */; };
 		586C224F1DDD86E300C31931 /* TYMapData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586C224D1DDD86E300C31931 /* TYMapData.framework */; };
@@ -91,6 +92,8 @@
 		584CD6431E03E0B100EC1757 /* RouteVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteVC.m; sourceTree = "<group>"; };
 		584CD6451E03E0BC00EC1757 /* LocationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationVC.h; sourceTree = "<group>"; };
 		584CD6461E03E0BC00EC1757 /* LocationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationVC.m; sourceTree = "<group>"; };
+		58545D981FA09C79004C2340 /* RouteForbiddenVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteForbiddenVC.h; sourceTree = "<group>"; };
+		58545D991FA09C79004C2340 /* RouteForbiddenVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteForbiddenVC.m; sourceTree = "<group>"; };
 		586C224A1DDD86DB00C31931 /* TYMapSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TYMapSDK.framework; sourceTree = "<group>"; };
 		586C224C1DDD86E300C31931 /* TYLocationEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TYLocationEngine.framework; sourceTree = "<group>"; };
 		586C224D1DDD86E300C31931 /* TYMapData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TYMapData.framework; sourceTree = "<group>"; };
@@ -173,6 +176,7 @@
 		581A7B671CEEA206008F791C /* mapdemo */ = {
 			isa = PBXGroup;
 			children = (
+				588691371F6A695D00DD23DB /* PrefixHeader.pch */,
 				581A7B6B1CEEA206008F791C /* AppDelegate.h */,
 				581A7B6C1CEEA206008F791C /* AppDelegate.m */,
 				58F449AD1DFFE9830025B433 /* DemoTableVC.h */,
@@ -186,8 +190,6 @@
 				58F64BA11F2EFD0200B23FDE /* POI搜索 */,
 				584CD63F1E03DDFE00EC1757 /* 路径规划 */,
 				584CD6401E03E07D00EC1757 /* 显示定位 */,
-				581A7B6E1CEEA206008F791C /* ViewController.h */,
-				581A7B6F1CEEA206008F791C /* ViewController.m */,
 				581A7B681CEEA206008F791C /* Supporting Files */,
 			);
 			path = mapdemo;
@@ -201,7 +203,6 @@
 				581A7BBB1CEEAC61008F791C /* libsqlite3.0.tbd */,
 				581A7B791CEEA206008F791C /* Info.plist */,
 				581A7B691CEEA206008F791C /* main.m */,
-				588691371F6A695D00DD23DB /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -245,6 +246,8 @@
 				58277FA61F30061F008D4518 /* RouteHintVC.m */,
 				5886912C1F692B5E00DD23DB /* RouteOnlyVC.h */,
 				5886912D1F692B5E00DD23DB /* RouteOnlyVC.m */,
+				58545D981FA09C79004C2340 /* RouteForbiddenVC.h */,
+				58545D991FA09C79004C2340 /* RouteForbiddenVC.m */,
 			);
 			name = "路径规划";
 			sourceTree = "<group>";
@@ -256,6 +259,8 @@
 				584CD6461E03E0BC00EC1757 /* LocationVC.m */,
 				583964B51F31581100D4A0AC /* LocationSnapVC.h */,
 				583964B61F31581100D4A0AC /* LocationSnapVC.m */,
+				581A7B6E1CEEA206008F791C /* ViewController.h */,
+				581A7B6F1CEEA206008F791C /* ViewController.m */,
 			);
 			name = "显示定位";
 			sourceTree = "<group>";
@@ -459,6 +464,7 @@
 				58F64B931F2EA7D100B23FDE /* GestureVC.m in Sources */,
 				58F64BAD1F2F5D6800B23FDE /* RouteDistanceVC.m in Sources */,
 				58F64BA01F2ED71400B23FDE /* FenceVC.m in Sources */,
+				58545D9A1FA09C79004C2340 /* RouteForbiddenVC.m in Sources */,
 				58F449AF1DFFE9830025B433 /* DemoTableVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -607,7 +613,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				REZ_SEARCH_PATHS = "";
-				VALID_ARCHS = "arm64 armv7";
+				VALID_ARCHS = arm64;
 			};
 			name = Debug;
 		};
@@ -656,7 +662,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				REZ_SEARCH_PATHS = "";
-				VALID_ARCHS = "arm64 armv7";
+				VALID_ARCHS = arm64;
 			};
 			name = Release;
 		};

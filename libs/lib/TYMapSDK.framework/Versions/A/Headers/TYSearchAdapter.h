@@ -23,7 +23,7 @@
 - (id)initWithBuildingID:(NSString *)buildingID;
 
 /**
- 初始化<=范围(米)去重名建筑类
+ 初始化<=范围(米)去重名搜索类
 
  @param buildingID 建筑ID
  @param threshold 去除阀值(米)内重复名称的数据
@@ -82,7 +82,7 @@
  @param point 中心点
  @param radius 半径
  @param floor 楼层，如：-1，1
- @return POI数组
+ @return POI数组，由近及远排序
  */
 - (NSArray *)queryPoiByCenter:(AGSPoint *)point Radius:(double) radius Floor:(int) floor;
 @end

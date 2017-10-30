@@ -94,4 +94,19 @@
  @return 整条路线
  */
 - (AGSPolyline *)route;
+
+
+/**
+ 设置禁止通行点
+
+ @param point 路径禁行拐点
+ */
+- (BOOL)addForbiddenPoint:(TYLocalPoint *)point;
+
+
+/**
+ 移除所有禁止通行点
+ */
+- (void)removeForbiddenPoints;
+
 @end

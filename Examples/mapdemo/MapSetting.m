@@ -43,10 +43,11 @@
     switch (sender.tag) {
         case 0:
             //Resolution = 实际距离米/显示的分辨率
+            //设置缩放限制，[6米-1000米]
             [self.mapView setMaxResolution:1000/self.mapView.frame.size.width];
             [self.mapView setMinResolution:6/self.mapView.frame.size.width];
             
-            //建筑最大实际距离/mapView宽度 = mapView刚好显示整个地图
+            //betterResolution即：建筑最大实际距离/mapView宽度 （mapView刚好显示整个地图），可以据此值进行2的指数倍缩放。
             double betterResolution = self.mapView.currentMapInfo.mapSize.x/self.mapView.frame.size.width;
             [self.mapView zoomToResolution:betterResolution/2.0 animated:YES];
             break;

@@ -23,6 +23,7 @@
 	[super viewDidLoad];
 
     [TYMapEnvironment initMapEnvironment];
+    [TYMapEnvironment setMapLanguage:TYEnglish];
     self.mapView = [[TYMapView alloc] initWithFrame:self.view.bounds];
     self.mapView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:self.mapView];

@@ -43,17 +43,27 @@
     }
     
     AGSGraphicsLayer *glayer = [AGSGraphicsLayer graphicsLayer];
-    [mapView addMapLayer:glayer];
+    [mapView addMapLayer:glayer withName:@"glayer"];
     
 
     TYMapInfo *mapInfo = mapView.allMapInfo.firstObject;
     AGSEnvelope *env = [AGSEnvelope envelopeWithXmin:mapInfo.mapExtent.xmin ymin:mapInfo.mapExtent.ymin xmax:mapInfo.mapExtent.xmax ymax:mapInfo.mapExtent.ymax spatialReference:TYMapEnvironment.defaultSpatialReference];
-    AGSGraphic *fence = [AGSGraphic graphicWithGeometry:[self getCircle:env.center R:mapInfo.mapSize.x/3.0] symbol:[AGSSimpleFillSymbol simpleFillSymbolWithColor:[UIColor colorWithWhite:0 alpha:0.2] outlineColor:[UIColor redColor]] attributes:nil];
+    AGSGraphic *fence = [AGSGraphic graphicWithGeometry:[self getCircle:env.center R:9] symbol:[AGSSimpleFillSymbol simpleFillSymbolWithColor:[UIColor colorWithWhite:0 alpha:0.2] outlineColor:[UIColor redColor]] attributes:nil];
     [glayer addGraphic:fence];
     
     AGSPoint *pt = [AGSPoint pointWithX:env.xmin y:env.ymax spatialReference:TYMapEnvironment.defaultSpatialReference];
     geometry = pt;
     graphic = [AGSGraphic graphicWithGeometry:pt symbol:symbol attributes:nil];
+    [glayer addGraphic:graphic];
+}
+
+- (void)TYMapView:(TYMapView *)mapView didClickAtPoint:(CGPoint)screen mapPoint:(AGSPoint *)mappoint {
+    //点击绘制圆形示例。
+    AGSGraphicsLayer *glayer = (AGSGraphicsLayer *)[mapView mapLayerForName:@"glayer"];
+    AGSGraphic *fence = [AGSGraphic graphicWithGeometry:[self getCircle:mappoint R:5] symbol:[AGSSimpleFillSymbol simpleFillSymbolWithColor:[UIColor colorWithWhite:0 alpha:0.2] outlineColor:[UIColor redColor]] attributes:nil];
+    [glayer addGraphic:fence];
+    
+    graphic = [AGSGraphic graphicWithGeometry:mappoint symbol:symbol attributes:nil];
     [glayer addGraphic:graphic];
 }
 
