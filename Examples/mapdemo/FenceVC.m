@@ -48,7 +48,7 @@
 
     TYMapInfo *mapInfo = mapView.allMapInfo.firstObject;
     AGSEnvelope *env = [AGSEnvelope envelopeWithXmin:mapInfo.mapExtent.xmin ymin:mapInfo.mapExtent.ymin xmax:mapInfo.mapExtent.xmax ymax:mapInfo.mapExtent.ymax spatialReference:TYMapEnvironment.defaultSpatialReference];
-    AGSGraphic *fence = [AGSGraphic graphicWithGeometry:[self getCircle:env.center R:9] symbol:[AGSSimpleFillSymbol simpleFillSymbolWithColor:[UIColor colorWithWhite:0 alpha:0.2] outlineColor:[UIColor redColor]] attributes:nil];
+    AGSGraphic *fence = [AGSGraphic graphicWithGeometry:[self getCircle:env.center R:(env.xmax-env.xmin)/4] symbol:[AGSSimpleFillSymbol simpleFillSymbolWithColor:[UIColor colorWithWhite:0 alpha:0.2] outlineColor:[UIColor redColor]] attributes:nil];
     [glayer addGraphic:fence];
     
     AGSPoint *pt = [AGSPoint pointWithX:env.xmin y:env.ymax spatialReference:TYMapEnvironment.defaultSpatialReference];

@@ -28,11 +28,15 @@
     mapView.allowRotationByPinching  = YES;
     mapView.touchDelegate = self;
     //测试；实际请加载到对应矢量地图楼层加载处
-    [self TYMapView:mapView didFinishLoadingFloor:@"1"];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self TYMapView:mapView didFinishLoadingFloor:@"F1"];
+    });
     
-    //设置放大限制：[6米，1000米]
+    //设置放大限制：[6米，1000米]/整个view宽
     [mapView setMaxResolution:1000/mapView.frame.size.width];
     [mapView setMinResolution:6/mapView.frame.size.width];
+    
+    self.title = @"瓦片演示图";
     
     //设置当前显示为：100米
     double betterResolution = 100/mapView.frame.size.width;

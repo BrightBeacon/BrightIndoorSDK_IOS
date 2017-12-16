@@ -10,7 +10,7 @@
 
 @interface FacilityCategoryEntity : NSObject
 
-@property (assign, nonatomic) int facilityCategoryID;
+@property (assign, nonatomic) NSNumber *facilityCategoryID;
 @property (strong, nonatomic) NSString *facilityName;
 @property (strong, nonatomic) NSString *facilityImageName;
 

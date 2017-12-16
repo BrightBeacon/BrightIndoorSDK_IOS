@@ -23,7 +23,7 @@
 	[super viewDidLoad];
 
     [TYMapEnvironment initMapEnvironment];
-    [TYMapEnvironment setMapLanguage:TYEnglish];
+//    [TYMapEnvironment setMapLanguage:TYEnglish];
     self.mapView = [[TYMapView alloc] initWithFrame:self.view.bounds];
     self.mapView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:self.mapView];
@@ -105,7 +105,7 @@
 //Poi选中
 - (void)TYMapView:(TYMapView *)mapView PoiSelected:(NSArray *)array {
     for (TYPoi *poi in array) {
-        NSLog(@"POI:%@->分类：%d",poi.name,poi.categoryID);
+        NSLog(@"POI:%@->分类：%d",poi.poiID,poi.categoryID);
     }
 }
 

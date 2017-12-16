@@ -67,7 +67,7 @@
     TYSearchAdapter *searchAdapter = [[TYSearchAdapter alloc] initWithBuildingID:self.mapView.building.buildingID distinct:1.0];
     NSArray *distinctArray = [searchAdapter queryPoi:sender.text andFloor:self.mapView.currentMapInfo.floorNumber];
     for (PoiEntity *pe in distinctArray) {
-        AGSPoint *pt = [AGSPoint pointWithX:pe.labelX y:pe.labelY spatialReference:self.mapView.spatialReference];
+        AGSPoint *pt = [AGSPoint pointWithX:pe.labelX.floatValue y:pe.labelY.floatValue spatialReference:self.mapView.spatialReference];
 
         AGSPictureMarkerSymbol *picSymbol = [[AGSPictureMarkerSymbol alloc] init];
         picSymbol.image = [UIImage imageNamed:@"cell_poi"];

@@ -10,10 +10,10 @@
 #import <TYMapData/TYMapData.h>
 
 /**
-    地图显示的语言类型: 简体中文、繁体中文、英语
+    地图显示的语言类型: 简体中文、英语、自定义(需添加配置)
  */
 typedef enum {
-    TYSimplifiedChinese, TYTraditionalChinese, TYEnglish
+    TYSimplifiedChinese, TYTraditionalChinese, TYEnglish, TYCustom
 } TYMapLanguage;
 
 
@@ -87,6 +87,21 @@ typedef enum {
  *  @return 当前语言类型
  */
 + (TYMapLanguage)getMapLanguage;
+
+
+/**
+ * 设置自定义地图本地化语言(zh-hans,zh-hant,en等，依赖MapLocalizable.string文件本地化设置)
+
+ @param language 设置本地化语言
+ */
++ (void)setMapCustomLanguage:(NSString *)local;
+
+/**
+ * 获取地图本地化Bundle，默认[NSBundle mainBundle]
+ *
+ @return 本地化Bundle
+ */
++ (NSBundle *)getCustomLanguageBundle;
 
 /**
  *  设置地图服务网络接口主机名

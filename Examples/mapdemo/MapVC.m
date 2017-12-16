@@ -21,6 +21,7 @@
     
     [self.mapView setGridSize:8];
     [self.mapView setBackgroundColor:[UIColor darkGrayColor]];
+    
 }
 
 #pragma mark - **************** 地图回调
@@ -30,20 +31,49 @@
     if (error) {
         return;
     }
-	//限制基于屏幕宽缩放，最小1~最大8倍
-//	[self setMinMaxResolution:1:8];
+    //地图文字颜色
+//    [self.mapView setLabelColor:[UIColor blueColor]];
+	//限制基于mapView宽设置缩放倍数，最小0.5~最大8倍
+//	[self setMinMaxResolution:0.5:8];
 }
 - (void)TYMapView:(TYMapView *)mapView didFinishLoadingFloor:(TYMapInfo *)mapInfo {
     [super TYMapView:mapView didFinishLoadingFloor:mapInfo];
 	NSLog(@"%@",mapInfo);
+    
+    [self refreshLabel];
+}
+
+- (void)refreshLabel {
+    NSMutableArray *marr = [NSMutableArray array];
+    AGSGraphicsLayer *labelLayer = (AGSGraphicsLayer *)[self.mapView mapLayerForName:@"LabelLayer"];
+    for (AGSGraphic *graphic in labelLayer.graphics) {
+//        NSDictionary *attrs = [graphic allAttributes];
+//        AGSTextSymbol *ts = [AGSTextSymbol textSymbolWithText:[NSString stringWithFormat:@"%@_TEST",[attrs valueForKey:@"NAME"]] color:[UIColor redColor]];
+//        ts.angleAlignment = AGSMarkerSymbolAngleAlignmentScreen;
+//        ts.hAlignment = AGSTextSymbolHAlignmentCenter;
+//        ts.vAlignment = AGSTextSymbolVAlignmentMiddle;
+//        ts.fontSize = 10.0f;
+//        ts.fontFamily = @"Heiti SC";
+//        ts.color = [UIColor darkGrayColor];
+        [graphic setAttributeWithString:@"tst" forKey:@"NAME"];
+        NSLog(@"%@",[graphic allAttributes]);
+//        [marr addObject:[AGSGraphic graphicWithGeometry:graphic.geometry symbol:ts attributes:[graphic allAttributes]]];
+    }
+//    [labelLayer removeAllGraphics];
+//    [labelLayer addGraphics:marr];
 }
 
 - (void)TYMapView:(TYMapView *)mapView didClickAtPoint:(CGPoint)screen mapPoint:(AGSPoint *)mappoint {
 	NSLog(@"%@,%@,%@",mappoint,[mapView toMapPoint:CGPointMake(mappoint.x, mappoint.y)],NSStringFromCGPoint([mapView toScreenPoint:mappoint]));
-	TYPoi *poi = [mapView extractRoomPoiOnCurrentFloorWithX:mappoint.x Y:mappoint.y];
-	if (poi.name&&![poi.name isEqual:[NSNull null]]) {
-		[mapView highlightPoi:poi];
-	}
+    TYPoi *poi = [mapView extractRoomPoiOnCurrentFloorWithX:mappoint.x Y:mappoint.y];
+    if (poi&&![poi.name isEqual:[NSNull null]]) {
+        NSLog(@"poi:%@",poi);
+        [mapView highlightPoi:poi];
+    }
+    TYPoi *poiRegion = [mapView extractRegionOnCurrentFloorWithX:mappoint.x Y:mappoint.y];
+    if (poiRegion) {
+        NSLog(@"poiRegion:%@",poiRegion);
+    }
 }
 
 - (void)TYMapViewDidZoomed:(TYMapView *)mapView {

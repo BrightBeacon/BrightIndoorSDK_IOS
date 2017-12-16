@@ -35,7 +35,7 @@
     NSArray *pois = [searchAdapter queryPoiByCenter:mappoint Radius:5 Floor:mapView.currentMapInfo.floorNumber];
     NSMutableArray *graphics = [NSMutableArray array];
     for (PoiEntity *pe in pois) {
-        AGSPoint *point = [AGSPoint pointWithX:pe.labelX y:pe.labelY spatialReference:self.mapView.spatialReference];
+        AGSPoint *point = [AGSPoint pointWithX:pe.labelX.floatValue y:pe.labelY.floatValue spatialReference:self.mapView.spatialReference];
         AGSGraphic *graphic = [AGSGraphic graphicWithGeometry:point symbol:nil attributes:@{@"NAME":pe.name}];
         [graphics addObject:graphic];
     }

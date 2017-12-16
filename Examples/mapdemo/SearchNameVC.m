@@ -44,7 +44,7 @@
     [self.resultLayer removeAllGraphics];
     NSMutableArray *graphics = [NSMutableArray array];
     for (PoiEntity *pe in list) {
-        AGSPoint *pt = [AGSPoint pointWithX:pe.labelX y:pe.labelY spatialReference:self.mapView.spatialReference];
+        AGSPoint *pt = [AGSPoint pointWithX:pe.labelX.floatValue y:pe.labelY.floatValue spatialReference:self.mapView.spatialReference];
         AGSGraphic *graphic  = [AGSGraphic graphicWithGeometry:pt symbol:nil attributes:@{@"NAME":pe.name}];
         [graphics addObject:graphic];
     }

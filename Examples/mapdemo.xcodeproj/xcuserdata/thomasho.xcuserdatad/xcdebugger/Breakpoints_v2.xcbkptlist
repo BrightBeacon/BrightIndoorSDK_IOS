@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../../../../Sources/IOS/TYTileMapSDK/TYTileMapSDK/TYTiledManager.m"
-            timestampString = "523939035.216371"
+            filePath = "../../../../Sources/IOS/MapProject/MapProject/MapSDK/ObjC/LabelLayers/IPTextLabelLayer.m"
+            timestampString = "535103050.063203"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "-downloadTileInfo:"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "-calculateLabelBorders:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../../../../Sources/IOS/TYTileMapSDK/TYTileMapSDK/TYTiledManager.m"
-            timestampString = "523939072.635411"
+            filePath = "../../../../Sources/IOS/MapProject/MapProject/MapSDK/Cpp/RouteNetwork/IPXRouteNetworkDataset.cpp"
+            timestampString = "534999081.227"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "-downloadTileInfo:"
+            startingLineNumber = "522"
+            endingLineNumber = "522"
+            landmarkName = "IPXRouteNetworkDataset::forbiddenNode(geos::geom::Point *point)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../../../../Sources/IOS/MapProject/MapProject/MapSDK/ObjC/Search/TYSearchAdapter.m"
-            timestampString = "528451694.159201"
+            filePath = "../../../../Sources/IOS/MapProject/MapProject/MapSDK/ObjC/Route/TYOfflineRouteManager.mm"
+            timestampString = "534998854.706833"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "273"
-            endingLineNumber = "273"
-            landmarkName = "-revertPoiResult:"
+            startingLineNumber = "248"
+            endingLineNumber = "248"
+            landmarkName = "-addForbiddenPoint:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,13 +57,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "mapdemo/SearchNameVC.m"
-            timestampString = "528451777.473466"
+            filePath = "../../../../Sources/IOS/MapProject/MapProject/MapSDK/Cpp/RouteNetwork/IPXRouteNetworkDataset.cpp"
+            timestampString = "534999081.244424"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "-searchBar:textDidChange:"
+            startingLineNumber = "493"
+            endingLineNumber = "493"
+            landmarkName = "IPXRouteNetworkDataset::forbiddenNode(geos::geom::Point *point)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mapdemo/RouteForbiddenVC.m"
-            timestampString = "530621574.784282"
+            timestampString = "535021842.962722"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "-forbidButtonClicked:"
             landmarkType = "7">
          </BreakpointContent>
@@ -86,64 +86,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "mapdemo/RouteForbiddenVC.m"
-            timestampString = "530621574.784282"
+            filePath = "../../../../Sources/IOS/MapProject/MapProject/MapSDK/ObjC/LabelLayers/IPTextLabelLayer.m"
+            timestampString = "535103050.063426"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "-TYMapView:didClickAtPoint:mapPoint:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "mapdemo/BaseMapVC.m"
-            timestampString = "530787495.114689"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../../../Sources/IOS/MapProject/MapProject/MapSDK/ObjC/MapView/TYMapView.m"
-            timestampString = "530787509.013179"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "438"
-            endingLineNumber = "438"
-            landmarkName = "-initMapViewWithBuilding:AppKey:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../../../Sources/IOS/MapProject/MapProject/MapSDK/ObjC/MapView/TYMapView.m"
-            timestampString = "530787592.170085"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "320"
-            endingLineNumber = "320"
-            landmarkName = "-setFloor:"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "-displayLabels:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -154,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../../../Sources/IOS/MapProject/MapProject/MapSDK/ObjC/LabelLayers/IPTextLabelLayer.m"
-            timestampString = "530787663.77558"
+            timestampString = "535103050.063477"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
             landmarkName = "-updateRoomLabel:WithName:"
             landmarkType = "7">
          </BreakpointContent>
@@ -170,12 +122,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../../../Sources/IOS/MapProject/MapProject/MapSDK/ObjC/LabelLayers/IPTextLabelLayer.m"
-            timestampString = "530787672.507206"
+            timestampString = "535110708.412394"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "-loadContents:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../Sources/IOS/MapProject/MapProject/MapSDK/ObjC/LabelLayers/IPTextLabelLayer.m"
+            timestampString = "535110769.46755"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "-loadContents:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../Sources/IOS/MapProject/MapProject/MapSDK/ObjC/MapView/TYMapEnviroment.m"
+            timestampString = "535110831.275416"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "+getCustomLanguageBundle"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

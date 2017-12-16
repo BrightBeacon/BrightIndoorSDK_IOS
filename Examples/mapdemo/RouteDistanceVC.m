@@ -113,7 +113,7 @@
     CGFloat currentPartLen = [[AGSGeometryEngine defaultGeometryEngine] lengthOfGeometry:part.route];
     
     //hint为当前段路径提示信息；默认会忽略小于6米和小于15度的路径。
-    TYDirectionalHint *hint = [self.mapView.routeResult getDirectionHintForLocation:lp FromHints:[self.mapView.routeResult getRouteDirectionalHint:part]];
+    TYDirectionalHint *hint = [self.mapView.routeResult getDirectionHintForLocation:lp FromHints:[self.mapView.routeResult getRouteDirectionalHint:part distanceThrehold:2 angleThrehold:10]];
     [self.mapView showRouteHintForDirectionHint:hint Centered:NO];
     CGFloat currentHintLen = hint.length;
     CGFloat currentHintRemaining = [lp distanceWith:[self p2lp:hint.endPoint]];

@@ -7,6 +7,7 @@
 //
 
 #import "RouteForbiddenVC.h"
+#import <TYMapSDK/FacilityCategoryEntity.h>
 
 @interface RouteForbiddenVC ()
 
@@ -47,7 +48,7 @@
 
 - (IBAction)forbidButtonClicked:(UIButton *)sender {
     [sender setSelected:!sender.isSelected];
-    
+    //移除所有禁行设施点
     [self.mapView.routeManager removeForbiddenPoints];
     NSString *categoryID = @"150014";
     if (sender.isSelected) {
@@ -56,13 +57,15 @@
         categoryID = @"150013";
         [sender setTitle:@"电梯禁行" forState:UIControlStateNormal];
     }
-    
     TYSearchAdapter *search = [[TYSearchAdapter alloc] initWithBuildingID:self.mapView.building.buildingID];
     NSArray *array = [search queryPoiByCategoryID:categoryID];
     for (PoiEntity *pe in array) {
-        if (pe.layer == POI_FACILITY) {
-            AGSPoint *pt = [AGSPoint pointWithX:pe.labelX y:pe.labelY spatialReference:self.mapView.spatialReference];
-            [self.mapView.routeManager addForbiddenPoint:[TYLocalPoint pointWithX:pt.x Y:pt.y Floor:pe.floorNumber]];
+        if (pe.poiLayer.integerValue == POI_FACILITY) {
+            //添加禁行设施点
+            AGSPoint *pt = [AGSPoint pointWithX:pe.labelX.doubleValue y:pe.labelY.doubleValue spatialReference:self.mapView.spatialReference];
+            if([self.mapView.routeManager addForbiddenPoint:[TYLocalPoint pointWithX:pt.x Y:pt.y Floor:pe.floorNumber.intValue]] == FALSE){
+                NSLog(@"%@ 禁行失败",pe.name);
+            }
         }
     }
 }

@@ -19,7 +19,7 @@
     
     double height = self.view.frame.size.height;
     UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(15, height - 150, 100, 44)];
-    [btn setTitle:@"文字优先设施" forState:UIControlStateNormal];
+    [btn setTitle:@"文字优先" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(operButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];

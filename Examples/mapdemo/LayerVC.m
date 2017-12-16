@@ -94,7 +94,9 @@
     txtSymbol.text = text;
     txtSymbol.fontFamily = @"Heiti SC";
 //    txtSymbol.offset = CGPointMake(15, -15);
-    txtSymbol.fontSize = 15;
+    txtSymbol.hAlignment = AGSTextSymbolHAlignmentCenter;
+    txtSymbol.vAlignment = AGSTextSymbolVAlignmentMiddle;
+    txtSymbol.fontSize = 10.0f;
     txtSymbol.color = [UIColor redColor];
     
     return txtSymbol;

@@ -368,6 +368,14 @@ typedef enum {
  */
 - (NSArray *)getAllFacilityCategoryIDOnCurrentFloor;
 
+
+/**
+ * 返回当前楼层显示文字，用于本地化MapLocalizable.strings基础模板
+ *
+ * @return 文字层数据
+ */
+- (NSDictionary *)getLocalStringOnCurrentFloor;
+
 /**
  *  显示当前楼层的所有公共设施
  */

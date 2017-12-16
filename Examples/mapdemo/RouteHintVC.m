@@ -65,7 +65,7 @@
     [self.mapView setLocationSymbol:locSymbol];
 }
 
-- (IBAction)moveButtonClicked:(id)sender {
+- (IBAction)moveButtonClicked:(UIButton *)sender {
     TYRouteResult *rs = self.mapView.routeResult;
     TYRoutePart *part = [rs getRoutePartsOnFloor:self.mapView.routeStart.floor].firstObject;
     if (part == nil) {
@@ -78,17 +78,24 @@
 
 
 - (void)moveToLocalPoint:(TYLocalPoint *)lp {
+    //如果楼层不一致，切换楼层
     if (lp.floor != self.mapView.currentMapInfo.floorNumber) {
         [self.mapView setFloor:@(lp.floor).stringValue];
     }
+    
+    //显示定位点
     [self.mapView showLocation:lp];
+    
+    //显示路径经过段和结束段分隔
     [self.mapView showPassedAndRemainingRouteResultOnCurrentFloor:lp];
     
+    //是否到达终点附近0.5米
     TYRouteResult *rs = self.mapView.routeResult;
     if ([rs distanceToRouteEnd:lp] < 0.5) {
         return;
     }
     
+    //lp临近的路径段，本层若没有会返回nil
     TYRoutePart *part = [rs getNearestRoutePart:lp];
     if (part == nil) {
         return;

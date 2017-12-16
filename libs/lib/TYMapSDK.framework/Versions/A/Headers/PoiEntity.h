@@ -15,12 +15,14 @@
 @property (strong, nonatomic) NSString *buildingId;
 @property (strong, nonatomic) NSString *floorId;
 @property (strong, nonatomic) NSString *name;
-@property (assign, nonatomic) int categoryId;
-@property (assign, nonatomic) double labelX;
-@property (assign, nonatomic) double labelY;
-@property (assign, nonatomic) int symbolID;
-@property (assign, nonatomic) int floorNumber;
+@property (strong, nonatomic) NSString *nameEn;
+@property (strong, nonatomic) NSString *retrieval;
+@property (strong, nonatomic) NSNumber *categoryId;
+@property (strong, nonatomic) NSNumber *labelX;
+@property (strong, nonatomic) NSNumber *labelY;
+@property (strong, nonatomic) NSNumber *symbolId;
+@property (strong, nonatomic) NSNumber *floorNumber;
 @property (strong, nonatomic) NSString *floorName;
-@property (assign, nonatomic) int layer;
+@property (strong, nonatomic) NSNumber *poiLayer;
 
 @end
