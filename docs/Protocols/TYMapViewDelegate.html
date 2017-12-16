@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>TYMapViewDelegate Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">TYMapSDK </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">智石科技</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/TYMapView:PoiSelected:">- TYMapView:PoiSelected:</option>
+		
+		<option value="//api/name/TYMapView:calloutDidDismiss:">- TYMapView:calloutDidDismiss:</option>
+		
+		<option value="//api/name/TYMapView:calloutWillDismiss:">- TYMapView:calloutWillDismiss:</option>
+		
+		<option value="//api/name/TYMapView:didClickAtPoint:mapPoint:">- TYMapView:didClickAtPoint:mapPoint:</option>
+		
+		<option value="//api/name/TYMapView:didFinishLoadingFloor:">- TYMapView:didFinishLoadingFloor:</option>
+		
+		<option value="//api/name/TYMapView:willShowForGraphic:layer:mapPoint:">- TYMapView:willShowForGraphic:layer:mapPoint:</option>
+		
+		<option value="//api/name/TYMapViewDidLoad:withError:">- TYMapViewDidLoad:withError:</option>
+		
+		<option value="//api/name/TYMapViewDidZoomed:">- TYMapViewDidZoomed:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">TYMapViewDelegate Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>TYMapView.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>地图代理协议</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/TYMapView:didClickAtPoint:mapPoint:" title="TYMapView:didClickAtPoint:mapPoint:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/TYMapView:didClickAtPoint:mapPoint:">&ndash;&nbsp;TYMapView:didClickAtPoint:mapPoint:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>地图点选事件回调方法</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)TYMapView:(TYMapView *)<em>mapView</em> didClickAtPoint:(CGPoint)<em>screen</em> mapPoint:(AGSPoint *)<em>mappoint</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>mapView</code></th>
+						<td><p>地图视图</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>screen</code></th>
+						<td><p>点击事件的屏幕坐标</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>mappoint</code></th>
+						<td><p>点击事件的地图坐标</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>地图点选事件回调方法</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TYMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/TYMapView:PoiSelected:" title="TYMapView:PoiSelected:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/TYMapView:PoiSelected:">&ndash;&nbsp;TYMapView:PoiSelected:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>地图POI选中事件回调</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)TYMapView:(TYMapView *)<em>mapView</em> PoiSelected:(NSArray *)<em>array</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>mapView</code></th>
+						<td><p>地图视图</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>array</code></th>
+						<td><p>选中的POI数组:[TYPoi]</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>地图POI选中事件回调</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TYMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/TYMapView:didFinishLoadingFloor:" title="TYMapView:didFinishLoadingFloor:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/TYMapView:didFinishLoadingFloor:">&ndash;&nbsp;TYMapView:didFinishLoadingFloor:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>地图楼层加载完成回调</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)TYMapView:(TYMapView *)<em>mapView</em> didFinishLoadingFloor:(TYMapInfo *)<em>mapInfo</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>mapView</code></th>
+						<td><p>地图视图</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>mapInfo</code></th>
+						<td><p>加载楼层信息</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>地图楼层加载完成回调</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TYMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/TYMapViewDidZoomed:" title="TYMapViewDidZoomed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/TYMapViewDidZoomed:">&ndash;&nbsp;TYMapViewDidZoomed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>地图放缩事件回调</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)TYMapViewDidZoomed:(TYMapView *)<em>mapView</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>mapView</code></th>
+						<td><p>地图视图</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>地图放缩事件回调</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TYMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/TYMapViewDidLoad:withError:" title="TYMapViewDidLoad:withError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/TYMapViewDidLoad:withError:">&ndash;&nbsp;TYMapViewDidLoad:withError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>地图加载完成事件回调</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)TYMapViewDidLoad:(TYMapView *)<em>mapView</em> withError:(NSError *)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>mapView</code></th>
+						<td><p>地图视图</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>错误信息，参见<a href="../Constants/TYMapError.html">TYMapError</a>.h</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>地图加载完成事件回调</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TYMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/TYMapView:calloutDidDismiss:" title="TYMapView:calloutDidDismiss:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/TYMapView:calloutDidDismiss:">&ndash;&nbsp;TYMapView:calloutDidDismiss:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>地图弹出框解除完成事件回调</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)TYMapView:(TYMapView *)<em>mapView</em> calloutDidDismiss:(AGSCallout *)<em>callout</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>mapView</code></th>
+						<td><p>地图视图</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>callout</code></th>
+						<td><p>地图弹出框</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>地图弹出框解除完成事件回调</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TYMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/TYMapView:calloutWillDismiss:" title="TYMapView:calloutWillDismiss:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/TYMapView:calloutWillDismiss:">&ndash;&nbsp;TYMapView:calloutWillDismiss:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>地图弹出框即将解除事件回调</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)TYMapView:(TYMapView *)<em>mapView</em> calloutWillDismiss:(AGSCallout *)<em>callout</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>mapView</code></th>
+						<td><p>地图视图</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>callout</code></th>
+						<td><p>地图弹出框</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>地图弹出框即将解除事件回调</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TYMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/TYMapView:willShowForGraphic:layer:mapPoint:" title="TYMapView:willShowForGraphic:layer:mapPoint:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/TYMapView:willShowForGraphic:layer:mapPoint:">&ndash;&nbsp;TYMapView:willShowForGraphic:layer:mapPoint:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>地图即将为要素显示弹出框事件回调</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)TYMapView:(TYMapView *)<em>mapView</em> willShowForGraphic:(AGSGraphic *)<em>graphic</em> layer:(AGSGraphicsLayer *)<em>layer</em> mapPoint:(AGSPoint *)<em>mappoint</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>mapView</code></th>
+						<td><p>地图视图</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>graphic</code></th>
+						<td><p>目标要素</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>layer</code></th>
+						<td><p>目标要素所在层</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>mappoint</code></th>
+						<td><p>目标点</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>是否显示弹出框</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>地图即将为要素显示弹出框事件回调</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TYMapView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2017 智石科技. All rights reserved. Updated: 2017-12-16</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>
