@@ -39,28 +39,6 @@
 - (void)TYMapView:(TYMapView *)mapView didFinishLoadingFloor:(TYMapInfo *)mapInfo {
     [super TYMapView:mapView didFinishLoadingFloor:mapInfo];
 	NSLog(@"%@",mapInfo);
-    
-    [self refreshLabel];
-}
-
-- (void)refreshLabel {
-    NSMutableArray *marr = [NSMutableArray array];
-    AGSGraphicsLayer *labelLayer = (AGSGraphicsLayer *)[self.mapView mapLayerForName:@"LabelLayer"];
-    for (AGSGraphic *graphic in labelLayer.graphics) {
-//        NSDictionary *attrs = [graphic allAttributes];
-//        AGSTextSymbol *ts = [AGSTextSymbol textSymbolWithText:[NSString stringWithFormat:@"%@_TEST",[attrs valueForKey:@"NAME"]] color:[UIColor redColor]];
-//        ts.angleAlignment = AGSMarkerSymbolAngleAlignmentScreen;
-//        ts.hAlignment = AGSTextSymbolHAlignmentCenter;
-//        ts.vAlignment = AGSTextSymbolVAlignmentMiddle;
-//        ts.fontSize = 10.0f;
-//        ts.fontFamily = @"Heiti SC";
-//        ts.color = [UIColor darkGrayColor];
-        [graphic setAttributeWithString:@"tst" forKey:@"NAME"];
-        NSLog(@"%@",[graphic allAttributes]);
-//        [marr addObject:[AGSGraphic graphicWithGeometry:graphic.geometry symbol:ts attributes:[graphic allAttributes]]];
-    }
-//    [labelLayer removeAllGraphics];
-//    [labelLayer addGraphics:marr];
 }
 
 - (void)TYMapView:(TYMapView *)mapView didClickAtPoint:(CGPoint)screen mapPoint:(AGSPoint *)mappoint {
@@ -69,6 +47,10 @@
     if (poi&&![poi.name isEqual:[NSNull null]]) {
         NSLog(@"poi:%@",poi);
         [mapView highlightPoi:poi];
+        if ([poi.geometry isKindOfClass:[AGSPolygon class]]) {
+            AGSPoint *point = [[AGSGeometryEngine defaultGeometryEngine] labelPointForPolygon:(AGSPolygon *)poi.geometry];
+            [mapView showLocation:[TYLocalPoint pointWithX:point.x Y:point.y Floor:mapView.currentMapInfo.floorNumber]];
+        }
     }
     TYPoi *poiRegion = [mapView extractRegionOnCurrentFloorWithX:mappoint.x Y:mappoint.y];
     if (poiRegion) {

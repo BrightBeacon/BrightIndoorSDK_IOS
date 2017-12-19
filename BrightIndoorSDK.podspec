@@ -18,6 +18,7 @@ Pod::Spec.new do |s|
   s.xcconfig  =  {  'CLANG_CXX_LIBRARY' => 'libc++',
   					'FRAMEWORK_SEARCH_PATHS' => '"$HOME/Library/SDKs/ArcGIS/iOS"',
   					'LIBRARY_SEARCH_PATHS' => '"${SRCROOT}"',
+					#'LIBRARY_SEARCH_PATHS' => '"${SRCROOT}/../../"',
                     'OTHER_LDFLAGS' => '"-framework ArcGIS -lgeos"'
 					}
 #s.user_target_xcconfig     = { 'CLANG_CXX_LANGUAGE_STANDARD' => 'c++11',

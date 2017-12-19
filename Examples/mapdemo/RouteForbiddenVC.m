@@ -79,6 +79,7 @@
         [mapView setRouteEnd:lp];
         [mapView showRouteEndSymbolOnCurrentFloor:lp];
         [mapView.routeManager requestRouteWithStart:mapView.routeStart End:mapView.routeEnd];
+        [mapView setRouteStart:nil];
     }
 }
 
