@@ -168,13 +168,19 @@
 - (void)TYMapView:(TYMapView *)mapView didClickAtPoint:(CGPoint)screen mapPoint:(AGSPoint *)mappoint {
     TYPoi *poi = [mapView extractRoomPoiOnCurrentFloorWithX:mappoint.x Y:mappoint.y];
     if (!poi) {
-        self.tipsLabel.text = @"请选择有POI范围的点";
+        self.tipsLabel.text = @"请选择有POI范围的区域";
         return;
     }
-    if (self.mapView.routeStart == nil) {
-        [self.mapView showRouteStartSymbolOnCurrentFloor:[self p2lp:mappoint]];
+    AGSPoint *centerPt;
+    if ([poi.geometry isKindOfClass:[AGSPolygon class]]) {
+        centerPt = [[AGSGeometryEngine defaultGeometryEngine] labelPointForPolygon:(AGSPolygon *)poi.geometry];
     }else {
-        [self.mapView showRouteEndSymbolOnCurrentFloor:[self p2lp:mappoint]];
+        centerPt = (AGSPoint *)poi.geometry;
+    }
+    if (self.mapView.routeStart == nil) {
+        [self.mapView showRouteStartSymbolOnCurrentFloor:[self p2lp:centerPt]];
+    }else {
+        [self.mapView showRouteEndSymbolOnCurrentFloor:[self p2lp:centerPt]];
         [mapView.routeManager requestRouteWithStart:self.mapView.routeStart End:self.mapView.routeEnd];
     }
 }

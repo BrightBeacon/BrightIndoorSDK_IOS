@@ -44,17 +44,13 @@
 - (void)TYMapView:(TYMapView *)mapView didClickAtPoint:(CGPoint)screen mapPoint:(AGSPoint *)mappoint {
 	NSLog(@"%@,%@,%@",mappoint,[mapView toMapPoint:CGPointMake(mappoint.x, mappoint.y)],NSStringFromCGPoint([mapView toScreenPoint:mappoint]));
     TYPoi *poi = [mapView extractRoomPoiOnCurrentFloorWithX:mappoint.x Y:mappoint.y];
-    if (poi&&![poi.name isEqual:[NSNull null]]) {
+    if (poi) {
         NSLog(@"poi:%@",poi);
         [mapView highlightPoi:poi];
         if ([poi.geometry isKindOfClass:[AGSPolygon class]]) {
             AGSPoint *point = [[AGSGeometryEngine defaultGeometryEngine] labelPointForPolygon:(AGSPolygon *)poi.geometry];
             [mapView showLocation:[TYLocalPoint pointWithX:point.x Y:point.y Floor:mapView.currentMapInfo.floorNumber]];
         }
-    }
-    TYPoi *poiRegion = [mapView extractRegionOnCurrentFloorWithX:mappoint.x Y:mappoint.y];
-    if (poiRegion) {
-        NSLog(@"poiRegion:%@",poiRegion);
     }
 }
 

@@ -50,6 +50,8 @@
 
     NSString *dir = [TYMapEnvironment getRootDirectoryForMapFiles];
     tileLayer = [[TYTiledLayer alloc] initWithTileRoot:dir withTileInfo:[tileManager tileInfoByFloor:floorName]];
+    //必要时清空缓存瓦片，默认使用本地缓存瓦片
+    //[tileLayer removeTileCache];
     if(tileLayer&&!tileLayer.error){
         [mapView insertMapLayer:tileLayer withName:@"layerid" atIndex:0];
         AGSPoint *center = tileLayer.fullEnvelope.center;

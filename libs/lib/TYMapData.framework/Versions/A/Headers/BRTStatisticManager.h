@@ -10,6 +10,7 @@
 
 @interface BRTStatisticManager : NSObject
 
++ (BOOL)getStatisticEnable;
 + (void)statisticEnable:(BOOL)enable;
 + (NSString *)getPersonID;
 + (void)statisticMapVerion:(NSString *)mapVersion;

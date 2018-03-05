@@ -40,17 +40,19 @@
 
 
 /**
- 设置定位权限，默认请求一直需要
-
- @param whenInUse 是否仅使用时期间定位权限
+ * 修改默认请求定位权限，默认请求always定位权限
+ *
+ * 请在Info.plist添加always定位描述说明：NSLocationAlwaysAndWhenInUsageDescription、NSLocationAlwaysUsageDescription和NSLocationWhenInUseUsageDescription，（填写描述如：用于室内地图导航）
+ *
+ * @param whenInUse 是否仅使用时期间定位权限
  */
 + (void)setRequestWhenInUseAuthorization:(BOOL)whenInUse;
 
 
 /**
- 获取定位权限模式
-
- @return @YES 仅在使用期间 @NO 一直需要
+ * 获取当前定位权限请求模式
+ *
+ * @return @YES 仅在使用期间 @NO 一直需要
  */
 + (BOOL)isWhenInUseAuthorization;
 @end
