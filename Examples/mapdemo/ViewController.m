@@ -115,6 +115,9 @@
 }
 
 - (void)TYLocationManager:(TYLocationManager *)manager didUpdateLocation:(TYLocalPoint *)newLocation{
+    if (isnan(newLocation.x)) {
+        return;
+    }
     if (manager.getLastLocation == nil) {
         AGSPoint *pt = [AGSPoint pointWithX:newLocation.x y:newLocation.y spatialReference:self.mapView.spatialReference];
         [self.mapView centerAtPoint:pt animated:YES];
@@ -339,8 +342,8 @@
         NSString *path = [TYMapEnvironment getRootDirectoryForMapFiles];
         [TYBLEEnvironment setRootDirectoryForFiles:path];
         self.loc = [[TYLocationManager alloc] initWithBuilding:kBuildingId appKey:kAppKey];
-        [_loc setRssiThreshold:-100];
-        [_loc setBeaconRegion:[[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"FDA50693-A4E2-4FB1-AFCF-C6EB07647825"] identifier:@"identifier1"]];
+        //所有设备rssi低于此值，则不进行定位
+        [_loc setRssiThreshold:-70];
         _loc.delegate = self;
     }
     [_loc startUpdateLocation];
