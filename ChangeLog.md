@@ -23,6 +23,13 @@ IOS-ChangeLog
 
 ## 地图更新日志
 
+2.3.2
+
+新增：TYDirectionalHint增加对应的AGSPolyline结构
+修复：针对类环状路线导致getDirectionHintForLocation计算错误
+
+***
+
 2.3.1
 
 更新：地图北偏角度对应js版本调整，影响地图，需要后台更正地图北偏东角度

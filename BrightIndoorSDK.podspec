@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "BrightIndoorSDK"
-  s.version      = "2.3.3"
+  s.version      = "2.3.4"
   s.summary      = "Indoor location library for iBeacon devices"
   s.homepage     = "http://www.brtbeacon.com"
   s.author       = { "BrightBeacon" => "o2owlkj@163.com" }
@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.documentation_url = 'http://help.brtbeacon.com'
   s.requires_arc = true
   s.platform     = :ios,'7.0'
-  s.source       = { :git => "https://github.com/BrightBeacon/BrightIndoorSDK_IOS.git", :tag => "2.3.3" }
+  s.source       = { :git => "https://github.com/BrightBeacon/BrightIndoorSDK_IOS.git", :tag => "2.3.4" }
   #s.source_files =  "libs/lib/TYLocationEngine/*.{h,m}"
   s.preserve_paths = 'libs/lib/TYLocationEngine.framework','libs/lib/TYMapData.framework','libs/lib/TYMapSDK.framework'
 
