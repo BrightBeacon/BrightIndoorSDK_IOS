@@ -54,6 +54,11 @@ typedef enum {
 @property (nonatomic, strong, readonly) AGSPoint *endPoint;
 
 /**
+ * 当前提示段路线
+ */
+@property (nonnull, strong) AGSPolyline *line;
+
+/**
  *  当前段的相对方向
  */
 @property (nonatomic, readonly) TYRelativeDirection relativeDirection;
@@ -82,6 +87,7 @@ typedef enum {
  *  包含当前段的路径部分
  */
 @property (nonatomic, weak) TYRoutePart *routePart;
+
 
 /**
  *  生成当前段的方向提示

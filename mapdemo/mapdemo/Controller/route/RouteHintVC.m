@@ -11,6 +11,7 @@
 @interface RouteHintVC () {
     int pointIndex;
     BOOL isStop;
+    NSArray *hintsOfPart;
 }
 @property (nonatomic,strong) UILabel *tipsLabel;
 
@@ -119,12 +120,11 @@
     TYLocalPoint *tmp = [TYLocalPoint pointWithX:pt.x Y:pt.y Floor:floor];
     [self animateUpdateGraphic:0 start:lp end:tmp];
     
-    NSArray *hints = [rs getRouteDirectionalHint:part distanceThrehold:2 angleThrehold:10];
-    TYDirectionalHint *hint = [rs getDirectionHintForLocation:tmp FromHints:hints];
+    hintsOfPart = [rs getRouteDirectionalHint:part distanceThrehold:2 angleThrehold:10];
+    TYDirectionalHint *hint = [rs getDirectionHintForLocation:tmp FromHints:hintsOfPart];
     if (hint) {
-        [self.mapView setRotationAngle: hint.currentAngle animated:YES];
         //仅演示效果，实际请指教使用定位回调的设备真实方向
-        [self.mapView processDeviceRotation:hint.currentAngle + self.mapView.building.initAngle];
+        [self.mapView processDeviceRotation:hint.currentAngle];
         [self.mapView showRouteHintForDirectionHint:hint Centered:NO];
     }
 }
@@ -154,10 +154,8 @@
 }
 
 - (void)showCurrentHint:(TYLocalPoint *)lp {
-    TYRoutePart *part = [self.mapView.routeResult getNearestRoutePart:lp];
-    if (part) {
-        NSArray *hints = [self.mapView.routeResult getRouteDirectionalHint:part distanceThrehold:2 angleThrehold:10];
-        TYDirectionalHint *hint = [self.mapView.routeResult getDirectionHintForLocation:lp FromHints:hints];
+    if (hintsOfPart) {
+        TYDirectionalHint *hint = [self.mapView.routeResult getDirectionHintForLocation:lp FromHints:hintsOfPart];
         if (hint) {
             self.tipsLabel.text = [NSString stringWithFormat:@"方向：%@\n本段长度%.2f\n本段角度%.2f\n剩余/全长：%.2f/%.2f",hint.getDirectionString,hint.length,hint.currentAngle,[self.mapView.routeResult distanceToRouteEnd:lp],self.mapView.routeResult.length];
         }

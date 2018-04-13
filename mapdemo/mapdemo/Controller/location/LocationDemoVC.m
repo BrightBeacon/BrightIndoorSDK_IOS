@@ -9,6 +9,7 @@
 #import "LocationDemoVC.h"
 #import <TYLocationEngine/TYLocationEngine.h>
 #import <AVFoundation/AVFoundation.h>
+#import <TYTileMapSDK/TYTileMapSDK.h>
 
 @interface LocationDemoVC ()<TYMapViewDelegate,TYOfflineRouteManagerDelegate,AGSCalloutDelegate,TYLocationManagerDelegate,UISearchBarDelegate>{
     BOOL isRouting;
@@ -25,6 +26,9 @@
     AGSPictureMarkerSymbol *switchSymbol;
     AGSSimpleMarkerSymbol *markerSymbol;
     AGSPictureMarkerSymbol *locationSymbol;
+    
+    TYTiledManager *tileManager;
+    
 }
 
 @property(nonatomic,strong) TYLocalPoint *startLocalPoint;
@@ -42,6 +46,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    tileManager = [[TYTiledManager alloc] initWithBuilding:kBuildingId];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -246,6 +252,18 @@
     if (isRouting) {
         [self.mapView showRouteResultOnCurrentFloor];
     }
+    TYTiledLayer *tileLayer = (TYTiledLayer *)[mapView mapLayerForName:@"layerid"];
+    [mapView removeMapLayer:tileLayer];
+    
+    NSString *dir = [TYMapEnvironment getRootDirectoryForMapFiles];
+    tileLayer = [[TYTiledLayer alloc] initWithTileRoot:dir withTileInfo:[tileManager tileInfoByFloor:mapInfo.floorName]];
+    //必要时清空缓存瓦片，默认使用本地缓存瓦片
+    //[tileLayer removeTileCache];
+    if(tileLayer&&!tileLayer.error){
+        [mapView insertMapLayer:tileLayer withName:@"layerid" atIndex:0];
+        AGSPoint *center = tileLayer.fullEnvelope.center;
+        [mapView centerAtPoint:center animated:YES];
+    }
 }
 
 - (void)TYMapViewDidZoomed:(TYMapView *)mapView
@@ -265,6 +283,8 @@
         self.mapView.callout.customView = [self calloutView:mappoint];
         [self.mapView.callout showCalloutAt:mappoint screenOffset:CGPointMake(0, 0) animated:YES];
     }
+    
+    [self TYLocationManager:_loc didUpdateLocation:[TYLocalPoint pointWithX:mappoint.x Y:mappoint.y Floor:mapView.currentMapInfo.floorNumber]];
 }
 
 - (UIView *)calloutView:(AGSPoint *)point {

@@ -43,10 +43,10 @@
 		58853CA62060ED8100181812 /* TYMapData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58853CA32060ED8100181812 /* TYMapData.framework */; };
 		58853CA72060ED8100181812 /* TYMapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58853CA42060ED8100181812 /* TYMapSDK.framework */; };
 		58853CAF2060EE7900181812 /* TYMapConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = 58853CAB2060EE7900181812 /* TYMapConvert.m */; };
-		58853CB02060EE7900181812 /* TYTileMapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58853CAC2060EE7900181812 /* TYTileMapSDK.framework */; };
 		58853CB12060EE7900181812 /* UIImageView+AGSNorthArrow.m in Sources */ = {isa = PBXBuildFile; fileRef = 58853CAE2060EE7900181812 /* UIImageView+AGSNorthArrow.m */; };
 		58853CBB2060EEA800181812 /* libgeos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58853CB72060EE9B00181812 /* libgeos.a */; };
 		58853CBE2060F0BE00181812 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58853CC02060F0BE00181812 /* Localizable.strings */; };
+		58F86393207F474300D9F505 /* TYTileMapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F86392207F474200D9F505 /* TYTileMapSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,12 +135,12 @@
 		58853CA82060EE3F00181812 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		58853CAA2060EE7900181812 /* TYMapConvert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYMapConvert.h; sourceTree = "<group>"; };
 		58853CAB2060EE7900181812 /* TYMapConvert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYMapConvert.m; sourceTree = "<group>"; };
-		58853CAC2060EE7900181812 /* TYTileMapSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TYTileMapSDK.framework; sourceTree = "<group>"; };
 		58853CAD2060EE7900181812 /* UIImageView+AGSNorthArrow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AGSNorthArrow.h"; sourceTree = "<group>"; };
 		58853CAE2060EE7900181812 /* UIImageView+AGSNorthArrow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AGSNorthArrow.m"; sourceTree = "<group>"; };
 		58853CB22060EE9B00181812 /* geos.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = geos.xcodeproj; path = ../../geos/geos.xcodeproj; sourceTree = "<group>"; };
 		58853CBF2060F0BE00181812 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		58853CC22060F1BA00181812 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		58F86392207F474200D9F505 /* TYTileMapSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TYTileMapSDK.framework; path = ../libs/TYTileMapSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,9 +148,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58F86393207F474300D9F505 /* TYTileMapSDK.framework in Frameworks */,
 				58853CBB2060EEA800181812 /* libgeos.a in Frameworks */,
 				58853CA62060ED8100181812 /* TYMapData.framework in Frameworks */,
-				58853CB02060EE7900181812 /* TYTileMapSDK.framework in Frameworks */,
 				58853CA72060ED8100181812 /* TYMapSDK.framework in Frameworks */,
 				58853CA52060ED8100181812 /* TYLocationEngine.framework in Frameworks */,
 			);
@@ -329,7 +329,6 @@
 			children = (
 				58853CAA2060EE7900181812 /* TYMapConvert.h */,
 				58853CAB2060EE7900181812 /* TYMapConvert.m */,
-				58853CAC2060EE7900181812 /* TYTileMapSDK.framework */,
 				58853CAD2060EE7900181812 /* UIImageView+AGSNorthArrow.h */,
 				58853CAE2060EE7900181812 /* UIImageView+AGSNorthArrow.m */,
 			);
@@ -347,6 +346,7 @@
 		58853CBA2060EEA800181812 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				58F86392207F474200D9F505 /* TYTileMapSDK.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -633,7 +633,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.o2o.mapdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = arm64;
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Debug;
 		};
@@ -666,7 +666,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.o2o.mapdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = arm64;
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Release;
 		};

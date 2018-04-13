@@ -71,7 +71,6 @@
 #pragma mark - **************** mapview
 
 - (void)TYMapView:(TYMapView *)mapView didClickAtPoint:(CGPoint)screen mapPoint:(AGSPoint *)mappoint {
-
     if (polygon == nil) {
         polygon = [[AGSMutablePolygon alloc] initWithSpatialReference:self.mapView.spatialReference];
         [polygon addRingToPolygon];
