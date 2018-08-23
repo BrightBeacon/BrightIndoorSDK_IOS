@@ -3,6 +3,20 @@ IOS-ChangeLog
 ## 定位更新日志
 
 
+2.1.2
+
+更新：支持本地化url
+
+```
+#import "TYBLEEnvironment.h"
+/**
+ *  设置定位服务网络接口主机名
+ *
+ *  @param hostName 主机名
+ */
++ (void)setHostName:(NSString *)hostName;
+```
+
 2.1.1
 
 更新：优化计步导航辅助
@@ -22,6 +36,31 @@ IOS-ChangeLog
 
 
 ## 地图更新日志
+
+2.3.3
+
+新增：地图、瓦片图本地化url设置
+
+```
+#import "TYMapEnviroment.h"
+/**
+ *  设置地图服务网络接口主机名
+ *
+ *  @param hostName 主机名
+ */
++ (void)setHostName:(NSString *)hostName;
+
+瓦片图
+TYTiledLayer.h
+->imageBaseUrl;
+
+TYTiledManager.h
+- (instancetype)initWithBuilding:(NSString *)buildingId from:(NSString *)url;
+
+```
+
+***
+
 
 2.3.2
 

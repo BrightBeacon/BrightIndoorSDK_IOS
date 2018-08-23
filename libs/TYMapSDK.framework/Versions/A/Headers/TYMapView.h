@@ -369,7 +369,7 @@ typedef enum {
 
 /**
  *  返回当前楼层的所有公共设施类型
- *
+ *ego
  *  @return 公共设施类型数组:[NSNumber]
  */
 - (NSArray *)getAllFacilityCategoryIDOnCurrentFloor;
@@ -496,6 +496,13 @@ typedef enum {
  *  隐藏车位状态
  */
 - (void)hideParkingSpaces;
+
+/**
+ * 获取所以车位
+ *
+ * @return 车位TYPOI数组
+ */
+- (NSArray<TYPoi *> *)getParkingSpacesOnCurrentFloor;
 
 /**
  *  设置是否启用标识重叠检测

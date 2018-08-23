@@ -47,7 +47,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    tileManager = [[TYTiledManager alloc] initWithBuilding:kBuildingId];
+    tileManager = [[TYTiledManager alloc] initWithBuilding:kBuildingId from:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    tileManager = [[TYTiledManager alloc] initWithBuilding:@"00210105"];
+    tileManager = [[TYTiledManager alloc] initWithBuilding:@"00210105" from:nil];
     TYMapView *mapView = [[TYMapView alloc] initWithFrame:self.view.bounds];
     mapView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:mapView];

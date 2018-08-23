@@ -9,36 +9,26 @@
 #import <Foundation/Foundation.h>
 #import "TYTiledLayer.h"
 
-
-///瓦片数据管理器
- 
 @interface TYTiledManager : NSObject
 
-/**
- * 瓦片楼层信息是否加载完成
- */
 @property (nonatomic,assign) BOOL isLoad;
-
-
-/**
- * 瓦片楼层信息
- */
 @property (nonatomic,strong) NSArray *allTileInfo;
 
 /**
- * 默认从本地获取数据，如无则从url下载
- *
- * @param buildingId 建筑id
- * @return 瓦片楼层描述数据
+ 默认从本地获取数据，如无则从url下载
+
+ @param buildingId 建筑id
+ @param url 传nil为官方服务器
+ @return 瓦片楼层描述数据
  */
-- (instancetype)initWithBuilding:(NSString *)buildingId;
+- (instancetype)initWithBuilding:(NSString *)buildingId from:(NSString *)url;
 
 
 /**
- * 通过楼层名索引到瓦片数据
- *
- * @param floorName 楼层名
- * @return 当层瓦片数据
+ 通过楼层名索引到瓦片数据
+
+ @param floorName 楼层名
+ @return 当层瓦片数据
  */
 - (NSDictionary *)tileInfoByFloor:(NSString *)floorName;
 

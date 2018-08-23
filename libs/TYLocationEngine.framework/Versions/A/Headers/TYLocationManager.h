@@ -27,7 +27,18 @@
  *
  *  @return 定位引擎实例
  */
-- (id)initWithBuilding:(NSString *)buildingID appKey:(NSString *)aKey;
+- (id)initWithBuilding:(TYBuilding *)building appKey:(NSString *)aKey;
+
+
+/**
+ 初始化定位引擎
+
+ @param buildingID 目标建筑ID
+ @param angle 目标建筑正北偏角（用于定位方向纠正）
+ @param aKey  用户appkey
+ @return 定位引擎
+ */
+- (id)initWithBuildingID:(NSString *)buildingID initAngle:(double)angle appKey:(NSString *)aKey;
 
 /**
  *  开启定位引擎
@@ -45,6 +56,13 @@
  *  @return 位置信息
  */
 - (TYLocalPoint *)getLastLocation;
+
+/**
+ * 设置定位地图正北角度，用于定位方向校准(使用didUpdateLocation，didUpdateMapHeading)
+ *
+ * @param angle 初始化角度
+ */
+- (void)setInitAngle:(double)angle;
 
 /**
  *  设置用于定位的Beacon参数

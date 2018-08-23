@@ -55,4 +55,19 @@
  * @return @YES 仅在使用期间 @NO 一直需要
  */
 + (BOOL)isWhenInUseAuthorization;
+
+/**
+ *  设置定位服务网络接口主机名
+ *
+ *  @param hostName 主机名
+ */
++ (void)setHostName:(NSString *)hostName;
+
+/**
+ *  获取定位服务网络接口主机名
+ *
+ *  @return 主机名
+ */
++ (NSString *)getHostName;
+
 @end
