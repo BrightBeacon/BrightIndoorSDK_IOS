@@ -9,10 +9,10 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.platform     = :ios,'7.0'
   s.source       = { :git => "https://github.com/BrightBeacon/BrightIndoorSDK_IOS.git", :tag => "2.3.5" }
-  #s.source_files =  "libs/lib/TYLocationEngine/*.{h,m}"
-  s.preserve_paths = 'libs/lib/TYLocationEngine.framework','libs/lib/TYMapData.framework','libs/lib/TYMapSDK.framework'
+  #s.source_files =  "libs/TYLocationEngine/*.{h,m}"
+  s.preserve_paths = 'libs/TYLocationEngine.framework','libs/TYMapData.framework','libs/TYMapSDK.framework'
 
-  s.ios.vendored_frameworks = 'libs/lib/TYLocationEngine.framework','libs/lib/TYMapData.framework','libs/lib/TYMapSDK.framework'
+  s.ios.vendored_frameworks = 'libs/TYLocationEngine.framework','libs/TYMapData.framework','libs/TYMapSDK.framework'
   s.resources = "resource/*.png"
   s.library = "sqlite3","z","stdc++.6.0.9","c++"
   s.xcconfig  =  {  'CLANG_CXX_LIBRARY' => 'libc++',
@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
   s.license      = {
     :type => 'Copyright',
     :text => <<-LICENSE
-      Copyright 2017 BrightBeacon All rights reserved.
+      Copyright 2018 BrightBeacon All rights reserved.
       LICENSE
   }
 end
