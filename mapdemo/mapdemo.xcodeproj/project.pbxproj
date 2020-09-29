@@ -11,7 +11,6 @@
 		5818FADC2060E96200FDCC7B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5818FADB2060E96200FDCC7B /* main.m */; };
 		58853C082060EA0100181812 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58853C062060EA0100181812 /* AppDelegate.m */; };
 		58853C0A2060EA0B00181812 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58853C092060EA0B00181812 /* Assets.xcassets */; };
-		58853C152060EB3F00181812 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58853C142060EB3F00181812 /* Info.plist */; };
 		58853C842060ECDC00181812 /* MapCoorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58853C492060ECDC00181812 /* MapCoorVC.m */; };
 		58853C852060ECDC00181812 /* MapInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58853C4B2060ECDC00181812 /* MapInfoVC.m */; };
 		58853C862060ECDC00181812 /* MapLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 58853C4D2060ECDC00181812 /* MapLayer.m */; };
@@ -427,7 +426,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58853C152060EB3F00181812 /* Info.plist in Resources */,
 				58853CBE2060F0BE00181812 /* Localizable.strings in Resources */,
 				58853C0A2060EA0B00181812 /* Assets.xcassets in Resources */,
 			);
